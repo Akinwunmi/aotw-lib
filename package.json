@@ -1,0 +1,24 @@
+{
+  "name": "aotw-lib",
+  "version": "0.0.1",
+  "description": "Archive of the World Theme and Component Library",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jurrit van der Ploeg <info@jurritvanderploeg.nl> (http://www.jurritvanderploeg.nl/)",
+  "license": "MIT",
+  "dependencies": {
+    "lit": "^2.1.2"
+  },
+  "devDependencies": {
+    "@rollup/plugin-typescript": "^8.3.0",
+    "@storybook/web-components": "^6.4.14",
+    "lit-html": "^2.1.2",
+    "node-sass": "^7.0.1",
+    "rollup": "^2.66.1",
+    "rollup-plugin-lit-css": "^3.2.1",
+    "sass": "^1.49.0",
+    "typescript": "^4.5.5"
+  }
+}
