@@ -1,14 +1,15 @@
 {
   "compilerOptions": {
-    "target": "es2018",
-    "module": "esnext",
+    "target": "es2019",
+    "module": "es2015",
     "moduleResolution": "node",
-    "lib": ["es2017"],
+    "lib": ["es2019", "dom"],
+    "declaration": true,
+    "declarationMap": true,
+    "experimentalDecorators": true,
+    "declarationDir": "dist/declarations",
     "strict": true,
-    "esModuleInterop": true,
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
-    "experimentalDecorators": true
+    "useDefineForClassFields": false
   },
   "include": ["./src/**/*.ts"]
 }
