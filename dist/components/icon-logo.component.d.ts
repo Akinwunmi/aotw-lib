@@ -1,4 +1,4 @@
-import { LitElement } from 'lit-element';
+import { LitElement } from 'lit';
 export declare class IconLogoComponent extends LitElement {
     color: string;
     static styles: any[];
