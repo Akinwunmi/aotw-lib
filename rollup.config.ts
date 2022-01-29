@@ -1,3 +1,4 @@
+import copy from 'rollup-plugin-copy';
 import postcss from 'rollup-plugin-postcss';
 import resolve from 'rollup-plugin-node-resolve';
 import typescript from 'rollup-plugin-typescript2';
@@ -12,6 +13,14 @@ export default {
     sourceMap: true
   },
   plugins: [
+    copy({
+      targets: [
+        {
+          src: 'src/theme',
+          dest: 'dist'
+        }
+      ]
+    }),
     postcss({
       extensions: ['.scss'],
       extract: false,
