@@ -1,0 +1,1 @@
+{"version":3,"file":"icon-logo.component.d.ts","sourceRoot":"","sources":["../src/components/icon/icon-logo.component.ts"],"names":[],"mappings":"AAAA,OAAO,EAAO,UAAU,EAAE,MAAM,aAAa,CAAC;AAI9C,qBACa,iBAAkB,SAAQ,UAAU;IACnC,KAAK,EAAG,MAAM,CAAC;IAE3B,MAAM,CAAC,MAAM,QAAe;IAE5B,MAAM;CAqBP;AAED,OAAO,CAAC,MAAM,CAAC;IACb,UAAU,qBAAqB;QAC7B,gBAAgB,EAAE,iBAAiB,CAAA;KACpC;CACF"}

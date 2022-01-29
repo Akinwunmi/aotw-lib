@@ -1,6 +1,5 @@
-import { LitElement, svg, html } from 'lit-element';
+import { LitElement, svg, css, unsafeCSS, html } from 'lit-element';
 import { property, customElement } from 'lit/decorators.js';
-import { css } from 'lit';
 
 /*! *****************************************************************************
 Copyright (c) Microsoft Corporation.
@@ -24,11 +23,35 @@ function __decorate(decorators, target, key, desc) {
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 }
 
-const styles = css`:host {
-  display: block;
-  width: 100%;
-  color: inherit;
-}`;
+function styleInject(css, ref) {
+  if ( ref === void 0 ) ref = {};
+  var insertAt = ref.insertAt;
+
+  if (!css || typeof document === 'undefined') { return; }
+
+  var head = document.head || document.getElementsByTagName('head')[0];
+  var style = document.createElement('style');
+  style.type = 'text/css';
+
+  if (insertAt === 'top') {
+    if (head.firstChild) {
+      head.insertBefore(style, head.firstChild);
+    } else {
+      head.appendChild(style);
+    }
+  } else {
+    head.appendChild(style);
+  }
+
+  if (style.styleSheet) {
+    style.styleSheet.cssText = css;
+  } else {
+    style.appendChild(document.createTextNode(css));
+  }
+}
+
+var css_248z = ":host {\n  display: block;\n  width: 100%;\n  color: inherit;\n}";
+styleInject(css_248z);
 
 let IconLogoComponent = class IconLogoComponent extends LitElement {
     render() {
@@ -53,7 +76,7 @@ let IconLogoComponent = class IconLogoComponent extends LitElement {
     `;
     }
 };
-IconLogoComponent.styles = [styles];
+IconLogoComponent.styles = [css_248z];
 __decorate([
     property()
 ], IconLogoComponent.prototype, "color", void 0);
@@ -63,9 +86,8 @@ IconLogoComponent = __decorate([
 
 let IconComponent = class IconComponent extends LitElement {
     render() {
-        if (this.color) {
-            this.style.setProperty('color', this.color);
-        }
+        var _a;
+        this.color = (_a = this.color) !== null && _a !== void 0 ? _a : 'currentColor';
         this.style.setProperty('width', this.width);
         switch (this.name) {
             case 'logo':
@@ -75,7 +97,7 @@ let IconComponent = class IconComponent extends LitElement {
         }
     }
 };
-IconComponent.styles = [styles];
+IconComponent.styles = [css `${unsafeCSS(css_248z)}`];
 __decorate([
     property()
 ], IconComponent.prototype, "color", void 0);

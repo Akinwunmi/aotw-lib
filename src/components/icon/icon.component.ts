@@ -1,4 +1,4 @@
-import { html, LitElement } from 'lit-element';
+import { css, html, LitElement, unsafeCSS } from 'lit-element';
 import { customElement, property } from 'lit/decorators.js';
 
 import styleIcon from './icon.component.scss';
@@ -11,12 +11,10 @@ export class IconComponent extends LitElement {
   @property() name!: string;
   @property() width!: string;
 
-  static styles = [styleIcon];
+  static styles = [css`${unsafeCSS(styleIcon)}`];
 
   render() {
-    if (this.color) {
-      this.style.setProperty('color', this.color);
-    }    
+    this.color = this.color ?? 'currentColor';
     this.style.setProperty('width', this.width);
 
     switch (this.name) {

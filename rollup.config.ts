@@ -1,19 +1,14 @@
-import litcss from 'rollup-plugin-lit-css';
-import Sass from 'sass';
-import summary from 'rollup-plugin-summary';
-import typescript from '@rollup/plugin-typescript';
+import postcss from 'rollup-plugin-postcss';
+import typescript from 'rollup-plugin-typescript2';
 
 export default {
   input: {
     'icon': 'src/components/icon/icon.component.ts'
   },
   plugins: [
-    litcss({
-      include: ['**/*.scss'],
-      transform: (_, { filePath }) =>
-        Sass.compile(filePath).css.toString()
+    postcss({
+      include: ['**/*.scss']
     }),
-    summary({ }),
     typescript()
   ],
   output: {

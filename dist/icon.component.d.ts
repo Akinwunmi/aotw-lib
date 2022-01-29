@@ -4,7 +4,7 @@ export declare class IconComponent extends LitElement {
     color: string;
     name: string;
     width: string;
-    static styles: any[];
+    static styles: import("lit-element").CSSResult[];
     render(): import("lit-html").TemplateResult<1>;
 }
 declare global {
