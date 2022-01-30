@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "rimraf dist && rollup -c",
+    "prepublish": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "rimraf dist && rollup -c -w"
   },
@@ -14,6 +15,10 @@
   ],
   "types": "./src/global.d.ts",
   "author": "Jurrit van der Ploeg <info@jurritvanderploeg.nl> (http://www.jurritvanderploeg.nl/)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Akinwunmi/aotw-lib.git"
+  },
   "license": "MIT",
   "dependencies": {
     "lit": "^2.1.2"
