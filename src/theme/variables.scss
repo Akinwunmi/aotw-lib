@@ -1,0 +1,6 @@
+@function aotw-grid($space) {
+  $result: 5px;
+
+  @return $result * $space;
+}
+
