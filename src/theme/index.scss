@@ -1,0 +1,23 @@
+@import 'reset';
+@import 'colors';
+@import 'variables';
+@import 'typography';
+@import 'buttons';
+
+html,
+body {
+  background-color: $secondary-smoke;
+
+  @include typography-default;
+  color: $primary-blue;
+
+  h1, h2, h3 {
+    @include typography-header;
+  }
+  a {
+    cursor: pointer;
+
+    @include typography-link;
+    color: $primary-blue;
+  }
+}
