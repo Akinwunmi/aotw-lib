@@ -1,18 +1,16 @@
 {
   "name": "aotw-lib",
-  "version": "0.0.2",
+  "version": "0.0.5",
   "description": "Archive of the World Theme and Component Library",
   "main": "index.js",
   "scripts": {
-    "build": "rimraf dist && rollup -c",
+    "build": "rimraf dist && rollup -c && npm run copy",
+    "copy": "copy package.json dist && copy README.md dist && copy .npmignore dist",
     "prepublish": "npm run build",
+    "publish": "cd dist && npm publish",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "watch": "rimraf dist && rollup -c -w"
+    "watch": "rimraf dist && rollup -c -w && npm run copy"
   },
-  "files": [
-    "dist/components",
-    "dist/theme"
-  ],
   "types": "./src/global.d.ts",
   "author": "Jurrit van der Ploeg <info@jurritvanderploeg.nl> (http://www.jurritvanderploeg.nl/)",
   "repository": {

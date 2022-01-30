@@ -5,12 +5,13 @@ import typescript from 'rollup-plugin-typescript2';
 
 export default {
   input: {
+    'button': 'src/components/button/button.component.ts',
     'icon': 'src/components/icon/icon.component.ts'
   },
   output: {
     dir: 'dist/components',
     format: 'esm',
-    sourceMap: true
+    sourcemap: true
   },
   plugins: [
     copy({

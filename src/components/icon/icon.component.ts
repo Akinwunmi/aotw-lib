@@ -11,7 +11,9 @@ export class IconComponent extends LitElement {
   @property() name!: string;
   @property() width!: string;
 
-  static styles = [css`${unsafeCSS(styleIcon)}`];
+  static styles = [
+    css`${unsafeCSS(styleIcon)}`
+  ];
 
   render() {
     this.color = this.color ?? 'currentColor';
