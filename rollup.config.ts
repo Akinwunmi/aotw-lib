@@ -21,12 +21,7 @@ export default {
         }
       ]
     }),
-    postcss({
-      extensions: ['.scss'],
-      extract: false,
-      modules: true,
-      use: ['sass']
-    }),
+    postcss(),
     resolve(),
     typescript()
   ],
