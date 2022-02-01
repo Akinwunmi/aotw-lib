@@ -1,30 +1,29 @@
-import { css, html, LitElement, unsafeCSS } from 'lit';
+import { css, html, LitElement, TemplateResult, unsafeCSS } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
+import { unsafeHTML } from 'lit/directives/unsafe-html.js';
 
 import styleIcon from './icon.component.scss';
-
-import './icon-logo.component.ts';
+import { Icon } from './icon';
+import './icons/icon-logo.component.ts';
 
 @customElement('aotw-icon')
 export class IconComponent extends LitElement {
-  @property() color!: string;
-  @property() name!: string;
-  @property() width!: string;
+  @property() name!: Icon;
 
   static styles = [
     css`${unsafeCSS(styleIcon)}`
   ];
 
-  render() {
-    this.color = this.color ?? 'currentColor';
-    this.style.setProperty('width', this.width);
-
-    switch (this.name) {
-      case 'logo':
-        return html`<icon-logo color=${this.color}></icon-logo>`;
-      default:
-        return html`Icon not found`;
+  render(): TemplateResult {
+    if (!this.name) {
+      return html`Define an icon`;
     }
+    if (!Object.values(Icon).includes(this.name)) {
+      return html`Icon not found`;
+    }
+    return html`
+      ${unsafeHTML(`<icon-${this.name}></icon-${this.name}>`)}
+    `;
   }
 }
 

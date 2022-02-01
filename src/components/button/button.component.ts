@@ -1,12 +1,12 @@
 import { css, html, LitElement, unsafeCSS } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 
-import { ButtonAction, ButtonType } from './button';
+import { ButtonLevel, ButtonType } from './button';
 import styleButton from './button.component.scss';
 
 @customElement('aotw-button')
 export class ButtonComponent extends LitElement {
-  @property() action!: string;
+  @property() level!: string;
   @property() type!: string;
 
   static styles = [
@@ -14,11 +14,11 @@ export class ButtonComponent extends LitElement {
   ];
 
   render() {
-    this.action = this.action ?? ButtonAction.BUTTON;
-    this.type = this.type ?? ButtonType.PRIMARY;
+    this.level = this.level ?? ButtonLevel.PRIMARY;
+    this.type = this.type ?? ButtonType.BUTTON;
 
     return html`
-      <button type=${this.action} class=${this.type}>
+      <button type=${this.type} class=${this.level}>
         <slot></slot>
       </button>
     `;

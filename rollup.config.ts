@@ -6,7 +6,8 @@ import typescript from 'rollup-plugin-typescript2';
 export default {
   input: {
     'button': 'src/components/button/button.component.ts',
-    'icon': 'src/components/icon/icon.component.ts'
+    'icon': 'src/components/icon/icon.component.ts',
+    'scrim': 'src/components/scrim/scrim.component.ts'
   },
   output: {
     dir: 'dist/components',
