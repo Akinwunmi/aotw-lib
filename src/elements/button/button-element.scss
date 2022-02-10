@@ -16,21 +16,21 @@
     text-transform: capitalize;
 
     &.primary {
-      background-color: $primary-blue;
+      background-color: $primary-blue-500;
   
       color: $default-white;
 
       &:hover {
-        background-color: $primary-blue-focus;
+        background-color: $primary-blue-600;
       }
     }
     &.secondary {
-      background-color: $secondary-ice;
+      background-color: $secondary-ice-100;
     
-      color: $primary-blue;
+      color: $primary-blue-500;
 
       &:hover {
-        background-color: $secondary-ice-focus;
+        background-color: $secondary-ice-200;
       }
     }
   }
