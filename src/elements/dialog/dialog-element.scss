@@ -1,0 +1,48 @@
+@import '../../theme/colors';
+@import '../../theme/variables';
+
+:host {
+  z-index: 300;
+  position: fixed;
+  display: flex;
+  inset: 0;
+
+  .dialog {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    top: 50px;
+    left: aotw-grid(2);
+    min-width: 300px;
+    max-width: 400px;
+    min-height: 400px;
+    margin: auto;
+    padding: aotw-grid(1) aotw-grid(2) aotw-grid(2);
+
+    background-color: $primary-blue-500;
+
+    color: $default-white;
+
+    header {
+      display: grid;
+      grid-template-columns: aotw-grid(58) auto;
+      align-items: flex-start;
+      gap: aotw-grid(2);
+
+      section {
+        h3 {
+          margin-block: aotw-grid(2);
+        }
+        .visual {
+          width: inherit;
+          margin-block: aotw-grid(3) aotw-grid(2);
+        }
+      }
+    }
+    &_content {
+      display: grid;
+      grid-template-rows: 1fr auto;
+      gap: aotw-grid(1);
+      padding-top: aotw-grid(2);
+    }
+  }
+}

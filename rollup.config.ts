@@ -8,6 +8,7 @@ export default {
   input: {
     'index': 'src/index.ts',
     'elements/button/button-element': 'src/elements/button/button-element.ts',
+    'elements/dialog/dialog-element': 'src/elements/dialog/dialog-element.ts',
     'elements/icon/icon-element': 'src/elements/icon/icon-element.ts',
     'elements/scrim/scrim-element': 'src/elements/scrim/scrim-element.ts',
     'elements/toggle/toggle-element': 'src/elements/toggle/toggle-element.ts',

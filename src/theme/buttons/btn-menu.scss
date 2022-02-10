@@ -1,3 +1,7 @@
+@import '../reset.scss';
+@import '../colors.scss';
+@import '../typography.scss';
+
 .btn-menu {
   width: 40px;
   height: 40px;  
@@ -11,7 +15,7 @@
     height: 2px;
 
     transition: all 150ms ease-in-out;
-    background-color: $primary-blue;
+    background-color: $primary-blue-500;
 
     font-size: 2rem;
 
@@ -24,7 +28,7 @@
       height: 2px;
 
       transition: all 150ms ease-in-out;
-      background-color: $primary-blue;
+      background-color: $primary-blue-500;
     }
     &::before {
       top: -6px;
