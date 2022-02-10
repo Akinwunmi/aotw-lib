@@ -1,4 +1,4 @@
-import { css, html, LitElement, unsafeCSS } from 'lit';
+import { html, LitElement } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import { styleMap } from 'lit/directives/style-map.js';
 
@@ -11,9 +11,7 @@ export class ToggleElement extends LitElement {
   @property() selected!: string | number;
   @property({ type: Array }) values!: string[] | number[];
 
-  static styles = [
-    css`${unsafeCSS(styleToggle)}`
-  ];
+  static styles = [styleToggle];
 
   render() {
     if (this.values) {

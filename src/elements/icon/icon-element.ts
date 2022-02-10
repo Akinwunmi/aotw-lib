@@ -1,4 +1,4 @@
-import { css, html, LitElement, TemplateResult, unsafeCSS } from 'lit';
+import { html, LitElement, TemplateResult } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import { unsafeHTML } from 'lit/directives/unsafe-html.js';
 
@@ -10,9 +10,7 @@ import './icons/icon-logo-element.ts';
 export class IconElement extends LitElement {
   @property() name!: Icon;
 
-  static styles = [
-    css`${unsafeCSS(styleIcon)}`
-  ];
+  static styles = [styleIcon];
 
   render(): TemplateResult {
     if (!this.name) {

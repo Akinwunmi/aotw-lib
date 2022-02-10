@@ -1,4 +1,4 @@
-import { css, html, LitElement, unsafeCSS } from 'lit';
+import { html, LitElement } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 
 import { ButtonLevel, ButtonType } from './button';
@@ -9,9 +9,7 @@ export class ButtonElement extends LitElement {
   @property() level!: ButtonLevel;
   @property() type!: ButtonType;
 
-  static styles = [
-    css`${unsafeCSS(styleButton)}`
-  ];
+  static styles = [styleButton];
 
   render() {
     this.level = this.level ?? ButtonLevel.PRIMARY;
