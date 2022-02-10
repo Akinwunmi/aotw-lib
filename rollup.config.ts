@@ -5,27 +5,28 @@ import typescript from 'rollup-plugin-typescript2';
 
 export default {
   input: {
-    'button': 'src/components/button/button.component.ts',
-    'icon': 'src/components/icon/icon.component.ts',
-    'scrim': 'src/components/scrim/scrim.component.ts'
+    'index': 'src/index.ts',
+    'elements/button/button-element': 'src/elements/button/button-element.ts',
+    'elements/icon/icon-element': 'src/elements/icon/icon-element.ts',
+    'elements/scrim/scrim-element': 'src/elements/scrim/scrim-element.ts',
+    'elements/toggle/toggle-element': 'src/elements/toggle/toggle-element.ts',
   },
   output: {
-    dir: 'dist/components',
+    dir: 'dist',
     format: 'esm',
-    sourcemap: true
   },
   plugins: [
     copy({
       targets: [
         {
           src: 'src/theme',
-          dest: 'dist'
+          dest: 'dist',
         }
       ]
     }),
     postcss(),
     resolve(),
-    typescript()
+    typescript(),
   ],
-  preserveEntrySignatures: 'strict'
+  preserveEntrySignatures: 'strict',
 };

@@ -1,10 +1,10 @@
 import { css, LitElement, unsafeCSS } from 'lit';
 import { customElement } from 'lit/decorators.js';
 
-import styleScrim from './scrim.component.scss';
+import styleScrim from './scrim-element.scss';
 
 @customElement('aotw-scrim')
-export class ScrimComponent extends LitElement {
+export class ScrimElement extends LitElement {
   static styles = [
     css`${unsafeCSS(styleScrim)}`
   ];
@@ -12,6 +12,6 @@ export class ScrimComponent extends LitElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'aotw-scrim': ScrimComponent
+    'aotw-scrim': ScrimElement
   }
 }

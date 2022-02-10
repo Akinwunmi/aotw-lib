@@ -2,12 +2,12 @@ import { css, html, LitElement, unsafeCSS } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 
 import { ButtonLevel, ButtonType } from './button';
-import styleButton from './button.component.scss';
+import styleButton from './button-element.scss';
 
 @customElement('aotw-button')
-export class ButtonComponent extends LitElement {
-  @property() level!: string;
-  @property() type!: string;
+export class ButtonElement extends LitElement {
+  @property() level!: ButtonLevel;
+  @property() type!: ButtonType;
 
   static styles = [
     css`${unsafeCSS(styleButton)}`
@@ -27,6 +27,6 @@ export class ButtonComponent extends LitElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'aotw-button': ButtonComponent
+    'aotw-button': ButtonElement
   }
 }

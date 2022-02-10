@@ -2,12 +2,12 @@ import { css, html, LitElement, TemplateResult, unsafeCSS } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import { unsafeHTML } from 'lit/directives/unsafe-html.js';
 
-import styleIcon from './icon.component.scss';
+import styleIcon from './icon-element.scss';
 import { Icon } from './icon';
-import './icons/icon-logo.component.ts';
+import './icons/icon-logo-element.ts';
 
 @customElement('aotw-icon')
-export class IconComponent extends LitElement {
+export class IconElement extends LitElement {
   @property() name!: Icon;
 
   static styles = [
@@ -29,6 +29,6 @@ export class IconComponent extends LitElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'aotw-icon': IconComponent
+    'aotw-icon': IconElement
   }
 }

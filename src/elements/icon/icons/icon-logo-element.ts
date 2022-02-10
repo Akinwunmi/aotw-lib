@@ -2,7 +2,7 @@ import { svg, LitElement } from 'lit';
 import { customElement } from 'lit/decorators.js';
 
 @customElement('icon-logo')
-export class IconLogoComponent extends LitElement {
+export class IconLogoElement extends LitElement {
   render() {
     return svg`
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" fill="none">
@@ -23,11 +23,5 @@ export class IconLogoComponent extends LitElement {
         />
       </svg>
     `;
-  }
-}
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'aotw-icon-logo': IconLogoComponent
   }
 }

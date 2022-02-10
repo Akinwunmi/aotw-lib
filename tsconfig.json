@@ -5,9 +5,7 @@
     "moduleResolution": "node",
     "lib": ["es2019", "dom"],
     "declaration": true,
-    "declarationMap": true,
     "experimentalDecorators": true,
-    "declarationDir": "dist/declarations",
     "strict": true,
     "useDefineForClassFields": false
   },
