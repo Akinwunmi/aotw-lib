@@ -1,10 +1,4 @@
-export enum ButtonLevel {
+export enum ButtonVariant {
   PRIMARY = 'primary',
   SECONDARY = 'secondary'
-}
-
-export enum ButtonType {
-  BUTTON = 'button',
-  RESET = 'reset',
-  SUBMIT = 'submit'
 }

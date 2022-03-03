@@ -1,5 +1,5 @@
-@import '../../theme/colors';
-@import '../../theme/variables';
+@import "../../theme/colors";
+@import "../../theme/spacing";
 
 :host {
   z-index: 300;
@@ -11,12 +11,12 @@
     display: grid;
     grid-template-rows: auto 1fr;
     top: 50px;
-    left: aotw-grid(2);
+    left: $aotw-spacing-s;
     min-width: 300px;
     max-width: 400px;
     min-height: 400px;
     margin: auto;
-    padding: aotw-grid(1) aotw-grid(2) aotw-grid(2);
+    padding: $aotw-spacing-xs $aotw-spacing-s $aotw-spacing-s;
 
     background-color: $primary-blue-500;
 
@@ -24,25 +24,25 @@
 
     header {
       display: grid;
-      grid-template-columns: aotw-grid(58) auto;
+      grid-template-columns: 290px auto;
       align-items: flex-start;
-      gap: aotw-grid(2);
+      gap: $aotw-spacing-s;
 
       section {
         h3 {
-          margin-block: aotw-grid(2);
+          margin-block: $aotw-spacing-s;
         }
         .visual {
           width: inherit;
-          margin-block: aotw-grid(3) aotw-grid(2);
+          margin-block: $aotw-spacing-m $aotw-spacing-s;
         }
       }
     }
     &_content {
       display: grid;
       grid-template-rows: 1fr auto;
-      gap: aotw-grid(1);
-      padding-top: aotw-grid(2);
+      gap: $aotw-spacing-xs;
+      padding-top: $aotw-spacing-s;
     }
   }
 }

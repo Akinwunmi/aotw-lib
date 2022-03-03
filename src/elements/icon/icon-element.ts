@@ -24,9 +24,3 @@ export class IconElement extends LitElement {
     `;
   }
 }
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'aotw-icon': IconElement
-  }
-}

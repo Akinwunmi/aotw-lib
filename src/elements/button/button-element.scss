@@ -1,37 +1,45 @@
-@import 'src/theme/reset';
-@import 'src/theme/colors';
-@import 'src/theme/typography';
+@import "src/theme/reset";
+@import "src/theme/colors";
+@import "src/theme/radii";
+@import "src/theme/spacing";
+@import "src/theme/typography";
 
-:host {
-  display: grid;
-  min-width: 120px;
-  min-height: 40px;
-  
-  button {
-    padding-top: 2px;
-  
-    transition: background-color 200ms ease-in-out;
+button {
+  padding: $aotw-spacing-xs $aotw-spacing-s;
 
-    @include typography-button;
-    text-transform: capitalize;
+  border-radius: $aotw-radius-s;
+  transition: background-color 200ms ease-in-out;
 
-    &.primary {
-      background-color: $primary-blue-500;
-  
-      color: $default-white;
+  @include typography-button;
+  text-transform: uppercase;
 
-      &:hover {
-        background-color: $primary-blue-600;
-      }
-    }
-    &.secondary {
-      background-color: $secondary-ice-100;
-    
-      color: $primary-blue-500;
+  p {
+    display: flex;
+    align-items: center;
+    gap: $aotw-spacing-xs;
+  }
+  &.primary {
+    background-color: $primary-blue-500;
 
-      &:hover {
-        background-color: $secondary-ice-200;
-      }
+    color: $default-white;
+
+    &:hover {
+      background-color: $primary-blue-600;
     }
   }
-}  
+  &.secondary {
+    background-color: $secondary-ice-100;
+
+    color: $primary-blue-500;
+
+    &:hover {
+      background-color: $secondary-ice-200;
+    }
+  }
+  &.disabled {
+    cursor: not-allowed;
+    background-color: $secondary-smoke-100;
+
+    color: $default-white;
+  }
+}

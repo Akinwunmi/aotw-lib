@@ -9,5 +9,6 @@
     "strict": true,
     "useDefineForClassFields": false
   },
-  "include": ["src/**/*.ts", "types/*.d.ts"]
+  "include": ["src/**/*.ts", "types/*.d.ts"],
+  "exclude": ["**/*.stories.ts", "src/stories"]
 }

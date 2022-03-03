@@ -1,7 +1,6 @@
 import { html, LitElement } from 'lit';
 import { customElement, property } from 'lit/decorators';
 
-import styleButtonClose from '../../theme/buttons/btn-close.scss';
 import styleDialog from './dialog-element.scss';
 
 import '../scrim';
@@ -12,7 +11,7 @@ export class DialogElement extends LitElement {
   @property({ type: Boolean }) scrim = true;
   closed = new Event('closed');
 
-  static styles = [styleButtonClose, styleDialog];
+  static styles = styleDialog;
 
   render() {
     return html`
