@@ -24,6 +24,12 @@ const Template: Story<ArgTypes> = ({ isDisabled, variant }: ArgTypes) => {
   `;
 };
 
+export const ButtonDefault = Template.bind({});
+ButtonDefault.args = {
+  isDisabled: false,
+  variant: ButtonVariant.PRIMARY
+};
+
 export const ButtonPrimary = Template.bind({});
 ButtonPrimary.args = {
   variant: ButtonVariant.PRIMARY
