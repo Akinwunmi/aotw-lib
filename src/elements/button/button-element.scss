@@ -7,6 +7,7 @@
 button {
   padding: $aotw-spacing-xs $aotw-spacing-s;
 
+  overflow: hidden;
   border-radius: $aotw-radius-s;
   transition: background-color 200ms ease-in-out;
 
@@ -26,6 +27,9 @@ button {
     &:hover {
       background-color: $primary-blue-600;
     }
+    &:active {
+      background-color: $primary-blue-700;
+    }
   }
   &.secondary {
     background-color: $secondary-ice-100;
@@ -34,6 +38,9 @@ button {
 
     &:hover {
       background-color: $secondary-ice-200;
+    }
+    &:active {
+      background-color: $secondary-ice-300;
     }
   }
   &.disabled {
