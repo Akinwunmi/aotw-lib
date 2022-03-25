@@ -4,12 +4,15 @@
 @import "src/theme/spacing";
 @import "src/theme/typography";
 
-.button {
+.toggle-button {
   height: 32px;
   padding: $aotw-spacing-xs $aotw-spacing-s;
 
+  background-color: $secondary-ice-200;
   border-radius: $aotw-radius-s;
   transition: background-color 200ms ease-in-out;
+
+  color: $default-white;
 
   @include typography-button;
   text-transform: uppercase;
@@ -19,23 +22,10 @@
     align-items: center;
     gap: $aotw-spacing-xs;
   }
-  &.primary {
+  &.active {
     background-color: $primary-blue-500;
 
     color: $default-white;
-
-    &:hover {
-      background-color: $primary-blue-600;
-    }
-  }
-  &.secondary {
-    background-color: $secondary-ice-100;
-
-    color: $primary-blue-500;
-
-    &:hover {
-      background-color: $secondary-ice-200;
-    }
   }
   &.disabled {
     cursor: not-allowed;

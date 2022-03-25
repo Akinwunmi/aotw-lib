@@ -1,7 +1,6 @@
 import { html } from 'lit';
 
-import '../../../dist';
-
+import '../../../dist/elements/button/button-element.js';
 import { Story } from '../../stories';
 
 import { ButtonVariant } from './button';
@@ -41,6 +40,14 @@ ButtonSecondary.args = {
 };
 
 export const ButtonWithIcon = () => {
+  return html`
+    <aotw-button>
+      <aotw-icon name="logo"></aotw-icon>
+    </aotw-button>
+  `;
+};
+
+export const ButtonWithIconAndText = () => {
   return html`
     <aotw-button>
       <aotw-icon name="logo"></aotw-icon>

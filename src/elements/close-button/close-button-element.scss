@@ -1,0 +1,26 @@
+@import '../../theme/reset';
+@import '../../theme/colors';
+
+.close-button {
+  position: relative;
+  width: 30px;
+  height: 40px;  
+  margin: 0 aotw-grid(1);
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    left: -5%;
+    width: 110%;
+    height: 2px;
+
+    background-color: $default-white;
+  }
+  &::before {
+    transform: rotate(25deg);
+  }
+  &:after {
+    transform: rotate(-25deg);
+  }
+}

@@ -16,7 +16,7 @@ export class ButtonElement extends LitElement {
 
   render() {
     return html`
-      <button class="${this.variant} ${this.isDisabled ? 'disabled' : ''}">
+      <button class="button ${this.variant} ${this.isDisabled ? 'disabled' : ''}">
         <p>
           <slot></slot>
         </p>

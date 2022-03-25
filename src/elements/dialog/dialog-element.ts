@@ -3,37 +3,42 @@ import { customElement, property } from 'lit/decorators';
 
 import styleDialog from './dialog-element.scss';
 
+import '../close-button';
 import '../scrim';
 
 @customElement('aotw-dialog')
 export class DialogElement extends LitElement {
-  @property() dialogTitle!: string;
-  @property({ type: Boolean }) scrim = true;
+  @property()
+  dialogTitle!: string;
+
+  @property({ type: Boolean })
+  scrim = true;
+  
   closed = new Event('closed');
 
   static styles = styleDialog;
+
+  private scrimHTML = html`
+    <aotw-scrim @click=${this.close}></aotw-scrim>
+  `;
 
   render() {
     return html`
       <div class="dialog">
         <header>
           <section>
-            ${this.dialogTitle
-              ? html` <h3>${this.dialogTitle}</h3>`
-              : null}
+            <h3>${this.dialogTitle}</h3>
             <div class="visual">
               <slot name="visual"></slot>
             </div>
           </section>
-          <button class="btn-close" @click=${this.close}></button>
+          <aotw-close-button @click=${this.close}></aotw-close-button>
         </header>
         <div class="dialog_content">
           <slot></slot>
         </div>
       </div>
-      ${this.scrim
-        ? html`<aotw-scrim @click=${this.close}></aotw-scrim>`
-        : null}
+      ${this.scrim ? this.scrimHTML : null}
     `;
   }
 

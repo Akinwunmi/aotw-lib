@@ -1,7 +1,6 @@
 import { html } from 'lit';
 
-import '../../../dist';
-
+import '../../../dist/elements/icon/icon-element.js';
 import { Story } from '../../stories';
 
 import './icon-element.stories.scss';
