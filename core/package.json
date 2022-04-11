@@ -1,0 +1,17 @@
+{
+  "name": "@aotw/core",
+  "description": "Archive of the World Core Library",
+  "version": "0.0.0",
+  "author": "Jurrit van der Ploeg <info@jurritvanderploeg.nl> (http://www.jurritvanderploeg.nl/)",
+  "license": "ISC",
+  "files": [
+    "dist/",
+    "src/"
+  ],
+  "scripts": {
+    "build": "sass src/index.scss:dist/style.css"
+  },
+  "devDependencies": {
+    "sass": "^1.50.0"
+  }
+}

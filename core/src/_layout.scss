@@ -1,0 +1,22 @@
+@import 'colors';
+@import 'typography';
+
+html,
+body {
+  background-color: $secondary-smoke-100;
+
+  @include typography-default;
+  color: $primary-blue-500;
+
+  h1,
+  h2,
+  h3 {
+    @include typography-header;
+  }
+  a {
+    cursor: pointer;
+
+    @include typography-link;
+    color: $primary-blue-500;
+  }
+}

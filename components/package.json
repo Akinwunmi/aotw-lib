@@ -1,0 +1,28 @@
+{
+  "name": "@aotw/components",
+  "description": "Archive of the World Component Library",
+  "version": "0.0.0",
+  "author": "Jurrit van der Ploeg <info@jurritvanderploeg.nl> (http://www.jurritvanderploeg.nl/)",
+  "license": "ISC",
+  "private": true,
+  "main": "dist/components.es.js",
+  "types": "types/index.d.ts",
+  "files": [
+    "dist",
+    "types"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build"
+  },
+  "dependencies": {
+    "@aotw/core": "file:../core",
+    "lit": "^2.0.2"
+  },
+  "devDependencies": {
+    "rollup-plugin-postcss-lit": "^2.0.0",
+    "sass": "^1.50.0",
+    "typescript": "^4.5.4",
+    "vite": "^2.9.0"
+  }
+}

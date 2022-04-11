@@ -1,0 +1,5 @@
+@function generate-size($multiplier) {
+  $size: 4px;
+
+  @return $size * $multiplier;
+}
