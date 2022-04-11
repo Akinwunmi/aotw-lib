@@ -1,6 +1,7 @@
 import { html, LitElement, unsafeCSS } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 
+import '../close-button';
 import '../scrim';
 
 import styleDialog from './dialog-element.scss';
@@ -36,7 +37,7 @@ export class DialogElement extends LitElement {
               <slot name="visual"></slot>
             </div>
           </section>
-          <button class="btn-close" @click=${this.close}></button>
+          <aotw-close-button @click=${this.close}></aotw-close-button>
         </header>
         <div class="dialog_content">
           <slot></slot>
