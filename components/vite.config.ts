@@ -1,5 +1,5 @@
 import { defineConfig } from 'vite'
-import litcss from 'rollup-plugin-postcss-lit';
+const litcss = require('rollup-plugin-postcss-lit');
 
 // https://vitejs.dev/config/
 export default defineConfig({

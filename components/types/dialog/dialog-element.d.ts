@@ -1,4 +1,5 @@
 import { LitElement } from 'lit';
+import '../close-button';
 import '../scrim';
 export declare class DialogElement extends LitElement {
     dialogTitle: string;

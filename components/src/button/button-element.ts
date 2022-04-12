@@ -19,6 +19,12 @@ export class ButtonElement extends LitElement {
   @property()
   icon!: Icon;
 
+  @property({ type: Boolean })
+  ghost = false;
+
+  @property({ type: Boolean })
+  outline = false;
+
   @property()
   variant = ButtonVariant.PRIMARY;
 
@@ -28,6 +34,8 @@ export class ButtonElement extends LitElement {
     const classes = {
       active: this.active,
       disabled: this.disabled,
+      ghost: this.ghost,
+      outline: this.outline,
       primary: this.variant === ButtonVariant.PRIMARY,
       secondary: this.variant === ButtonVariant.SECONDARY
     };

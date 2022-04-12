@@ -17,9 +17,10 @@
   },
   "dependencies": {
     "@aotw/core": "file:../core",
-    "lit": "^2.0.2"
+    "lit": "^2.2.2"
   },
   "devDependencies": {
+    "@types/node": "^17.0.23",
     "rollup-plugin-postcss-lit": "^2.0.0",
     "sass": "^1.50.0",
     "typescript": "^4.5.4",

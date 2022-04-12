@@ -11,7 +11,7 @@ button {
   gap: $aotw-spacing-s;
   height: 32px;
   padding-inline: $aotw-spacing-s;
-  border-radius: $aotw-radius-s;
+  border: 1px solid transparent;
   transition: background-color 200ms ease-in-out;
 
   @include typography-button;
@@ -25,13 +25,39 @@ button {
   &.primary {
     background-color: $primary-blue-500;
     color: $default-white;
-
+    
     &:hover {
-      background-color: $primary-blue-600;
+      background-color: $primary-blue-400;
     }
     &:active,
     &.active {
       background-color: $primary-blue-700;
+    }
+    &.ghost,
+    &.outline {
+      background-color: $default-white;
+      color: $primary-blue-500;
+
+      &:hover {
+        background-color: $primary-blue-50;
+        color: $primary-blue-400;
+      }
+      &:active,
+      &.active {
+        background-color: $primary-blue-100;
+        color: $primary-blue-700;
+      }
+    }
+    &.outline {
+      border: 1px solid $primary-blue-500;
+
+      &:hover {
+        border-color: $primary-blue-400;
+      }
+      &:active,
+      &.active {
+        border-color: $primary-blue-700;
+      }
     }
   }
   &.secondary {
@@ -45,10 +71,36 @@ button {
     &.active {
       background-color: $secondary-grey-900;
     }
+    &.ghost,
+    &.outline {
+      background-color: $default-white;
+      color: $secondary-grey-700;
+
+      &:hover {
+        background-color: $secondary-grey-50;
+        color: $secondary-grey-500;
+      }
+      &:active,
+      &.active {
+        background-color: $secondary-grey-100;
+        color: $secondary-grey-900;
+      }
+    }
+    &.outline {
+      border: 1px solid $secondary-grey-700;
+
+      &:hover {
+        border-color: $secondary-grey-500;
+      }
+      &:active,
+      &.active {
+        border-color: $secondary-grey-900;
+      }
+    }
   }
   &.disabled {
     pointer-events: none;
     background-color: $secondary-smoke-100;
-    color: $default-white;
+    color: $secondary-smoke-200;
   }
 }
