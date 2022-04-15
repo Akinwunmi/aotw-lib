@@ -2,6 +2,8 @@ import { html, LitElement, unsafeCSS } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import { classMap } from 'lit/directives/class-map.js';
 
+import { Icon } from '../icon/icon';
+
 import styleChip from './chip-element.scss';
 
 const AOTW_CHIP = 'aotw-chip';
@@ -12,7 +14,13 @@ export class ChipElement extends LitElement {
   active = false;
 
   @property({ type: Boolean })
+  deletable = false;
+
+  @property({ type: Boolean })
   disabled = false;
+
+  @property()
+  icon!: Icon;
 
   static styles = unsafeCSS(styleChip);
 
@@ -22,12 +30,22 @@ export class ChipElement extends LitElement {
       disabled: this.disabled
     }
 
+    const iconHTML = this.icon
+      ? html`<aotw-icon name=${this.icon}></aotw-icon>`
+      : null;
+
+    const deleteIconHTML = this.deletable
+      ? html`<aotw-icon name="close" @click=${() => this.removeChipElement()}></aotw-icon>`
+      : null;
+
     return html`
       <button
         class="chip ${classMap(classes)}"
         @click=${() => this.toggleActive()}
       >
+        ${iconHTML}
         <slot></slot>
+        ${deleteIconHTML}
       </button>
     `;
   }
@@ -39,6 +57,14 @@ export class ChipElement extends LitElement {
       });
       this.dispatchEvent(onClick);
     }
+  }
+
+  private removeChipElement() {
+    const deleted = new CustomEvent('deleted', {
+      detail: this
+    });
+    this.dispatchEvent(deleted);
+    this.remove();
   }
 }
 

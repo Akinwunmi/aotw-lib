@@ -12,8 +12,8 @@
     "types"
   ],
   "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build"
+    "build": "tsc && vite build",
+    "dev": "vite"
   },
   "dependencies": {
     "@aotw/core": "file:../core",

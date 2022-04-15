@@ -5,27 +5,27 @@
 @import '@aotw/core/src/typography';
 
 .chip {
+  display: flex;
+  align-items: center;
+  gap: $aotw-spacing-s;
   height: 32px;
   padding: $aotw-spacing-xs $aotw-spacing-s;
 
-  background-color: $secondary-ice-200;
+  background-color: $default-white;
+  border: 1px solid $secondary-grey-500;
   border-radius: $aotw-radius-s;
-  transition: background-color 200ms ease-in-out;
+  transition: background-color 150ms ease-in-out;
 
-  color: $default-white;
+  color: $secondary-grey-500;
 
   @include typography-button;
   text-transform: uppercase;
 
-  p {
-    display: flex;
-    align-items: center;
-    gap: $aotw-spacing-xs;
-  }
   &.active {
-    background-color: $primary-blue-500;
+    border-color: $primary-blue-500;
+    background-color: $primary-blue-50;
 
-    color: $default-white;
+    color: $primary-blue-500;
   }
   &.disabled {
     cursor: not-allowed;

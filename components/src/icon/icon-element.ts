@@ -10,16 +10,14 @@ const AOTW_ICON = 'aotw-icon';
 
 @customElement(AOTW_ICON)
 export class IconElement extends LitElement {
-  @property() name!: Icon;
+  @property()
+  name!: Icon;
 
   static styles = unsafeCSS(styleIcon);
 
   render(): TemplateResult {
-    if (!this.name) {
-      return html`Define an icon`;
-    }
     if (!Object.values(Icon).includes(this.name)) {
-      return html`Icon not found`;
+      return html``;
     }
     return html`
       ${unsafeHTML(`<icon-${this.name}></icon-${this.name}>`)}

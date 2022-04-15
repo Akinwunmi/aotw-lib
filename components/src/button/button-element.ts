@@ -40,7 +40,9 @@ export class ButtonElement extends LitElement {
       secondary: this.variant === ButtonVariant.SECONDARY
     };
 
-    const iconHTML = this.icon ? html`<aotw-icon .name=${this.icon}></aotw-icon>` : null;
+    const iconHTML = this.icon
+      ? html`<aotw-icon .name=${this.icon}></aotw-icon>`
+      : null;
 
     return html`
       <button class=${classMap(classes)}>
