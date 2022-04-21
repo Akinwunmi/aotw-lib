@@ -35,7 +35,6 @@ button {
     }
     &.ghost,
     &.outline {
-      background-color: $default-white;
       color: $primary-blue-500;
 
       &:hover {
@@ -48,7 +47,11 @@ button {
         color: $primary-blue-700;
       }
     }
+    &.ghost {
+      background-color: transparent;
+    }
     &.outline {
+      background-color: $default-white;
       border: 1px solid $primary-blue-500;
 
       &:hover {
@@ -73,7 +76,6 @@ button {
     }
     &.ghost,
     &.outline {
-      background-color: $default-white;
       color: $secondary-grey-700;
 
       &:hover {
@@ -86,7 +88,11 @@ button {
         color: $secondary-grey-900;
       }
     }
+    &.ghost {
+      background-color: transparent;
+    }
     &.outline {
+      background-color: $default-white;
       border: 1px solid $secondary-grey-700;
 
       &:hover {
@@ -96,6 +102,18 @@ button {
       &.active {
         border-color: $secondary-grey-900;
       }
+    }
+  }
+  &.ghost,
+  &.outline {
+    &.disabled {
+      pointer-events: none;
+      color: $secondary-smoke-200;
+    }
+  }
+  &.outline {
+    &.disabled {
+      border-color: $secondary-smoke-200;
     }
   }
   &.disabled {
