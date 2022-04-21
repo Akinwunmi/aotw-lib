@@ -1,8 +1,8 @@
-import { Meta } from '@storybook/web-components';
+import { ButtonVariant } from '@aotw/components/src/button';
 import { Icon } from '@aotw/components/src/icon';
+import { Meta } from '@storybook/web-components';
 
 import { buttonArgs, ButtonTemplate } from './button.model';
-import { ButtonVariant } from '@aotw/components/src/button';
 
 export default {
   title: 'Components/Button/Secondary'

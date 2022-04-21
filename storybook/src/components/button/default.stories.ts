@@ -1,5 +1,4 @@
 import { Meta } from '@storybook/web-components';
-import { Icon } from '@aotw/components/src/icon';
 
 import { buttonArgs, ButtonTemplate } from './button.model';
 
