@@ -1,0 +1,26 @@
+{
+  "name": "@aotw/storybook",
+  "description": "Archive of the World Library Storybook",
+  "version": "0.0.0",
+  "author": "Jurrit van der Ploeg <info@jurritvanderploeg.nl> (http://www.jurritvanderploeg.nl/)",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "dev": "start-storybook -p 6006",
+    "build": "build-storybook"
+  },
+  "dependencies": {
+    "@aotw/components": "file:../components",
+    "@aotw/core": "file:../core",
+    "lit": "^2.2.2"
+  },
+  "devDependencies": {
+    "@storybook/addon-actions": "^6.4.22",
+    "@storybook/addon-essentials": "^6.4.22",
+    "@storybook/addon-links": "^6.4.22",
+    "@storybook/builder-vite": "^0.1.29",
+    "@storybook/web-components": "^6.4.22",
+    "typescript": "^4.6.3",
+    "vite": "^2.9.5"
+  }
+}
