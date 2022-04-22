@@ -79,12 +79,12 @@ button {
       color: $secondary-grey-700;
 
       &:hover {
-        background-color: $secondary-grey-50;
+        background-color: $secondary-grey-100;
         color: $secondary-grey-500;
       }
       &:active,
       &.active {
-        background-color: $secondary-grey-100;
+        background-color: $secondary-grey-200;
         color: $secondary-grey-900;
       }
     }

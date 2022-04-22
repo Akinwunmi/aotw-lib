@@ -3,11 +3,39 @@
 @import '@aotw/core/src/typography';
 
 .palette {
+  position: relative;
   display: grid;
   gap: $aotw-spacing-l;
 
   @include typography-default;
 
+  &_grid {
+    z-index: 1;
+    position: absolute;
+    display: grid;
+    gap: $aotw-spacing-l;
+    top: 46px;
+    margin-left: 200px;
+    padding-left: $aotw-spacing-m;
+    
+    &__row {
+      display: grid;
+      grid-template-columns: repeat(10, 60px);
+
+      div {
+        position: relative;
+        height: 60px;
+
+        &::before {
+          content: '';
+          position: absolute;
+          display: block;
+          inset: 28px;
+          background-color: $secondary-grey-100;
+        }
+      }
+    }
+  }
   &_header {
     display: grid;
     grid-template-columns: repeat(10, 60px);
@@ -20,6 +48,7 @@
     }
   }
   &_color-range {
+    z-index: 2;
     display: grid;
     grid-template-columns: 200px 1fr;
     align-items: center;
@@ -49,25 +78,22 @@
         &_500 {
           background-color: $primary-blue-500;
         }
-        &_600 {
-          background-color: $primary-blue-600;
-        }
         &_700 {
+          grid-column: 8 / 9;
           background-color: $primary-blue-700;
         }
-        &_800 {
-          background-color: $primary-blue-800;
-        }
         &_900 {
+          grid-column: 10 / 11;
           background-color: $primary-blue-900;
         }
       }
       .secondary-grey {
-        &_50 {
-          background-color: $secondary-grey-50;
-        }
         &_100 {
+          grid-column: 2 / 3;
           background-color: $secondary-grey-100;
+        }
+        &_200 {
+          background-color: $secondary-grey-200;
         }
         &_500 {
           grid-column: 6 / 7;
