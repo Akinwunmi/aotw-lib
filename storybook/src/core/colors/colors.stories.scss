@@ -1,0 +1,114 @@
+@import '@aotw/core/src/colors';
+@import '@aotw/core/src/spacing';
+@import '@aotw/core/src/typography';
+
+.palette {
+  display: grid;
+  gap: $aotw-spacing-l;
+
+  @include typography-default;
+
+  &_header {
+    display: grid;
+    grid-template-columns: repeat(10, 60px);
+    height: 30px;
+    margin-left: 200px;
+    padding-left: $aotw-spacing-m;
+
+    p {
+      margin: auto;
+    }
+  }
+  &_color-range {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    align-items: center;
+    gap: $aotw-spacing-m;
+
+    &__values {
+      display: grid;
+      grid-template-columns: repeat(10, 60px);
+      height: 60px;
+
+      .primary-blue {
+        &_50 {
+          background-color: $primary-blue-50;
+        }
+        &_100 {
+          background-color: $primary-blue-100;
+        }
+        &_200 {
+          background-color: $primary-blue-200;
+        }
+        &_300 {
+          background-color: $primary-blue-300;
+        }
+        &_400 {
+          background-color: $primary-blue-400;
+        }
+        &_500 {
+          background-color: $primary-blue-500;
+        }
+        &_600 {
+          background-color: $primary-blue-600;
+        }
+        &_700 {
+          background-color: $primary-blue-700;
+        }
+        &_800 {
+          background-color: $primary-blue-800;
+        }
+        &_900 {
+          background-color: $primary-blue-900;
+        }
+      }
+      .secondary-grey {
+        &_50 {
+          background-color: $secondary-grey-50;
+        }
+        &_100 {
+          background-color: $secondary-grey-100;
+        }
+        &_500 {
+          grid-column: 6 / 7;
+          background-color: $secondary-grey-500;
+        }
+        &_700 {
+          grid-column: 8 / 9;
+          background-color: $secondary-grey-700;
+        }
+        &_900 {
+          grid-column: 10 / 11;
+          background-color: $secondary-grey-900;
+        }
+      }
+      .secondary-smoke {
+        &_100 {
+          grid-column: 2 / 3;
+          background-color: $secondary-smoke-100;
+        }
+        &_200 {
+          background-color: $secondary-smoke-200;
+        }
+      }
+      .tertiary-steelblue {
+        &_500 {
+          grid-column: 6 / 7;
+          background-color: $tertiary-steelblue-500;
+        }
+      }
+      .tertiary-wheat {
+        &_300 {
+          grid-column: 4 / 5;
+          background-color: $tertiary-wheat-300;
+        }
+        &_400 {
+          background-color: $tertiary-wheat-400;
+        }
+        &_500 {
+          background-color: $tertiary-wheat-500;
+        }
+      }
+    }
+  }
+}
