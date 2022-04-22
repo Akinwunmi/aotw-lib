@@ -30,7 +30,8 @@
   &.disabled {
     cursor: not-allowed;
     background-color: $secondary-smoke-100;
+    border-color: $secondary-smoke-200;
 
-    color: $default-white;
+    color: $secondary-smoke-200;
   }
 }
