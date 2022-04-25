@@ -88,8 +88,10 @@
         }
       }
       .secondary-grey {
+        &_50 {
+          background-color: $secondary-grey-50;
+        }
         &_100 {
-          grid-column: 2 / 3;
           background-color: $secondary-grey-100;
         }
         &_200 {

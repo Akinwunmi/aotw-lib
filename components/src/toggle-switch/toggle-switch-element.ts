@@ -14,6 +14,9 @@ export class ToggleSwitchElement extends LitElement {
   @property({ type: Boolean })
   disabled = false;
 
+  @property({ type: String })
+  label?: string;
+
   static styles = unsafeCSS(styleToggleSwitch);
 
   render() {
@@ -27,13 +30,15 @@ export class ToggleSwitchElement extends LitElement {
         class="toggle-switch ${classMap(classes)}"
         @click=${() => this.toggleActive()}
       >
+        <div class="switch"></div>
         <div class="handle"></div>
       </div>
+      <p>${this.label}</p>
     `;
   }
 
   private toggleActive() {
-    if (this.disabled === false) {
+    if (!this.disabled) {
       const onClick = new CustomEvent<boolean>('onClick', {
         detail: (this.active = !this.active)
       });
