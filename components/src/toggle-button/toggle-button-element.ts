@@ -4,17 +4,14 @@ import { classMap } from 'lit/directives/class-map.js';
 
 import { Icon } from '../icon/icon';
 
-import styleChip from './chip-element.scss';
+import styleToggleButton from './toggle-button-element.scss';
 
-const AOTW_CHIP = 'aotw-chip';
+const AOTW_TOGGLE_BUTTON = 'aotw-toggle-button';
 
-@customElement(AOTW_CHIP)
-export class ChipElement extends LitElement {
+@customElement(AOTW_TOGGLE_BUTTON)
+export class ToggleButtonElement extends LitElement {
   @property({ type: Boolean })
   active = false;
-
-  @property({ type: Boolean })
-  deletable = false;
 
   @property({ type: Boolean })
   disabled = false;
@@ -22,7 +19,7 @@ export class ChipElement extends LitElement {
   @property()
   icon?: Icon;
 
-  static styles = unsafeCSS(styleChip);
+  static styles = unsafeCSS(styleToggleButton);
 
   render() {
     const classes = {
@@ -34,24 +31,18 @@ export class ChipElement extends LitElement {
       ? html`<aotw-icon name=${this.icon}></aotw-icon>`
       : null;
 
-    const deleteIconHTML = this.deletable
-      ? html`<aotw-icon name="close" @click=${() => this.removeChipElement()}></aotw-icon>`
-      : null;
-
     return html`
       <button
-        class="chip ${classMap(classes)}"
-        part="button"
+        class="toggle-button ${classMap(classes)}"
         @click=${() => this.toggleActive()}
       >
         ${iconHTML}
         <slot></slot>
-        ${deleteIconHTML}
       </button>
     `;
   }
 
-  private toggleActive() {
+  toggleActive() {
     if (this.disabled === false) {
       const onClick = new CustomEvent<boolean>('onClick', {
         detail: (this.active = !this.active)
@@ -59,18 +50,10 @@ export class ChipElement extends LitElement {
       this.dispatchEvent(onClick);
     }
   }
-
-  private removeChipElement() {
-    const deleted = new CustomEvent('deleted', {
-      detail: this
-    });
-    this.dispatchEvent(deleted);
-    this.remove();
-  }
 }
 
 declare global {
   interface HTMLElementTagNameMap {
-    AOTW_CHIP: ChipElement
+    AOTW_TOGGLE_BUTTON: ToggleButtonElement
   }
 }
