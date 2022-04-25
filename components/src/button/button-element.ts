@@ -17,7 +17,7 @@ export class ButtonElement extends LitElement {
   disabled = false;
 
   @property()
-  icon!: Icon;
+  icon?: Icon;
 
   @property({ type: Boolean })
   ghost = false;
