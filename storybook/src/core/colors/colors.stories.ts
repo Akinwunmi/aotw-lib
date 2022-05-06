@@ -10,7 +10,7 @@ export default {
 const defaultColorRange = [50, 100, 200, 300, 400, 500, 600, 700, 800, 900];
 const palette = {
   'primary-blue': [50, 100, 200, 300, 400, 500, 700, 900],
-  'secondary-grey': [100, 200, 500, 700, 900],
+  'secondary-grey': [50, 100, 200, 500, 700, 900],
   'secondary-smoke': [100, 200],
   'tertiary-steelblue': [500],
   'tertiary-wheat': [300, 400, 500]
