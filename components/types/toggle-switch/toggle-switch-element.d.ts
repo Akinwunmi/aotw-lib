@@ -2,6 +2,7 @@ import { LitElement } from 'lit';
 export declare class ToggleSwitchElement extends LitElement {
     active: boolean;
     disabled: boolean;
+    label?: string;
     static styles: import("lit").CSSResult;
     render(): import("lit-html").TemplateResult<1>;
     private toggleActive;

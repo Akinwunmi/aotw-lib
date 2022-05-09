@@ -4,7 +4,7 @@ import { ButtonVariant } from './button';
 export declare class ButtonElement extends LitElement {
     active: boolean;
     disabled: boolean;
-    icon: Icon;
+    icon?: Icon;
     ghost: boolean;
     outline: boolean;
     variant: ButtonVariant;

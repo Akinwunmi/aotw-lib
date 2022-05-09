@@ -4,4 +4,6 @@ export * from './close-button';
 export * from './dialog';
 export * from './icon';
 export * from './scrim';
+export * from './table';
+export * from './toggle-button';
 export * from './toggle-switch';

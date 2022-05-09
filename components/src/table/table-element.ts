@@ -4,6 +4,7 @@ import { classMap } from 'lit/directives/class-map.js';
 
 import tableStyles from './table-element.scss';
 import { Column, Data } from './table';
+import { Icon } from '../icon';
 
 const AOTW_TABLE = 'aotw-table';
 
@@ -38,8 +39,12 @@ export class TableElement extends LitElement {
 
       return html`
         <div id=${column.key} class="table_column ${classMap(classes)}">
-          <div class="table_column__header" @click=${() => this.hideColumn(column.key)}>
-            ${column.name}
+          <div
+            class="table_column__header"
+            title=${column.name}
+            @click=${() => this.hideColumn(column.key)}
+          >
+            ${column.abbreviation ?? column.name}
           </div>
           <div class="table_column__data">            
             ${this.setData(column.key)}
@@ -51,9 +56,15 @@ export class TableElement extends LitElement {
 
   setData(columnKey: string): TemplateResult[] | undefined {
     return this.data?.map(cell => {
+      let value = cell[columnKey] ?? '';
+      const icons = Object.values(Icon);
+      if (icons.find(icon => icon.toString() === value)) {
+        value = html`<aotw-icon name=${value}></aotw-icon>`;
+      }
+
       return html`
-        <div class="cell">${cell[columnKey]}</div>
-      `
+        <div class="cell">${value}</div>
+      `;
     });
   }
 

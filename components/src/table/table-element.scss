@@ -31,6 +31,9 @@
       gap: $aotw-spacing-xs;
       
       .cell {
+        display: grid;
+        align-items: center;
+        min-height: 40px;
         padding: $aotw-spacing-s;
         padding-right: $aotw-spacing-l;
         border-bottom: 1px solid $default-white;
