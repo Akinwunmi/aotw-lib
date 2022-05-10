@@ -9,8 +9,10 @@ export default {
 
 const defaultColorRange = [50, 100, 200, 300, 400, 500, 600, 700, 800, 900];
 const palette = {
-  'primary-blue': [50, 100, 200, 300, 400, 500, 700, 900],
+  'primary-blue': [50, 100, 400, 500, 700, 900],
+  'secondary-green': [500],
   'secondary-grey': [50, 100, 200, 500, 700, 900],
+  'secondary-red': [500],
   'secondary-smoke': [100, 200],
   'tertiary-steelblue': [500],
   'tertiary-wheat': [300, 400, 500]
@@ -49,7 +51,9 @@ export const Palette = () => {
         )}
       </div>
       ${setColorRange('primary-blue')}
+      ${setColorRange('secondary-green')}
       ${setColorRange('secondary-grey')}
+      ${setColorRange('secondary-red')}
       ${setColorRange('secondary-smoke')}
       ${setColorRange('tertiary-steelblue')}
       ${setColorRange('tertiary-wheat')}
