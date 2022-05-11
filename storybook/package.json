@@ -7,7 +7,7 @@
   "private": true,
   "scripts": {
     "dev": "start-storybook -p 6006",
-    "build": "build-storybook"
+    "build": "build-storybook -o dist"
   },
   "dependencies": {
     "@aotw/components": "file:../components",
