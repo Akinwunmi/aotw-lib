@@ -1,9 +1,10 @@
 import { Meta } from '@storybook/web-components';
 
-import { buttonArgs, ButtonTemplate } from './button.model';
+import { buttonArgs, ButtonControls, ButtonTemplate } from './button.model';
 
 export default {
-  title: 'Components/Button'
+  title: 'Components/Button',
+  argTypes: ButtonControls
 } as Meta;
 
 export const Default = ButtonTemplate.bind({});

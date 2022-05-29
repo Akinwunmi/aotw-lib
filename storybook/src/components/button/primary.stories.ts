@@ -1,10 +1,11 @@
 import { Icon } from '@aotw/components/src/icon';
 import { Meta } from '@storybook/web-components';
 
-import { buttonArgs, ButtonTemplate } from './button.model';
+import { buttonArgs, ButtonControls, ButtonTemplate } from './button.model';
 
 export default {
-  title: 'Components/Button/Primary'
+  title: 'Components/Button/Primary',
+  argTypes: ButtonControls
 } as Meta;
 
 export const WithText = ButtonTemplate.bind({});

@@ -5,6 +5,14 @@ import { html } from 'lit';
 
 import { Story } from '../../../types/story.model';
 
+export const ButtonControls = {
+  variant: {
+    control: 'inline-radio',
+    defaultValue: ButtonVariant.Primary,
+    options: Object.values(ButtonVariant)
+  }
+}
+
 interface ButtonArgTypes {
   active: boolean;
   disabled: boolean;
@@ -21,7 +29,7 @@ export const buttonArgs: ButtonArgTypes = {
   ghost: false,
   outline: false,
   text: 'Button',
-  variant: ButtonVariant.PRIMARY
+  variant: ButtonVariant.Primary
 };
 
 export const ButtonTemplate: Story<ButtonArgTypes> = (

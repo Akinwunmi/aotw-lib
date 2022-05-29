@@ -12,6 +12,7 @@ const palette = {
   'primary-blue': [50, 100, 400, 500, 700, 900],
   'secondary-green': [500],
   'secondary-grey': [50, 100, 200, 500, 700, 900],
+  'secondary-orange': [500],
   'secondary-red': [500],
   'secondary-smoke': [100, 200],
   'tertiary-steelblue': [500],
@@ -50,13 +51,9 @@ export const Palette = () => {
           html`<p>${value}</p>`
         )}
       </div>
-      ${setColorRange('primary-blue')}
-      ${setColorRange('secondary-green')}
-      ${setColorRange('secondary-grey')}
-      ${setColorRange('secondary-red')}
-      ${setColorRange('secondary-smoke')}
-      ${setColorRange('tertiary-steelblue')}
-      ${setColorRange('tertiary-wheat')}
+      ${Object.keys(palette).map(color =>
+        setColorRange(color)
+      )}
     </div>
   `
 };

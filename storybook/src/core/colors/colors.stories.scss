@@ -111,6 +111,12 @@
           background-color: $secondary-grey-900;
         }
       }
+      .secondary-orange {
+        &_500 {
+          grid-column: 6 / 7;
+          background-color: $secondary-orange-500;
+        }
+      }
       .secondary-red {
         &_500 {
           grid-column: 6 / 7;

@@ -1,2 +1,2 @@
 export * from './table';
-export * from './table-element';
+export * from './table.model';
