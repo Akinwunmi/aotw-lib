@@ -1,0 +1,13 @@
+@import '@aotw/core/src/colors';
+@import '@aotw/core/src/spacing';
+
+input {
+  height: 32px;
+  padding: $aotw-spacing-s;
+  border: 1px solid $secondary-grey-500;
+
+  &:focus {
+    border-color: $primary-blue-500;
+    outline: 2px solid $primary-blue-500;
+  }
+}
