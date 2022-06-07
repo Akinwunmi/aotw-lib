@@ -9,3 +9,9 @@ export default {
 
 export const Default = InputTemplate.bind({});
 Default.args = inputArgs;
+
+export const WithLabel = InputTemplate.bind({});
+WithLabel.args = {
+  ...inputArgs,
+  label: 'Label'
+};

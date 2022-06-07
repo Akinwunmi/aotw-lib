@@ -1,13 +1,13 @@
 @import '@aotw/core/src/colors';
 @import '@aotw/core/src/radii';
-@import '@aotw/core/src/spacing';
+@import '@aotw/core/src/space';
 @import '@aotw/core/src/typography';
 
 :host {
   position: relative;
   display: flex;
   align-items: center;
-  gap: $aotw-spacing-m;
+  gap: $aotw-space-m;
   height: 24px;
   color: $default-black;
   
@@ -34,7 +34,7 @@
       position: absolute;
       width: 16px;
       height: 16px;
-      top: $aotw-spacing-xs;
+      top: $aotw-space-xs;
       left: 0;
       border-radius: 50%;
     }
@@ -44,7 +44,7 @@
         background-color: $primary-blue-500;
       }
       .handle {
-        left: $aotw-spacing-2xl;
+        left: $aotw-space-2xl;
       }
     }
     &.disabled {

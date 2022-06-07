@@ -8,14 +8,16 @@ export const InputControls = {
   variant: { }
 }
 
-interface InputArgTypes { }
+interface InputArgTypes {
+  label?: string;
+}
 
 export const inputArgs: InputArgTypes = { };
 
 export const InputTemplate: Story<InputArgTypes> = (
-  { }: InputArgTypes
+  { label }: InputArgTypes
 ) => {
   return html`
-    <aotw-input></aotw-input>
+    <aotw-input .label=${label}></aotw-input>
   `;
 };
