@@ -1,0 +1,16 @@
+{
+  "name": "@aotw/cli",
+  "description": "Archive of the World CLI",
+  "version": "0.0.0",
+  "author": "Jurrit van der Ploeg <info@jurritvanderploeg.nl> (http://www.jurritvanderploeg.nl/)",
+  "license": "ISC",
+  "bin": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "dependencies": {
+    "chalk": "^5.0.1"
+  }
+}
