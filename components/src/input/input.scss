@@ -3,25 +3,41 @@
 @import '@aotw/core/src/typography';
 
 :host {
-  display: inline-grid;
-  gap: $aotw-space-xs;
+  display: inline-block;
 }
 
 label {
+  position: relative;
+  display: grid;
+  gap: $aotw-space-xs;
+
   @include typography-default;
   color: $primary-blue-500;
-}
-
-input {
-  box-sizing: border-box;
-  height: 32px;
-  padding-inline: $aotw-space-s;
-  border: 1px solid $secondary-grey-500;
-  @include typography-input;
-  color: $default-black;
   
-  &:focus {
-    border-color: $primary-blue-500;
-    outline: 2px solid $primary-blue-500;
+  input {
+    box-sizing: border-box;
+    height: 32px;
+    padding-inline: $aotw-space-s $aotw-space-5xl;
+    border: none;
+
+    @include typography-input;
+    color: $default-black;
+  }
+
+  aotw-button {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+  
+  &:focus-within,
+  &:hover {
+    font-weight: 500;
+  }
+
+  &:focus-within {
+    input {
+      outline-color: $secondary-grey-200;
+    }
   }
 }

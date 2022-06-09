@@ -1,5 +1,5 @@
-import { html, LitElement, unsafeCSS } from 'lit';
-import { customElement, property } from 'lit/decorators.js';
+import { html, LitElement, TemplateResult, unsafeCSS } from 'lit';
+import { customElement, property, query } from 'lit/decorators.js';
 
 import styleInput from './input.scss';
 
@@ -10,17 +10,61 @@ export class AotwInput extends LitElement {
   @property({ type: String })
   label?: string;
 
+  @property({ type: String })
+  placeholder?: string;
+
+  @property({ type: String })
+  value?: string;
+
+  @query('input')
+  private input!: HTMLInputElement;
+
   static styles = unsafeCSS(styleInput);
   
-  render() {
-    const labelHTML = this.label
-      ? html`<label for="input">${this.label}</label>`
+  firstUpdated() {
+    this.requestUpdate();
+  }
+
+  render(): TemplateResult {
+    const labelText = this.label
+      ? html`<span>${this.label}</span>`
+      : undefined;
+
+    const removeButton = this.value
+      ? html`<aotw-button
+          ghost
+          icon="close"
+          variant="secondary"
+          @click=${this.removeValue}
+        ></aotw-button>`
       : undefined;
 
     return html`
-      ${labelHTML}
-      <input type="text" id="input" />
+      <label>
+        ${labelText}
+        <input
+          type="text"
+          placeholder=${this.placeholder}
+          value=${this.value}
+          @blur=${this.handleBlur}
+        />
+        ${removeButton}
+      </label>
     `;
+  }
+
+  private updateInputValue() {
+    this.requestUpdate();
+    this.value = this.input?.value;
+  }
+
+  private removeValue() {
+    this.input.value = '';
+    this.updateInputValue();
+  }
+  
+  private handleBlur() {
+    this.updateInputValue();
   }
 }
 
