@@ -5,7 +5,7 @@ html,
 body {
   background-color: $secondary-smoke-100;
 
-  @include typography-default;
+  @include typography-body;
   color: $primary-blue-500;
 
   h1,

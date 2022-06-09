@@ -1,7 +1,9 @@
 import { html, LitElement, TemplateResult, unsafeCSS } from 'lit';
 import { customElement, property, query } from 'lit/decorators.js';
+import { classMap } from 'lit/directives/class-map.js';
 
 import styleInput from './input.scss';
+import { InputMessage, InputMessageState } from './input.model';
 
 const AOTW_INPUT = 'aotw-input';
 
@@ -9,6 +11,9 @@ const AOTW_INPUT = 'aotw-input';
 export class AotwInput extends LitElement {
   @property({ type: String })
   label?: string;
+
+  @property()
+  message?: InputMessage;
 
   @property({ type: String })
   placeholder?: string;
@@ -26,17 +31,28 @@ export class AotwInput extends LitElement {
   }
 
   render(): TemplateResult {
+    const classes = {
+      error: this.message?.state === InputMessageState.Error,
+      warning: this.message?.state === InputMessageState.Warning
+    };
+
     const labelText = this.label
       ? html`<span>${this.label}</span>`
       : undefined;
 
     const removeButton = this.value
-      ? html`<aotw-button
-          ghost
-          icon="close"
-          variant="secondary"
-          @click=${this.removeValue}
-        ></aotw-button>`
+      ? html`
+          <aotw-button
+            ghost
+            icon="close"
+            variant="secondary"
+            @click=${this.removeValue}
+          ></aotw-button>
+        `
+      : undefined;
+    
+    const messageText = this.message
+      ? html`<p class=${classMap(classes)}>${this.message.text}</p>`
       : undefined;
 
     return html`
@@ -50,6 +66,7 @@ export class AotwInput extends LitElement {
         />
         ${removeButton}
       </label>
+      ${messageText}
     `;
   }
 

@@ -1,5 +1,5 @@
 import '@aotw/components/src/input';
-import { } from '@aotw/components/src/input';
+import { InputMessage, InputMessageState } from '@aotw/components/src/input';
 import { html } from 'lit';
 
 import { Story } from '../../../types/story.model';
@@ -12,6 +12,7 @@ export const InputControls = {
 
 interface InputArgTypes {
   label?: string;
+  message?: InputMessage;
   placeholder?: string;
   value?: string;
 }
@@ -19,9 +20,9 @@ interface InputArgTypes {
 export const inputArgs: InputArgTypes = { };
 
 export const InputTemplate: Story<InputArgTypes> = (
-  { label, placeholder, value }: InputArgTypes
+  { label, message, placeholder, value }: InputArgTypes
 ) => {
   return html`
-    <aotw-input .label=${label} .placeholder=${placeholder} .value=${value}></aotw-input>
+    <aotw-input .label=${label} .message=${message} .placeholder=${placeholder} .value=${value}></aotw-input>
   `;
 };

@@ -8,7 +8,7 @@
   justify-content: stretch;
   border: 1px solid $default-white;
   background-color: $secondary-smoke-50;
-  @include typography-default;
+  @include typography-body;
   color: $primary-blue-500;
 
   &_column {

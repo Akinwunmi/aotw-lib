@@ -11,12 +11,15 @@ label {
   display: grid;
   gap: $aotw-space-xs;
 
-  @include typography-default;
+  @include typography-body;
   color: $primary-blue-500;
-  
+
+  span {
+    height: 20px;
+  }
+
   input {
-    box-sizing: border-box;
-    height: 32px;
+    height: 30px;
     padding-inline: $aotw-space-s $aotw-space-5xl;
     border: none;
 
@@ -36,8 +39,31 @@ label {
   }
 
   &:focus-within {
+    margin-bottom: -2px;
+
     input {
-      outline-color: $secondary-grey-200;
+      border-bottom: 2px solid $primary-blue-500;
+      outline: 2px solid $secondary-grey-200;
     }
+
+    aotw-button {
+      bottom: 2px;
+    }
+  }
+}
+
+p {
+  height: 16px;
+  margin: $aotw-space-xs 0;
+
+  @include typography-body-small;
+  color: $primary-blue-500;
+
+  &.error {
+    color: $secondary-red-500;
+  }
+
+  &.warning {
+    color: $secondary-orange-500;
   }
 }

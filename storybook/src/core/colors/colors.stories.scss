@@ -7,7 +7,7 @@
   display: grid;
   gap: $aotw-space-l;
 
-  @include typography-default;
+  @include typography-body;
 
   &_grid {
     z-index: 1;

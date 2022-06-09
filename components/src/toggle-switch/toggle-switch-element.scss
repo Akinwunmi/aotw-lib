@@ -11,7 +11,7 @@
   height: 24px;
   color: $default-black;
   
-  @include typography-default;
+  @include typography-body;
 
   .toggle-switch {
     display: flex;
