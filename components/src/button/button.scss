@@ -38,12 +38,11 @@ button {
       color: $primary-blue-500;
 
       &:hover {
-        background-color: $primary-blue-50;
         color: $primary-blue-400;
       }
       &:active,
       &.active {
-        background-color: $primary-blue-100;
+        background-color: $primary-blue-50;
         color: $primary-blue-700;
       }
     }
@@ -79,12 +78,11 @@ button {
       color: $secondary-grey-700;
 
       &:hover {
-        background-color: $secondary-grey-100;
         color: $secondary-grey-500;
       }
       &:active,
       &.active {
-        background-color: $secondary-grey-200;
+        background-color: $secondary-grey-100;
         color: $secondary-grey-900;
       }
     }

@@ -4,7 +4,7 @@ import { classMap } from 'lit/directives/class-map.js';
 
 import { Icon } from '../icon/icon';
 
-import styleChip from './chip-element.scss';
+import styleChip from './chip.scss';
 
 const AOTW_CHIP = 'aotw-chip';
 

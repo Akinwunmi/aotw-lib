@@ -19,9 +19,12 @@ label {
   }
 
   input {
-    height: 30px;
+    box-sizing: border-box;
+    height: 32px;
     padding-inline: $aotw-space-s $aotw-space-5xl;
+    background-color: $default-white;
     border: none;
+    border-bottom: 2px solid transparent;
 
     @include typography-input;
     color: $default-black;
@@ -39,16 +42,10 @@ label {
   }
 
   &:focus-within {
-    margin-bottom: -2px;
-
     input {
-      border-bottom: 2px solid $primary-blue-500;
-      outline: 2px solid $secondary-grey-200;
+      border-bottom-color: $primary-blue-500;
     }
-
-    aotw-button {
-      bottom: 2px;
-    }
+    
   }
 }
 
