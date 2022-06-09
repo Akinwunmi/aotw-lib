@@ -1,0 +1,12 @@
+@import './functions/size';
+
+$aotw-space-xs: generate-size(1);
+$aotw-space-s: generate-size(2);
+$aotw-space-m: generate-size(3);
+$aotw-space-l: generate-size(4);
+$aotw-space-xl: generate-size(5);
+$aotw-space-2xl: generate-size(6);
+$aotw-space-3xl: generate-size(7);
+$aotw-space-4xl: generate-size(8);
+$aotw-space-5xl: generate-size(9);
+$aotw-space-6xl: generate-size(10);

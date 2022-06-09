@@ -2,43 +2,48 @@ import { html, LitElement, unsafeCSS } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import { classMap } from 'lit/directives/class-map.js';
 
-import styleToggleSwitch from './toggle-switch-element.scss';
+import { Icon } from '../icon/icon';
 
-const AOTW_TOGGLE_SWITCH = 'aotw-toggle-switch';
+import styleToggleButton from './toggle-button.scss';
 
-@customElement(AOTW_TOGGLE_SWITCH)
-export class ToggleSwitchElement extends LitElement {
+const AOTW_TOGGLE_BUTTON = 'aotw-toggle-button';
+
+@customElement(AOTW_TOGGLE_BUTTON)
+export class ToggleButtonElement extends LitElement {
   @property({ type: Boolean })
   active = false;
 
   @property({ type: Boolean })
   disabled = false;
 
-  @property({ type: String })
-  label?: string;
+  @property()
+  icon?: Icon;
 
-  static styles = unsafeCSS(styleToggleSwitch);
+  static styles = unsafeCSS(styleToggleButton);
 
   render() {
     const classes = {
       active: this.active,
       disabled: this.disabled
-    }
+    };
+
+    const iconHTML = this.icon
+      ? html`<aotw-icon name=${this.icon}></aotw-icon>`
+      : null;
 
     return html`
-      <div
-        class="toggle-switch ${classMap(classes)}"
+      <button
+        class="toggle-button ${classMap(classes)}"
         @click=${() => this.toggleActive()}
       >
-        <div class="switch"></div>
-        <div class="handle"></div>
-      </div>
-      <p>${this.label}</p>
+        ${iconHTML}
+        <slot></slot>
+      </button>
     `;
   }
 
-  private toggleActive() {
-    if (!this.disabled) {
+  toggleActive() {
+    if (this.disabled === false) {
       const onClick = new CustomEvent<boolean>('onClick', {
         detail: (this.active = !this.active)
       });
@@ -49,6 +54,6 @@ export class ToggleSwitchElement extends LitElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    AOTW_TOGGLE_SWITCH: ToggleSwitchElement
+    AOTW_TOGGLE_BUTTON: ToggleButtonElement
   }
 }

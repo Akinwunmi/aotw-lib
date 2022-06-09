@@ -1,16 +1,16 @@
 @import '@aotw/core/src/colors';
 @import '@aotw/core/src/radii';
 @import '@aotw/core/src/reset';
-@import '@aotw/core/src/spacing';
+@import '@aotw/core/src/space';
 @import '@aotw/core/src/typography';
 
 button {
   overflow: hidden;
   display: flex;
   align-items: center;
-  gap: $aotw-spacing-s;
+  gap: $aotw-space-s;
   height: 32px;
-  padding-inline: $aotw-spacing-s;
+  padding-inline: $aotw-space-s;
   border: 1px solid transparent;
   transition: background-color 200ms ease-in-out;
 
@@ -20,7 +20,7 @@ button {
   p {
     display: flex;
     align-items: center;
-    gap: $aotw-spacing-xs;
+    gap: $aotw-space-xs;
   }
   &.primary {
     background-color: $primary-blue-500;
@@ -38,12 +38,11 @@ button {
       color: $primary-blue-500;
 
       &:hover {
-        background-color: $primary-blue-50;
         color: $primary-blue-400;
       }
       &:active,
       &.active {
-        background-color: $primary-blue-100;
+        background-color: $primary-blue-50;
         color: $primary-blue-700;
       }
     }
@@ -79,12 +78,11 @@ button {
       color: $secondary-grey-700;
 
       &:hover {
-        background-color: $secondary-grey-100;
         color: $secondary-grey-500;
       }
       &:active,
       &.active {
-        background-color: $secondary-grey-200;
+        background-color: $secondary-grey-100;
         color: $secondary-grey-900;
       }
     }
