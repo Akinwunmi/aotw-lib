@@ -1,1 +1,1 @@
-export * from './toggle-button-element';
+export * from './toggle-button';

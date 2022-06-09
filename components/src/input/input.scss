@@ -21,7 +21,7 @@ label {
   input {
     box-sizing: border-box;
     height: 32px;
-    padding-inline: $aotw-space-s $aotw-space-5xl;
+    padding-inline: $aotw-space-s $aotw-space-4xl;
     background-color: $default-white;
     border: none;
     border-bottom: 2px solid transparent;
@@ -30,10 +30,21 @@ label {
     color: $default-black;
   }
 
-  aotw-button {
+  aotw-icon {
     position: absolute;
     right: 0;
     bottom: 0;
+    padding: $aotw-space-s;
+    cursor: pointer;
+    color: $secondary-grey-700;
+
+    &:hover {
+      color: $secondary-grey-500;
+    }
+
+    &:active {
+      color: $secondary-grey-900
+    }
   }
   
   &:focus-within,

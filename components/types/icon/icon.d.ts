@@ -1,5 +1,7 @@
 export declare enum Icon {
     CHECK = "check",
     CLOSE = "close",
-    LOGO = "logo"
+    DOT = "dot",
+    LOGO = "logo",
+    SHINE = "shine"
 }

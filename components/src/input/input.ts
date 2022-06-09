@@ -40,14 +40,12 @@ export class AotwInput extends LitElement {
       ? html`<span>${this.label}</span>`
       : undefined;
 
-    const removeButton = this.value
+    const removeIcon = this.value
       ? html`
-          <aotw-button
-            ghost
-            icon="close"
-            variant="secondary"
+          <aotw-icon
+            name="close"
             @click=${this.removeValue}
-          ></aotw-button>
+          ></aotw-icon>
         `
       : undefined;
     
@@ -64,7 +62,7 @@ export class AotwInput extends LitElement {
           value=${this.value}
           @blur=${this.handleBlur}
         />
-        ${removeButton}
+        ${removeIcon}
       </label>
       ${messageText}
     `;

@@ -1,9 +1,18 @@
-import { TemplateResult } from 'lit';
-export interface Column {
-    key: string;
-    name: string;
-    abbreviation?: string;
+import { LitElement, TemplateResult } from 'lit';
+import { Column, Data } from './table.model';
+export declare class TableElement extends LitElement {
+    columns?: Column[];
+    data?: Data[];
+    uniqueKey?: string;
+    private hiddenColumns;
+    static styles: import("lit").CSSResult;
+    render(): TemplateResult<1>;
+    setColumns(): TemplateResult[] | undefined;
+    setData(columnKey: string): TemplateResult[] | undefined;
+    hideColumn(key: string): void;
 }
-export interface Data {
-    [key: string]: string | string[] | boolean | TemplateResult;
+declare global {
+    interface HTMLElementTagNameMap {
+        AOTW_TABLE: TableElement;
+    }
 }

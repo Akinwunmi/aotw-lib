@@ -1,6 +1,6 @@
 {
-  "name": "@aotw/components",
-  "description": "Archive of the World Component Library",
+  "name": "@aotw/recipes",
+  "description": "Archive of the World Recipe Library",
   "version": "0.0.0",
   "author": "Jurrit van der Ploeg <info@jurritvanderploeg.nl> (http://www.jurritvanderploeg.nl/)",
   "license": "ISC",
@@ -16,7 +16,7 @@
     "dev": "vite"
   },
   "dependencies": {
-    "@aotw/core": "file:../core",
+    "@aotw/components": "file:../components",
     "lit": "^2.2.5"
   },
   "devDependencies": {

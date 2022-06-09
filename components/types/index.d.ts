@@ -3,6 +3,7 @@ export * from './chip';
 export * from './close-button';
 export * from './dialog';
 export * from './icon';
+export * from './input';
 export * from './scrim';
 export * from './table';
 export * from './toggle-button';
