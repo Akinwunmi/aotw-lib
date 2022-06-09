@@ -1,0 +1,10 @@
+@import '@aotw/core/src/colors';
+
+:host {
+  z-index: -1;
+  position: absolute;
+  inset: 0;
+
+  cursor: pointer;
+  background-color: rgba($default-black, 0.35);
+}  

@@ -1,5 +1,5 @@
 @import '@aotw/core/src/colors';
-@import '@aotw/core/src/spacing';
+@import '@aotw/core/src/space';
 @import '@aotw/core/src/typography';
 
 :host {
@@ -8,18 +8,18 @@
   display: flex;
   inset: 0;
 
-  @include typography-default;
+  @include typography-body;
 
   .dialog {
     display: grid;
     grid-template-rows: auto 1fr;
     top: 50px;
-    left: $aotw-spacing-s;
+    left: $aotw-space-s;
     min-width: 300px;
     max-width: 400px;
     min-height: 400px;
     margin: auto;
-    padding: $aotw-spacing-xs $aotw-spacing-s $aotw-spacing-s;
+    padding: $aotw-space-xs $aotw-space-s $aotw-space-s;
 
     background-color: $primary-blue-500;
 
@@ -29,23 +29,23 @@
       display: grid;
       grid-template-columns: 1fr auto;
       align-items: flex-start;
-      gap: $aotw-spacing-s;
+      gap: $aotw-space-s;
 
       section {
         h3 {
-          margin-block: $aotw-spacing-s;
+          margin-block: $aotw-space-s;
         }
         .visual {
           width: inherit;
-          margin-block: $aotw-spacing-m $aotw-spacing-s;
+          margin-block: $aotw-space-m $aotw-space-s;
         }
       }
     }
     &_content {
       display: grid;
       grid-template-rows: 1fr auto;
-      gap: $aotw-spacing-xs;
-      padding-top: $aotw-spacing-s;
+      gap: $aotw-space-xs;
+      padding-top: $aotw-space-s;
     }
   }
 }

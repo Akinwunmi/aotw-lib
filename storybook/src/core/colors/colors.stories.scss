@@ -1,22 +1,22 @@
 @import '@aotw/core/src/colors';
-@import '@aotw/core/src/spacing';
+@import '@aotw/core/src/space';
 @import '@aotw/core/src/typography';
 
 .palette {
   position: relative;
   display: grid;
-  gap: $aotw-spacing-l;
+  gap: $aotw-space-l;
 
-  @include typography-default;
+  @include typography-body;
 
   &_grid {
     z-index: 1;
     position: absolute;
     display: grid;
-    gap: $aotw-spacing-l;
+    gap: $aotw-space-l;
     top: 46px;
     margin-left: 200px;
-    padding-left: $aotw-spacing-m;
+    padding-left: $aotw-space-m;
     
     &__row {
       display: grid;
@@ -41,7 +41,7 @@
     grid-template-columns: repeat(10, 60px);
     height: 30px;
     margin-left: 200px;
-    padding-left: $aotw-spacing-m;
+    padding-left: $aotw-space-m;
 
     p {
       margin: auto;
@@ -52,7 +52,7 @@
     display: grid;
     grid-template-columns: 200px 1fr;
     align-items: center;
-    gap: $aotw-spacing-m;
+    gap: $aotw-space-m;
 
     &__values {
       display: grid;

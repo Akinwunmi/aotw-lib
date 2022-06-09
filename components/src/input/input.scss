@@ -1,0 +1,66 @@
+@import '@aotw/core/src/colors';
+@import '@aotw/core/src/space';
+@import '@aotw/core/src/typography';
+
+:host {
+  display: inline-block;
+}
+
+label {
+  position: relative;
+  display: grid;
+  gap: $aotw-space-xs;
+
+  @include typography-body;
+  color: $primary-blue-500;
+
+  span {
+    height: 20px;
+  }
+
+  input {
+    box-sizing: border-box;
+    height: 32px;
+    padding-inline: $aotw-space-s $aotw-space-5xl;
+    background-color: $default-white;
+    border: none;
+    border-bottom: 2px solid transparent;
+
+    @include typography-input;
+    color: $default-black;
+  }
+
+  aotw-button {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+  
+  &:focus-within,
+  &:hover {
+    font-weight: 500;
+  }
+
+  &:focus-within {
+    input {
+      border-bottom-color: $primary-blue-500;
+    }
+    
+  }
+}
+
+p {
+  height: 16px;
+  margin: $aotw-space-xs 0;
+
+  @include typography-body-small;
+  color: $primary-blue-500;
+
+  &.error {
+    color: $secondary-red-500;
+  }
+
+  &.warning {
+    color: $secondary-orange-500;
+  }
+}

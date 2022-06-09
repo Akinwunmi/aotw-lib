@@ -1,1 +1,1 @@
-export * from './close-button-element';
+export * from './close-button';
