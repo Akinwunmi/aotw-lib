@@ -1,0 +1,31 @@
+@import '@aotw/core/src/colors';
+@import '@aotw/core/src/radii';
+@import '@aotw/core/src/space';
+@import '@aotw/core/src/typography';
+
+button {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  gap: $aotw-space-xs;
+  height: 24px;
+  background-color: $secondary-grey-50;
+  border: none;
+  border-radius: $aotw-radius-m;
+  
+  @include typography-body-small;
+  color: $primary-blue-500;
+
+  aotw-icon {
+    width: 12px;
+    height: 12px;
+
+    &[name='close'] {
+      cursor: pointer;
+    }
+  }
+
+  &.icon-only {
+    gap: $aotw-space-s;
+  }
+}

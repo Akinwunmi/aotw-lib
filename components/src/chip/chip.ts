@@ -32,11 +32,11 @@ export class ChipElement extends LitElement {
 
     const iconHTML = this.icon
       ? html`<aotw-icon name=${this.icon}></aotw-icon>`
-      : null;
+      : undefined;
 
     const deleteIconHTML = this.deletable
-      ? html`<aotw-icon name="close" @click=${() => this.removeChipElement()}></aotw-icon>`
-      : null;
+      ? html`<aotw-icon name="close" @click=${this.removeChipElement}></aotw-icon>`
+      : undefined;
 
     return html`
       <button

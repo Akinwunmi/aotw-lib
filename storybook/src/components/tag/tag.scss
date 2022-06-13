@@ -1,0 +1,8 @@
+@import '@aotw/core/src/colors';
+
+.custom-colors {
+  &::part(button) {
+    background-color: $secondary-grey-900;
+    color: $default-white;
+  }
+}
