@@ -4,13 +4,18 @@
   "version": "0.0.0",
   "author": "Jurrit van der Ploeg <info@jurritvanderploeg.nl> (http://www.jurritvanderploeg.nl/)",
   "license": "ISC",
-  "bin": "src/index.js",
+  "bin": {
+    "aotw": "./bin/index.js"
+  },
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
+  "keywords": [
+    "cli"
+  ],
   "dependencies": {
-    "chalk": "^5.0.1"
+    "chalk": "^5.0.1",
+    "yargs": "^17.5.1"
   }
 }
