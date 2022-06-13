@@ -1,51 +1,47 @@
-@import '@aotw/core/src/colors';
-@import '@aotw/core/src/space';
 @import '@aotw/core/src/typography';
 
 :host {
+  @include typography-body;
   z-index: 300;
   position: fixed;
   display: flex;
   inset: 0;
+}
 
-  @include typography-body;
+.dialog {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  top: 50px;
+  left: var(--aotw-space-s);
+  min-width: 300px;
+  max-width: 400px;
+  min-height: 400px;
+  margin: auto;
+  padding: var(--aotw-space-xs) var(--aotw-space-s) var(--aotw-space-s);
+  background-color: var(--aotw-color-primary-500);
+  color: var(--aotw-color-white);
 
-  .dialog {
+  header {
     display: grid;
-    grid-template-rows: auto 1fr;
-    top: 50px;
-    left: $aotw-space-s;
-    min-width: 300px;
-    max-width: 400px;
-    min-height: 400px;
-    margin: auto;
-    padding: $aotw-space-xs $aotw-space-s $aotw-space-s;
+    grid-template-columns: 1fr auto;
+    align-items: flex-start;
+    gap: var(--aotw-space-s);
 
-    background-color: $primary-blue-500;
-
-    color: $default-white;
-
-    header {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      align-items: flex-start;
-      gap: $aotw-space-s;
-
-      section {
-        h3 {
-          margin-block: $aotw-space-s;
-        }
-        .visual {
-          width: inherit;
-          margin-block: $aotw-space-m $aotw-space-s;
-        }
+    section {
+      h3 {
+        margin-block: var(--aotw-space-s);
+      }
+      
+      .visual {
+        width: inherit;
+        margin-block: var(--aotw-space-m) var(--aotw-space-s);
       }
     }
-    &_content {
-      display: grid;
-      grid-template-rows: 1fr auto;
-      gap: $aotw-space-xs;
-      padding-top: $aotw-space-s;
-    }
+  }
+  &_content {
+    display: grid;
+    grid-template-rows: 1fr auto;
+    gap: var(--aotw-space-xs);
+    padding-top: var(--aotw-space-s);
   }
 }

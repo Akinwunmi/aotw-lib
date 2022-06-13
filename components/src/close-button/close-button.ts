@@ -11,7 +11,7 @@ export class CloseButtonElement extends LitElement {
 
   render() {
     return html`
-      <button class="close-button"></button>
+      <button class="close-button" part="button"></button>
     `
   }
 }

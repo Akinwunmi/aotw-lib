@@ -1,0 +1,8 @@
+{
+  "aotw": {
+    "height": {
+      "s": { "value": "24px", "type": "height" },
+      "m": { "value": "32px", "type": "height" }
+    }
+  }
+}

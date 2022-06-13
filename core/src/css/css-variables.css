@@ -1,0 +1,47 @@
+/**
+ * Do not edit directly
+ * Generated on Tue, 12 Jul 2022 08:59:22 GMT
+ */
+
+:root {
+  --aotw-color-primary-50: #f0f0ff;
+  --aotw-color-primary-100: #e3e3ff;
+  --aotw-color-primary-300: #5982ed;
+  --aotw-color-primary-400: #44f;
+  --aotw-color-primary-500: #00f;
+  --aotw-color-primary-700: #0000b8;
+  --aotw-color-primary-900: #00007c;
+  --aotw-color-secondary-50: #eaebf1;
+  --aotw-color-secondary-100: #d4d7e2;
+  --aotw-color-secondary-200: #c5c6d3;
+  --aotw-color-secondary-300: #a4a8b4;
+  --aotw-color-secondary-400: #838290;
+  --aotw-color-secondary-500: #5a5d70;
+  --aotw-color-secondary-700: #3a3c50;
+  --aotw-color-secondary-900: #1a1b30;
+  --aotw-color-tertiary-300: #fff3d3;
+  --aotw-color-tertiary-400: #eee4c4;
+  --aotw-color-tertiary-500: #ddd5b5;
+  --aotw-color-success-500: #00c98d;
+  --aotw-color-error-500: #ff3535;
+  --aotw-color-warning-500: #fc9a2a;
+  --aotw-color-black: #222;
+  --aotw-color-white: #fff;
+  --aotw-elevation-xs: 0 4px 4px rgba(var(--aotw-color-black), 0.1);
+  --aotw-height-s: 24px;
+  --aotw-height-m: 32px;
+  --aotw-radius-xs: 2px;
+  --aotw-radius-s: 4px;
+  --aotw-radius-m: 6px;
+  --aotw-radius-l: 8px;
+  --aotw-space-xs: 4px;
+  --aotw-space-s: 8px;
+  --aotw-space-m: 12px;
+  --aotw-space-l: 16px;
+  --aotw-space-xl: 20px;
+  --aotw-space-2xl: 24px;
+  --aotw-space-3xl: 28px;
+  --aotw-space-4xl: 32px;
+  --aotw-space-5xl: 36px;
+  --aotw-space-6xl: 40px;
+}

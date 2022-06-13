@@ -1,5 +1,5 @@
 @import '@aotw/core/src/colors';
-@import '@aotw/core/src/space';
+@import '@aotw/core/src/spaces';
 @import '@aotw/core/src/typography';
 
 .palette {
@@ -15,7 +15,7 @@
     display: grid;
     gap: $aotw-space-l;
     top: 46px;
-    margin-left: 200px;
+    margin-left: 100px;
     padding-left: $aotw-space-m;
     
     &__row {
@@ -31,7 +31,7 @@
           position: absolute;
           display: block;
           inset: 28px;
-          background-color: $secondary-grey-100;
+          background-color: $aotw-color-secondary-100;
         }
       }
     }
@@ -40,7 +40,7 @@
     display: grid;
     grid-template-columns: repeat(10, 60px);
     height: 30px;
-    margin-left: 200px;
+    margin-left: 100px;
     padding-left: $aotw-space-m;
 
     p {
@@ -50,7 +50,7 @@
   &_color-range {
     z-index: 2;
     display: grid;
-    grid-template-columns: 200px 1fr;
+    grid-template-columns: 100px 1fr;
     align-items: center;
     gap: $aotw-space-m;
 
@@ -59,95 +59,88 @@
       grid-template-columns: repeat(10, 60px);
       height: 60px;
 
-      .primary-blue {
+      .primary {
         &_50 {
-          background-color: $primary-blue-50;
+          background-color: $aotw-color-primary-50;
         }
         &_100 {
-          background-color: $primary-blue-100;
+          background-color: $aotw-color-primary-100;
         }
-        &_400 {
-          grid-column: 5 / 6;
-          background-color: $primary-blue-400;
-        }
-        &_500 {
-          background-color: $primary-blue-500;
-        }
-        &_700 {
-          grid-column: 8 / 9;
-          background-color: $primary-blue-700;
-        }
-        &_900 {
-          grid-column: 10 / 11;
-          background-color: $primary-blue-900;
-        }
-      }
-      .secondary-green {
-        &_500 {
-          grid-column: 6 / 7;
-          background-color: $secondary-green-500;
-        }
-      }
-      .secondary-grey {
-        &_50 {
-          background-color: $secondary-grey-50;
-        }
-        &_100 {
-          background-color: $secondary-grey-100;
-        }
-        &_200 {
-          background-color: $secondary-grey-200;
-        }
-        &_500 {
-          grid-column: 6 / 7;
-          background-color: $secondary-grey-500;
-        }
-        &_700 {
-          grid-column: 8 / 9;
-          background-color: $secondary-grey-700;
-        }
-        &_900 {
-          grid-column: 10 / 11;
-          background-color: $secondary-grey-900;
-        }
-      }
-      .secondary-orange {
-        &_500 {
-          grid-column: 6 / 7;
-          background-color: $secondary-orange-500;
-        }
-      }
-      .secondary-red {
-        &_500 {
-          grid-column: 6 / 7;
-          background-color: $secondary-red-500;
-        }
-      }
-      .secondary-smoke {
-        &_100 {
-          grid-column: 2 / 3;
-          background-color: $secondary-smoke-100;
-        }
-        &_200 {
-          background-color: $secondary-smoke-200;
-        }
-      }
-      .tertiary-steelblue {
-        &_500 {
-          grid-column: 6 / 7;
-          background-color: $tertiary-steelblue-500;
-        }
-      }
-      .tertiary-wheat {
         &_300 {
           grid-column: 4 / 5;
-          background-color: $tertiary-wheat-300;
+          background-color: $aotw-color-primary-300;
         }
         &_400 {
-          background-color: $tertiary-wheat-400;
+          background-color: $aotw-color-primary-400;
         }
         &_500 {
-          background-color: $tertiary-wheat-500;
+          background-color: $aotw-color-primary-500;
+        }
+        &_700 {
+          grid-column: 8 / 9;
+          background-color: $aotw-color-primary-700;
+        }
+        &_900 {
+          grid-column: 10 / 11;
+          background-color: $aotw-color-primary-900;
+        }
+      }
+      .secondary {
+        &_50 {
+          background-color: $aotw-color-secondary-50;
+        }
+        &_100 {
+          background-color: $aotw-color-secondary-100;
+        }
+        &_200 {
+          background-color: $aotw-color-secondary-200;
+        }
+        &_300 {
+          background-color: $aotw-color-secondary-300;
+        }
+        &_400 {
+          background-color: $aotw-color-secondary-400;
+        }
+        &_500 {
+          background-color: $aotw-color-secondary-500;
+        }
+        &_700 {
+          grid-column: 8 / 9;
+          background-color: $aotw-color-secondary-700;
+        }
+        &_900 {
+          grid-column: 10 / 11;
+          background-color: $aotw-color-secondary-900;
+        }
+      }
+      .tertiary {
+        &_300 {
+          grid-column: 4 / 5;
+          background-color: $aotw-color-tertiary-300;
+        }
+        &_400 {
+          background-color: $aotw-color-tertiary-400;
+        }
+        &_500 {
+          background-color: $aotw-color-tertiary-500;
+        }
+      }
+      .success {
+        &_500 {
+          grid-column: 6 / 7;
+          background-color: $aotw-color-success-500;
+        }
+      }
+      .error {
+        &_500 {
+          grid-column: 6 / 7;
+          background-color: $aotw-color-error-500;
+        }
+      }
+      .warning {
+        &_500 {
+          grid-column: 6 / 7;
+          background-color: $aotw-color-warning-500;
         }
       }
     }

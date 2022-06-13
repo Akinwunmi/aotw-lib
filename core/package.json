@@ -9,9 +9,10 @@
     "src/"
   ],
   "scripts": {
-    "build": "sass src/index.scss:dist/style.css"
+    "build": "style-dictionary build --config ./config.json"
   },
   "devDependencies": {
-    "sass": "^1.50.0"
+    "sass": "^1.50.0",
+    "style-dictionary": "^3.7.1"
   }
 }

@@ -9,14 +9,12 @@ export default {
 
 const defaultColorRange = [50, 100, 200, 300, 400, 500, 600, 700, 800, 900];
 const palette = {
-  'primary-blue': [50, 100, 400, 500, 700, 900],
-  'secondary-green': [500],
-  'secondary-grey': [50, 100, 200, 500, 700, 900],
-  'secondary-orange': [500],
-  'secondary-red': [500],
-  'secondary-smoke': [100, 200],
-  'tertiary-steelblue': [500],
-  'tertiary-wheat': [300, 400, 500]
+  'primary': [50, 100, 300, 400, 500, 700, 900],
+  'secondary': [50, 100, 200, 300, 400, 500, 700, 900],
+  'tertiary': [300, 400, 500],
+  'success': [500],
+  'error': [500],
+  'warning': [500]
 };
 
 function setColorRange(name: string): TemplateResult {

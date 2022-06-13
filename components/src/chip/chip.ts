@@ -52,7 +52,7 @@ export class ChipElement extends LitElement {
   }
 
   private toggleActive() {
-    if (this.disabled === false) {
+    if (!this.disabled) {
       const onClick = new CustomEvent<boolean>('onClick', {
         detail: (this.active = !this.active)
       });
