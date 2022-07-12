@@ -1,14 +1,13 @@
-@import '@aotw/core/src/colors';
-@import '@aotw/core/src/spaces';
+@import '@aotw/core/src/css/css-variables.css';
 
 body {
-  background-color: $aotw-color-secondary-50;
+  background-color: var(--aotw-color-secondary-50);
 
   main {
     display: flex;
     flex-flow: row wrap;
-    gap: $aotw-space-s;
-    margin: $aotw-space-s;
-    padding: $aotw-space-s;
+    gap: var(--aotw-space-s);
+    margin: var(--aotw-space-s);
+    padding: var(--aotw-space-s);
   }
 }
