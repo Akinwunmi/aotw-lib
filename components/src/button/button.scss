@@ -1,104 +1,95 @@
-@import '@aotw/core/src/colors';
-@import '@aotw/core/src/radii';
-@import '@aotw/core/src/reset';
-@import '@aotw/core/src/space';
 @import '@aotw/core/src/typography';
 
 button {
   overflow: hidden;
   display: flex;
   align-items: center;
-  gap: $aotw-space-s;
-  height: 32px;
-  padding-inline: $aotw-space-s;
+  gap: var(--aotw-space-s);
+  height: var(--aotw-height-m);
+  padding-inline: var(--aotw-space-s);
+  cursor: pointer;
   border: 1px solid transparent;
   transition: background-color 200ms ease-in-out;
+  text-transform: uppercase;
 
   @include typography-button;
-  text-transform: uppercase;
 
   p {
     display: flex;
     align-items: center;
-    gap: $aotw-space-xs;
+    gap: var(--aotw-space-xs);
   }
   &.primary {
-    background-color: $primary-blue-500;
-    color: $default-white;
+    background-color: var(--aotw-color-primary-500);
+    color: var(--aotw-color-white);
     
     &:hover {
-      background-color: $primary-blue-400;
+      background-color: var(--aotw-color-primary-400);
     }
     &:active,
     &.active {
-      background-color: $primary-blue-700;
+      background-color: var(--aotw-color-primary-700);
     }
     &.ghost,
     &.outline {
-      color: $primary-blue-500;
+      background-color: transparent;
+      color: var(--aotw-color-primary-500);
 
       &:hover {
-        color: $primary-blue-400;
+        color: var(--aotw-color-primary-400);
       }
       &:active,
       &.active {
-        background-color: $primary-blue-50;
-        color: $primary-blue-700;
+        background-color: var(--aotw-color-primary-50);
+        color: var(--aotw-color-primary-700);
       }
-    }
-    &.ghost {
-      background-color: transparent;
     }
     &.outline {
-      background-color: $default-white;
-      border: 1px solid $primary-blue-500;
+      border: 1px solid var(--aotw-color-primary-500);
 
       &:hover {
-        border-color: $primary-blue-400;
+        border-color: var(--aotw-color-primary-400);
       }
       &:active,
       &.active {
-        border-color: $primary-blue-700;
+        border-color: var(--aotw-color-primary-700);
       }
     }
   }
   &.secondary {
-    background-color: $secondary-grey-700;
-    color: $default-white;
+    background-color: var(--aotw-color-secondary-700);
+    color: var(--aotw-color-white);
 
     &:hover {
-      background-color: $secondary-grey-500;
+      background-color: var(--aotw-color-secondary-500);
     }
     &:active,
     &.active {
-      background-color: $secondary-grey-900;
+      background-color: var(--aotw-color-secondary-900);
     }
     &.ghost,
     &.outline {
-      color: $secondary-grey-700;
+      background-color: transparent;
+      color: var(--aotw-color-secondary-700);
 
       &:hover {
-        color: $secondary-grey-500;
+        color: var(--aotw-color-secondary-500);
       }
       &:active,
       &.active {
-        background-color: $secondary-grey-100;
-        color: $secondary-grey-900;
+        background-color: var(--aotw-color-secondary-100);
+        color: var(--aotw-color-secondary-900);
       }
-    }
-    &.ghost {
-      background-color: transparent;
     }
     &.outline {
-      background-color: $default-white;
-      border: 1px solid $secondary-grey-700;
+      border: 1px solid var(--aotw-color-secondary-700);
 
       &:hover {
-        border-color: $secondary-grey-500;
+        border-color: var(--aotw-color-secondary-500);
       }
       &:active,
       &.active {
-        border-color: $secondary-grey-900;
+        border-color: var(--aotw-color-secondary-900);
       }
     }
   }
@@ -106,17 +97,17 @@ button {
   &.outline {
     &.disabled {
       pointer-events: none;
-      color: $secondary-smoke-200;
+      color: var(--aotw-color-secondary-300);
     }
   }
   &.outline {
     &.disabled {
-      border-color: $secondary-smoke-200;
+      border-color: var(--aotw-color-secondary-300);
     }
   }
   &.disabled {
     pointer-events: none;
-    background-color: $secondary-smoke-100;
-    color: $secondary-smoke-200;
+    background-color: var(--aotw-color-secondary-100);
+    color: var(--aotw-color-secondary-300);
   }
 }

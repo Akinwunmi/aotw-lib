@@ -1,0 +1,16 @@
+{
+  "aotw": {
+    "space": {
+      "xs": { "value": "4px", "type": "space" },
+      "s": { "value": "8px", "type": "space" },
+      "m": { "value": "12px", "type": "space" },
+      "l": { "value": "16px", "type": "space" },
+      "xl": { "value": "20px", "type": "space" },
+      "2xl": { "value": "24px", "type": "space" },
+      "3xl": { "value": "28px", "type": "space" },
+      "4xl": { "value": "32px", "type": "space" },
+      "5xl": { "value": "36px", "type": "space" },
+      "6xl": { "value": "40px", "type": "space" }
+    }
+  }
+}

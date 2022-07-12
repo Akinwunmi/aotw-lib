@@ -3,10 +3,10 @@
 
 html,
 body {
-  background-color: $secondary-smoke-100;
+  background-color: $aotw-color-secondary-100;
 
   @include typography-body;
-  color: $primary-blue-500;
+  color: $aotw-color-primary-500;
 
   h1,
   h2,
@@ -17,6 +17,6 @@ body {
     cursor: pointer;
 
     @include typography-link;
-    color: $primary-blue-500;
+    color: $aotw-color-primary-500;
   }
 }

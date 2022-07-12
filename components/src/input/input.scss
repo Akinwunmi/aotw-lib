@@ -1,5 +1,3 @@
-@import '@aotw/core/src/colors';
-@import '@aotw/core/src/space';
 @import '@aotw/core/src/typography';
 
 :host {
@@ -7,27 +5,25 @@
 }
 
 label {
+  @include typography-body;
   position: relative;
   display: grid;
-  gap: $aotw-space-xs;
-
-  @include typography-body;
-  color: $primary-blue-500;
+  gap: var(--aotw-space-xs);
+  color: var(--aotw-color-primary-500);
 
   span {
     height: 20px;
   }
 
   input {
+    @include typography-input;
     box-sizing: border-box;
     height: 32px;
-    padding-inline: $aotw-space-s $aotw-space-5xl;
-    background-color: $default-white;
+    padding-inline: var(--aotw-space-s) var(--aotw-space-5xl);
+    background-color: var(--aotw-color-white);
     border: none;
     border-bottom: 2px solid transparent;
-
-    @include typography-input;
-    color: $default-black;
+    color: var(--aotw-color-black);
   }
 
   aotw-button {
@@ -43,24 +39,23 @@ label {
 
   &:focus-within {
     input {
-      border-bottom-color: $primary-blue-500;
+      border-bottom-color: var(--aotw-color-primary-500);
     }
     
   }
 }
 
 p {
-  height: 16px;
-  margin: $aotw-space-xs 0;
-
   @include typography-body-small;
-  color: $primary-blue-500;
+  height: 16px;
+  margin: var(--aotw-space-xs) 0;
+  color: var(--aotw-color-primary-500);
 
   &.error {
-    color: $secondary-red-500;
+    color: var(--aotw-color-error-500);
   }
 
   &.warning {
-    color: $secondary-orange-500;
+    color: var(--aotw-color-warning-500);
   }
 }

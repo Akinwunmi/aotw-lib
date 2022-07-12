@@ -1,8 +1,8 @@
 @import '@aotw/core/src/colors';
-@import '@aotw/core/src/space';
+@import '@aotw/core/src/spaces';
 
 body {
-  background-color: $secondary-grey-50;
+  background-color: $aotw-color-secondary-50;
 
   main {
     display: flex;

@@ -1,20 +1,16 @@
-@import '@aotw/core/src/colors';
-@import '@aotw/core/src/radii';
-@import '@aotw/core/src/space';
 @import '@aotw/core/src/typography';
 
 button {
+  @include typography-body-small;
   box-sizing: border-box;
   display: flex;
   align-items: center;
-  gap: $aotw-space-xs;
-  height: 24px;
-  background-color: $secondary-grey-50;
+  gap: var(--aotw-space-xs);
+  height: var(--aotw-height-s);
+  background-color: var(--aotw-color-secondary-50);
   border: none;
-  border-radius: $aotw-radius-m;
-  
-  @include typography-body-small;
-  color: $primary-blue-500;
+  border-radius: var(--aotw-radius-m);
+  color: var(--aotw-color-primary-500);
 
   aotw-icon {
     width: 12px;
@@ -26,6 +22,6 @@ button {
   }
 
   &.icon-only {
-    gap: $aotw-space-s;
+    gap: var(--aotw-space-s);
   }
 }
