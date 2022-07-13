@@ -1,4 +1,4 @@
-import { html, LitElement, unsafeCSS } from 'lit';
+import { html, LitElement, TemplateResult, unsafeCSS } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import { classMap } from 'lit/directives/class-map.js';
 
@@ -30,7 +30,7 @@ export class ButtonElement extends LitElement {
 
   static styles = unsafeCSS(styleButton);
 
-  render() {
+  render(): TemplateResult {
     const classes = {
       active: this.active,
       disabled: this.disabled,

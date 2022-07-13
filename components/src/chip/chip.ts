@@ -1,8 +1,6 @@
-import { html, LitElement, unsafeCSS } from 'lit';
+import { html, LitElement, TemplateResult, unsafeCSS } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import { classMap } from 'lit/directives/class-map.js';
-
-import { Icon } from '../icon/icon';
 
 import styleChip from './chip.scss';
 
@@ -14,29 +12,15 @@ export class ChipElement extends LitElement {
   active = false;
 
   @property({ type: Boolean })
-  deletable = false;
-
-  @property({ type: Boolean })
   disabled = false;
-
-  @property()
-  icon?: Icon;
 
   static styles = unsafeCSS(styleChip);
 
-  render() {
+  render(): TemplateResult {
     const classes = {
       active: this.active,
       disabled: this.disabled
     };
-
-    const iconHTML = this.icon
-      ? html`<aotw-icon name=${this.icon}></aotw-icon>`
-      : undefined;
-
-    const deleteIconHTML = this.deletable
-      ? html`<aotw-icon name="close" @click=${this.removeChipElement}></aotw-icon>`
-      : undefined;
 
     return html`
       <button
@@ -44,9 +28,9 @@ export class ChipElement extends LitElement {
         part="button"
         @click=${() => this.toggleActive()}
       >
-        ${iconHTML}
+        <slot name="prefix"></slot>
         <slot></slot>
-        ${deleteIconHTML}
+        <slot name="suffix" @click=${this.removeChipElement}></slot>
       </button>
     `;
   }
@@ -60,12 +44,13 @@ export class ChipElement extends LitElement {
     }
   }
 
-  private removeChipElement() {
-    const deleted = new CustomEvent('deleted', {
+  private removeChipElement(e: Event) {
+    e.stopPropagation();
+    const chipToRemove = new CustomEvent('chipToRemove', {
       detail: this
     });
-    this.dispatchEvent(deleted);
-    this.remove();
+    this.dispatchEvent(chipToRemove);
+    console.log('chipToRemove', this);
   }
 }
 
