@@ -1,29 +1,29 @@
-$aotw-color-black: #222;
-$aotw-color-white: #fff;
+$aotw-color-primary-50: var(--aotw-color-primary-50);
+$aotw-color-primary-100: var(--aotw-color-primary-100);
+$aotw-color-primary-300: var(--aotw-color-primary-300);
+$aotw-color-primary-400: var(--aotw-color-primary-400);
+$aotw-color-primary-500: var(--aotw-color-primary-500);
+$aotw-color-primary-700: var(--aotw-color-primary-700);
+$aotw-color-primary-900: var(--aotw-color-primary-900);
 
-$aotw-color-primary-50: #f0f0ff;
-$aotw-color-primary-100: #e3e3ff;
-$aotw-color-primary-300: #5982ed;
-$aotw-color-primary-400: #44f;
-$aotw-color-primary-500: #00f;
-$aotw-color-primary-700: #0000b8;
-$aotw-color-primary-900: #00007c;
+$aotw-color-secondary-50: var(--aotw-color-secondary-50);
+$aotw-color-secondary-100: var(--aotw-color-secondary-100);
+$aotw-color-secondary-200: var(--aotw-color-secondary-200);
+$aotw-color-secondary-300: var(--aotw-color-secondary-300);
+$aotw-color-secondary-400: var(--aotw-color-secondary-400);
+$aotw-color-secondary-500: var(--aotw-color-secondary-500);
+$aotw-color-secondary-700: var(--aotw-color-secondary-700);
+$aotw-color-secondary-900: var(--aotw-color-secondary-900);
 
-$aotw-color-secondary-50: #eaebf1;
-$aotw-color-secondary-100: #d4d7e2;
-$aotw-color-secondary-200: #c5c6d3;
-$aotw-color-secondary-300: #a4a8b4;
-$aotw-color-secondary-400: #838290;
-$aotw-color-secondary-500: #5a5d70;
-$aotw-color-secondary-700: #3a3c50;
-$aotw-color-secondary-900: #1a1b30;
+$aotw-color-tertiary-300: var(--aotw-color-tertiary-300);
+$aotw-color-tertiary-400: var(--aotw-color-tertiary-400);
+$aotw-color-tertiary-500: var(--aotw-color-tertiary-500);
 
-$aotw-color-tertiary-300: #fff3d3;
-$aotw-color-tertiary-400: #eee4c4;
-$aotw-color-tertiary-500: #ddd5b5;
+$aotw-color-success-500: var(--aotw-color-success-500);
 
-$aotw-color-success-500: #00c98d;
+$aotw-color-error-500: var(--aotw-color-error-500);
 
-$aotw-color-error-500: #ff3535;
+$aotw-color-warning-500: var(--aotw-color-warning-500);
 
-$aotw-color-warning-500: #fc9a2a;
+$aotw-color-black: var(--aotw-color-black);
+$aotw-color-white: var(--aotw-color-white);

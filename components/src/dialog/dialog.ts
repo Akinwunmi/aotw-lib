@@ -1,8 +1,5 @@
-import { html, LitElement, unsafeCSS } from 'lit';
+import { html, LitElement, TemplateResult, unsafeCSS } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
-
-import '../close-button';
-import '../scrim';
 
 import styleDialog from './dialog.scss';
 
@@ -10,29 +7,21 @@ const AOTW_DIALOG = 'aotw-dialog';
 
 @customElement(AOTW_DIALOG)
 export class DialogElement extends LitElement {
-  @property()
-  dialogTitle!: string;
-
   @property({ type: Boolean })
-  scrim = true;
-  
-  closed = new Event('closed');
+  public scrim = true;
 
-  static styles = unsafeCSS(styleDialog);
+  static override styles = unsafeCSS(styleDialog);
 
-  render() {
+  public override render(): TemplateResult {
     const scrimHTML = this.scrim
       ? html`<aotw-scrim @click=${this.close}></aotw-scrim>`
-      : null;
-    const titleHTML = this.dialogTitle
-      ? html` <h3>${this.dialogTitle}</h3>`
-      : null;
+      : undefined;
 
     return html`
       <div class="dialog">
         <header>
           <section>
-            ${titleHTML}
+            <slot name="title"></slot>
             <div class="visual">
               <slot name="visual"></slot>
             </div>
@@ -47,8 +36,11 @@ export class DialogElement extends LitElement {
     `;
   }
 
-  close() {
-    this.dispatchEvent(this.closed);
+  private close(): void {
+    const closeDialog = new CustomEvent<this>('closeDialog', {
+      detail: this
+    });
+    this.dispatchEvent(closeDialog);
   }
 }
 

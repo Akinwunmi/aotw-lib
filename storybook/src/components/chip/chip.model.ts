@@ -23,7 +23,7 @@ export const ChipTemplate: Story<ChipArgTypes> = (
   { active, disabled, icon, prefix, suffix, text }: ChipArgTypes
 ) => {
   function chipToRemove(e) {
-    document.querySelector('#root-inner').removeChild(e.detail);
+    document.querySelector('#root-inner')?.removeChild(e.detail);
   }
 
   return html`

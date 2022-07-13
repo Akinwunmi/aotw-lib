@@ -26,8 +26,8 @@ WithIcon.args = {
   text: ''
 }
 
-export const Deletable = ChipTemplate.bind({});
-Deletable.args = {
+export const Removable = ChipTemplate.bind({});
+Removable.args = {
   ...chipArgs,
   suffix: html`<aotw-icon name=${Icon.CLOSE} slot="suffix"></aotw-icon>`
 }

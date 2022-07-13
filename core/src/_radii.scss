@@ -1,6 +1,4 @@
-@import './functions/size';
-
-$aotw-radius-xs: generate-size(0.5);
-$aotw-radius-s: generate-size(1);
-$aotw-radius-m: generate-size(1.5);
-$aotw-radius-l: generate-size(2);
+$aotw-radius-xs: var(--aotw-radius-xs);
+$aotw-radius-s: var(--aotw-radius-s);
+$aotw-radius-m: var(--aotw-radius-m);
+$aotw-radius-l: var(--aotw-radius-l);
