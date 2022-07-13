@@ -9,14 +9,14 @@ const AOTW_CHIP = 'aotw-chip';
 @customElement(AOTW_CHIP)
 export class ChipElement extends LitElement {
   @property({ type: Boolean })
-  active = false;
+  public active = false;
 
   @property({ type: Boolean })
-  disabled = false;
+  public disabled = false;
 
-  static styles = unsafeCSS(styleChip);
+  static override styles = unsafeCSS(styleChip);
 
-  render(): TemplateResult {
+  public override render(): TemplateResult {
     const classes = {
       active: this.active,
       disabled: this.disabled
@@ -26,7 +26,7 @@ export class ChipElement extends LitElement {
       <button
         class="chip ${classMap(classes)}"
         part="button"
-        @click=${() => this.toggleActive()}
+        @click=${this.toggleActive}
       >
         <slot name="prefix"></slot>
         <slot></slot>
@@ -35,7 +35,7 @@ export class ChipElement extends LitElement {
     `;
   }
 
-  private toggleActive() {
+  private toggleActive(): void {
     if (!this.disabled) {
       const onClick = new CustomEvent<boolean>('onClick', {
         detail: (this.active = !this.active)
@@ -44,13 +44,12 @@ export class ChipElement extends LitElement {
     }
   }
 
-  private removeChipElement(e: Event) {
+  private removeChipElement(e: Event): void {
     e.stopPropagation();
-    const chipToRemove = new CustomEvent('chipToRemove', {
+    const chipToRemove = new CustomEvent<this>('chipToRemove', {
       detail: this
     });
     this.dispatchEvent(chipToRemove);
-    console.log('chipToRemove', this);
   }
 }
 

@@ -6,10 +6,10 @@
 
 label {
   @include typography-body;
-  position: relative;
+  color: var(--aotw-color-primary-500);
   display: grid;
   gap: var(--aotw-space-xs);
-  color: var(--aotw-color-primary-500);
+  position: relative;
 
   span {
     height: 20px;
@@ -17,19 +17,20 @@ label {
 
   input {
     @include typography-input;
-    box-sizing: border-box;
-    height: 32px;
-    padding-inline: var(--aotw-space-s) var(--aotw-space-5xl);
     background-color: var(--aotw-color-white);
     border: none;
     border-bottom: 2px solid transparent;
+    box-shadow: var(--aotw-elevation-xs);
+    box-sizing: border-box;
     color: var(--aotw-color-black);
+    height: 32px;
+    padding-inline: var(--aotw-space-s) var(--aotw-space-5xl);
   }
 
   aotw-button {
+    bottom: 0;
     position: absolute;
     right: 0;
-    bottom: 0;
   }
   
   &:focus-within,
@@ -47,9 +48,9 @@ label {
 
 p {
   @include typography-body-small;
+  color: var(--aotw-color-primary-500);
   height: 16px;
   margin: var(--aotw-space-xs) 0;
-  color: var(--aotw-color-primary-500);
 
   &.error {
     color: var(--aotw-color-error-500);

@@ -7,7 +7,7 @@ const AOTW_SCRIM = 'aotw-scrim';
 
 @customElement(AOTW_SCRIM)
 export class ScrimElement extends LitElement {
-  static styles = unsafeCSS(styleScrim);
+  static override styles = unsafeCSS(styleScrim);
 }
 
 declare global {

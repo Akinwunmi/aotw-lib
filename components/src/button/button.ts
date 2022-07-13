@@ -2,8 +2,6 @@ import { html, LitElement, TemplateResult, unsafeCSS } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import { classMap } from 'lit/directives/class-map.js';
 
-import { Icon } from '../icon/icon';
-
 import styleButton from './button.scss';
 import { ButtonVariant } from './button.model';
 
@@ -16,9 +14,6 @@ export class ButtonElement extends LitElement {
   @property({ type: Boolean })
   disabled = false;
 
-  @property()
-  icon?: Icon;
-
   @property({ type: Boolean })
   ghost = false;
 
@@ -28,9 +23,9 @@ export class ButtonElement extends LitElement {
   @property()
   variant = ButtonVariant.Primary;
 
-  static styles = unsafeCSS(styleButton);
+  static override styles = unsafeCSS(styleButton);
 
-  render(): TemplateResult {
+  public override render(): TemplateResult {
     const classes = {
       active: this.active,
       disabled: this.disabled,
@@ -40,13 +35,9 @@ export class ButtonElement extends LitElement {
       secondary: this.variant === ButtonVariant.Secondary
     };
 
-    const iconHTML = this.icon
-      ? html`<aotw-icon .name=${this.icon}></aotw-icon>`
-      : null;
-
     return html`
       <button class=${classMap(classes)}>
-        ${iconHTML}
+        <slot name="prefix"></slot>
         <slot></slot>
       </button>
     `;

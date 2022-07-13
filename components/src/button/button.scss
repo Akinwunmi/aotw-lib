@@ -1,22 +1,25 @@
 @import '@aotw/core/src/typography';
 
+:host([disabled]) {
+  pointer-events: none;
+}
+
 button {
-  overflow: hidden;
-  display: flex;
+  @include typography-button;
   align-items: center;
+  border: 1px solid transparent;
+  cursor: pointer;
+  display: flex;
   gap: var(--aotw-space-s);
   height: var(--aotw-height-m);
+  overflow: hidden;
   padding-inline: var(--aotw-space-s);
-  cursor: pointer;
-  border: 1px solid transparent;
-  transition: background-color 200ms ease-in-out;
   text-transform: uppercase;
-
-  @include typography-button;
+  transition: background-color 200ms ease-in-out;
 
   p {
-    display: flex;
     align-items: center;
+    display: flex;
     gap: var(--aotw-space-xs);
   }
   &.primary {
@@ -96,8 +99,8 @@ button {
   &.ghost,
   &.outline {
     &.disabled {
-      pointer-events: none;
       color: var(--aotw-color-secondary-300);
+      pointer-events: none;
     }
   }
   &.outline {
@@ -106,8 +109,8 @@ button {
     }
   }
   &.disabled {
-    pointer-events: none;
     background-color: var(--aotw-color-secondary-100);
     color: var(--aotw-color-secondary-300);
+    pointer-events: none;
   }
 }
