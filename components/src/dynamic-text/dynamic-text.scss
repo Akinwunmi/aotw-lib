@@ -1,28 +1,23 @@
 :host {
-  width: 100%;
-  height: 100%;
-}
-
-.dynamic-text {
   font-family: var(--aotw-font-family-primary);
-  height: inherit;
+  height: 100%;
   overflow: hidden;
   position: relative;
   text-transform: uppercase;
-  width: inherit;
+  width: 100%;
+}
 
-  &_content {
-    align-items: center;
-    display: grid;
-    height: inherit;
-    left: 0;
-    position: absolute;
-    transition: all 2500ms linear;
-    white-space: nowrap;
+.dynamic-text {
+  align-items: center;
+  display: grid;
+  height: inherit;
+  left: 0;
+  position: absolute;
+  transition: all 2500ms linear;
+  white-space: nowrap;
 
-    &.right-aligned {
-      left: auto;
-      right: 0;
-    }
+  &.right-aligned {
+    left: auto;
+    right: 0;
   }
 }

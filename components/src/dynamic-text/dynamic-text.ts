@@ -11,9 +11,6 @@ export class DynamicTextElement extends LitElement {
   public alignment: 'left' | 'right' = 'left';
 
   @query('.dynamic-text')
-  private _container!: HTMLDivElement;
-
-  @query('.dynamic-text_content')
   private _content!: HTMLDivElement;
 
   private _duration = 1500;
@@ -35,22 +32,18 @@ export class DynamicTextElement extends LitElement {
     };
 
     return html`
-      <div class="dynamic-text">
-        <div class="dynamic-text_content ${classMap(classes)}">
-          <slot></slot>
-        </div>
+      <div class="dynamic-text ${classMap(classes)}">
+        <slot></slot>
       </div>
-      `;
+    `;
   }
   
   private setAnimation(): void {
-    if (!(this._container || this._content)) {
+    if (!this._content) {
       return;
     }
-    const containerWidth = this._container.clientWidth;
-    const contentWidth = this._content.clientWidth;
-    if (contentWidth > containerWidth) {
-      this._content.style[this.alignment] = `${containerWidth - contentWidth}px`;
+    if (this._content.clientWidth > this.clientWidth) {
+      this._content.style[this.alignment] = `${this.clientWidth - this._content.clientWidth}px`;
       setTimeout(() => {
         this._content.style[this.alignment] = '0';
       }, this._duration);
@@ -61,7 +54,7 @@ export class DynamicTextElement extends LitElement {
     if (!this._content) {
       return;
     }
-    this._duration = (this._content.clientWidth - this._container.clientWidth) / 4 * 1000;
+    this._duration = (this._content.clientWidth - this.clientWidth) / 4 * 1000;
     this._interval += this._duration * 2;
     this._content.style.transitionDuration = `${this._duration}ms`;
   }
