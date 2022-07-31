@@ -1,0 +1,19 @@
+.dynamic-text {
+  font-family: var(--aotw-font-family-primary);
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  text-transform: uppercase;
+
+  &_content {
+    left: 0;
+    position: absolute;
+    transition: all 2500ms linear;
+    white-space: nowrap;
+
+    &.right-aligned {
+      left: auto;
+      right: 0;
+    }
+  }
+}
