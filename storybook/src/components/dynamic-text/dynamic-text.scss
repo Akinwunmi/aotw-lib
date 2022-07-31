@@ -1,0 +1,19 @@
+.dynamic-text-wrapper {
+  align-items: center;
+  border-left: 1px solid var(--aotw-color-secondary-400);
+  border-right: 1px solid var(--aotw-color-secondary-400);
+  display: grid;
+  height: 25px;
+
+  &.small {
+    width: 100px;
+  }
+
+  &.medium {
+    width: 200px;
+  }
+
+  &.large {
+    width: 300px;
+  }
+}

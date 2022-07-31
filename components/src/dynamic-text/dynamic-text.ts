@@ -22,11 +22,7 @@ export class DynamicTextElement extends LitElement {
   static override styles = unsafeCSS(styleDynamicText);
 
   protected override firstUpdated(): void {
-    if (this._content) {
-      this._duration = (this._content.clientWidth - this._container.clientWidth) / 4 * 1000;
-      this._interval += this._duration * 2;
-      this._content.style.transitionDuration = `${this._duration}ms`;
-    }
+    this.setDurationAndInterval();
     this.setAnimation();
     setInterval(() => {
       this.setAnimation();
@@ -59,6 +55,15 @@ export class DynamicTextElement extends LitElement {
         this._content.style[this.alignment] = '0';
       }, this._duration);
     }
+  }
+
+  private setDurationAndInterval(): void {
+    if (!this._content) {
+      return;
+    }
+    this._duration = (this._content.clientWidth - this._container.clientWidth) / 4 * 1000;
+    this._interval += this._duration * 2;
+    this._content.style.transitionDuration = `${this._duration}ms`;
   }
 }
 
