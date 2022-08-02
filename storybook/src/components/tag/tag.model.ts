@@ -1,6 +1,7 @@
 import '@aotw/components/src/tag';
 import { Icon } from '@aotw/components/src/icon';
 import { html } from 'lit';
+import { ifDefined } from 'lit/directives/if-defined.js';
 
 import { Story } from '../../../types/story.model';
 
@@ -29,7 +30,7 @@ export const TagTemplate: Story<TagArgTypes> = (
 ) => {
   return html`
     <aotw-tag
-      class=${customClass}
+      class=${ifDefined(customClass)}
       ?deletable=${deletable}
       .icon=${icon}
     >${text}</aotw-tag>
