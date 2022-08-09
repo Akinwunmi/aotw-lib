@@ -10,6 +10,10 @@
   color: var(--aotw-color-black);
 }
 
+:host([disabled]) {
+  pointer-events: none;
+}
+
 .toggle-switch {
   display: flex;
   align-items: center;

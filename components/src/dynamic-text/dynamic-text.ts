@@ -16,7 +16,7 @@ export class DynamicTextElement extends LitElement {
   private _duration = 1500;
   private _interval = 6000;
 
-  static override styles = unsafeCSS(styleDynamicText);
+  public static override styles = unsafeCSS(styleDynamicText);
 
   protected override firstUpdated(): void {
     this.setDurationAndInterval();
@@ -26,7 +26,7 @@ export class DynamicTextElement extends LitElement {
     }, this._interval);
   }
   
-  public override render(): TemplateResult {
+  protected override render(): TemplateResult {
     const classes: ClassInfo = {
       'right-aligned': this.alignment === 'right'
     };

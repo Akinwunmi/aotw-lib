@@ -1,6 +1,7 @@
-import { html, LitElement, TemplateResult, unsafeCSS } from 'lit';
+import { html, LitElement, nothing, TemplateResult, unsafeCSS } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 
+import '../scrim';
 import styleDialog from './dialog.scss';
 
 const AOTW_DIALOG = 'aotw-dialog';
@@ -10,12 +11,12 @@ export class DialogElement extends LitElement {
   @property({ type: Boolean })
   public scrim = true;
 
-  static override styles = unsafeCSS(styleDialog);
+  public static override styles = unsafeCSS(styleDialog);
 
-  public override render(): TemplateResult {
+  protected override render(): TemplateResult {
     const scrimHTML = this.scrim
       ? html`<aotw-scrim @click=${this.close}></aotw-scrim>`
-      : undefined;
+      : nothing;
 
     return html`
       <div class="dialog">

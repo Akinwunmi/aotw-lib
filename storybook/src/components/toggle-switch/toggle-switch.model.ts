@@ -1,12 +1,12 @@
 import '@aotw/components/src/toggle-switch';
-import { html } from 'lit';
+import { html, TemplateResult } from 'lit';
 
 import { Story } from '../../../types/story.model';
 
 interface ToggleSwitchArgTypes {
   active: boolean;
   disabled: boolean;
-  label?: string;
+  slot?: TemplateResult | string;
 }
 
 export const toggleSwitchArgs: ToggleSwitchArgTypes = {
@@ -15,13 +15,12 @@ export const toggleSwitchArgs: ToggleSwitchArgTypes = {
 };
 
 export const ToggleSwitchTemplate: Story<ToggleSwitchArgTypes> = (
-  { active, disabled, label }: ToggleSwitchArgTypes
+  { active, disabled, slot }: ToggleSwitchArgTypes
 ) => {
   return html`
     <aotw-toggle-switch
       ?active=${active}
       ?disabled=${disabled}
-      .label=${label}
-    ></aotw-toggle-switch>
+    >${slot}</aotw-toggle-switch>
   `;
 };

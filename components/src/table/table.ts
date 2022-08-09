@@ -2,28 +2,28 @@ import { html, LitElement, TemplateResult, unsafeCSS } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import { classMap } from 'lit/directives/class-map.js';
 
+import { Icon } from '../icon';
 import tableStyles from './table.scss';
 import { Column, Data } from './table.model';
-import { Icon } from '../icon';
 
 const AOTW_TABLE = 'aotw-table';
 
 @customElement(AOTW_TABLE)
 export class TableElement extends LitElement {
-  @property()
-  columns?: Column[];
+  @property({ type: Array })
+  public columns?: Column[];
 
-  @property()
-  data?: Data[];
+  @property({ type: Array })
+  public data?: Data[];
 
-  @property()
-  uniqueKey?: string;
+  @property({ type: String })
+  public uniqueKey?: string;
 
-  private hiddenColumns: string[] = [];
+  private _hiddenColumns: string[] = [];
 
-  static styles = unsafeCSS(tableStyles);
+  public static override styles = unsafeCSS(tableStyles);
 
-  render() {
+  protected override render() {
     return html`
       <div class="table">
         ${this.setColumns()}
@@ -31,10 +31,10 @@ export class TableElement extends LitElement {
     `;
   }
 
-  setColumns(): TemplateResult[] | undefined {
+  private setColumns(): TemplateResult[] | undefined {
     return this.columns?.map(column => {
       const classes = {
-        hidden: this.hiddenColumns.includes(column.key)
+        hidden: this._hiddenColumns.includes(column.key)
       };
 
       return html`
@@ -55,12 +55,12 @@ export class TableElement extends LitElement {
     });
   }
 
-  setData(columnKey: string): TemplateResult[] | undefined {
+  private setData(columnKey: string): TemplateResult[] | undefined {
     return this.data?.map(cell => {
       let value = cell[columnKey] ?? '';
       const icons = Object.values(Icon);
-      if (icons.find(icon => icon.toString() === value)) {
-        value = html`<aotw-icon name=${value}></aotw-icon>`;
+      if (icons.find(icon => String(icon) === value)) {
+        value = html`<aotw-icon name=${value as Icon}></aotw-icon>`;
       }
 
       return html`
@@ -69,11 +69,11 @@ export class TableElement extends LitElement {
     });
   }
 
-  hideColumn(key: string) {
-    const keyIndex = this.hiddenColumns.indexOf(key);
+  private hideColumn(key: string) {
+    const keyIndex = this._hiddenColumns.indexOf(key);
     keyIndex > -1
-      ? this.hiddenColumns.splice(keyIndex, 1)
-      : this.hiddenColumns.push(key);
+      ? this._hiddenColumns.splice(keyIndex, 1)
+      : this._hiddenColumns.push(key);
     this.requestUpdate();
   }
 }

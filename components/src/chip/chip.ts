@@ -1,6 +1,6 @@
 import { html, LitElement, TemplateResult, unsafeCSS } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
-import { classMap } from 'lit/directives/class-map.js';
+import { ClassInfo, classMap } from 'lit/directives/class-map.js';
 
 import styleChip from './chip.scss';
 
@@ -14,10 +14,10 @@ export class ChipElement extends LitElement {
   @property({ type: Boolean })
   public disabled = false;
 
-  static override styles = unsafeCSS(styleChip);
+  public static override styles = unsafeCSS(styleChip);
 
-  public override render(): TemplateResult {
-    const classes = {
+  protected override render(): TemplateResult {
+    const classes: ClassInfo = {
       active: this.active,
       disabled: this.disabled
     };

@@ -1,6 +1,6 @@
 import { html, LitElement, TemplateResult, unsafeCSS } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
-import { classMap } from 'lit/directives/class-map.js';
+import { ClassInfo, classMap } from 'lit/directives/class-map.js';
 
 import styleButton from './button.scss';
 import { ButtonVariant } from './button.model';
@@ -23,10 +23,10 @@ export class ButtonElement extends LitElement {
   @property()
   variant = ButtonVariant.Primary;
 
-  static override styles = unsafeCSS(styleButton);
+  public static override styles = unsafeCSS(styleButton);
 
-  public override render(): TemplateResult {
-    const classes = {
+  protected override render(): TemplateResult {
+    const classes: ClassInfo = {
       active: this.active,
       disabled: this.disabled,
       ghost: this.ghost,

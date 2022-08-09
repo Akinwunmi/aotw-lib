@@ -1,6 +1,6 @@
 import '@aotw/components/src/tag';
 import { Icon } from '@aotw/components/src/icon';
-import { html } from 'lit';
+import { html, TemplateResult } from 'lit';
 import { ifDefined } from 'lit/directives/if-defined.js';
 
 import { Story } from '../../../types/story.model';
@@ -15,24 +15,23 @@ export const TagControls = {
 
 interface TagArgTypes {
   customClass?: string;
-  deletable: boolean;
-  icon?: Icon;
-  text: string;
+  slot: TemplateResult | string;
+  tagToDelete: (e: Event) => void;
 }
 
 export const tagArgs: TagArgTypes = {
-  deletable: false,
-  text: 'Tag'
+  slot: 'Tag',
+  tagToDelete: (e: Event) => 
+    document.getElementById('root-inner')?.removeChild((e as CustomEvent).detail)
 };
 
 export const TagTemplate: Story<TagArgTypes> = (
-  { customClass, deletable, icon, text }: TagArgTypes
+  { customClass, slot, tagToDelete }: TagArgTypes
 ) => {
   return html`
     <aotw-tag
       class=${ifDefined(customClass)}
-      ?deletable=${deletable}
-      .icon=${icon}
-    >${text}</aotw-tag>
+      @delete=${tagToDelete}
+    >${slot}</aotw-tag>
   `;
 };

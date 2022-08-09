@@ -26,7 +26,7 @@ export const DialogTemplate: Story<DialogArgTypes> = (
   return html`
     <aotw-dialog
       @closeDialog=${closeDialog}
-      ?scrim=${scrim}
+      .scrim=${scrim}
     >${title}${visual}${content}</aotw-dialog>
   `;
 };

@@ -26,5 +26,5 @@ Disabled.args = {
 export const WithLabel = ToggleSwitchTemplate.bind({});
 WithLabel.args = {
   ...toggleSwitchArgs,
-  label: 'Show all'
+  slot: 'Show all'
 }

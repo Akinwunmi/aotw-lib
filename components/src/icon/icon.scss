@@ -1,0 +1,25 @@
+:host {
+  display: inline-block;
+  width: var(--aotw-space-l);
+  height: var(--aotw-space-l);
+}
+
+:host([size='small']) {
+  width: var(--aotw-space-s);
+  height: var(--aotw-space-s);
+}
+
+:host([size='medium']) {
+  width: var(--aotw-space-m);
+  height: var(--aotw-space-m);
+}
+
+:host([size='large']) {
+  width: var(--aotw-space-l);
+  height: var(--aotw-space-l);
+}
+
+:host([size='extra-large']) {
+  width: var(--aotw-space-xl);
+  height: var(--aotw-space-xl);
+}
