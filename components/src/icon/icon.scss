@@ -1,7 +1,12 @@
 :host {
-  display: inline-block;
-  width: var(--aotw-space-l);
-  height: var(--aotw-space-l);
+  display: inline-flex;
+  align-items: center;
+
+  > * {
+    display: grid;
+    width: 100%;
+    height: 100%;
+  }
 }
 
 :host([size='small']) {
