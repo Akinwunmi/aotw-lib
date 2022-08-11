@@ -1,8 +1,7 @@
 import { ButtonVariant } from '@aotw/components/src/button';
-import { Icon } from '@aotw/components/src/icon';
 import { Meta } from '@storybook/web-components';
 
-import { buttonArgs, ButtonControls, ButtonTemplate } from './button.model';
+import { buttonArgs, ButtonControls, ButtonTemplate, iconHTML } from './button.model';
 
 export default {
   title: 'Components/Button/Secondary',
@@ -18,7 +17,7 @@ WithText.args = {
 export const WithIcon = ButtonTemplate.bind({});
 WithIcon.args = {
   ...buttonArgs,
-  icon: Icon.LOGO,
+  prefix: iconHTML,
   text: '',
   variant: ButtonVariant.Secondary
 }
@@ -26,7 +25,7 @@ WithIcon.args = {
 export const WithIconAndText = ButtonTemplate.bind({});
 WithIconAndText.args = {
   ...buttonArgs,
-  icon: Icon.LOGO,
+  prefix: iconHTML,
   variant: ButtonVariant.Secondary
 }
 
@@ -55,7 +54,7 @@ export const GhostWithIconAndText = ButtonTemplate.bind({});
 GhostWithIconAndText.args = {
   ...buttonArgs,
   ghost: true,
-  icon: Icon.LOGO,
+  prefix: iconHTML,
   variant: ButtonVariant.Secondary
 }
 
@@ -63,7 +62,7 @@ export const GhostWithIcon = ButtonTemplate.bind({});
 GhostWithIcon.args = {
   ...buttonArgs,
   ghost: true,
-  icon: Icon.LOGO,
+  prefix: iconHTML,
   text: '',
   variant: ButtonVariant.Secondary
 }
@@ -94,7 +93,7 @@ OutlineWithText.args = {
 export const OutlineWithIconAndText = ButtonTemplate.bind({});
 OutlineWithIconAndText.args = {
   ...buttonArgs,
-  icon: Icon.LOGO,
+  prefix: iconHTML,
   outline: true,
   variant: ButtonVariant.Secondary
 }
@@ -102,7 +101,7 @@ OutlineWithIconAndText.args = {
 export const OutlineWithIcon = ButtonTemplate.bind({});
 OutlineWithIcon.args = {
   ...buttonArgs,
-  icon: Icon.LOGO,
+  prefix: iconHTML,
   outline: true,
   text: '',
   variant: ButtonVariant.Secondary

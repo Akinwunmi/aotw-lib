@@ -1,61 +1,46 @@
-@import '@aotw/core/src/typography';
-
 :host {
-  display: inline-block;
-}
-
-label {
-  @include typography-body;
-  position: relative;
-  display: grid;
+  align-items: center;
+  background-color: var(--aotw-color-white);
+  box-shadow: var(--aotw-elevation-xs);
+  color: var(--aotw-color-black);
+  display: flex;
   gap: var(--aotw-space-xs);
-  color: var(--aotw-color-primary-500);
-
-  span {
-    height: 20px;
-  }
-
-  input {
-    @include typography-input;
-    box-sizing: border-box;
-    height: 32px;
-    padding-inline: var(--aotw-space-s) var(--aotw-space-5xl);
-    background-color: var(--aotw-color-white);
-    border: none;
-    border-bottom: 2px solid transparent;
-    color: var(--aotw-color-black);
-  }
-
-  aotw-button {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-  }
-  
-  &:focus-within,
-  &:hover {
-    font-weight: 500;
-  }
-
-  &:focus-within {
-    input {
-      border-bottom-color: var(--aotw-color-primary-500);
-    }
-    
-  }
+  padding-inline: var(--aotw-space-s);
+  transition: all 150ms ease-in-out;
 }
 
-p {
-  @include typography-body-small;
-  height: 16px;
-  margin: var(--aotw-space-xs) 0;
+:host(:hover) {
+  background-color: var(--aotw-color-primary-50);
+}
+
+:host(:active),
+:host(:focus) {
   color: var(--aotw-color-primary-500);
+}
 
-  &.error {
-    color: var(--aotw-color-error-500);
-  }
+.input {
+  background-color: inherit;
+  border: none;
+  box-sizing: border-box;
+  color: inherit;
+  font-family: var(--aotw-font-family-primary);
+  font-size: var(--aotw-font-size-s);
+  height: 32px;
+  order: 2;
+  outline: none;
+  padding-inline: var(--aotw-space-xs);
+  width: 100%;
+}
 
-  &.warning {
-    color: var(--aotw-color-warning-500);
-  }
+::slotted(aotw-icon[prefix]) {
+  order: 1;
+}
+
+::slotted(aotw-icon[suffix]) {
+  order: 3;
+}
+
+:host([disabled]) {
+  color: var(--aotw-color-secondary-100);
+  pointer-events: none;
 }

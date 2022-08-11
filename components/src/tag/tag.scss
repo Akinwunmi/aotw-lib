@@ -12,16 +12,7 @@ button {
   border-radius: var(--aotw-radius-m);
   color: var(--aotw-color-primary-500);
 
-  aotw-icon {
-    width: 12px;
-    height: 12px;
-
-    &[name='close'] {
-      cursor: pointer;
-    }
-  }
-
-  &.icon-only {
-    gap: var(--aotw-space-s);
+  ::slotted(aotw-icon[suffix]) {
+    cursor: pointer;
   }
 }

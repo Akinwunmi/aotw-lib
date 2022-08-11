@@ -35,7 +35,8 @@
         "500": { "value": "#fc9a2a", "type": "color" }
       },
       "black": { "value": "#222", "type": "color" },
-      "white": { "value": "#fff", "type": "color" }
+      "white": { "value": "#fff", "type": "color" },
+      "light-opacity": { "value": "#22222211", "type": "color" }
     }
   }
 }

@@ -1,7 +1,6 @@
-import { Icon } from '@aotw/components/src/icon';
 import { Meta } from '@storybook/web-components';
 
-import { buttonArgs, ButtonControls, ButtonTemplate } from './button.model';
+import { buttonArgs, ButtonControls, ButtonTemplate, iconHTML } from './button.model';
 
 export default {
   title: 'Components/Button/Primary',
@@ -14,14 +13,14 @@ WithText.args = buttonArgs;
 export const WithIcon = ButtonTemplate.bind({});
 WithIcon.args = {
   ...buttonArgs,
-  icon: Icon.LOGO,
+  prefix: iconHTML,
   text: ''
 }
 
 export const WithIconAndText = ButtonTemplate.bind({});
 WithIconAndText.args = {
   ...buttonArgs,
-  icon: Icon.LOGO
+  prefix: iconHTML
 }
 
 export const Active = ButtonTemplate.bind({});
@@ -46,14 +45,14 @@ export const GhostWithIconAndText = ButtonTemplate.bind({});
 GhostWithIconAndText.args = {
   ...buttonArgs,
   ghost: true,
-  icon: Icon.LOGO
+  prefix: iconHTML
 }
 
 export const GhostWithIcon = ButtonTemplate.bind({});
 GhostWithIcon.args = {
   ...buttonArgs,
   ghost: true,
-  icon: Icon.LOGO,
+  prefix: iconHTML,
   text: ''
 }
 
@@ -80,14 +79,14 @@ OutlineWithText.args = {
 export const OutlineWithIconAndText = ButtonTemplate.bind({});
 OutlineWithIconAndText.args = {
   ...buttonArgs,
-  icon: Icon.LOGO,
+  prefix: iconHTML,
   outline: true
 }
 
 export const OutlineWithIcon = ButtonTemplate.bind({});
 OutlineWithIcon.args = {
   ...buttonArgs,
-  icon: Icon.LOGO,
+  prefix: iconHTML,
   outline: true,
   text: ''
 }

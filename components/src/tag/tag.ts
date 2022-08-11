@@ -1,6 +1,5 @@
 import { html, LitElement, TemplateResult, unsafeCSS } from 'lit';
-import { customElement, property } from 'lit/decorators.js';
-import { classMap } from 'lit/directives/class-map.js';
+import { customElement, property, queryAssignedElements } from 'lit/decorators.js';
 
 import styleTag from './tag.scss';
 
@@ -9,50 +8,35 @@ const AOTW_TAG = 'aotw-tag';
 @customElement(AOTW_TAG)
 export class TagElement extends LitElement {
   @property()
-  icon?: string;
+  public icon?: string;
 
   @property({ type: Boolean })
-  deletable = false;
+  public deletable = false;
 
-  private get slottedChildren() {
-    const slot = this.shadowRoot?.querySelector('slot');
-    return slot?.assignedNodes({ flatten: true });
-  }
+  @queryAssignedElements()
+  private _elements!: HTMLElement[];
 
-  static styles = unsafeCSS(styleTag);
+  public static override styles = unsafeCSS(styleTag);
 
-  firstUpdated() {
+  protected override firstUpdated() {
+    const suffix = this._elements.find(element => element.attributes.getNamedItem('suffix'));
+    suffix?.addEventListener('click', this.removeTagElement);
     this.requestUpdate();
   }
 
-  render(): TemplateResult {
-    const classes = {
-      'icon-only': !this.slottedChildren?.length
-    };
-
-    const iconHTML = this.icon
-      ? html`<aotw-icon name=${this.icon}></aotw-icon>`
-      : undefined;
-
-    const deleteIconHTML = this.deletable
-      ? html`<aotw-icon name="close" @click=${this.removeTagElement}></aotw-icon>`
-      : undefined;
-
+  protected override render(): TemplateResult {
     return html`
-      <button part="button" class=${classMap(classes)}>
-        ${iconHTML}
+      <button part="button">
         <slot></slot>
-        ${deleteIconHTML}
       </button>
     `;
   }
 
-  private removeTagElement() {
-    const deleted = new CustomEvent('deleted', {
+  private removeTagElement = () => {
+    const deleted = new CustomEvent('delete', {
       detail: this
     });
     this.dispatchEvent(deleted);
-    this.remove();
   }
 }
 

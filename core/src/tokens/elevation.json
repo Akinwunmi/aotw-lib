@@ -1,7 +1,7 @@
 {
   "aotw": {
     "elevation": {
-      "xs": { "value": "0 4px 4px rgba(var(--aotw-color-black), 0.1)", "type": "elevation" }
+      "xs": { "value": "0 4px 8px var(--aotw-color-light-opacity)", "type": "elevation" }
     }
   }
 }

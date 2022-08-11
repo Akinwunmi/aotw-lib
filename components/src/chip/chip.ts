@@ -1,8 +1,6 @@
-import { html, LitElement, unsafeCSS } from 'lit';
+import { html, LitElement, TemplateResult, unsafeCSS } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
-import { classMap } from 'lit/directives/class-map.js';
-
-import { Icon } from '../icon/icon';
+import { ClassInfo, classMap } from 'lit/directives/class-map.js';
 
 import styleChip from './chip.scss';
 
@@ -11,47 +9,33 @@ const AOTW_CHIP = 'aotw-chip';
 @customElement(AOTW_CHIP)
 export class ChipElement extends LitElement {
   @property({ type: Boolean })
-  active = false;
+  public active = false;
 
   @property({ type: Boolean })
-  deletable = false;
+  public disabled = false;
 
-  @property({ type: Boolean })
-  disabled = false;
+  public static override styles = unsafeCSS(styleChip);
 
-  @property()
-  icon?: Icon;
-
-  static styles = unsafeCSS(styleChip);
-
-  render() {
-    const classes = {
+  protected override render(): TemplateResult {
+    const classes: ClassInfo = {
       active: this.active,
       disabled: this.disabled
     };
-
-    const iconHTML = this.icon
-      ? html`<aotw-icon name=${this.icon}></aotw-icon>`
-      : undefined;
-
-    const deleteIconHTML = this.deletable
-      ? html`<aotw-icon name="close" @click=${this.removeChipElement}></aotw-icon>`
-      : undefined;
 
     return html`
       <button
         class="chip ${classMap(classes)}"
         part="button"
-        @click=${() => this.toggleActive()}
+        @click=${this.toggleActive}
       >
-        ${iconHTML}
+        <slot name="prefix"></slot>
         <slot></slot>
-        ${deleteIconHTML}
+        <slot name="suffix" @click=${this.removeChipElement}></slot>
       </button>
     `;
   }
 
-  private toggleActive() {
+  private toggleActive(): void {
     if (!this.disabled) {
       const onClick = new CustomEvent<boolean>('onClick', {
         detail: (this.active = !this.active)
@@ -60,12 +44,12 @@ export class ChipElement extends LitElement {
     }
   }
 
-  private removeChipElement() {
-    const deleted = new CustomEvent('deleted', {
+  private removeChipElement(e: Event): void {
+    e.stopPropagation();
+    const chipToRemove = new CustomEvent<this>('chipToRemove', {
       detail: this
     });
-    this.dispatchEvent(deleted);
-    this.remove();
+    this.dispatchEvent(chipToRemove);
   }
 }
 

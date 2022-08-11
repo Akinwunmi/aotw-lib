@@ -7,9 +7,9 @@ const AOTW_CLOSE_BUTTON = 'aotw-close-button';
 
 @customElement(AOTW_CLOSE_BUTTON)
 export class CloseButtonElement extends LitElement {
-  static styles = unsafeCSS(styleCloseButton);
+  public static override styles = unsafeCSS(styleCloseButton);
 
-  render() {
+  protected override render() {
     return html`
       <button class="close-button" part="button"></button>
     `

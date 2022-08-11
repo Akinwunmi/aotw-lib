@@ -3,7 +3,7 @@ import { customElement } from 'lit/decorators.js';
 
 @customElement('icon-check')
 export class IconCheckElement extends LitElement {
-  render() {
+  protected override render() {
     return svg`
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" fill="none">
         <title>Check Icon</title>

@@ -1,4 +1,4 @@
-import '@aotw/core/dist/variables.css'
+import '@aotw/core/dist/variables.css';
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },

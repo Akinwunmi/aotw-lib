@@ -1,6 +1,6 @@
 import { html, LitElement, unsafeCSS } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
-import { classMap } from 'lit/directives/class-map.js';
+import { ClassInfo, classMap } from 'lit/directives/class-map.js';
 
 import styleToggleSwitch from './toggle-switch.scss';
 
@@ -9,18 +9,15 @@ const AOTW_TOGGLE_SWITCH = 'aotw-toggle-switch';
 @customElement(AOTW_TOGGLE_SWITCH)
 export class ToggleSwitchElement extends LitElement {
   @property({ type: Boolean })
-  active = false;
+  public active = false;
 
   @property({ type: Boolean })
-  disabled = false;
+  public disabled = false;
 
-  @property({ type: String })
-  label?: string;
+  public static override styles = unsafeCSS(styleToggleSwitch);
 
-  static styles = unsafeCSS(styleToggleSwitch);
-
-  render() {
-    const classes = {
+  protected override render() {
+    const classes: ClassInfo = {
       active: this.active,
       disabled: this.disabled
     }
@@ -28,22 +25,20 @@ export class ToggleSwitchElement extends LitElement {
     return html`
       <div
         class="toggle-switch ${classMap(classes)}"
-        @click=${() => this.toggleActive()}
+        @click=${this.toggleActive}
       >
         <div class="switch"></div>
         <div class="handle"></div>
       </div>
-      <p>${this.label}</p>
+      <slot></slot>
     `;
   }
 
   private toggleActive() {
-    if (!this.disabled) {
-      const onClick = new CustomEvent<boolean>('onClick', {
-        detail: (this.active = !this.active)
-      });
-      this.dispatchEvent(onClick);
-    }
+    const onClick = new CustomEvent<boolean>('onClick', {
+      detail: (this.active = !this.active)
+    });
+    this.dispatchEvent(onClick);
   }
 }
 
