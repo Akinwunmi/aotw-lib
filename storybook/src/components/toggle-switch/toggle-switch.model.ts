@@ -14,9 +14,7 @@ export const toggleSwitchArgs: ToggleSwitchArgTypes = {
   disabled: false
 };
 
-export const ToggleSwitchTemplate: Story<ToggleSwitchArgTypes> = (
-  { active, disabled, slot }: ToggleSwitchArgTypes
-) => {
+export const ToggleSwitchTemplate: Story<ToggleSwitchArgTypes> = ({ active, disabled, slot }) => {
   return html`
     <aotw-toggle-switch
       ?active=${active}

@@ -24,6 +24,16 @@ InputWithIcons.args = {
 `,
 }
 
+export const WithHtmlInput = FieldTemplate.bind({});
+WithHtmlInput.args = {
+  ...fieldArgs,
+  slot: html`
+    <aotw-label>Label</aotw-label>
+    <input aotwInput value="Input" />
+    <aotw-message>Message</aotw-message>
+`,
+}
+
 export const Disabled = FieldTemplate.bind({});
 Disabled.args = {
   ...fieldArgs,
