@@ -7,6 +7,7 @@ export * from './icon';
 export * from './input';
 export * from './field';
 export * from './label';
+export * from './list';
 export * from './message';
 export * from './scrim';
 export * from './table';

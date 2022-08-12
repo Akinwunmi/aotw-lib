@@ -1,17 +1,22 @@
 import { html, LitElement, TemplateResult, unsafeCSS } from 'lit';
 import { customElement, property, queryAssignedElements } from 'lit/decorators.js';
 
-import styleField from './field.scss';
+import styleList from './list.scss';
 
-const AOTW_FIELD = 'aotw-field';
+const AOTW_LIST = 'aotw-list';
 
-@customElement(AOTW_FIELD)
-export class AotwField extends LitElement {
+@customElement(AOTW_LIST)
+export class ListElement extends LitElement {
   private _disabled = false;
 
-  @property({ type: Boolean, reflect: true })
+  @property({ type: Boolean })
   public set disabled(disabled: boolean) {
-    this._elements.forEach(element => element.toggleAttribute('disabled', disabled));
+    if (
+      !this._elements.some(element => element.attributes.getNamedItem('disabled')) ||
+      this._elements.every(element => element.attributes.getNamedItem('disabled'))
+    ) {
+      this._elements.forEach(element => element.toggleAttribute('disabled', disabled));
+    }
     this._disabled = disabled;
   }
 
@@ -22,7 +27,7 @@ export class AotwField extends LitElement {
   @queryAssignedElements()
   private _elements!: HTMLElement[];
 
-  public static override styles = unsafeCSS(styleField);
+  public static override styles = unsafeCSS(styleList);
 
   protected override firstUpdated(): void {
     this.disabled = this._disabled;
@@ -38,6 +43,6 @@ export class AotwField extends LitElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    AOTW_FIELD: AotwField
+    AOTW_LIST: ListElement
   }
 }
