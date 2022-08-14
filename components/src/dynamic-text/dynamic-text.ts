@@ -1,4 +1,4 @@
-import { html, LitElement, TemplateResult, unsafeCSS } from 'lit';
+import { LitElement, TemplateResult, html, unsafeCSS } from 'lit';
 import { customElement, property, query } from 'lit/decorators.js';
 import { ClassInfo, classMap } from 'lit/directives/class-map.js';
 
@@ -19,10 +19,10 @@ export class DynamicTextElement extends LitElement {
   public static override styles = unsafeCSS(styleDynamicText);
 
   protected override firstUpdated(): void {
-    this.setDurationAndInterval();
-    this.setAnimation();
+    this._setDurationAndInterval();
+    this._setAnimation();
     setInterval(() => {
-      this.setAnimation();
+      this._setAnimation();
     }, this._interval);
   }
   
@@ -38,7 +38,7 @@ export class DynamicTextElement extends LitElement {
     `;
   }
   
-  private setAnimation(): void {
+  private _setAnimation(): void {
     if (!this._content) {
       return;
     }
@@ -50,7 +50,7 @@ export class DynamicTextElement extends LitElement {
     }
   }
 
-  private setDurationAndInterval(): void {
+  private _setDurationAndInterval(): void {
     if (!this._content) {
       return;
     }

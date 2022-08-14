@@ -13,7 +13,9 @@
   ],
   "scripts": {
     "build": "tsc && vite build",
-    "dev": "vite"
+    "dev": "vite",
+    "lint": "eslint src/**/*.ts",
+    "lint:fix": "eslint src/**/*.ts --fix"
   },
   "dependencies": {
     "@aotw/core": "file:../core",
@@ -21,6 +23,10 @@
   },
   "devDependencies": {
     "@types/node": "^17.0.23",
+    "@typescript-eslint/eslint-plugin": "^5.33.0",
+    "@typescript-eslint/parser": "^5.33.0",
+    "eslint": "^8.22.0",
+    "eslint-plugin-lit": "^1.6.1",
     "rollup-plugin-postcss-lit": "^2.0.0",
     "sass": "^1.50.0",
     "typescript": "^4.5.4",
