@@ -1,4 +1,4 @@
-import { html, LitElement, TemplateResult, unsafeCSS } from 'lit';
+import { LitElement, TemplateResult, html, unsafeCSS } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import { ClassInfo, classMap } from 'lit/directives/class-map.js';
 
@@ -26,16 +26,16 @@ export class ChipElement extends LitElement {
       <button
         class="chip ${classMap(classes)}"
         part="button"
-        @click=${this.toggleActive}
+        @click=${this._toggleActive}
       >
         <slot name="prefix"></slot>
         <slot></slot>
-        <slot name="suffix" @click=${this.removeChipElement}></slot>
+        <slot name="suffix" @click=${this._removeChipElement}></slot>
       </button>
     `;
   }
 
-  private toggleActive(): void {
+  private _toggleActive(): void {
     if (!this.disabled) {
       const onClick = new CustomEvent<boolean>('onClick', {
         detail: (this.active = !this.active)
@@ -44,7 +44,7 @@ export class ChipElement extends LitElement {
     }
   }
 
-  private removeChipElement(e: Event): void {
+  private _removeChipElement(e: Event): void {
     e.stopPropagation();
     const chipToRemove = new CustomEvent<this>('chipToRemove', {
       detail: this

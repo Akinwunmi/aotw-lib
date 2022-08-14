@@ -1,4 +1,4 @@
-import { html, LitElement, nothing, TemplateResult, unsafeCSS } from 'lit';
+import { LitElement, TemplateResult, html, nothing, unsafeCSS } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 
 import '../scrim';
@@ -15,7 +15,7 @@ export class DialogElement extends LitElement {
 
   protected override render(): TemplateResult {
     const scrimHTML = this.scrim
-      ? html`<aotw-scrim @click=${this.close}></aotw-scrim>`
+      ? html`<aotw-scrim @click=${this._close}></aotw-scrim>`
       : nothing;
 
     return html`
@@ -27,7 +27,7 @@ export class DialogElement extends LitElement {
               <slot name="visual"></slot>
             </div>
           </section>
-          <aotw-close-button @click=${this.close}></aotw-close-button>
+          <aotw-close-button @click=${this._close}></aotw-close-button>
         </header>
         <div class="dialog_content">
           <slot></slot>
@@ -37,7 +37,7 @@ export class DialogElement extends LitElement {
     `;
   }
 
-  private close(): void {
+  private _close(): void {
     const closeDialog = new CustomEvent<this>('closeDialog', {
       detail: this
     });

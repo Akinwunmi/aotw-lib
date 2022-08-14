@@ -1,4 +1,4 @@
-import { html, LitElement, TemplateResult, unsafeCSS } from 'lit';
+import { LitElement, TemplateResult, html, unsafeCSS } from 'lit';
 import { customElement } from 'lit/decorators.js';
 
 import styleLabel from './label.scss';

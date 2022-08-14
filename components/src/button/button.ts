@@ -1,4 +1,4 @@
-import { html, LitElement, TemplateResult, unsafeCSS } from 'lit';
+import { LitElement, TemplateResult, html, unsafeCSS } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import { ClassInfo, classMap } from 'lit/directives/class-map.js';
 
@@ -9,19 +9,19 @@ const AOTW_BUTTON = 'aotw-button';
 @customElement(AOTW_BUTTON)
 export class ButtonElement extends LitElement {
   @property({ type: Boolean })
-  active = false;
+  public active = false;
 
   @property({ type: Boolean })
-  disabled = false;
+  public disabled = false;
 
   @property({ type: Boolean })
-  ghost = false;
+  public ghost = false;
 
   @property({ type: Boolean })
-  outline = false;
+  public outline = false;
 
   @property()
-  variant = ButtonVariant.Primary;
+  public variant = ButtonVariant.Primary;
 
   public static override styles = unsafeCSS(styleButton);
 

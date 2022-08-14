@@ -1,4 +1,4 @@
-import { html, LitElement, unsafeCSS } from 'lit';
+import { LitElement, html, unsafeCSS } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import { ClassInfo, classMap } from 'lit/directives/class-map.js';
 
@@ -20,12 +20,12 @@ export class ToggleSwitchElement extends LitElement {
     const classes: ClassInfo = {
       active: this.active,
       disabled: this.disabled
-    }
+    };
 
     return html`
       <div
         class="toggle-switch ${classMap(classes)}"
-        @click=${this.toggleActive}
+        @click=${this._toggleActive}
       >
         <div class="switch"></div>
         <div class="handle"></div>
@@ -34,7 +34,7 @@ export class ToggleSwitchElement extends LitElement {
     `;
   }
 
-  private toggleActive() {
+  private _toggleActive() {
     const onClick = new CustomEvent<boolean>('onClick', {
       detail: (this.active = !this.active)
     });

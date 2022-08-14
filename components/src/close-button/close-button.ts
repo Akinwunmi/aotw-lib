@@ -1,4 +1,4 @@
-import { html, LitElement, unsafeCSS } from 'lit';
+import { LitElement, html, unsafeCSS } from 'lit';
 import { customElement } from 'lit/decorators.js';
 
 import styleCloseButton from './close-button.scss';
@@ -12,7 +12,7 @@ export class CloseButtonElement extends LitElement {
   protected override render() {
     return html`
       <button class="close-button" part="button"></button>
-    `
+    `;
   }
 }
 
