@@ -1,15 +1,19 @@
-export interface OverlayCloseEvent {
-  position: OverlayPosition
+export interface ElementPosition {
+  x: number;
+  y: number;
 }
 
 export interface OverlayOpenEvent {
   content: HTMLElement[],
-  position: OverlayPosition
+  position: ElementPosition
 }
 
-export interface OverlayPosition {
-  top: string,
-  right: string,
-  bottom: string,
-  left: string
+export interface OverlayCreateOptions {
+  disableClickOutside?: boolean;
+  location?: HTMLElement;
+  name?: string;
+}
+
+export interface OverlayRemoveOptions {
+  name?: string;
 }

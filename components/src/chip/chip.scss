@@ -1,5 +1,9 @@
 @import '@aotw/core/src/typography';
 
+:host {
+  display: inline-block;
+}
+
 :host([disabled]) {
   pointer-events: none;
 }

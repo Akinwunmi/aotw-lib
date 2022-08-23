@@ -1,49 +1,88 @@
 import { html, LitElement, TemplateResult, unsafeCSS } from 'lit';
-import { customElement, property, queryAssignedElements } from 'lit/decorators.js';
+import { customElement, property, query, queryAssignedElements } from 'lit/decorators.js';
 
 import styleOverlayContainer from './overlay-container.scss';
-import { OverlayCloseEvent, OverlayOpenEvent, OverlayPosition } from './overlay-container.model';
+import { ElementPosition, OverlayOpenEvent } from './overlay-container.model';
 
 const AOTW_OVERLAY_CONTAINER = 'aotw-overlay-container';
 
 @customElement(AOTW_OVERLAY_CONTAINER)
 export class OverlayContainerElement extends LitElement {
-  @property()
-  public position!: OverlayPosition;
+  @property({ type: Boolean })
+  public set close(close: boolean) {
+    if (close) {
+      this.closeOverlay();
+    }
+  }
+
+  @property({ type: Boolean })
+  public disableClickOutside = false;
+
+  @property({ type: String })
+  public name?: string;
+
+  @property({ type: String })
+  public position = '';
+
+  @query('slot')
+  private _slot!: HTMLSlotElement;
 
   @queryAssignedElements()
   private _elements!: HTMLElement[];
 
   public static override styles = unsafeCSS(styleOverlayContainer);
 
+  protected override firstUpdated(): void {
+    this.addEventListener('click', this.handleClickOutside);
+    this._slot.addEventListener('click', this.handleClickInside);
+  }
+
   protected override render(): TemplateResult {
     return html`
-      <slot @slotchange=${this.handleOpenOverlay}></slot>
+      <slot @slotchange=${this.openOverlay}></slot>
     `;
   }
 
-  private handleOpenOverlay(): void {
+  private handleClickOutside(): void {
+    this.close = true;
+  }
+
+  private handleClickInside(e: Event): void {
+    e.stopPropagation();
+  }
+
+  private openOverlay(): void {
     if (!this._elements.length) return;
+    this.style.pointerEvents = this.disableClickOutside ? 'none' : 'visible';
+
     const overlayOpen = new CustomEvent<OverlayOpenEvent>('overlay-open', {
       detail: {
         content: this._elements,
-        position: this.position
+        position: JSON.parse(this.position) as ElementPosition
       }
     });
     document.dispatchEvent(overlayOpen);
   }
 
-  private close(): void {
-    const overlayClose = new CustomEvent<OverlayCloseEvent>('overlay-close', {
-      detail: {
-        position: this.position
-      }
+  private closeOverlay(): void {
+    this.position = '';
+    this.style.pointerEvents = 'none';
+
+    let child = this.lastElementChild;
+    while (child) {
+      this.removeChild(child);
+      child = this.lastElementChild;
+    }
+
+    const overlayClosed = new CustomEvent('overlay-closed', {
+      detail: {}
     });
-    document.dispatchEvent(overlayClose);
+    document.dispatchEvent(overlayClosed);
   }
 
   public override disconnectedCallback(): void {
-    this.close();
+    this.removeEventListener('click', this.handleClickOutside, false);
+    this._slot.removeEventListener('click', this.handleClickInside, false);
   }
 }
 
