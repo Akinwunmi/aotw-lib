@@ -23,11 +23,19 @@
   text-transform: uppercase;
   transition: background-color 150ms ease-in-out;
 
+  &:hover {
+    background-color: var(--aotw-color-primary-100);
+    border-color: var(--aotw-color-primary-400);
+    color: var(--aotw-color-primary-400);
+  }
+
+  &:active,
   &.active {
     background-color: var(--aotw-color-primary-50);
     border-color: var(--aotw-color-primary-500);
     color: var(--aotw-color-primary-500);
   }
+
   &.disabled {
     background-color: var(--aotw-color-secondary-100);
     border-color: var(--aotw-color-secondary-300);

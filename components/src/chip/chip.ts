@@ -26,22 +26,12 @@ export class ChipElement extends LitElement {
       <button
         class="chip ${classMap(classes)}"
         part="button"
-        @click=${this.toggleActive}
       >
         <slot name="prefix"></slot>
         <slot></slot>
         <slot name="suffix" @click=${this.removeChipElement}></slot>
       </button>
     `;
-  }
-
-  private toggleActive(): void {
-    if (!this.disabled) {
-      const onClick = new CustomEvent<boolean>('onClick', {
-        detail: (this.active = !this.active)
-      });
-      this.dispatchEvent(onClick);
-    }
   }
 
   private removeChipElement(e: Event): void {

@@ -1,3 +1,8 @@
+export interface ElementInfo {
+  element: HTMLElement;
+  name?: string;
+}
+
 export interface ElementPosition {
   x: number;
   y: number;
@@ -5,7 +10,7 @@ export interface ElementPosition {
 
 export interface OverlayOpenEvent {
   content: HTMLElement[],
-  position: ElementPosition
+  position?: ElementPosition
 }
 
 export interface OverlayCreateOptions {

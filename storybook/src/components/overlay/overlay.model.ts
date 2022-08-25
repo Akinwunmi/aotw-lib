@@ -3,7 +3,7 @@ import { ElementPosition, OverlayCreateOptions, OverlayRemoveOptions } from '@ao
 import { html } from 'lit';
 
 import { Story } from '../../../types/story.model';
-import { handleElement, handleExistence } from './overlay.utils';
+import { handleElement, handleExistence, handleRemoveAll } from './overlay.utils';
 
 interface OverlayArgTypes {
   handleClick: (e: Event, element?: HTMLElement, position?: ElementPosition) => void
@@ -19,5 +19,6 @@ export const OverlayTemplate: Story<OverlayArgTypes> = ({ handleClick, options }
     <aotw-chip class="create" @click=${handleExistence.bind(this, 'create', options)}>Create</aotw-chip>
     <aotw-chip class="open" disabled @click=${handleClick}>Open</aotw-chip>
     <aotw-chip class="remove" disabled @click=${handleExistence.bind(this, 'remove', options)}>Remove</aotw-chip>
+    <aotw-chip class="remove-all" @click=${handleRemoveAll}>Remove All</aotw-chip>
   `;
 };

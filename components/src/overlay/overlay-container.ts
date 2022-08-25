@@ -21,8 +21,8 @@ export class OverlayContainerElement extends LitElement {
   @property({ type: String })
   public name?: string;
 
-  @property({ type: String })
-  public position = '';
+  @property({ type: Object })
+  public position?: ElementPosition;
 
   @query('slot')
   private _slot!: HTMLSlotElement;
@@ -58,14 +58,14 @@ export class OverlayContainerElement extends LitElement {
     const overlayOpen = new CustomEvent<OverlayOpenEvent>('overlay-open', {
       detail: {
         content: this._elements,
-        position: JSON.parse(this.position) as ElementPosition
+        position: this.position
       }
     });
     document.dispatchEvent(overlayOpen);
   }
 
   private closeOverlay(): void {
-    this.position = '';
+    this.position = undefined;
     this.style.pointerEvents = 'none';
 
     let child = this.lastElementChild;
