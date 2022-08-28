@@ -1,20 +1,20 @@
 const chipWithText = document.querySelector('#chip');
-chipWithText.addEventListener('click', () => {
+chipWithText?.addEventListener('click', () => {
   createChip('Chip');
 });
 
 const chipWithIcon = document.querySelector('#chip-icon');
-chipWithIcon.addEventListener('click', () => {
+chipWithIcon?.addEventListener('click', () => {
   createChip('', 'logo');
 });
 
 const chipWithIconAndText = document.querySelector('#chip-icon-and-text');
-chipWithIconAndText.addEventListener('click', () => {
+chipWithIconAndText?.addEventListener('click', () => {
   createChip('Chip', 'check');
 });
 
 const deletableChipWithText = document.querySelector('#deletable-chip');
-deletableChipWithText.addEventListener('click', () => {
+deletableChipWithText?.addEventListener('click', () => {
   createChip('Deletable', '', true);
 });
 
@@ -30,5 +30,5 @@ function createChip(text: string, icon?: string, deletable?: boolean) {
     chip.toggleAttribute('deletable');
   }
   const main = document.body.querySelector('main');
-  main.appendChild(chip);
+  main?.appendChild(chip);
 }
