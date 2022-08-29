@@ -10,6 +10,7 @@ export * from './label';
 export * from './list';
 export * from './message';
 export * from './scrim';
+export * from './tab';
 export * from './table';
 export * from './tag';
 export * from './toggle-switch';

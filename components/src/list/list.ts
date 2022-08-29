@@ -12,8 +12,8 @@ export class ListElement extends LitElement {
   @property({ type: Boolean })
   public set disabled(disabled: boolean) {
     if (
-      !this._elements.some(element => element.attributes.getNamedItem('disabled')) ||
-      this._elements.every(element => element.attributes.getNamedItem('disabled'))
+      this._elements.every(element => element.attributes.getNamedItem('disabled')) ||
+      !this._elements.some(element => element.attributes.getNamedItem('disabled'))
     ) {
       this._elements.forEach(element => element.toggleAttribute('disabled', disabled));
     }
