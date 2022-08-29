@@ -19,3 +19,8 @@
   height: var(--aotw-height-m);
   padding-inline: var(--aotw-space-m);
 }
+
+::slotted(input[aotwInput][disabled]) {
+  color: var(--aotw-color-secondary-100);
+  pointer-events: none;
+}

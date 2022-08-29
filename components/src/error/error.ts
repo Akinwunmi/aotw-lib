@@ -1,17 +1,16 @@
 import { LitElement, TemplateResult, html, unsafeCSS } from 'lit';
 import { customElement } from 'lit/decorators.js';
 
-import styleInput from './input.scss';
+import styleError from './error.scss';
 
-const AOTW_INPUT = 'aotw-input';
+const AOTW_FIELD_ERROR = 'aotw-error';
 
-@customElement(AOTW_INPUT)
-export class AotwInput extends LitElement {
-  public static override styles = unsafeCSS(styleInput);
+@customElement(AOTW_FIELD_ERROR)
+export class AotwFieldError extends LitElement {
+  public static override styles = unsafeCSS(styleError);
 
   protected override render(): TemplateResult {
     return html`
-      <input class="input" value="Input" />
       <slot></slot>
     `;
   }
@@ -19,6 +18,6 @@ export class AotwInput extends LitElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    AOTW_INPUT: AotwInput
+    AOTW_FIELD_ERROR: AotwFieldError
   }
 }

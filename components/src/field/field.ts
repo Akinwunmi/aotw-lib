@@ -25,6 +25,7 @@ export class AotwField extends LitElement {
   public static override styles = unsafeCSS(styleField);
 
   protected override firstUpdated(): void {
+    this._getInputAttributesAndRender();
     this.disabled = this._disabled;
     this.requestUpdate();
   }
@@ -33,6 +34,36 @@ export class AotwField extends LitElement {
     return html`
       <slot></slot>
     `;
+  }
+
+  private _getInputAttributesAndRender(): void {
+    const label = this._elements.find(element => element.localName === 'aotw-label');
+    const input = this._elements.find(element => element.localName === 'input');
+    const message = this._elements.find(element => element.localName === 'aotw-message');
+    const error = this._elements.find(element => element.localName === 'aotw-error');
+    const placeholder = input?.getAttribute('placeholder');
+    const inputError = input?.getAttribute('error');
+    const inputMessage = input?.getAttribute('message');
+
+    if (!label && placeholder) {
+      const label = document.createElement('aotw-label');
+      label.innerHTML = placeholder;
+      this.prepend(label);
+    }
+
+    if (inputMessage) {
+      const newMessage = message || document.createElement('aotw-message');
+      newMessage.innerHTML = inputMessage;
+      this.appendChild(newMessage);
+    }
+
+    if (inputError) {
+      label?.toggleAttribute('error', true);
+      message?.remove();
+      const newError = error || document.createElement('aotw-error');
+      newError.innerHTML = inputError;
+      this.appendChild(newError);
+    }
   }
 }
 

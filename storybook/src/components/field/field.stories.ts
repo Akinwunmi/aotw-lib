@@ -11,27 +11,56 @@ export default {
 export const Default = FieldTemplate.bind({});
 Default.args = fieldArgs;
 
-export const InputWithIcons = FieldTemplate.bind({});
-InputWithIcons.args = {
+export const Label = FieldTemplate.bind({});
+Label.args = {
   ...fieldArgs,
   slot: html`
     <aotw-label>Label</aotw-label>
-    <aotw-input>
-      <aotw-icon name="logo" prefix></aotw-icon>
-      <aotw-icon name="check" suffix></aotw-icon>
-    </aotw-input>
-    <aotw-message>Message</aotw-message>
-`,
+    <input aotwInput />
+  `
 }
 
-export const WithHtmlInput = FieldTemplate.bind({});
-WithHtmlInput.args = {
+export const Message = FieldTemplate.bind({});
+Message.args = {
+  ...fieldArgs,
+  slot: html`
+    <input aotwInput />
+    <aotw-message>Message</aotw-message>
+  `
+}
+
+export const Placeholder = FieldTemplate.bind({});
+Placeholder.args = {
+  ...fieldArgs,
+  slot: html`
+    <input aotwInput placeholder="Placeholder" />
+  `
+}
+
+export const Value = FieldTemplate.bind({});
+Value.args = {
+  ...fieldArgs,
+  slot: html`
+    <input aotwInput value="Value" />
+  `
+}
+
+export const InputMessage = FieldTemplate.bind({});
+InputMessage.args = {
   ...fieldArgs,
   slot: html`
     <aotw-label>Label</aotw-label>
-    <input aotwInput value="Input" />
-    <aotw-message>Message</aotw-message>
-`,
+    <input aotwInput message="Input message" />
+  `
+}
+
+export const InputError = FieldTemplate.bind({});
+InputError.args = {
+  ...fieldArgs,
+  slot: html`
+    <aotw-label>Label</aotw-label>
+    <input aotwInput error="Input error" />
+  `
 }
 
 export const Disabled = FieldTemplate.bind({});
@@ -40,10 +69,7 @@ Disabled.args = {
   disabled: true,
   slot: html`
     <aotw-label>Label</aotw-label>
-    <aotw-input disabled>
-      <aotw-icon name="logo" prefix></aotw-icon>
-      <aotw-icon name="check" suffix></aotw-icon>
-    </aotw-input>
+    <input aotwInput />
     <aotw-message>Message</aotw-message>
-`,
+  `
 }
