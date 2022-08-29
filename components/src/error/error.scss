@@ -1,13 +1,8 @@
 :host {
-  color: var(--aotw-color-primary-500);
-  font-family: var(--aotw-font-family-primary);
-  height: 16px;
-  margin: var(--aotw-space-xs) 0;
-  transition: all 150ms ease-in-out;
-}
-
-:host([error]) {
   color: var(--aotw-color-error-500);
+  font-family: var(--aotw-font-family-primary);
+  font-size: var(--aotw-font-size-xs);
+  transition: all 150ms ease-in-out;
 }
 
 :host([disabled]) {
