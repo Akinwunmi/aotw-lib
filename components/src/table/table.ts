@@ -2,7 +2,6 @@ import { LitElement, TemplateResult, html, unsafeCSS } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import { classMap } from 'lit/directives/class-map.js';
 
-import { Icon } from '../icon';
 import tableStyles from './table.scss';
 import { Column, Data } from './table.model';
 
@@ -57,14 +56,11 @@ export class TableElement extends LitElement {
 
   private _setData(columnKey: string): TemplateResult[] | undefined {
     return this.data?.map(cell => {
-      let value = cell[columnKey] ?? '';
-      const icons = Object.values(Icon);
-      if (icons.find(icon => String(icon) === value)) {
-        value = html`<aotw-icon name=${value as Icon}></aotw-icon>`;
-      }
+      const value = cell[columnKey] ?? '';
+      const icon = html`<aotw-icon name=${String(value)}></aotw-icon>`;
 
       return html`
-        <div class="cell">${value}</div>
+        <div class="cell">${icon}</div>
       `;
     });
   }

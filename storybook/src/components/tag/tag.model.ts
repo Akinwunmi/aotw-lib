@@ -1,17 +1,10 @@
 import '@aotw/components/src/tag';
-import { Icon } from '@aotw/components/src/icon';
 import { html, TemplateResult } from 'lit';
 import { ifDefined } from 'lit/directives/if-defined.js';
 
 import { Story } from '../../../types/story.model';
 
-export const TagControls = {
-  icon: {
-    control: 'select',
-    defaultValue: undefined,
-    options: [undefined, ...Object.values(Icon)]
-  }
-}
+export const TagControls = {}
 
 interface TagArgTypes {
   customClass?: string;
