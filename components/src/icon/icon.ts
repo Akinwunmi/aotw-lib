@@ -1,29 +1,27 @@
-import { LitElement, TemplateResult, html, unsafeCSS } from 'lit';
+import { LitElement, TemplateResult, unsafeCSS, svg } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
-import { unsafeHTML } from 'lit/directives/unsafe-html.js';
+import { unsafeSVG } from 'lit/directives/unsafe-svg.js';
 
 import './icons';
 import styleIcon from './icon.scss';
-import { Icon } from './icon.model';
+import { IconSize } from './icon.model';
+import { AotwIconRegistry } from './icon-registry';
 
 const AOTW_ICON = 'aotw-icon';
 
 @customElement(AOTW_ICON)
 export class IconElement extends LitElement {
-  @property()
-  public name!: Icon;
+  @property({ type: String })
+  public name!: string;
 
-  @property({ reflect: true })
-  public size: 'small' | 'medium' | 'large' | 'extra-large' = 'medium';
+  @property({ type: String, reflect: true })
+  public size = IconSize.Medium;
 
   public static override styles = unsafeCSS(styleIcon);
 
   protected override render(): TemplateResult {
-    if (!Object.values(Icon).includes(this.name)) {
-      return html``;
-    }
-    return html`
-      ${unsafeHTML(`<icon-${this.name}></icon-${this.name}>`)}
+    return svg`
+      ${unsafeSVG(AotwIconRegistry.getIcon(this.name).data)}
     `;
   }
 }
