@@ -1,2 +1,3 @@
 export * from './icon';
-export * from './icon-element';
+export * from './icon.model';
+export * from './icon-registry';

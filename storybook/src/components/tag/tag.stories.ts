@@ -1,4 +1,3 @@
-import { Icon } from '@aotw/components/src/icon';
 import { Meta } from '@storybook/web-components';
 import { html } from 'lit';
 
@@ -23,7 +22,7 @@ export const WithTextAndIcon = TagTemplate.bind({});
 WithTextAndIcon.args = {
   ...tagArgs,
   slot: html`
-    <aotw-icon name=${Icon.SHINE} size="medium" prefix></aotw-icon>
+    <aotw-icon name="shine" size="medium" prefix></aotw-icon>
     Tag
   `
 };
@@ -41,8 +40,8 @@ export const DeletableWithIcon = TagTemplate.bind({});
 DeletableWithIcon.args = {
   ...tagArgs,
   slot: html`
-    <aotw-icon name=${Icon.SHINE} size="medium" prefix></aotw-icon>
-    <aotw-icon name=${Icon.CLOSE} size="medium" suffix></aotw-icon>
+    <aotw-icon name="shine" size="medium" prefix></aotw-icon>
+    <aotw-icon name="close" size="medium" suffix></aotw-icon>
   `
 };
 
@@ -51,8 +50,8 @@ CustomColors.args = {
   ...tagArgs,
   customClass: 'custom-colors',
   slot: html`
-    <aotw-icon name=${Icon.SHINE} size="medium" prefix></aotw-icon>
+    <aotw-icon name="shine" size="medium" prefix></aotw-icon>
     Tag
-    <aotw-icon name=${Icon.CLOSE} size="medium" suffix></aotw-icon>
+    <aotw-icon name="close" size="medium" suffix></aotw-icon>
   `
 };

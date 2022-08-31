@@ -11,10 +11,10 @@
         "s": { "value": "1.2em", "type": "font" }
       },
       "size": {
-        "xs": { "value": "0.8rem", "type": "font" },
+        "xs": { "value": "0.75rem", "type": "font" },
         "s": { "value": "1rem", "type": "font" },
-        "m": { "value": "1.2rem", "type": "font" },
-        "l": { "value": "1.4rem", "type": "font" }
+        "m": { "value": "1.25rem", "type": "font" },
+        "l": { "value": "1.5rem", "type": "font" }
       },
       "weight": {
         "bold": { "value": 600, "type": "font" },

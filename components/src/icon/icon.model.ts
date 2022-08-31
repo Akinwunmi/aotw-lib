@@ -1,7 +1,11 @@
-export enum Icon {
-  CHECK = 'check',
-  CLOSE = 'close',
-  DOT = 'dot',
-  LOGO = 'logo',
-  SHINE = 'shine'
+export interface Icon {
+  data: string;
+  name: string;
+}
+
+export enum IconSize {
+  Small = 'small',
+  Medium = 'medium',
+  Large = 'large',
+  ExtraLarge = 'extra-large'
 }

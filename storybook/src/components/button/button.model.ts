@@ -1,6 +1,5 @@
 import '@aotw/components/src/button';
 import { ButtonVariant } from '@aotw/components/src/button';
-import { Icon } from '@aotw/components/src/icon';
 import { html, TemplateResult } from 'lit';
 
 import { Story } from '../../../types/story.model';
@@ -32,7 +31,7 @@ export const buttonArgs: ButtonArgTypes = {
   variant: ButtonVariant.Primary
 };
 
-export const iconHTML = html`<aotw-icon name=${Icon.LOGO} slot="prefix"></aotw-icon>`;
+export const iconHTML = html`<aotw-icon name="logo" slot="prefix"></aotw-icon>`;
 
 export const ButtonTemplate: Story<ButtonArgTypes> = (
   { active, disabled, ghost, outline, prefix, text, variant }: ButtonArgTypes

@@ -16,20 +16,25 @@ export const WithText = Default;
 export const WithIconAndText = ChipTemplate.bind({});
 WithIconAndText.args = {
   ...chipArgs,
-  prefix: html`<aotw-icon name=${Icon.CHECK} slot="prefix"></aotw-icon>`
+  slot: html`
+    <aotw-icon name="check" slot="prefix"></aotw-icon>
+    Chip
+  `
 }
 
 export const WithIcon = ChipTemplate.bind({});
 WithIcon.args = {
   ...chipArgs,
-  prefix: html`<aotw-icon name=${Icon.LOGO} slot="prefix"></aotw-icon>`,
-  text: ''
+  slot: html`<aotw-icon name="logo" slot="prefix"></aotw-icon>`
 }
 
 export const Removable = ChipTemplate.bind({});
 Removable.args = {
   ...chipArgs,
-  suffix: html`<aotw-icon name=${Icon.CLOSE} slot="suffix"></aotw-icon>`
+  slot: html`
+    Chip
+    <aotw-icon name="close" slot="suffix"></aotw-icon>
+  `
 }
 
 export const Active = ChipTemplate.bind({});
