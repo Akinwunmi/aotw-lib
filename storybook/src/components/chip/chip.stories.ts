@@ -1,4 +1,3 @@
-import { Icon } from '@aotw/components/src/icon';
 import { Meta } from '@storybook/web-components';
 import { html } from 'lit';
 
@@ -17,7 +16,7 @@ export const WithIconAndText = ChipTemplate.bind({});
 WithIconAndText.args = {
   ...chipArgs,
   slot: html`
-    <aotw-icon name="check" slot="prefix"></aotw-icon>
+    <aotw-icon name="check" prefix></aotw-icon>
     Chip
   `
 }
@@ -25,7 +24,7 @@ WithIconAndText.args = {
 export const WithIcon = ChipTemplate.bind({});
 WithIcon.args = {
   ...chipArgs,
-  slot: html`<aotw-icon name="logo" slot="prefix"></aotw-icon>`
+  slot: html`<aotw-icon name="logo" prefix></aotw-icon>`
 }
 
 export const Removable = ChipTemplate.bind({});
@@ -33,8 +32,14 @@ Removable.args = {
   ...chipArgs,
   slot: html`
     Chip
-    <aotw-icon name="close" slot="suffix"></aotw-icon>
+    <aotw-icon name="close" suffix></aotw-icon>
   `
+}
+
+export const MediumSize = ChipTemplate.bind({});
+MediumSize.args = {
+  ...chipArgs,
+  size: 'medium'
 }
 
 export const Active = ChipTemplate.bind({});

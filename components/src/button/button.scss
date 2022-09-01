@@ -80,7 +80,7 @@ button {
       }
       &:active,
       &.active {
-        background-color: var(--aotw-color-secondary-100);
+        background-color: var(--aotw-color-secondary-150);
         color: var(--aotw-color-secondary-900);
       }
     }
@@ -109,7 +109,7 @@ button {
     }
   }
   &.disabled {
-    background-color: var(--aotw-color-secondary-100);
+    background-color: var(--aotw-color-secondary-150);
     color: var(--aotw-color-secondary-300);
     pointer-events: none;
   }

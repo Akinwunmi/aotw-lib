@@ -12,8 +12,10 @@
       },
       "secondary": {
         "50": { "value": "#eaebf1", "type": "color" },
-        "100": { "value": "#d4d7e2", "type": "color" },
+        "100": { "value": "#dcdee4", "type": "color" },
+        "150": { "value": "#d4d7e2", "type": "color" },
         "200": { "value": "#c5c6d3", "type": "color" },
+        "250": { "value": "#Bbfc2ca", "type": "color" },
         "300": { "value": "#a4a8b4", "type": "color" },
         "400": { "value": "#838290", "type": "color" },
         "500": { "value": "#5a5d70", "type": "color" },

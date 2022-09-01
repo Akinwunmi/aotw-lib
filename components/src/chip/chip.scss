@@ -1,33 +1,44 @@
 @import '@aotw/core/src/typography';
 
-:host([disabled]) {
-  pointer-events: none;
-}
-
-.chip {
+:host {
   @include typography-button;
   align-items: center;
-  background-color: var(--aotw-color-white);
-  border: 1px solid var(--aotw-color-secondary-500);
+  background-color: var(--aotw-color-primary-50);
   border-radius: var(--aotw-radius-s);
-  color: var(--aotw-color-secondary-500);
+  box-sizing: border-box;
+  color: var(--aotw-color-primary-500);
   cursor: pointer;
-  display: flex;
+  display: inline-flex;
   gap: var(--aotw-space-s);
-  height: 32px;
+  justify-content: center;
   padding: var(--aotw-space-xs) var(--aotw-space-s);
   text-transform: uppercase;
   transition: background-color 150ms ease-in-out;
+}
 
-  &.active {
-    background-color: var(--aotw-color-primary-50);
-    border-color: var(--aotw-color-primary-500);
-    color: var(--aotw-color-primary-500);
-  }
-  &.disabled {
-    background-color: var(--aotw-color-secondary-100);
-    border-color: var(--aotw-color-secondary-300);
-    color: var(--aotw-color-secondary-300);
-    pointer-events: none;
-  }
+:host(:hover) {
+  background-color: var(--aotw-color-primary-100);
+}
+
+:host(:active),
+:host([active]) {
+  background-color: var(--aotw-color-primary-500);
+  color: var(--aotw-color-secondary-100);
+}
+
+:host([size='small']) {
+  height: 32px;
+  min-width: 32px;
+}
+
+:host([size='medium']) {
+  height: 40px;
+  min-width: 40px;
+}
+
+:host([disabled]) {
+  background-color: var(--aotw-color-secondary-150);
+  border-color: var(--aotw-color-secondary-300);
+  color: var(--aotw-color-secondary-300);
+  pointer-events: none;
 }
