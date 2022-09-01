@@ -1,4 +1,4 @@
-import { OverlayCreateOptions } from '@aotw/components/src/overlay';
+import { OverlayCreateConfig } from '@aotw/components/src/overlay';
 import { Meta } from '@storybook/web-components';
 
 import { overlayArgs, OverlayTemplate } from './overlay.model';
@@ -11,5 +11,5 @@ export default {
 export const Default = OverlayTemplate.bind({});
 Default.args = {
   ...overlayArgs,
-  options: { location: customLocation } as OverlayCreateOptions
+  options: { location: customLocation } as OverlayCreateConfig
 };

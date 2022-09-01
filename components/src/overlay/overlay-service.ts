@@ -1,65 +1,53 @@
-import { OverlayContainerElement } from './overlay-container';
-import { ElementInfo, ElementPosition, OverlayCreateOptions, OverlayRemoveOptions } from './overlay-container.model';
+import { html, LitElement, TemplateResult } from 'lit';
+import { customElement } from 'lit/decorators.js';
+
+import { OverlayContainer } from './overlay-container';
+import { OverlayConfig } from './overlay-container.model';
+import { AotwOverlayPortal } from './overlay-portal';
+import { OverlayRef } from './overlay-ref';
+
+const AOTW_OVERLAY_PANEL = 'aotw-overlay-panel';
+
+let uniqueId = 0;
 
 export class OverlayService {
-  private static _containers: OverlayContainerElement[] = [];
-
-  public static create(options?: OverlayCreateOptions): void {
-    if (!options?.name && this._containers.length) {
-      throw new Error('A default overlay container already exists');
-    }
-    if (options?.name && (this.getContainerWithName(options.name))) {
-      throw new Error('An overlay container with that name already exists');
-    }
-
-    const container = new OverlayContainerElement();
-    if (options?.disableClickOutside) {
-      container.toggleAttribute('disableClickOutside', true);
-    }
-    if (options?.name) {
-      container.setAttribute('name', options.name);
-    }
-    this._containers.push(container);
-    (options?.location || document.body).prepend(container);
+  public static create(config: OverlayConfig): OverlayRef {
+    const host = this._createHost(config.location);
+    const panel = this._createPanel(host);
+    const portal = this._createPortal(panel);
+    return new OverlayRef(portal, host, panel, config);
   }
 
-  public static attach(info: ElementInfo, position?: ElementPosition): void {
-    const container = this.getContainer(info.name);
-    if (!this._containers.length || !container) {
-      throw new Error('No overlay container found to attach this element to');
-    }
-
-    if (position) {
-      container.setAttribute('position', JSON.stringify(position));
-    }
-    container.appendChild(info.element);
-    container.toggleAttribute('close', false);
+  private static _createHost(location?: HTMLElement): HTMLDivElement {
+    const host = document.createElement('div');
+    OverlayContainer.getContainer(location).appendChild(host);
+    return host;
   }
 
-  public static remove(options?: OverlayRemoveOptions): void {
-    const container = this.getContainer(options?.name);
-    if (container) {
-      const index = this._containers.indexOf(container);
-      if (index > -1) {
-        this._containers.splice(index, 1);
-      }
-      container.remove();
-    }
+  private static _createPanel(host: HTMLDivElement): AotwOverlayPanel {
+    const panel = document.createElement(AOTW_OVERLAY_PANEL) as AotwOverlayPanel;
+    panel.id = `aotw-overlay-panel-${uniqueId++}`;
+    host.appendChild(panel);
+    return panel;
   }
 
-  public static removeAll(): void {
-    const containers = document.querySelectorAll('aotw-overlay-container');
-    containers.forEach(container => container.remove());
-    this._containers = [];
+  private static _createPortal(panel: AotwOverlayPanel) {
+    const portal = new AotwOverlayPortal(panel);
+    return portal;
   }
+}
 
-  private static getContainer(name?: string): OverlayContainerElement | undefined {
-    return name
-      ? this.getContainerWithName(name)
-      : this._containers[0];
+@customElement(AOTW_OVERLAY_PANEL)
+export class AotwOverlayPanel extends LitElement {
+  protected override render(): TemplateResult {
+    return html`
+      <slot></slot>
+    `;
   }
+}
 
-  private static getContainerWithName(name: string): OverlayContainerElement | undefined {
-    return this._containers.find(container => container.getAttribute('name') === name);
+declare global {
+  interface HTMLElementTagNameMap {
+    AOTW_OVERLAY_PANEL: AotwOverlayPanel
   }
 }

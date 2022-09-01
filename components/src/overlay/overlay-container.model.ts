@@ -13,12 +13,20 @@ export interface OverlayOpenEvent {
   position?: ElementPosition
 }
 
-export interface OverlayCreateOptions {
+export interface OverlayCreateConfig {
   disableClickOutside?: boolean;
   location?: HTMLElement;
   name?: string;
 }
 
 export interface OverlayRemoveOptions {
+  name?: string;
+}
+
+
+
+export interface OverlayConfig {
+  disableClickOutside?: boolean;
+  location?: HTMLElement;
   name?: string;
 }

@@ -1,93 +1,42 @@
 import { html, LitElement, TemplateResult, unsafeCSS } from 'lit';
-import { customElement, property, query, queryAssignedElements } from 'lit/decorators.js';
+import { customElement } from 'lit/decorators.js';
 
 import styleOverlayContainer from './overlay-container.scss';
-import { ElementPosition, OverlayOpenEvent } from './overlay-container.model';
 
 const AOTW_OVERLAY_CONTAINER = 'aotw-overlay-container';
 
-@customElement(AOTW_OVERLAY_CONTAINER)
-export class OverlayContainerElement extends LitElement {
-  @property({ type: Boolean })
-  public set close(close: boolean) {
-    if (close) {
-      this.closeOverlay();
+export class OverlayContainer {
+  private static _container: HTMLElement;
+
+  public static getContainer(location?: HTMLElement): HTMLElement {
+    if (!this._container) {
+      this._createContainer(location);
     }
+    return this._container;
   }
 
-  @property({ type: Boolean })
-  public disableClickOutside = false;
+  private static _createContainer(location?: HTMLElement): void {
+    console.log(location);
+    const container = document.createElement(AOTW_OVERLAY_CONTAINER);
+    container.classList.add('aotw-overlay-container');
+    (location || document.body).prepend(container);
+    this._container = container;
+  }
+}
 
-  @property({ type: String })
-  public name?: string;
-
-  @property({ type: Object })
-  public position?: ElementPosition;
-
-  @query('slot')
-  private _slot!: HTMLSlotElement;
-
-  @queryAssignedElements()
-  private _elements!: HTMLElement[];
-
+@customElement(AOTW_OVERLAY_CONTAINER)
+export class AotwOverlayContainer extends LitElement {
   public static override styles = unsafeCSS(styleOverlayContainer);
-
-  protected override firstUpdated(): void {
-    this.addEventListener('click', this.handleClickOutside);
-    this._slot.addEventListener('click', this.handleClickInside);
-  }
 
   protected override render(): TemplateResult {
     return html`
-      <slot @slotchange=${this.openOverlay}></slot>
-    `;
-  }
-
-  private handleClickOutside(): void {
-    this.close = true;
-  }
-
-  private handleClickInside(e: Event): void {
-    e.stopPropagation();
-  }
-
-  private openOverlay(): void {
-    if (!this._elements.length) return;
-    this.style.pointerEvents = this.disableClickOutside ? 'none' : 'visible';
-
-    const overlayOpen = new CustomEvent<OverlayOpenEvent>('overlay-open', {
-      detail: {
-        content: this._elements,
-        position: this.position
-      }
-    });
-    document.dispatchEvent(overlayOpen);
-  }
-
-  private closeOverlay(): void {
-    this.position = undefined;
-    this.style.pointerEvents = 'none';
-
-    let child = this.lastElementChild;
-    while (child) {
-      this.removeChild(child);
-      child = this.lastElementChild;
-    }
-
-    const overlayClosed = new CustomEvent('overlay-closed', {
-      detail: {}
-    });
-    document.dispatchEvent(overlayClosed);
-  }
-
-  public override disconnectedCallback(): void {
-    this.removeEventListener('click', this.handleClickOutside, false);
-    this._slot.removeEventListener('click', this.handleClickInside, false);
+      <slot></slot>
+    `
   }
 }
 
 declare global {
   interface HTMLElementTagNameMap {
-    AOTW_OVERLAY_CONTAINER: OverlayContainerElement
+    AOTW_OVERLAY_CONTAINER: AotwOverlayContainer
   }
 }

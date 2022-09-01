@@ -1,5 +1,5 @@
 import '@aotw/components/src/overlay';
-import { ElementPosition, OverlayCreateOptions, OverlayRemoveOptions } from '@aotw/components/src/overlay';
+import { ElementPosition, OverlayCreateConfig, OverlayRemoveOptions } from '@aotw/components/src/overlay';
 import { html } from 'lit';
 
 import { Story } from '../../../types/story.model';
@@ -7,7 +7,7 @@ import { handleElement, handleExistence, handleRemoveAll } from './overlay.utils
 
 interface OverlayArgTypes {
   handleClick: (e: Event, element?: HTMLElement, position?: ElementPosition) => void
-  options?: OverlayCreateOptions | OverlayRemoveOptions;
+  options?: OverlayCreateConfig | OverlayRemoveOptions;
 }
 
 export const overlayArgs: OverlayArgTypes = {
