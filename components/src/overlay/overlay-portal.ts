@@ -1,7 +1,7 @@
-import { AotwOverlayPanel } from "./overlay-service";
+import { AotwOverlayPanel } from './overlay-panel';
 
 export class AotwOverlayPortal {
-  private static _attachedElement: HTMLElement;
+  private static _attachedElement?: HTMLElement;
   private static _portalOutlet: AotwOverlayPanel;
 
   constructor(
@@ -14,6 +14,13 @@ export class AotwOverlayPortal {
     AotwOverlayPortal._attachedElement = element;
     AotwOverlayPortal._portalOutlet.appendChild(element);
     return AotwOverlayPortal._attachedElement;
+  }
+
+  public detach(): void {
+    if (!AotwOverlayPortal._attachedElement) return;
+    
+    AotwOverlayPortal._portalOutlet.removeChild(AotwOverlayPortal._attachedElement);
+    AotwOverlayPortal._attachedElement = undefined;
   }
 
   public hasAttached(): boolean {

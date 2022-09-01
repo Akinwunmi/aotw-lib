@@ -1,24 +1,26 @@
 import '@aotw/components/src/overlay';
-import { ElementPosition, OverlayCreateConfig, OverlayRemoveOptions } from '@aotw/components/src/overlay';
+import { ElementPosition, OverlayConfig } from '@aotw/components/src/overlay';
 import { html } from 'lit';
 
 import { Story } from '../../../types/story.model';
-import { handleElement, handleExistence, handleRemoveAll } from './overlay.utils';
+import { handleClose, handleCreate, handleOpen, handleRemove } from './overlay.utils';
 
 interface OverlayArgTypes {
-  handleClick: (e: Event, element?: HTMLElement, position?: ElementPosition) => void
-  options?: OverlayCreateConfig | OverlayRemoveOptions;
+  handleClose: () => void;
+  handleOpen: (e: Event, element?: HTMLElement, position?: ElementPosition) => void
+  config?: OverlayConfig;
 }
 
 export const overlayArgs: OverlayArgTypes = {
-  handleClick: handleElement
+  handleClose: handleClose,
+  handleOpen: handleOpen
 };
 
-export const OverlayTemplate: Story<OverlayArgTypes> = ({ handleClick, options }: OverlayArgTypes) => {
+export const OverlayTemplate: Story<OverlayArgTypes> = ({ handleClose, handleOpen, config }: OverlayArgTypes) => {
   return html`
-    <aotw-chip class="create" @click=${handleExistence.bind(this, 'create', options)}>Create</aotw-chip>
-    <aotw-chip class="open" disabled @click=${handleClick}>Open</aotw-chip>
-    <aotw-chip class="remove" disabled @click=${handleExistence.bind(this, 'remove', options)}>Remove</aotw-chip>
-    <aotw-chip class="remove-all" @click=${handleRemoveAll}>Remove All</aotw-chip>
+    <aotw-chip class="create" @click=${handleCreate.bind(this, config)}>Create</aotw-chip>
+    <aotw-chip class="open" disabled @click=${handleOpen}>Open</aotw-chip>
+    <aotw-chip class="close" disabled @click=${handleClose}>Close</aotw-chip>
+    <aotw-chip class="remove" disabled @click=${handleRemove}>Remove</aotw-chip>
   `;
 };

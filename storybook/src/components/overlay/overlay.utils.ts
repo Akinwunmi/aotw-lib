@@ -1,31 +1,53 @@
-import { ElementPosition, OverlayConfig, OverlayService } from '@aotw/components/src/overlay';
-import { OverlayRef } from '@aotw/components/src/overlay/overlay-ref';
+import { ElementPosition, OverlayConfig, AotwOverlay } from '@aotw/components/src/overlay';
+import { AotwOverlayRef } from '@aotw/components/src/overlay/overlay-ref';
 
 export const customLocation = document.querySelector('#root') as HTMLDivElement;
 
 const buttonElement = document.createElement('aotw-button');
 buttonElement.innerHTML = 'Click me!';
 
-export function handleElement(e: Event, element?: HTMLElement, position?: ElementPosition): void {
-  if (!element) {
-    element = buttonElement;
-  }
-
-  // OverlayService.attach({ element }, position);
-  OverlayRef.attach(element);
-}
-
-export function handleExistence(action: 'create' | 'remove', config: OverlayConfig): void {
-  // action === 'create' ? OverlayService.create(options) : OverlayService.remove();
-  OverlayService.create(config);
-  const chips = document.querySelectorAll('aotw-chip');
-  chips.forEach(chip => {
-    if (chip.className !== 'remove-all') {
-      chip.toggleAttribute('disabled')
+export function handleClose(): void {
+  AotwOverlayRef.detach();
+  getChips().forEach(chip => {
+    if (chip.className === 'close') {
+      chip.toggleAttribute('disabled', true);
+    }
+    if (chip.className === 'open') {
+      chip.toggleAttribute('disabled', false);
     }
   });
 }
 
-export function handleRemoveAll(): void {
-  // OverlayService.removeAll();
+export function handleOpen(e: Event, element?: HTMLElement, position?: ElementPosition): void {
+  if (!element) {
+    element = buttonElement;
+  }
+
+  AotwOverlayRef.attach(element);
+  getChips().forEach(chip => {
+    if (chip.className === 'close') {
+      chip.toggleAttribute('disabled', false);
+    }
+    if (chip.className === 'open') {
+      chip.toggleAttribute('disabled', true);
+    }
+  });
+}
+
+export function handleCreate(config: OverlayConfig): void {
+  AotwOverlay.create(config);
+  getChips().forEach(chip =>
+    chip.toggleAttribute('disabled', !!(chip.className === 'close' || chip.className === 'create'))
+  );
+}
+
+export function handleRemove(): void {
+  AotwOverlayRef.remove();
+  getChips().forEach(chip => 
+    chip.toggleAttribute('disabled', chip.className !== 'create' || false)
+  );
+}
+
+function getChips(): NodeListOf<Element> {
+  return document.querySelectorAll('aotw-chip');
 }
