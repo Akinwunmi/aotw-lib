@@ -1,24 +1,35 @@
-import { OverlayConfig } from './overlay.model';
+import { OverlayConfig } from './overlay-config';
 import { AotwOverlayHost } from './overlay-host';
 import { AotwOverlayPanel } from './overlay-panel';
-import { AotwOverlayPortal } from './overlay-portal';
+import { OverlayPortal } from './overlay-portal';
+import { OverlayPosition } from './overlay-position';
 
-export class AotwOverlayRef {
-  private static _portal: AotwOverlayPortal;
+export class OverlayRef {
+  private static _portal: OverlayPortal;
   private static _host: AotwOverlayHost;
   private static _panel: AotwOverlayPanel;
   private static _config: OverlayConfig;
+  private static _position: OverlayPosition;
 
-  constructor(
-    _portal: AotwOverlayPortal,
+  public static get hostElement(): AotwOverlayHost {
+    return OverlayRef._host;
+  }
+
+  public static get panelElement(): AotwOverlayPanel {
+    return OverlayRef._panel;
+  }
+
+  public constructor(
+    _portal: OverlayPortal,
     _host: AotwOverlayHost,
     _panel: AotwOverlayPanel,
     _config: OverlayConfig
   ) {
-    AotwOverlayRef._portal = _portal;
-    AotwOverlayRef._host = _host;
-    AotwOverlayRef._panel = _panel;
-    AotwOverlayRef._config = _config;
+    OverlayRef._portal = _portal;
+    OverlayRef._host = _host;
+    OverlayRef._panel = _panel;
+    OverlayRef._config = _config;
+    OverlayRef._position = _config.position;
   }
 
   public static attach(element: HTMLElement): HTMLElement {
@@ -26,6 +37,9 @@ export class AotwOverlayRef {
       throw new Error('Portal already has an element attached.');
     }
     
+    if (this._position) {
+      this._position.attach(element);
+    }
     return this._portal.attach(element);
   }
 
