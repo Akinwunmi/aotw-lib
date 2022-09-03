@@ -15,14 +15,14 @@ Default.args = tagArgs;
 export const WithIcon = TagTemplate.bind({});
 WithIcon.args = {
   ...tagArgs,
-  slot: html`<aotw-icon name="shine" size="medium" prefix></aotw-icon>`
+  slot: html`<aotw-icon name="shine" prefix></aotw-icon>`
 };
 
 export const WithTextAndIcon = TagTemplate.bind({});
 WithTextAndIcon.args = {
   ...tagArgs,
   slot: html`
-    <aotw-icon name="shine" size="medium" prefix></aotw-icon>
+    <aotw-icon name="shine" prefix></aotw-icon>
     Tag
   `
 };
@@ -32,7 +32,7 @@ Deletable.args = {
   ...tagArgs,
   slot: html`
     Tag
-    <aotw-icon name="close" size="medium" suffix></aotw-icon>
+    <aotw-icon name="close" suffix></aotw-icon>
   `
 };
 
@@ -40,8 +40,8 @@ export const DeletableWithIcon = TagTemplate.bind({});
 DeletableWithIcon.args = {
   ...tagArgs,
   slot: html`
-    <aotw-icon name="shine" size="medium" prefix></aotw-icon>
-    <aotw-icon name="close" size="medium" suffix></aotw-icon>
+    <aotw-icon name="shine" prefix></aotw-icon>
+    <aotw-icon name="close" suffix></aotw-icon>
   `
 };
 
@@ -50,8 +50,8 @@ CustomColors.args = {
   ...tagArgs,
   customClass: 'custom-colors',
   slot: html`
-    <aotw-icon name="shine" size="medium" prefix></aotw-icon>
+    <aotw-icon name="shine" prefix></aotw-icon>
     Tag
-    <aotw-icon name="close" size="medium" suffix></aotw-icon>
+    <aotw-icon name="close" suffix></aotw-icon>
   `
 };

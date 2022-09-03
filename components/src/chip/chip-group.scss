@@ -1,0 +1,17 @@
+:host {
+  display: inline-flex;
+}
+
+::slotted(:first-child) {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+::slotted(:not(:first-child):not(:last-child)) {
+  border-radius: 0;
+}
+
+::slotted(:last-child) {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
