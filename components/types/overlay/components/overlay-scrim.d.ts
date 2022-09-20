@@ -1,11 +1,12 @@
 import { LitElement, TemplateResult } from 'lit';
-export declare class DialogElement extends LitElement {
+export declare const OVERLAY_SCRIM = "aotw-overlay-scrim";
+export declare class AotwOverlayScrim extends LitElement {
+    withBackground: boolean;
     static styles: import("lit").CSSResult;
     protected render(): TemplateResult;
-    private _close;
 }
 declare global {
     interface HTMLElementTagNameMap {
-        AOTW_DIALOG: DialogElement;
+        OVERLAY_SCRIM: AotwOverlayScrim;
     }
 }

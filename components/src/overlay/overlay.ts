@@ -1,57 +1,56 @@
-import { OverlayConfig } from './overlay-config';
-import { AotwOverlayContainer } from './overlay-container';
-import { AotwOverlayHost } from './overlay-host';
-import { AotwOverlayPanel } from './overlay-panel';
-import { OverlayPortal } from './overlay-portal';
-import { OverlayPosition } from './overlay-position';
-import { OverlayRef } from './overlay-ref';
+import { AotwOverlayHost, AotwOverlayPanel, AOTW_OVERLAY_HOST, AOTW_OVERLAY_PANEL } from './components';
+import { OverlayConfig } from './overlay.model';
+import { OverlayPortal, OverlayPosition, OverlayRef } from './services';
 
-let uniqueId = 0;
+let PANEL_ID = 0;
 
 export class Overlay {
-  private static _container?: AotwOverlayContainer;
+  private static _instance: Overlay;
 
-  public static create(config: OverlayConfig): OverlayRef {
-    const host = this._createHost();
-    const panel = this._createPanel(host);
-    const portal = this._createPortal(panel);
-    const overlayConfig = new OverlayConfig(config);
-    return new OverlayRef(portal, host, panel, overlayConfig);
+  private _container!: HTMLDivElement;
+  private _host!: AotwOverlayHost;
+
+  public static getInstance(): Overlay {
+    if (!this._instance) {
+      this._instance = new Overlay();
+    }
+    return this._instance;
   }
 
-  public static position() {
+  public create(config?: OverlayConfig): OverlayRef {
+    this._createContainer();
+    this._createHost();
+    const panel = this._createPanel();
+    const portal = new OverlayPortal(panel);
+
+    const overlayRef = new OverlayRef(this._container, this._host, panel, portal, config);
+
+    return overlayRef;
+  }
+
+  public position() {
     return new OverlayPosition();
   }
 
-  private static _createContainer(): AotwOverlayContainer {
-    const container = document.createElement('aotw-overlay-container') as AotwOverlayContainer;
-    document.body.prepend(container);
-    this._container = container;
-    return this._container;
-  }
-
-  private static _createHost(): AotwOverlayHost {
-    const host = document.createElement('aotw-overlay-host') as AotwOverlayHost;
-    this.getContainer().appendChild(host);
-    return host;
-  }
-
-  private static _createPanel(host: AotwOverlayHost): AotwOverlayPanel {
-    const panel = document.createElement('aotw-overlay-panel') as AotwOverlayPanel;
-    panel.id = `aotw-overlay-panel-${uniqueId++}`;
-    host.appendChild(panel);
-    return panel;
-  }
-
-  private static _createPortal(panel: AotwOverlayPanel) {
-    const portal = new OverlayPortal(panel);
-    return portal;
-  }
-
-  public static getContainer(): AotwOverlayContainer {
+  private _createContainer(): void {
     if (!this._container) {
-      return this._createContainer();
+      const container = document.createElement('div');
+      container.className = 'aotw-overlay-container';
+      this._container = container;
+      document.body.appendChild(this._container);
     }
-    return this._container;
+  }
+
+  private _createHost(): void {
+    this._host = document.createElement(AOTW_OVERLAY_HOST) as AotwOverlayHost;
+    this._container.appendChild(this._host);
+  }
+
+  private _createPanel(): AotwOverlayPanel {
+    const panel = document.createElement(AOTW_OVERLAY_PANEL) as AotwOverlayPanel;
+    panel.id = `panel-${PANEL_ID++}`;
+    this._host.appendChild(panel);
+
+    return panel;
   }
 }

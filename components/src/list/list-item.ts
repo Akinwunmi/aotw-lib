@@ -9,10 +9,6 @@ const AOTW_LIST_ITEM = 'aotw-list-item';
 export class ListItemElement extends LitElement {
   public static override styles = unsafeCSS(styleListItem);
 
-  protected override firstUpdated(): void {
-    this.requestUpdate();
-  }
-
   protected override render(): TemplateResult {
     return html`
       <slot></slot>

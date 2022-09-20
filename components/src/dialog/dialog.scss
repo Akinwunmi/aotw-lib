@@ -2,19 +2,11 @@
 
 :host {
   @include typography-body;
-  display: flex;
-  inset: 0;
-  position: fixed;
-  z-index: 300;
-}
-
-.dialog {
-  background-color: var(--aotw-color-primary-500);
+  background-color: var(--aotw-color-primary-300);
   color: var(--aotw-color-white);
-  display: grid;
+  display: inline-grid;
   grid-template-rows: auto 1fr;
   left: var(--aotw-space-s);
-  margin: auto;
   max-width: 400px;
   min-height: 400px;
   min-width: 300px;
@@ -48,6 +40,7 @@
       }
     }
   }
+
   &_content {
     display: grid;
     gap: var(--aotw-space-xs);

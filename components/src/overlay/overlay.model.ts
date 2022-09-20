@@ -1,29 +1,26 @@
-export interface ElementInfo {
-  element: HTMLElement;
-  name?: string;
+import { OverlayPosition } from './services/overlay-position';
+
+export interface OverlayConfig {
+  position?: OverlayPosition;
+  scrim?: boolean;
+  scrimWithBackground?: boolean;
+  scrimCloseTrigger?: string;
 }
 
-export interface ElementPosition {
+type Orientation = 'start' | 'center' | 'end';
+
+export interface Positions {
+  offset?: Point;
+  relative?: PositionAxes;
+  absolute?: PositionAxes;
+}
+
+export interface PositionAxes {
+  horizontal: Orientation;
+  vertical: Orientation;
+}
+
+export interface Point {
   x: number;
   y: number;
-}
-
-export interface OriginPosition {
-  originX: 'left' | 'center' | 'right';
-  originY: 'top' | 'center' | 'bottom';
-}
-
-export interface OverlayOpenEvent {
-  content: HTMLElement[],
-  position?: ElementPosition
-}
-
-export interface OverlayCreateConfig {
-  disableClickOutside?: boolean;
-  location?: HTMLElement;
-  name?: string;
-}
-
-export interface OverlayRemoveOptions {
-  name?: string;
 }

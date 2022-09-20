@@ -1,53 +1,61 @@
-import { ElementPosition, OverlayConfig, Overlay } from '@aotw/components/src/overlay';
-import { OverlayRef } from '@aotw/components/src/overlay/overlay-ref';
+import { Overlay } from '@aotw/components/src/overlay/overlay';
+import { OverlayConfig } from '@aotw/components/src/overlay/overlay.model';
 
-const buttonElement = document.createElement('aotw-button');
-buttonElement.innerHTML = 'Click me!';
+const overlay = Overlay.getInstance();
 
-export function handleCreate(config: OverlayConfig): void {
-  const overlayConfig = new OverlayConfig(config);
+const dialogConfig: OverlayConfig = {
+  scrimWithBackground: true,
+};
+const dialogRef = overlay.create(dialogConfig);
 
-  Overlay.create(overlayConfig);
-  getChips().forEach(chip =>
-    chip.toggleAttribute('disabled', !!(chip.className === 'close' || chip.className === 'create'))
-  );
+const dropdownPosition = overlay.position();
+dropdownPosition.setPositions({
+  relative: {
+    horizontal: 'end',
+    vertical: 'end',
+  },
+});
+const dropdownConfig: OverlayConfig = {
+  position: dropdownPosition || undefined,
+  scrim: true,
+};
+const dropdownRef = overlay.create(dropdownConfig);
+
+const toastPosition = overlay.position();
+toastPosition.setPositions({
+  absolute: {
+    horizontal: 'start',
+    vertical: 'end',
+  },
+  offset: {
+    x: 16,
+    y: -16,
+  },
+});
+const toastConfig: OverlayConfig = {
+  position: toastPosition,
+};
+const toastRef = overlay.create(toastConfig);
+
+export function handleOpenDialog(templateId: string): void {
+  const template = document.getElementById(templateId) as HTMLTemplateElement;
+  dialogRef.attach(template);
 }
 
-export function handleOpen(e: Event, element?: HTMLElement, position?: ElementPosition): void {
-  if (!element) {
-    element = buttonElement;
+export function handleOpenDropdown(templateId: string): void {
+  const template = document.getElementById(templateId) as HTMLTemplateElement;
+  const origin = document.getElementById('button-dropdown');
+
+  if (origin) {
+    dropdownPosition.setOrigin(origin);
   }
-
-  OverlayRef.attach(element);
-  getChips().forEach(chip => {
-    if (chip.className === 'close') {
-      chip.toggleAttribute('disabled', false);
-    }
-    if (chip.className === 'open') {
-      chip.toggleAttribute('disabled', true);
-    }
-  });
+  dropdownRef.attach(template);
 }
 
-export function handleClose(): void {
-  OverlayRef.detach();
-  getChips().forEach(chip => {
-    if (chip.className === 'close') {
-      chip.toggleAttribute('disabled', true);
-    }
-    if (chip.className === 'open') {
-      chip.toggleAttribute('disabled', false);
-    }
-  });
-}
-
-export function handleRemove(): void {
-  OverlayRef.remove();
-  getChips().forEach(chip => 
-    chip.toggleAttribute('disabled', chip.className !== 'create' || false)
-  );
-}
-
-function getChips(): NodeListOf<Element> {
-  return document.querySelectorAll('aotw-chip');
+export function handleOpenToast(templateId: string): void {
+  const template = document.getElementById(templateId) as HTMLTemplateElement;
+  toastRef.attach(template);
+  setTimeout(() => {
+    toastRef.detach();
+  }, 3000);
 }

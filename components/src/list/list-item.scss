@@ -9,6 +9,14 @@
   padding: var(--aotw-space-m) var(--aotw-space-l);
 }
 
+:host(:hover) {
+  background-color: var(--aotw-color-primary-50);
+}
+
+:host(:active) {
+  background-color: var(--aotw-color-primary-100);
+}
+
 ::slotted(*[prefix]) {
   grid-column: 1 / 2;
 }

@@ -5,14 +5,14 @@
   "author": "Jurrit van der Ploeg <info@jurritvanderploeg.nl> (http://www.jurritvanderploeg.nl/)",
   "license": "ISC",
   "private": true,
-  "main": "dist/components.es.js",
+  "main": "dist/index.js",
   "types": "types/index.d.ts",
   "files": [
     "dist",
     "types"
   ],
   "scripts": {
-    "build": "tsc && vite build",
+    "build": "rimraf dist && rimraf types && tsc && vite build",
     "dev": "vite",
     "lint": "eslint src/**/*.ts",
     "lint:fix": "eslint src/**/*.ts --fix"
@@ -27,6 +27,7 @@
     "@typescript-eslint/parser": "^5.33.0",
     "eslint": "^8.22.0",
     "eslint-plugin-lit": "^1.6.1",
+    "rimraf": "^3.0.2",
     "rollup-plugin-postcss-lit": "^2.0.0",
     "sass": "^1.50.0",
     "typescript": "^4.5.4",
