@@ -8,6 +8,10 @@
         {
           "destination": "variables.css",
           "format": "css/variables"
+        },
+        {
+          "destination": "../src/tokens/variables.css",
+          "format": "css/variables"
         }
       ]
     }

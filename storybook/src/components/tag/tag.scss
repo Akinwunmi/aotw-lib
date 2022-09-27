@@ -2,7 +2,7 @@
 
 .custom-colors {
   &::part(button) {
-    background-color: $aotw-color-secondary-900;
-    color: $aotw-color-white;
+    background-color: var(--aotw-color-black);
+    color: var(--aotw-color-white);
   }
 }

@@ -1,0 +1,56 @@
+/**
+ * Do not edit directly
+ * Generated on Thu, 29 Sep 2022 18:15:51 GMT
+ */
+
+:root {
+  --aotw-color-black: #161616;
+  --aotw-color-white: rgba(255, 255, 255, 0.9);
+  --aotw-color-grey-100: #eaebf1;
+  --aotw-color-grey-200: #d4d7e2;
+  --aotw-color-grey-300: #a4a8b4;
+  --aotw-color-grey-400: #838290;
+  --aotw-color-grey-500: #5a5d70;
+  --aotw-color-grey-600: #3a3c50;
+  --aotw-color-primary-100: rgba(51, 0, 255, 0.15);
+  --aotw-color-primary-200: rgba(51, 0, 255, 0.5);
+  --aotw-color-primary-300: #3300ff;
+  --aotw-color-primary-400: #2900cc;
+  --aotw-color-primary-500: #1e0094;
+  --aotw-color-secondary-100: rgba(111, 255, 180, 0.15);
+  --aotw-color-secondary-200: rgba(111, 255, 180, 0.5);
+  --aotw-color-secondary-300: #6fffb4;
+  --aotw-color-secondary-400: #68e2a2;
+  --aotw-color-secondary-500: #61bf8e;
+  --aotw-color-success-300: #00c98d;
+  --aotw-color-error-300: #ff3535;
+  --aotw-color-warning-300: #fc9a2a;
+  --aotw-elevation-xs: 0 4px 8px var(--aotw-color-light-opacity);
+  --aotw-font-family-primary: 'Inter', sans-serif;
+  --aotw-font-letter-spacing-m: 0.25em;
+  --aotw-font-line-height-s: 1.25em;
+  --aotw-font-line-height-m: 1.5em;
+  --aotw-font-size-xs: 0.75rem;
+  --aotw-font-size-s: 1rem;
+  --aotw-font-size-m: 1.25rem;
+  --aotw-font-size-l: 1.5rem;
+  --aotw-font-weight-bold: 600;
+  --aotw-font-weight-medium: 500;
+  --aotw-font-weight-regular: 400;
+  --aotw-height-s: 24px;
+  --aotw-height-m: 32px;
+  --aotw-radius-xs: 2px;
+  --aotw-radius-s: 4px;
+  --aotw-radius-m: 6px;
+  --aotw-radius-l: 8px;
+  --aotw-space-xs: 4px;
+  --aotw-space-s: 8px;
+  --aotw-space-m: 12px;
+  --aotw-space-l: 16px;
+  --aotw-space-xl: 20px;
+  --aotw-space-2xl: 24px;
+  --aotw-space-3xl: 28px;
+  --aotw-space-4xl: 32px;
+  --aotw-space-5xl: 36px;
+  --aotw-space-6xl: 40px;
+}

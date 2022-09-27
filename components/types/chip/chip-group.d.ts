@@ -1,16 +1,13 @@
 import { LitElement, TemplateResult } from 'lit';
-export declare class AotwChip extends LitElement {
-    active: boolean;
-    disabled: boolean;
-    size: 'small' | 'medium';
-    private _elements;
+export declare class AotwChipGroup extends LitElement {
+    private _chips;
     static styles: import("lit").CSSResult;
     protected firstUpdated(): void;
     protected render(): TemplateResult;
-    private _removeChipElement;
+    private _setActive;
 }
 declare global {
     interface HTMLElementTagNameMap {
-        AOTW_CHIP: AotwChip;
+        AOTW_CHIP_GROUP: AotwChipGroup;
     }
 }
