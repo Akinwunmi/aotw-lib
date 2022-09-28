@@ -1,10 +1,14 @@
 import { Meta } from '@storybook/addon-docs';
 
-<Meta title="Core/Colors/Overview" />
+import './colors.stories.scss';
 
-# AOTW Colors
+<Meta title="Core/Colors" />
 
-Archive of the World color tokens for _CSS_, _Sass_ and _SCSS_.
+# Colors
+
+**Archive of the World color tokens for _CSS_, _Sass_ and _SCSS_.**
+
+---
 
 ### Color token structure
 
@@ -12,19 +16,121 @@ Archive of the World color tokens for _CSS_, _Sass_ and _SCSS_.
 
 #### Examples
 
-- `var(--aotw-color-tertiary-300)` (CSS)
+- `var(--aotw-color-primary-300)` (CSS)
 - `$aotw-color-error-500` (Sass / SCSS)
 
-### Palette structure
+---
 
-| Name      | Default color | Range       |
-|-----------|---------------|-------------|
-| primary   | blue          | `50 - 900` |
-| secondary | grey          | `50 - 900` |
-| tertiary  | wheat         | `300 - 500` |
-| success   | green         | `500`       |
-| error     | red           | `500`       |
-| warning   | orange        | `500`       |
+### Palette
+
+#### Default
+
+<div class="palette">
+  <div class="palette_color" style={{ backgroundColor: 'var(--aotw-color-black)' }}>
+    <p class="name">Black</p>
+    <p class="value">#161616</p>
+  </div>
+  <div class="palette_color light" style={{ backgroundColor: 'var(--aotw-color-white)' }}>
+    <p class="name">White</p>
+    <p class="value">rgba(255, 255, 255, 0.9)</p>
+  </div>
+</div>
+
+#### Grey
+
+<div class="palette">
+  <div class="palette_color light" style={{ backgroundColor: 'var(--aotw-color-grey-100)' }}>
+    <p class="name">Grey 100</p>
+    <p class="value">#EAEBF1</p>
+  </div>
+  <div class="palette_color border light" style={{ backgroundColor: 'var(--aotw-color-grey-200)' }}>
+    <p class="name">Grey 200</p>
+    <p class="value">#D4D7E2</p>
+  </div>
+  <div class="palette_color" style={{ backgroundColor: 'var(--aotw-color-grey-300)' }}>
+    <p class="name">Grey 300</p>
+    <p class="value">#A4A8B4</p>
+  </div>
+  <div class="palette_color" style={{ backgroundColor: 'var(--aotw-color-grey-400)' }}>
+    <p class="name">Grey 400</p>
+    <p class="value">#838290</p>
+  </div>
+  <div class="palette_color" style={{ backgroundColor: 'var(--aotw-color-grey-500)' }}>
+    <p class="name">Grey 500</p>
+    <p class="value">#5A5D70</p>
+  </div>
+  <div class="palette_color" style={{ backgroundColor: 'var(--aotw-color-grey-600)' }}>
+    <p class="name">Grey 600</p>
+    <p class="value">#3A3C50</p>
+  </div>
+</div>
+
+#### Primary
+
+<div class="palette">
+  <div class="palette_color light" style={{ backgroundColor: 'var(--aotw-color-primary-100)' }}>
+    <p class="name">Primary 100</p>
+    <p class="value">rgba(51, 0, 255, 0.15)</p>
+  </div>
+  <div class="palette_color" style={{ backgroundColor: 'var(--aotw-color-primary-200)' }}>
+    <p class="name">Primary 200</p>
+    <p class="value">rgba(51, 0, 255, 0.5)</p>
+  </div>
+  <div class="palette_color" style={{ backgroundColor: 'var(--aotw-color-primary-300)' }}>
+    <p class="name">Primary 300</p>
+    <p class="value">#3300FF</p>
+  </div>
+  <div class="palette_color" style={{ backgroundColor: 'var(--aotw-color-primary-400)' }}>
+    <p class="name">Primary 400</p>
+    <p class="value">#2900CC</p>
+  </div>
+  <div class="palette_color" style={{ backgroundColor: 'var(--aotw-color-primary-500)' }}>
+    <p class="name">Primary 500</p>
+    <p class="value">#1E0094</p>
+  </div>
+</div>
+
+#### Secondary
+
+<div class="palette">
+  <div class="palette_color light" style={{ backgroundColor: 'var(--aotw-color-secondary-100)' }}>
+    <p class="name">Secondary 100</p>
+    <p class="value">rgba(111, 255, 180, 0.15)</p>
+  </div>
+  <div class="palette_color light" style={{ backgroundColor: 'var(--aotw-color-secondary-200)' }}>
+    <p class="name">Secondary 200</p>
+    <p class="value">rgba(111, 255, 180, 0.5)</p>
+  </div>
+  <div class="palette_color light" style={{ backgroundColor: 'var(--aotw-color-secondary-300)' }}>
+    <p class="name">Secondary 300</p>
+    <p class="value">#6FFFB4</p>
+  </div>
+  <div class="palette_color" style={{ backgroundColor: 'var(--aotw-color-secondary-400)' }}>
+    <p class="name">Secondary 400</p>
+    <p class="value">#68E2A2</p>
+  </div>
+  <div class="palette_color" style={{ backgroundColor: 'var(--aotw-color-secondary-500)' }}>
+    <p class="name">Secondary 500</p>
+    <p class="value">#61BF8E</p>
+  </div>
+</div>
+
+#### Validation
+
+<div class="palette">
+  <div class="palette_color" style={{ backgroundColor: 'var(--aotw-color-success-300)' }}>
+    <p class="name">Success 300</p>
+    <p class="value">#00C98D</p>
+  </div>
+  <div class="palette_color" style={{ backgroundColor: 'var(--aotw-color-warning-300)' }}>
+    <p class="name">Warning 300</p>
+    <p class="value">#FF3535</p>
+  </div>
+  <div class="palette_color" style={{ backgroundColor: 'var(--aotw-color-error-300)' }}>
+    <p class="name">Error 300</p>
+    <p class="value">#FC9A2A</p>
+  </div>
+</div>
 
 ---
 

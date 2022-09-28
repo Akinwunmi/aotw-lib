@@ -2,7 +2,7 @@
   "aotw": {
     "color": {
       "black": { "value": "#161616", "type": "color" },
-      "white": { "value": "#ffffff", "type": "color" },
+      "white": { "value": "rgba(255, 255, 255, 0.9)", "type": "color" },
       "grey": {
         "100": { "value": "#eaebf1", "type": "color" },
         "200": { "value": "#d4d7e2", "type": "color" },
@@ -26,13 +26,13 @@
         "500": { "value": "#61bf8e", "type": "color" }
       },
       "success": {
-        "500": { "value": "#00c98d", "type": "color" }
+        "300": { "value": "#00c98d", "type": "color" }
       },
       "error": {
-        "500": { "value": "#ff3535", "type": "color" }
+        "300": { "value": "#ff3535", "type": "color" }
       },
       "warning": {
-        "500": { "value": "#fc9a2a", "type": "color" }
+        "300": { "value": "#fc9a2a", "type": "color" }
       }
     }
   }
