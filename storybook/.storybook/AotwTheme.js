@@ -4,7 +4,7 @@ export default create({
   base: 'light',
 
   colorPrimary: '#161616',
-  colorSecondary: '#0000ff',
+  colorSecondary: '#3300ff',
 
   // UI
   appBg: '#d4d7e2',
@@ -21,11 +21,11 @@ export default create({
   textInverseColor: '#ffffff',
 
   // Toolbar default and active colors
-  barTextColor: 'silver',
-  barSelectedColor: 'black',
+  barTextColor: '#838290',
+  barSelectedColor: '#3300ff',
   barBg: '#d4d7e2',
 
   brandTitle: 'AOTW Design System',
-  brandUrl: 'https://example.com',
+  brandUrl: 'https://github.com/Akinwunmi',
   brandTarget: '_self',
 });

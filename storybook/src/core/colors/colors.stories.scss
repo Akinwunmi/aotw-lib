@@ -1,10 +1,24 @@
 .palette {
   display: grid;
-  gap: var(--aotw-space-m);
+  gap: var(--aotw-space-xl) var(--aotw-space-s);
   grid-template-columns: repeat(auto-fit, minmax(20em, 1fr));
-  margin-bottom: var(--aotw-space-m);
 
   &_color {
+    display: grid;
+    gap: var(--aotw-space-s);
+
+    &.default {
+      grid-column: 1 / -1;
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    &.validation {
+      grid-column: 1 / -1;
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .card {
     border-radius: var(--aotw-radius-s);
     padding: var(--aotw-space-s) var(--aotw-space-m);
 
