@@ -2,13 +2,14 @@
   "aotw": {
     "font": {
       "family": {
-        "primary": { "value": "'Poppins', sans-serif", "type": "font" }
+        "primary": { "value": "'Inter', sans-serif", "type": "font" }
       },
       "letter-spacing": {
         "m": { "value": "0.25em", "type": "font" }
       },
       "line-height": {
-        "s": { "value": "1.2em", "type": "font" }
+        "s": { "value": "1.25em", "type": "font" },
+        "m": { "value": "1.5em", "type": "font" }
       },
       "size": {
         "xs": { "value": "0.75rem", "type": "font" },

@@ -1,148 +1,52 @@
-@import '@aotw/core/src/colors';
-@import '@aotw/core/src/spaces';
-@import '@aotw/core/src/typography';
-
 .palette {
-  position: relative;
   display: grid;
-  gap: $aotw-space-l;
+  gap: var(--aotw-space-xl) var(--aotw-space-s);
+  grid-template-columns: repeat(auto-fit, minmax(20em, 1fr));
 
-  @include typography-body;
-
-  &_grid {
-    z-index: 1;
-    position: absolute;
+  &_color {
+    align-content: flex-start;
     display: grid;
-    gap: $aotw-space-l;
-    top: 46px;
-    margin-left: 100px;
-    padding-left: $aotw-space-m;
-    
-    &__row {
-      display: grid;
-      grid-template-columns: repeat(10, 60px);
+    gap: var(--aotw-space-s);
 
-      div {
-        position: relative;
-        height: 60px;
+    &.default {
+      grid-column: 1 / -1;
+      grid-template-columns: repeat(2, 1fr);
+    }
 
-        &::before {
-          content: '';
-          position: absolute;
-          display: block;
-          inset: 28px;
-          background-color: $aotw-color-secondary-150;
-        }
-      }
+    &.validation {
+      grid-column: 1 / -1;
+      grid-template-columns: repeat(3, 1fr);
     }
   }
-  &_header {
-    display: grid;
-    grid-template-columns: repeat(10, 60px);
-    height: 30px;
-    margin-left: 100px;
-    padding-left: $aotw-space-m;
+
+  .card {
+    border-radius: var(--aotw-radius-s);
+    box-sizing: border-box;
+    height: 70px;
+    padding: var(--aotw-space-s) var(--aotw-space-m);
 
     p {
-      margin: auto;
+      color: var(--aotw-color-white);
+      margin: 0;
     }
-  }
-  &_color-range {
-    z-index: 2;
-    display: grid;
-    grid-template-columns: 100px 1fr;
-    align-items: center;
-    gap: $aotw-space-m;
 
-    &__values {
-      display: grid;
-      grid-template-columns: repeat(10, 60px);
-      height: 60px;
+    &.border {
+      border: 1px solid var(--aotw-color-grey-300);
+    }
 
-      .primary {
-        &_50 {
-          background-color: $aotw-color-primary-50;
-        }
-        &_100 {
-          background-color: $aotw-color-primary-100;
-        }
-        &_300 {
-          grid-column: 4 / 5;
-          background-color: $aotw-color-primary-300;
-        }
-        &_400 {
-          background-color: $aotw-color-primary-400;
-        }
-        &_500 {
-          background-color: $aotw-color-primary-500;
-        }
-        &_700 {
-          grid-column: 8 / 9;
-          background-color: $aotw-color-primary-700;
-        }
-        &_900 {
-          grid-column: 10 / 11;
-          background-color: $aotw-color-primary-900;
-        }
+    &.light {
+      p {
+        color: var(--aotw-color-black);
       }
-      .secondary {
-        &_50 {
-          background-color: $aotw-color-secondary-50;
-        }
-        &_100 {
-          background-color: $aotw-color-secondary-150;
-        }
-        &_200 {
-          background-color: $aotw-color-secondary-200;
-        }
-        &_300 {
-          background-color: $aotw-color-secondary-300;
-        }
-        &_400 {
-          background-color: $aotw-color-secondary-400;
-        }
-        &_500 {
-          background-color: $aotw-color-secondary-500;
-        }
-        &_700 {
-          grid-column: 8 / 9;
-          background-color: $aotw-color-secondary-700;
-        }
-        &_900 {
-          grid-column: 10 / 11;
-          background-color: $aotw-color-secondary-900;
-        }
-      }
-      .tertiary {
-        &_300 {
-          grid-column: 4 / 5;
-          background-color: $aotw-color-tertiary-300;
-        }
-        &_400 {
-          background-color: $aotw-color-tertiary-400;
-        }
-        &_500 {
-          background-color: $aotw-color-tertiary-500;
-        }
-      }
-      .success {
-        &_500 {
-          grid-column: 6 / 7;
-          background-color: $aotw-color-success-500;
-        }
-      }
-      .error {
-        &_500 {
-          grid-column: 6 / 7;
-          background-color: $aotw-color-error-500;
-        }
-      }
-      .warning {
-        &_500 {
-          grid-column: 6 / 7;
-          background-color: $aotw-color-warning-500;
-        }
-      }
+    }
+    
+    .name {
+      font-size: var(--aotw-font-size-l);
+      line-height: var(--aotw-font-line-height-s);
+    }
+    .value {
+      font-size: var(--aotw-font-size-s);
+      line-height: var(--aotw-font-line-height-m);
     }
   }
 }

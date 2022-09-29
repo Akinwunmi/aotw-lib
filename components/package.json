@@ -1,7 +1,7 @@
 {
   "name": "@aotw/components",
   "description": "Archive of the World Component Library",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "author": "Jurrit van der Ploeg <info@jurritvanderploeg.nl> (http://www.jurritvanderploeg.nl/)",
   "license": "ISC",
   "private": true,
