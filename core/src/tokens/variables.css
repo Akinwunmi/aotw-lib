@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Sat, 22 Oct 2022 21:15:06 GMT
+ * Generated on Sat, 22 Oct 2022 21:50:27 GMT
  */
 
 :root {
@@ -12,20 +12,20 @@
   --aotw-color-grey-400: #838290;
   --aotw-color-grey-500: #5a5d70;
   --aotw-color-grey-600: #3a3c50;
-  --aotw-color-primary-100: rgba(51, 0, 255, 0.15);
-  --aotw-color-primary-200: rgba(51, 0, 255, 0.5);
+  --aotw-color-primary-100: rgba(51, 0, 255, 0.1);
+  --aotw-color-primary-200: rgba(51, 0, 255, 0.4);
   --aotw-color-primary-300: #3300ff;
   --aotw-color-primary-400: #2900cc;
   --aotw-color-primary-500: #1e0094;
-  --aotw-color-secondary-100: rgba(111, 255, 180, 0.15);
-  --aotw-color-secondary-200: rgba(111, 255, 180, 0.5);
+  --aotw-color-secondary-100: rgba(111, 255, 180, 0.1);
+  --aotw-color-secondary-200: rgba(111, 255, 180, 0.4);
   --aotw-color-secondary-300: #6fffb4;
   --aotw-color-secondary-400: #68e2a2;
   --aotw-color-secondary-500: #61bf8e;
   --aotw-color-success-300: #00c98d;
   --aotw-color-error-300: #ff3535;
   --aotw-color-warning-300: #fc9a2a;
-  --aotw-elevation-xs: 0 4px 8px var(--aotw-color-light-opacity);
+  --aotw-elevation-xs: 0 4px 8px var(--aotw-color-grey-300);
   --aotw-font-family-primary: 'Inter', sans-serif;
   --aotw-font-letter-spacing-m: 0.25em;
   --aotw-font-line-height-s: 1.25em;
