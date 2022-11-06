@@ -12,15 +12,15 @@
         "600": { "value": "#3a3c50", "type": "color" }
       },
       "primary": {
-        "100": { "value": "rgba(51, 0, 255, 0.15)", "type": "color" },
-        "200": { "value": "rgba(51, 0, 255, 0.5)", "type": "color" },
+        "100": { "value": "rgba(51, 0, 255, 0.1)", "type": "color" },
+        "200": { "value": "rgba(51, 0, 255, 0.4)", "type": "color" },
         "300": { "value": "#3300ff", "type": "color" },
         "400": { "value": "#2900cc", "type": "color" },
         "500": { "value": "#1e0094", "type": "color" }
       },
       "secondary": {
-        "100": { "value": "rgba(111, 255, 180, 0.15)", "type": "color" },
-        "200": { "value": "rgba(111, 255, 180, 0.5)", "type": "color" },
+        "100": { "value": "rgba(111, 255, 180, 0.1)", "type": "color" },
+        "200": { "value": "rgba(111, 255, 180, 0.4)", "type": "color" },
         "300": { "value": "#6fffb4", "type": "color" },
         "400": { "value": "#68e2a2", "type": "color" },
         "500": { "value": "#61bf8e", "type": "color" }

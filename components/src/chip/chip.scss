@@ -3,10 +3,10 @@
 :host {
   @include typography-button;
   align-items: center;
-  background-color: var(--aotw-color-primary-50);
+  background-color: var(--aotw-color-grey-100);
   border-radius: var(--aotw-radius-s);
   box-sizing: border-box;
-  color: var(--aotw-color-primary-500);
+  color: var(--aotw-color-primary-300);
   cursor: pointer;
   display: inline-flex;
   gap: var(--aotw-space-s);
@@ -17,13 +17,13 @@
 }
 
 :host(:hover) {
-  background-color: var(--aotw-color-primary-100);
+  background-color: var(--aotw-color-grey-200);
 }
 
 :host(:active),
 :host([active]) {
-  background-color: var(--aotw-color-primary-500);
-  color: var(--aotw-color-secondary-100);
+  background-color: var(--aotw-color-primary-300);
+  color: var(--aotw-color-grey-100);
 }
 
 :host([size='small']) {
@@ -37,8 +37,8 @@
 }
 
 :host([disabled]) {
-  background-color: var(--aotw-color-secondary-150);
-  border-color: var(--aotw-color-secondary-300);
-  color: var(--aotw-color-secondary-300);
+  background-color: var(--aotw-color-grey-100);
+  border-color: var(--aotw-color-grey-300);
+  color: var(--aotw-color-grey-300);
   pointer-events: none;
 }

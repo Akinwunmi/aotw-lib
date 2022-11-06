@@ -44,12 +44,6 @@ WithPrefixAndSuffix.args = {
   `
 }
 
-export const DisabledList = ListTemplate.bind({});
-DisabledList.args = {
-  ...listArgs,
-  disabled: true
-};
-
 export const DisabledListItem = ListTemplate.bind({});
 DisabledListItem.args = {
   ...listArgs,
