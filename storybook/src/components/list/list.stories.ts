@@ -15,7 +15,7 @@ WithPrefix.args = {
   ...listArgs,
   slot: html`
     <aotw-list-item>
-      <aotw-icon name="logo" size="large" prefix></aotw-icon>
+      <aotw-icon name="logo" size="medium" prefix></aotw-icon>
       List Item 1
     </aotw-list-item>
   `
@@ -37,18 +37,12 @@ WithPrefixAndSuffix.args = {
   ...listArgs,
   slot: html`
     <aotw-list-item>
-      <aotw-icon name="logo" size="large" prefix></aotw-icon>
+      <aotw-icon name="logo" size="medium" prefix></aotw-icon>
       List Item 1
       <aotw-tag suffix>New</aotw-tag>
     </aotw-list-item>
   `
 }
-
-export const DisabledList = ListTemplate.bind({});
-DisabledList.args = {
-  ...listArgs,
-  disabled: true
-};
 
 export const DisabledListItem = ListTemplate.bind({});
 DisabledListItem.args = {

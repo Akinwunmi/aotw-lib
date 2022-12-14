@@ -2,7 +2,6 @@ import { LitElement, TemplateResult, unsafeCSS, svg } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import { unsafeSVG } from 'lit/directives/unsafe-svg.js';
 
-import './icons';
 import styleIcon from './icon.scss';
 import { IconSize } from './icon.model';
 import { AotwIconRegistry } from './icon-registry';
@@ -15,7 +14,7 @@ export class IconElement extends LitElement {
   public name!: string;
 
   @property({ type: String, reflect: true })
-  public size = IconSize.Medium;
+  public size = IconSize.Small;
 
   public static override styles = unsafeCSS(styleIcon);
 

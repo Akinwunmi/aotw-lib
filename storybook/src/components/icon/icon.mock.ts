@@ -58,6 +58,28 @@ export const iconsStub = [
   },
   {
     data: `
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+        <title>Grid Icon</title>
+        <rect x="3" y="3" width="7" height="7" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+        <rect x="14" y="3" width="7" height="7" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+        <rect x="3" y="14" width="7" height="7" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+        <rect x="14" y="14" width="7" height="7" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+      </svg>  
+    `,
+    name: 'grid'
+  },
+  {
+    data: `
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+        <title>List Icon</title>
+        <rect x="3" y="3" width="18" height="7" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+        <rect x="3" y="14" width="18" height="7" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+      </svg>
+    `,
+    name: 'list'
+  },
+  {
+    data: `
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" fill="none">
         <title>Archive of the World Logo</title>
         <circle cx="9" cy="9" r="8" stroke="currentColor" stroke-width="2"/>

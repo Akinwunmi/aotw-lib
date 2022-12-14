@@ -1,5 +1,5 @@
 import '@aotw/components/src/icon';
-import { Icon, IconSize } from '@aotw/components/src/icon';
+import { IconSize } from '@aotw/components/src/icon';
 import { html } from 'lit';
 
 import { Story } from '../../../types/story.model';

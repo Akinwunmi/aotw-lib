@@ -1,6 +1,7 @@
 export * from './button';
 export * from './chip';
 export * from './close-button';
+export * from './container';
 export * from './dialog';
 export * from './dynamic-text';
 export * from './icon';

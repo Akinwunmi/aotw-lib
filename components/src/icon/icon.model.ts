@@ -4,6 +4,7 @@ export interface Icon {
 }
 
 export enum IconSize {
+  ExtraSmall = 'extra-small',
   Small = 'small',
   Medium = 'medium',
   Large = 'large',

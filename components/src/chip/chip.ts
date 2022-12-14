@@ -1,36 +1,34 @@
 import { LitElement, TemplateResult, html, unsafeCSS } from 'lit';
-import { customElement, property } from 'lit/decorators.js';
-import { ClassInfo, classMap } from 'lit/directives/class-map.js';
+import { customElement, property, queryAssignedElements } from 'lit/decorators.js';
 
 import styleChip from './chip.scss';
 
 const AOTW_CHIP = 'aotw-chip';
 
 @customElement(AOTW_CHIP)
-export class ChipElement extends LitElement {
+export class AotwChip extends LitElement {
   @property({ type: Boolean })
   public active = false;
 
   @property({ type: Boolean })
   public disabled = false;
 
+  @property({ type: String, reflect: true })
+  public size: 'small' | 'medium' = 'small';
+
+  @queryAssignedElements()
+  private _elements!: HTMLElement[];
+
   public static override styles = unsafeCSS(styleChip);
 
-  protected override render(): TemplateResult {
-    const classes: ClassInfo = {
-      active: this.active,
-      disabled: this.disabled
-    };
+  protected override firstUpdated(): void {
+    const suffix = this._elements.find(element => element.getAttribute('suffix') === '');
+    suffix?.addEventListener('click', this._removeChipElement);
+  }
 
+  protected override render(): TemplateResult {
     return html`
-      <button
-        class="chip ${classMap(classes)}"
-        part="button"
-      >
-        <slot name="prefix"></slot>
-        <slot></slot>
-        <slot name="suffix" @click=${this._removeChipElement}></slot>
-      </button>
+      <slot></slot>
     `;
   }
 
@@ -45,6 +43,6 @@ export class ChipElement extends LitElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    AOTW_CHIP: ChipElement
+    AOTW_CHIP: AotwChip
   }
 }

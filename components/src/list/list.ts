@@ -1,13 +1,13 @@
-import { LitElement, TemplateResult, html, unsafeCSS } from 'lit';
+import { TemplateResult, html } from 'lit';
 import { customElement } from 'lit/decorators.js';
 
-import styleList from './list.scss';
+import { AotwContainer } from '../container';
 
 const AOTW_LIST = 'aotw-list';
 
 @customElement(AOTW_LIST)
-export class ListElement extends LitElement {
-  public static override styles = unsafeCSS(styleList);
+export class AotwList extends AotwContainer {
+  public elevated = true;
 
   protected override render(): TemplateResult {
     return html`
@@ -18,6 +18,6 @@ export class ListElement extends LitElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    AOTW_LIST: ListElement
+    AOTW_LIST: AotwList
   }
 }

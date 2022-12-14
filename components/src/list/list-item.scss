@@ -1,7 +1,7 @@
 :host {
   align-items: center;
   background-color: var(--aotw-color-white);
-  color: var(--aotw-color-secondary-500);
+  color: var(--aotw-color-black);
   display: grid;
   gap: var(--aotw-space-s);
   grid-template-columns: auto 1fr auto;
@@ -25,5 +25,6 @@
 }
 
 :host([disabled]) {
-  color: var(--aotw-color-secondary-200);
+  color: var(--aotw-color-grey-300);
+  pointer-events: none;
 }

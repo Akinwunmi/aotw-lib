@@ -1,5 +1,7 @@
 import './preview.scss';
 
+import aotwTheme from './AotwTheme';
+
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
   backgrounds: {
@@ -16,5 +18,13 @@ export const parameters = {
       color: /(background|color)$/i,
       date: /Date$/,
     },
+  },
+  docs: {
+    theme: aotwTheme
+  },
+  options: {
+    storySort: {
+      order: ['Core', 'Components']
+    }
   }
 }
