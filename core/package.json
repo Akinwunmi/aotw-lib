@@ -10,8 +10,8 @@
   ],
   "scripts": {
     "build:tokens": "style-dictionary build --config ./config.json",
-    "build:sass": "sass src/index.scss:dist/style.css",
-    "build": "npm run build:tokens && npm run build:sass"
+    "build:scss": "sass src/index.scss:dist/style.css",
+    "build": "npm run build:tokens && npm run build:scss"
   },
   "devDependencies": {
     "sass": "^1.50.0",

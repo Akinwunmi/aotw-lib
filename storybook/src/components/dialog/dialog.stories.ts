@@ -15,9 +15,3 @@ WithVisual.args = {
   ...dialogArgs,
   visual: html`<img src="https://unsplash.it/600/400" style="width: 100%" />`,
 };
-
-export const WithoutScrim = DialogTemplate.bind({});
-WithoutScrim.args = {
-  ...dialogArgs,
-  scrim: false,
-};

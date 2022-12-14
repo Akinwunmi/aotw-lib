@@ -7,7 +7,7 @@ export * from './dynamic-text';
 export * from './icon';
 export * from './field';
 export * from './list';
-export * from './scrim';
+export * from './overlay';
 export * from './tab';
 export * from './table';
 export * from './tag';

@@ -1,5 +1,6 @@
 import { TemplateResult, html } from 'lit';
 import { customElement } from 'lit/decorators.js';
+
 import { AotwContainer } from '../container';
 
 const AOTW_LIST = 'aotw-list';

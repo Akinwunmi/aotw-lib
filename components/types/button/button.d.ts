@@ -1,5 +1,6 @@
 import { LitElement, TemplateResult } from 'lit';
 import { ButtonVariant } from './button.model';
+export declare const AOTW_BUTTON = "aotw-button";
 export declare class ButtonElement extends LitElement {
     active: boolean;
     disabled: boolean;

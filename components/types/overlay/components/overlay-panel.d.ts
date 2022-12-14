@@ -1,11 +1,11 @@
 import { LitElement, TemplateResult } from 'lit';
-export declare class DialogElement extends LitElement {
+export declare const AOTW_OVERLAY_PANEL = "aotw-overlay-panel";
+export declare class AotwOverlayPanel extends LitElement {
     static styles: import("lit").CSSResult;
     protected render(): TemplateResult;
-    private _close;
 }
 declare global {
     interface HTMLElementTagNameMap {
-        AOTW_DIALOG: DialogElement;
+        AOTW_OVERLAY_PANEL: AotwOverlayPanel;
     }
 }

@@ -1,4 +1,4 @@
-import '@aotw/core/dist/style.css';
+import './preview.scss';
 
 import aotwTheme from './AotwTheme';
 

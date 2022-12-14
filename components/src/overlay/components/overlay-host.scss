@@ -1,0 +1,12 @@
+:host {
+  display: flex;
+  position: absolute;
+  inset: 0;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+slot {
+  pointer-events: auto;
+}

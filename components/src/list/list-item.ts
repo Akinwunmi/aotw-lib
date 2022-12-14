@@ -7,7 +7,7 @@ const AOTW_LIST_ITEM = 'aotw-list-item';
 
 @customElement(AOTW_LIST_ITEM)
 export class AotwListItem extends LitElement {
-  public static override styles = [unsafeCSS(styleListItem)];
+  public static override styles = unsafeCSS(styleListItem);
 
   protected override render(): TemplateResult {
     return html`
