@@ -12,8 +12,8 @@
         "600": { "value": "#3a3c50", "type": "color" }
       },
       "primary": {
-        "100": { "value": "rgba(51, 0, 255, 0.1)", "type": "color" },
-        "200": { "value": "rgba(51, 0, 255, 0.4)", "type": "color" },
+        "100": { "value": "#b7b7f3", "type": "color" },
+        "200": { "value": "#9090eb", "type": "color" },
         "300": { "value": "#3300ff", "type": "color" },
         "400": { "value": "#2900cc", "type": "color" },
         "500": { "value": "#1e0094", "type": "color" }

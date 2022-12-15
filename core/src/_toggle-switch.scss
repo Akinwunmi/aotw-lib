@@ -1,0 +1,68 @@
+@import './typography';
+
+input[type='checkbox'][toggle-switch] {
+  display: none;
+  align-items: center;
+  width: 40px;
+  height: 24px;
+  cursor: pointer;
+
+  + label {
+    @include typography-body;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: var(--aotw-space-m);
+
+    &::after,
+    &::before {
+      content: '';
+      order: -1;
+      background-color: var(--aotw-color-primary-100);
+      transition: all 150ms ease-in-out;
+    }
+
+    &::before {
+      width: 40px;
+      height: 6px;
+      border-radius: var(--aotw-radius-s);
+    }
+
+    &::after {
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      left: 0;
+      border-radius: 50%;
+    }
+  }
+
+  &:active + label {
+    &::before,
+    &::after {
+      background-color: var(--aotw-color-primary-200);
+    }
+  }
+
+  &:checked + label {
+    &::before,
+    &::after {
+      background-color: var(--aotw-color-primary-300);
+    }
+
+    &::after {
+      left: var(--aotw-space-2xl);
+    }
+  }
+
+  &:disabled + label {
+    &::before,
+    &::after {
+      background-color: var(--aotw-color-grey-300);
+    }
+  }
+
+  &:not([disabled]) + label {
+    cursor: pointer;
+  }
+}
