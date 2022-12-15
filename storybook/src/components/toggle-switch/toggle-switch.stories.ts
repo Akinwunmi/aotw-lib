@@ -1,30 +1,22 @@
 import { Meta } from '@storybook/web-components';
 
-import { toggleSwitchArgs, ToggleSwitchTemplate } from './toggle-switch.model';
+import { toggleSwitchArgs, ToggleSwitchTemplate } from './toggle-switch';
 
 export default {
   title: 'Components/Toggle Switch'
 } as Meta;
 
-export const Default = ToggleSwitchTemplate.bind({});
-Default.args = toggleSwitchArgs;
+export const Off = ToggleSwitchTemplate.bind({});
+Off.args = toggleSwitchArgs;
 
-export const Inactive = Default;
-
-export const Active = ToggleSwitchTemplate.bind({});
-Active.args = {
+export const On = ToggleSwitchTemplate.bind({});
+On.args = {
   ...toggleSwitchArgs,
-  active: true
+  checked: true
 }
 
 export const Disabled = ToggleSwitchTemplate.bind({});
 Disabled.args = {
   ...toggleSwitchArgs,
   disabled: true
-}
-
-export const WithLabel = ToggleSwitchTemplate.bind({});
-WithLabel.args = {
-  ...toggleSwitchArgs,
-  slot: 'Show all'
 }
