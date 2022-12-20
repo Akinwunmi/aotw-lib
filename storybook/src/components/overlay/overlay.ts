@@ -26,9 +26,9 @@ export const OverlayTemplate: Story<OverlayProps> = (props) => {
 
   return html`
     <div style="display: flex; gap: var(--aotw-space-s)">
-      <aotw-button id="button-dialog" @click=${props.handleOpenDialog.bind(undefined, 'overlay-dialog')}>Open dialog</aotw-button>
-      <aotw-button id="button-dropdown" @click=${props.handleOpenDropdown.bind(undefined, 'overlay-dropdown')}>Open dropdown</aotw-button>
-      <aotw-button id="button-toast" @click=${props.handleOpenToast.bind(undefined, 'overlay-toast')}>Open toast</aotw-button>
+      <button id="button-dialog" @click=${props.handleOpenDialog.bind(undefined, 'overlay-dialog')}>Open dialog</button>
+      <button id="button-dropdown" @click=${props.handleOpenDropdown.bind(undefined, 'overlay-dropdown')}>Open dropdown</button>
+      <button id="button-toast" @click=${props.handleOpenToast.bind(undefined, 'overlay-toast')}>Open toast</button>
     </div>
 
     <template id="overlay-dialog">

@@ -3,7 +3,7 @@ import { Meta } from '@storybook/web-components';
 import { buttonArgs, ButtonControls, ButtonTemplate } from './button.model';
 
 export default {
-  title: 'Components/Button',
+  title: 'Core/Button',
   argTypes: ButtonControls
 } as Meta;
 
