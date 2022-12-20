@@ -5,6 +5,7 @@ import { ClassInfo, classMap } from 'lit/directives/class-map.js';
 import styleButton from './button.scss';
 
 export const AOTW_BUTTON = 'aotw-button';
+
 @customElement(AOTW_BUTTON)
 export class ButtonElement extends LitElement {
   @property({ type: Boolean })

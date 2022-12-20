@@ -6,7 +6,7 @@ export * from './dialog';
 export * from './dynamic-text';
 export * from './icon';
 export * from './field';
-export * from './list';
+export * from './list-item';
 export * from './overlay';
 export * from './tab';
 export * from './table';

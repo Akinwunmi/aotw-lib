@@ -19,13 +19,13 @@ WithIconAndText.args = {
     <aotw-icon name="check" prefix></aotw-icon>
     Chip
   `
-}
+};
 
 export const WithIcon = ChipTemplate.bind({});
 WithIcon.args = {
   ...chipArgs,
   slot: html`<aotw-icon name="logo" prefix></aotw-icon>`
-}
+};
 
 export const Removable = ChipTemplate.bind({});
 Removable.args = {
@@ -34,22 +34,22 @@ Removable.args = {
     Chip
     <aotw-icon name="close" suffix></aotw-icon>
   `
-}
+};
 
 export const MediumSize = ChipTemplate.bind({});
 MediumSize.args = {
   ...chipArgs,
   size: 'medium'
-}
+};
 
 export const Active = ChipTemplate.bind({});
 Active.args = {
   ...chipArgs,
   active: true
-}
+};
 
 export const Disabled = ChipTemplate.bind({});
 Disabled.args = {
   ...chipArgs,
   disabled: true
-}
+};

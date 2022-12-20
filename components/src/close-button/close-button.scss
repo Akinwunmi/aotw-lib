@@ -15,7 +15,7 @@
     width: 110%;
     height: 2px;
 
-    background-color: var(--aotw-color-primary-500);
+    background-color: var(--aotw-color-primary-400);
     transition: all 200ms ease-in-out;
 }
 
@@ -30,14 +30,14 @@
   &:hover {
     &::before,
     &::after {
-      background-color: var(--aotw-color-primary-400);
+      background-color: var(--aotw-color-primary-500);
     }
   }
 
   &:active {
     &::before,
     &::after {
-      background-color: var(--aotw-color-primary-700);
+      background-color: var(--aotw-color-primary-600);
     }
   }
 }

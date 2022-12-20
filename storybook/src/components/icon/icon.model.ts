@@ -16,7 +16,7 @@ export const IconControls = {
     defaultValue: IconSize.Medium,
     options: Object.values(IconSize)
   }
-}
+};
 
 interface IconArgTypes {
   name: string;

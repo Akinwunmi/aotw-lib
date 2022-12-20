@@ -1,18 +1,23 @@
 @import '@aotw/core/src/typography';
 
-button {
+:root {
+  --aotw-tag-background-color: var(--aotw-color-grey-100);
+  --aotw-tag-color: var(--aotw-color-primary-400);
+}
+
+:host {
   @include typography-body-small;
-  box-sizing: border-box;
-  display: flex;
   align-items: center;
+  background-color: var(--aotw-tag-background-color);
+  border-radius: var(--aotw-radius-m);
+  box-sizing: border-box;
+  color: var(--aotw-tag-color);
+  display: inline-flex;
   gap: var(--aotw-space-xs);
   height: var(--aotw-height-s);
-  background-color: var(--aotw-color-secondary-50);
-  border: none;
-  border-radius: var(--aotw-radius-m);
-  color: var(--aotw-color-primary-500);
+  padding-inline: var(--aotw-space-xs);
 
-  ::slotted(aotw-icon[suffix]) {
+  ::slotted(*[suffix]) {
     cursor: pointer;
   }
 }

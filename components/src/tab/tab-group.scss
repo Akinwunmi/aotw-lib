@@ -1,5 +1,5 @@
 :host {
-  color: var(--aotw-color-primary-500);
+  color: var(--aotw-color-primary-400);
   display: flex;
   font-family: var(--aotw-font-family-primary);
   font-size: var(--aotw-font-size-m);
@@ -8,7 +8,7 @@
 }
 
 .active-line {
-  background-color: var(--aotw-color-primary-500);
+  background-color: var(--aotw-color-primary-400);
   bottom: 0;
   height: 2px;
   left: 0;

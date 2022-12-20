@@ -18,7 +18,7 @@ input[type='checkbox'][toggle-switch] {
     &::before {
       content: '';
       order: -1;
-      background-color: var(--aotw-color-primary-100);
+      background-color: var(--aotw-color-primary-200);
       transition: all 150ms ease-in-out;
     }
 
@@ -40,14 +40,14 @@ input[type='checkbox'][toggle-switch] {
   &:active + label {
     &::before,
     &::after {
-      background-color: var(--aotw-color-primary-200);
+      background-color: var(--aotw-color-primary-300);
     }
   }
 
   &:checked + label {
     &::before,
     &::after {
-      background-color: var(--aotw-color-primary-300);
+      background-color: var(--aotw-color-primary-400);
     }
 
     &::after {

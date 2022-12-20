@@ -6,7 +6,7 @@
   background-color: var(--aotw-color-grey-100);
   border-radius: var(--aotw-radius-s);
   box-sizing: border-box;
-  color: var(--aotw-color-primary-300);
+  color: var(--aotw-color-primary-400);
   cursor: pointer;
   display: inline-flex;
   gap: var(--aotw-space-s);
@@ -17,12 +17,12 @@
 }
 
 :host(:hover) {
-  background-color: var(--aotw-color-grey-200);
+  background-color: var(--aotw-color-primary-100);
 }
 
 :host(:active),
 :host([active]) {
-  background-color: var(--aotw-color-primary-300);
+  background-color: var(--aotw-color-primary-400);
   color: var(--aotw-color-grey-100);
 }
 

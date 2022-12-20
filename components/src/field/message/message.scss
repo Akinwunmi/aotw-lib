@@ -1,10 +1,10 @@
 :host {
-  color: var(--aotw-color-primary-500);
+  color: var(--aotw-color-primary-400);
   font-family: var(--aotw-font-family-primary);
   font-size: var(--aotw-font-size-xs);
   transition: all 150ms ease-in-out;
 }
 
 :host([disabled]) {
-  color: var(--aotw-color-secondary-200);
+  color: var(--aotw-color-grey-300);
 }

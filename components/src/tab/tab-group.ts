@@ -18,9 +18,11 @@ export class AotwTabGroup extends LitElement {
   public static override styles = unsafeCSS(styleTabGroup);
 
   protected override firstUpdated(): void {
-    this._tabs[0].toggleAttribute('active', true);
+    const activeTab = this._tabs.findIndex(tab => !tab.attributes.getNamedItem('disabled'));
+    this._tabs[activeTab].toggleAttribute('active', true);
     this._tabs.forEach((tab, i) => tab.addEventListener('click', this._setActive.bind(this, tab, i)));
     this._activeLine.style.width = `${100 / this._tabs.length}%`;
+    this._activeLine.style.left = `${100 / this._tabs.length * activeTab}%`;
   }
 
   protected override render(): TemplateResult {

@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Thu, 15 Dec 2022 08:49:59 GMT
+ * Generated on Tue, 20 Dec 2022 13:09:05 GMT
  */
 
 :root {
@@ -12,11 +12,12 @@
   --aotw-color-grey-400: #838290;
   --aotw-color-grey-500: #5a5d70;
   --aotw-color-grey-600: #3a3c50;
-  --aotw-color-primary-100: #b7b7f3;
-  --aotw-color-primary-200: #9090eb;
-  --aotw-color-primary-300: #3300ff;
-  --aotw-color-primary-400: #2900cc;
-  --aotw-color-primary-500: #1e0094;
+  --aotw-color-primary-100: #dedefd;
+  --aotw-color-primary-200: #b7b7f3;
+  --aotw-color-primary-300: #9090eb;
+  --aotw-color-primary-400: #3300ff;
+  --aotw-color-primary-500: #2900cc;
+  --aotw-color-primary-600: #1e0094;
   --aotw-color-secondary-100: rgba(111, 255, 180, 0.1);
   --aotw-color-secondary-200: rgba(111, 255, 180, 0.4);
   --aotw-color-secondary-300: #6fffb4;
@@ -39,6 +40,8 @@
   --aotw-font-weight-regular: 400;
   --aotw-height-s: 24px;
   --aotw-height-m: 32px;
+  --aotw-height-l: 48px;
+  --aotw-height-xl: 64px;
   --aotw-radius-xs: 2px;
   --aotw-radius-s: 4px;
   --aotw-radius-m: 6px;

@@ -1,5 +1,5 @@
 :host {
-  color: var(--aotw-color-primary-500);
+  color: var(--aotw-color-primary-400);
   font-family: var(--aotw-font-family-primary);
   height: 16px;
   margin: var(--aotw-space-xs) 0;
@@ -7,9 +7,9 @@
 }
 
 :host([error]) {
-  color: var(--aotw-color-error-500);
+  color: var(--aotw-color-error-300);
 }
 
 :host([disabled]) {
-  color: var(--aotw-color-secondary-200);
+  color: var(--aotw-color-grey-300);
 }

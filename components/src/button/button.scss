@@ -4,7 +4,7 @@
 
 button {
   align-items: center;
-  background-color: var(--aotw-color-primary-300);
+  background-color: var(--aotw-color-primary-400);
   border: 1px solid transparent;
   color: var(--aotw-color-white);
   cursor: pointer;
@@ -23,7 +23,7 @@ button {
 
   &.ghost {
     background-color: transparent;
-    color: var(--aotw-color-primary-300);
+    color: var(--aotw-color-primary-400);
   }
 
   &.secondary {
@@ -39,11 +39,11 @@ button {
 
 :host(:hover) {
   button {
-    background-color: var(--aotw-color-primary-400);
+    background-color: var(--aotw-color-primary-500);
 
     &.ghost {
       background-color: transparent;
-      color: var(--aotw-color-primary-400);
+      color: var(--aotw-color-primary-500);
     }
 
     &.secondary {
@@ -60,11 +60,11 @@ button {
 :host(:active),
 :host(:not([disabled])[active]) {
   button {
-    background-color: var(--aotw-color-primary-500);
+    background-color: var(--aotw-color-primary-600);
 
     &.ghost {
-      background-color: var(--aotw-color-primary-100);
-      color: var(--aotw-color-primary-500);
+      background-color: var(--aotw-color-primary-200);
+      color: var(--aotw-color-primary-600);
     }
 
     &.secondary {
