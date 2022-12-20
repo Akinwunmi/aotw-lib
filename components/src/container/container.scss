@@ -1,0 +1,11 @@
+:host {
+  background-color: var(--aotw-color-white);
+  display: grid;
+  height: 100%;
+  min-height: var(--aotw-height-s);
+  width: 100%;
+}
+
+:host([elevated]) {
+  box-shadow: var(--aotw-elevation-xs);
+}

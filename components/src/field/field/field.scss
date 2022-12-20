@@ -1,0 +1,24 @@
+:host {
+  display: grid;
+  gap: var(--aotw-space-s);
+}
+
+:host([disabled]) {
+  pointer-events: none;
+}
+
+::slotted(input[aotwInput]) {
+  background-color: var(--aotw-color-white);
+  border: none;
+  box-shadow: var(--aotw-elevation-xs);
+  box-sizing: border-box;
+  color: var(--aotw-color-black);
+  font-family: var(--aotw-font-family-primary);
+  font-size: var(--aotw-font-size-s);
+  height: var(--aotw-height-m);
+  padding-inline: var(--aotw-space-m);
+}
+
+::slotted(input[aotwInput][disabled]) {
+  pointer-events: none;
+}

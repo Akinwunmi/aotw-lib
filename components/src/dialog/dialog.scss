@@ -1,0 +1,50 @@
+@import '@aotw/core/src/typography';
+
+:host {
+  @include typography-body;
+  background-color: var(--aotw-color-primary-400);
+  color: var(--aotw-color-white);
+  display: inline-grid;
+  grid-template-rows: auto 1fr;
+  left: var(--aotw-space-s);
+  max-width: 400px;
+  min-height: 400px;
+  min-width: 300px;
+  padding: var(--aotw-space-xs) var(--aotw-space-s) var(--aotw-space-s);
+  top: 50px;
+
+  header {
+    align-items: flex-start;
+    display: grid;
+    gap: var(--aotw-space-s);
+    grid-template-columns: 1fr auto;
+
+    section {
+      slot[name='title'] {
+        @include typography-header;
+        display: inline-block;
+        margin-block: var(--aotw-space-s);
+      }
+      
+      .visual {
+        margin-block: var(--aotw-space-m) var(--aotw-space-s);
+      }
+    }
+
+    aotw-close-button {
+      &::part(button) {
+        &::before,
+        &::after {
+          background-color: var(--aotw-color-white);
+        }
+      }
+    }
+  }
+
+  &_content {
+    display: grid;
+    gap: var(--aotw-space-xs);
+    grid-template-rows: 1fr auto;
+    padding-top: var(--aotw-space-s);
+  }
+}

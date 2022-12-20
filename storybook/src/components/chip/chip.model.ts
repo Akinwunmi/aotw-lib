@@ -1,33 +1,30 @@
 import '@aotw/components/src/chip';
-import { Icon } from '@aotw/components/src/icon';
-import { html } from 'lit';
+import { html, TemplateResult } from 'lit';
 
 import { Story } from '../../../types/story.model';
 
 interface ChipArgTypes {
   active: boolean;
-  deletable: boolean;
   disabled: boolean;
-  icon?: Icon;
-  text: string;
+  size: 'small' | 'medium';
+  slot: TemplateResult | string;
 }
 
 export const chipArgs: ChipArgTypes = {
   active: false,
-  deletable: false,
   disabled: false,
-  text: 'Chip'
+  size: 'small',
+  slot: 'Chip'
 };
 
-export const ChipTemplate: Story<ChipArgTypes> = (
-  { active, deletable, disabled, icon, text }: ChipArgTypes
-) => {
+export const ChipTemplate: Story<ChipArgTypes> = ({ active, disabled, size, slot }: ChipArgTypes) => {
+  function chipToRemove(e) {
+    document.querySelector('#root-inner')?.removeChild(e.detail);
+  }
+
   return html`
-    <aotw-chip
-      .icon=${icon}
-      ?active=${active}
-      ?deletable=${deletable}
-      ?disabled=${disabled}
-    >${text}</aotw-chip>
+    <aotw-chip @chipToRemove=${chipToRemove} ?active=${active} ?disabled=${disabled} .size=${size}>
+      ${slot}
+    </aotw-chip>
   `;
 };

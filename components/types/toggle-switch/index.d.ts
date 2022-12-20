@@ -1,1 +1,1 @@
-export * from './toggle-switch-element';
+export * from './toggle-switch';

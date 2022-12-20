@@ -1,0 +1,33 @@
+:host {
+  align-items: center;
+  background-color: var(--aotw-color-white);
+  box-sizing: border-box;
+  color: var(--aotw-color-black);
+  display: grid;
+  gap: var(--aotw-space-s);
+  grid-template-columns: auto 1fr auto;
+  font-family: var(--aotw-font-family-primary);
+  padding: var(--aotw-space-m) var(--aotw-space-l);
+  height: var(--aotw-height-l);
+}
+
+:host(:hover) {
+  background-color: var(--aotw-color-primary-100);
+}
+
+:host(:active) {
+  background-color: var(--aotw-color-primary-200);
+  transition: background-color 150ms ease-in-out;
+}
+
+::slotted(*[prefix]) {
+  grid-column: 1 / 2;
+}
+::slotted(*[suffix]) {
+  grid-column: 3 / 4;
+}
+
+:host([disabled]) {
+  color: var(--aotw-color-grey-300);
+  pointer-events: none;
+}

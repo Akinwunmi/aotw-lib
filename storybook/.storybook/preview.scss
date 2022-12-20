@@ -1,0 +1,10 @@
+@import '@aotw/core/dist/style.css';
+
+html,
+body {
+  height: 100%;
+}
+
+.aotw-overlay-container {
+  display: flex !important;
+}

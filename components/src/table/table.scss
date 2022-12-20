@@ -1,0 +1,56 @@
+@import '@aotw/core/src/typography';
+
+.table {
+  @include typography-body;
+  display: flex;
+  justify-content: stretch;
+  border: 1px solid var(--aotw-color-white);
+  background-color: var(--aotw-color-secondary-50);
+  color: var(--aotw-color-primary-500);
+
+  &_column {
+    $self: &;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid var(--aotw-color-white);
+    
+    &:last-of-type {
+      width: 100%;
+      border: none;
+    }
+    &__header {
+      padding: var(--aotw-space-s);
+      border-bottom: 2px solid var(--aotw-color-white);
+    }
+    &__data {
+      display: flex;
+      flex-direction: column;
+      gap: var(--aotw-space-xs);
+      
+      .cell {
+        display: grid;
+        align-items: center;
+        min-height: 40px;
+        padding: var(--aotw-space-s);
+        padding-right: var(--aotw-space-l);
+        border-bottom: 1px solid var(--aotw-color-white);
+
+        &:last-of-type {
+          border: none;
+        }
+      }
+    }
+    &.hidden {
+      position: relative;
+      width: max-content;
+      writing-mode: vertical-lr;
+      
+      #{$self}__header {
+        border-bottom: none;
+      }
+      #{$self}__data {
+        display: none;
+      }
+    }
+  }
+}

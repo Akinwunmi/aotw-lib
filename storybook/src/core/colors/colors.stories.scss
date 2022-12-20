@@ -1,142 +1,52 @@
-@import '@aotw/core/src/colors';
-@import '@aotw/core/src/spacing';
-@import '@aotw/core/src/typography';
-
 .palette {
-  position: relative;
   display: grid;
-  gap: $aotw-spacing-l;
+  gap: var(--aotw-space-xl) var(--aotw-space-s);
+  grid-template-columns: repeat(auto-fit, minmax(20em, 1fr));
 
-  @include typography-default;
-
-  &_grid {
-    z-index: 1;
-    position: absolute;
+  &_color {
+    align-content: flex-start;
     display: grid;
-    gap: $aotw-spacing-l;
-    top: 46px;
-    margin-left: 200px;
-    padding-left: $aotw-spacing-m;
-    
-    &__row {
-      display: grid;
-      grid-template-columns: repeat(10, 60px);
+    gap: var(--aotw-space-s);
 
-      div {
-        position: relative;
-        height: 60px;
+    &.default {
+      grid-column: 1 / -1;
+      grid-template-columns: repeat(2, 1fr);
+    }
 
-        &::before {
-          content: '';
-          position: absolute;
-          display: block;
-          inset: 28px;
-          background-color: $secondary-grey-100;
-        }
-      }
+    &.validation {
+      grid-column: 1 / -1;
+      grid-template-columns: repeat(3, 1fr);
     }
   }
-  &_header {
-    display: grid;
-    grid-template-columns: repeat(10, 60px);
-    height: 30px;
-    margin-left: 200px;
-    padding-left: $aotw-spacing-m;
+
+  .card {
+    border-radius: var(--aotw-radius-s);
+    box-sizing: border-box;
+    height: 70px;
+    padding: var(--aotw-space-s) var(--aotw-space-m);
 
     p {
-      margin: auto;
+      color: var(--aotw-color-white);
+      margin: 0;
     }
-  }
-  &_color-range {
-    z-index: 2;
-    display: grid;
-    grid-template-columns: 200px 1fr;
-    align-items: center;
-    gap: $aotw-spacing-m;
 
-    &__values {
-      display: grid;
-      grid-template-columns: repeat(10, 60px);
-      height: 60px;
+    &.border {
+      border: 1px solid var(--aotw-color-grey-300);
+    }
 
-      .primary-blue {
-        &_50 {
-          background-color: $primary-blue-50;
-        }
-        &_100 {
-          background-color: $primary-blue-100;
-        }
-        &_200 {
-          background-color: $primary-blue-200;
-        }
-        &_300 {
-          background-color: $primary-blue-300;
-        }
-        &_400 {
-          background-color: $primary-blue-400;
-        }
-        &_500 {
-          background-color: $primary-blue-500;
-        }
-        &_700 {
-          grid-column: 8 / 9;
-          background-color: $primary-blue-700;
-        }
-        &_900 {
-          grid-column: 10 / 11;
-          background-color: $primary-blue-900;
-        }
+    &.light {
+      p {
+        color: var(--aotw-color-black);
       }
-      .secondary-grey {
-        &_50 {
-          background-color: $secondary-grey-50;
-        }
-        &_100 {
-          background-color: $secondary-grey-100;
-        }
-        &_200 {
-          background-color: $secondary-grey-200;
-        }
-        &_500 {
-          grid-column: 6 / 7;
-          background-color: $secondary-grey-500;
-        }
-        &_700 {
-          grid-column: 8 / 9;
-          background-color: $secondary-grey-700;
-        }
-        &_900 {
-          grid-column: 10 / 11;
-          background-color: $secondary-grey-900;
-        }
-      }
-      .secondary-smoke {
-        &_100 {
-          grid-column: 2 / 3;
-          background-color: $secondary-smoke-100;
-        }
-        &_200 {
-          background-color: $secondary-smoke-200;
-        }
-      }
-      .tertiary-steelblue {
-        &_500 {
-          grid-column: 6 / 7;
-          background-color: $tertiary-steelblue-500;
-        }
-      }
-      .tertiary-wheat {
-        &_300 {
-          grid-column: 4 / 5;
-          background-color: $tertiary-wheat-300;
-        }
-        &_400 {
-          background-color: $tertiary-wheat-400;
-        }
-        &_500 {
-          background-color: $tertiary-wheat-500;
-        }
-      }
+    }
+    
+    .name {
+      font-size: var(--aotw-font-size-l);
+      line-height: var(--aotw-font-line-height-s);
+    }
+    .value {
+      font-size: var(--aotw-font-size-s);
+      line-height: var(--aotw-font-line-height-m);
     }
   }
 }

@@ -1,26 +1,34 @@
 {
   "name": "@aotw/components",
   "description": "Archive of the World Component Library",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "author": "Jurrit van der Ploeg <info@jurritvanderploeg.nl> (http://www.jurritvanderploeg.nl/)",
   "license": "ISC",
   "private": true,
-  "main": "dist/components.es.js",
+  "main": "dist/index.js",
   "types": "types/index.d.ts",
   "files": [
     "dist",
     "types"
   ],
   "scripts": {
-    "build": "tsc && vite build",
-    "dev": "vite"
+    "build": "rimraf dist && rimraf types && tsc && vite build",
+    "dev": "vite",
+    "lint": "eslint . src/**/*.ts",
+    "lint:fix": "eslint . src/**/*.ts --fix"
   },
   "dependencies": {
     "@aotw/core": "file:../core",
     "lit": "^2.2.2"
   },
   "devDependencies": {
+    "@aotw/eslint-config": "file:../eslint-config",
     "@types/node": "^17.0.23",
+    "@typescript-eslint/eslint-plugin": "^5.33.0",
+    "@typescript-eslint/parser": "^5.33.0",
+    "eslint": "^8.22.0",
+    "eslint-plugin-lit": "^1.6.1",
+    "rimraf": "^3.0.2",
     "rollup-plugin-postcss-lit": "^2.0.0",
     "sass": "^1.50.0",
     "typescript": "^4.5.4",

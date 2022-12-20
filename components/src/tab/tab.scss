@@ -1,0 +1,14 @@
+:host {
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  height: var(--aotw-height-s);
+  padding: var(--aotw-space-s);
+  justify-content: center;
+  width: 100%;
+}
+
+:host([disabled]) {
+  color: var(--aotw-color-grey-300);
+  pointer-events: none;
+}

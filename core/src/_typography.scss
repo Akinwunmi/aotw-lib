@@ -1,49 +1,59 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
 
 @mixin typography-button {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 500;
-  font-size: 1rem;
-  line-height: 1.2em;
+  font-family: var(--aotw-font-family-primary);
+  font-weight: var(--aotw-font-weight-medium);
+  font-size: var(--aotw-font-size-s);
+  line-height: var(--aotw-font-line-height-s);
   text-decoration: none;
+  text-transform: uppercase;
 }
-@mixin typography-default {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 400;
-  font-size: 1rem;
-  line-height: 1.2em;
+.aotw-typography-button {
+  @include typography-button();
+}
+@mixin typography-body {
+  font-family: var(--aotw-font-family-primary);
+  font-weight: var(--aotw-font-weight-regular);
+  font-size: var(--aotw-font-size-s);
+  line-height: var(--aotw-font-line-height-s);
+}
+@mixin typography-body-small {
+  font-family: var(--aotw-font-family-primary);
+  font-weight: var(--aotw-font-weight-regular);
+  font-size: var(--aotw-font-size-xs);
+  line-height: var(--aotw-font-line-height-s);
 }
 @mixin typography-header {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 500;
-  font-size: 1.4rem;
-  line-height: 1.2em;
+  font-family: var(--aotw-font-family-primary);
+  font-weight: var(--aotw-font-weight-medium);
+  font-size: var(--aotw-font-size-l);
+  line-height: var(--aotw-font-line-height-s);
 }
 @mixin typography-header-small {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 400;
-  font-size: 1.2rem;
-  line-height: 1.2em;
+  font-family: var(--aotw-font-family-primary);
+  font-weight: var(--aotw-font-weight-regular);
+  font-size: var(--aotw-font-size-m);
+  line-height: var(--aotw-font-line-height-s);
 }
 @mixin typography-header-smallcaps {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 400;
-  font-size: 1rem;
-  line-height: 1.2em;
-  letter-spacing: .025em;
+  font-family: var(--aotw-font-family-primary);
+  font-weight: var(--aotw-font-weight-regular);
+  font-size: var(--aotw-font-size-s);
+  line-height: var(--aotw-font-line-height-s);
+  letter-spacing: var(--aotw-font-letter-spacing-m);
   text-transform: uppercase;
 }
 @mixin typography-input {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 400;
-  font-size: 1rem;
-  line-height: 1.2em;
+  font-family: var(--aotw-font-family-primary);
+  font-weight: var(--aotw-font-weight-regular);
+  font-size: var(--aotw-font-size-s);
+  line-height: var(--aotw-font-line-height-s);
   text-decoration: none;
 }
 @mixin typography-link {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 600;
-  font-size: 1rem;
-  line-height: 1.2em;
+  font-family: var(--aotw-font-family-primary);
+  font-weight: var(--aotw-font-weight-bold);
+  font-size: var(--aotw-font-size-s);
+  line-height: var(--aotw-font-line-height-s);
   text-decoration: none;
 }

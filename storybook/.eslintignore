@@ -1,0 +1,8 @@
+.storybook
+node_modules
+*.d.ts
+vite.config.ts
+dist/**/*
+.eslintrc.js
+.prettierrc.js
+storybook-static

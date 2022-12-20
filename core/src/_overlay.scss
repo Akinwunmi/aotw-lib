@@ -1,0 +1,15 @@
+:root {
+  --aotw-overlay-container-level: 1000;
+  --aotw-overlay-container-padding: var(--grav-space-xl);
+}
+
+.aotw-overlay-container {
+  align-items: center;
+  display: flex;
+  inset: 0;
+  justify-content: center;
+  padding: var(--aotw-overlay-container-padding);
+  pointer-events: none;
+  position: fixed;
+  z-index: var(--aotw-overlay-container-level);
+}

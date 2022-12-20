@@ -1,0 +1,10 @@
+{
+  "aotw": {
+    "radius": {
+      "xs": { "value": "2px", "type": "radius" },
+      "s": { "value": "4px", "type": "radius" },
+      "m": { "value": "6px", "type": "radius" },
+      "l": { "value": "8px", "type": "radius" }
+    }
+  }
+}

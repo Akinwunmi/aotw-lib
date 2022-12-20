@@ -9,9 +9,12 @@
     "src/"
   ],
   "scripts": {
-    "build": "sass src/index.scss:dist/style.css"
+    "build:tokens": "style-dictionary build --config ./config.json",
+    "build:scss": "sass src/index.scss:dist/style.css",
+    "build": "npm run build:tokens && npm run build:scss"
   },
   "devDependencies": {
-    "sass": "^1.50.0"
+    "sass": "^1.50.0",
+    "style-dictionary": "^3.7.1"
   }
 }

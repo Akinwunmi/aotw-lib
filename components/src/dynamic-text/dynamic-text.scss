@@ -1,0 +1,23 @@
+:host {
+  font-family: var(--aotw-font-family-primary);
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+.dynamic-text {
+  align-items: center;
+  display: grid;
+  height: inherit;
+  left: 0;
+  position: absolute;
+  transition: all 2500ms linear;
+  white-space: nowrap;
+
+  &.right-aligned {
+    left: auto;
+    right: 0;
+  }
+}
