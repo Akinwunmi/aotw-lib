@@ -15,7 +15,7 @@ interface FieldArgTypes {
 export const fieldArgs: FieldArgTypes = {
   disabled: false,
   slot: html`
-    <input aotwInput />
+    <input aotw-input />
   `,
 };
 

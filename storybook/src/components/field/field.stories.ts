@@ -4,7 +4,7 @@ import { html } from 'lit';
 import { fieldArgs, FieldControls, FieldTemplate } from './field.model';
 
 export default {
-  title: 'Components/Field',
+  title: 'Components/Field (deprecated)',
   argTypes: FieldControls
 } as Meta;
 
@@ -16,7 +16,7 @@ Label.args = {
   ...fieldArgs,
   slot: html`
     <aotw-label>Label</aotw-label>
-    <input aotwInput />
+    <input aotw-input />
   `
 };
 
@@ -24,24 +24,8 @@ export const Message = FieldTemplate.bind({});
 Message.args = {
   ...fieldArgs,
   slot: html`
-    <input aotwInput />
+    <input aotw-input />
     <aotw-message>Message</aotw-message>
-  `
-};
-
-export const Placeholder = FieldTemplate.bind({});
-Placeholder.args = {
-  ...fieldArgs,
-  slot: html`
-    <input aotwInput placeholder="Placeholder" />
-  `
-};
-
-export const Value = FieldTemplate.bind({});
-Value.args = {
-  ...fieldArgs,
-  slot: html`
-    <input aotwInput value="Value" />
   `
 };
 
@@ -50,7 +34,7 @@ InputMessage.args = {
   ...fieldArgs,
   slot: html`
     <aotw-label>Label</aotw-label>
-    <input aotwInput message="Input message" />
+    <input aotw-input message="Input message" />
   `
 };
 
@@ -59,7 +43,7 @@ InputError.args = {
   ...fieldArgs,
   slot: html`
     <aotw-label>Label</aotw-label>
-    <input aotwInput error="Input error" />
+    <input aotw-input error="Input error" />
   `
 };
 
@@ -68,8 +52,8 @@ Disabled.args = {
   ...fieldArgs,
   disabled: true,
   slot: html`
-    <aotw-label>Label</aotw-label>
-    <input aotwInput />
-    <aotw-message>Message</aotw-message>
+    <aotw-label disabled>Label</aotw-label>
+    <input aotw-input disabled />
+    <aotw-message disabled>Message</aotw-message>
   `
 };
