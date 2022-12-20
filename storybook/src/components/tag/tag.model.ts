@@ -4,7 +4,7 @@ import { ifDefined } from 'lit/directives/if-defined.js';
 
 import { Story } from '../../../types/story.model';
 
-export const TagControls = {}
+export const TagControls = {};
 
 interface TagArgTypes {
   customClass?: string;

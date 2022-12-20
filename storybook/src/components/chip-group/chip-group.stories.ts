@@ -21,4 +21,4 @@ ActiveChip.args = {
       <aotw-icon name="grid" size="extra-large"></aotw-icon>
     </aotw-chip>
   `
-}
+};

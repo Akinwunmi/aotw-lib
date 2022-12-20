@@ -5,7 +5,7 @@ import { Story } from '../../../types/story.model';
 
 export const FieldControls = {
   slot: { control: 'text' },
-}
+};
 
 interface FieldArgTypes {
   disabled: boolean;

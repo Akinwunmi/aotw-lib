@@ -1,26 +1,32 @@
 import '@aotw/components/src/tab';
-import { html, TemplateResult } from 'lit';
+import { html } from 'lit';
 
 import { Story } from '../../../types/story.model';
 
-export const tabStub = [
-  { id: 1, title: 'Tab 1', disabled: false },
-  { id: 2, title: 'Tab 2', disabled: false },
-  { id: 3, title: 'Tab 3', disabled: false }
-];
-
-interface TabArgTypes {
-  slot: TemplateResult | string;
+interface ArgTypes {
+  disabledItem: number;
+  items: number;
 }
 
-export const tabArgs: TabArgTypes = {
-  slot: html`
-    ${tabStub.map(({ id, title, disabled }) => html`
-      <aotw-tab id=${id} ?disabled=${disabled}>${title}</aotw-tab>
-    `)}
-  `
+export const tabArgs: ArgTypes = {
+  disabledItem: 3,
+  items: 3
 };
 
-export const TabGroupTemplate: Story<TabArgTypes> = ({ slot }) => {
-  return html`<aotw-tab-group>${slot}</aotw-tab-group>`;
+export const TabGroupTemplate: Story<ArgTypes> = (props) => {
+  const tabs = new Array(props.items).fill(true).map((_, index) => ({
+    id: index + 1,
+    label: `Tab ${index + 1}`,
+    disabled: index === props.disabledItem
+  }));
+  
+  const tabElements = tabs.map(tab => html`
+    <aotw-tab id=${tab.id} ?disabled=${tab.disabled}>${tab.label}</aotw-tab>
+  `);
+
+  return html`
+    <aotw-tab-group>
+      ${tabElements}
+    </aotw-tab-group>
+  `;
 };

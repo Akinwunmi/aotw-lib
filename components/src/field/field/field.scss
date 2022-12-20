@@ -4,7 +4,6 @@
 }
 
 :host([disabled]) {
-  color: var(--aotw-color-secondary-200);
   pointer-events: none;
 }
 
@@ -21,6 +20,5 @@
 }
 
 ::slotted(input[aotwInput][disabled]) {
-  color: var(--aotw-color-secondary-150);
   pointer-events: none;
 }

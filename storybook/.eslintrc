@@ -1,0 +1,5 @@
+{
+  "extends": [
+    "@aotw/eslint-config"
+  ]
+}

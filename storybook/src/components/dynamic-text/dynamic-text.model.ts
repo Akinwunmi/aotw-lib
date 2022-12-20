@@ -9,7 +9,7 @@ export const DynamicTextControls = {
     defaultValue: 'small',
     options: ['small', 'medium', 'large']
   }
-}
+};
 
 interface DynamicTextArgTypes {
   alignment: 'left' | 'right';

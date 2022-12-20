@@ -14,14 +14,15 @@
   "scripts": {
     "build": "rimraf dist && rimraf types && tsc && vite build",
     "dev": "vite",
-    "lint": "eslint src/**/*.ts",
-    "lint:fix": "eslint src/**/*.ts --fix"
+    "lint": "eslint . src/**/*.ts",
+    "lint:fix": "eslint . src/**/*.ts --fix"
   },
   "dependencies": {
     "@aotw/core": "file:../core",
     "lit": "^2.2.2"
   },
   "devDependencies": {
+    "@aotw/eslint-config": "file:../eslint-config",
     "@types/node": "^17.0.23",
     "@typescript-eslint/eslint-plugin": "^5.33.0",
     "@typescript-eslint/parser": "^5.33.0",

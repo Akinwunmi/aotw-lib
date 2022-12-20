@@ -36,11 +36,9 @@ export const OverlayTemplate: Story<OverlayProps> = (props) => {
     </template>
 
     <template id="overlay-dropdown">
-      <aotw-list>
-        <aotw-list-item>Item 1</aotw-list-item>
-        <aotw-list-item>Item 2</aotw-list-item>
-        <aotw-list-item>Item 3</aotw-list-item>
-      </aotw-list>
+      <aotw-list-item>Item 1</aotw-list-item>
+      <aotw-list-item>Item 2</aotw-list-item>
+      <aotw-list-item>Item 3</aotw-list-item>
     </template>
 
     <template id="overlay-toast">

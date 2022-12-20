@@ -18,7 +18,7 @@ Label.args = {
     <aotw-label>Label</aotw-label>
     <input aotwInput />
   `
-}
+};
 
 export const Message = FieldTemplate.bind({});
 Message.args = {
@@ -27,7 +27,7 @@ Message.args = {
     <input aotwInput />
     <aotw-message>Message</aotw-message>
   `
-}
+};
 
 export const Placeholder = FieldTemplate.bind({});
 Placeholder.args = {
@@ -35,7 +35,7 @@ Placeholder.args = {
   slot: html`
     <input aotwInput placeholder="Placeholder" />
   `
-}
+};
 
 export const Value = FieldTemplate.bind({});
 Value.args = {
@@ -43,7 +43,7 @@ Value.args = {
   slot: html`
     <input aotwInput value="Value" />
   `
-}
+};
 
 export const InputMessage = FieldTemplate.bind({});
 InputMessage.args = {
@@ -52,7 +52,7 @@ InputMessage.args = {
     <aotw-label>Label</aotw-label>
     <input aotwInput message="Input message" />
   `
-}
+};
 
 export const InputError = FieldTemplate.bind({});
 InputError.args = {
@@ -61,7 +61,7 @@ InputError.args = {
     <aotw-label>Label</aotw-label>
     <input aotwInput error="Input error" />
   `
-}
+};
 
 export const Disabled = FieldTemplate.bind({});
 Disabled.args = {
@@ -72,4 +72,4 @@ Disabled.args = {
     <input aotwInput />
     <aotw-message>Message</aotw-message>
   `
-}
+};

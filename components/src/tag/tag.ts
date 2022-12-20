@@ -26,9 +26,7 @@ export class TagElement extends LitElement {
 
   protected override render(): TemplateResult {
     return html`
-      <button part="button">
-        <slot></slot>
-      </button>
+      <slot></slot>
     `;
   }
 
