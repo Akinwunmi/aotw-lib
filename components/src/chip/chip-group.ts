@@ -1,7 +1,7 @@
 import { LitElement, TemplateResult, html, unsafeCSS } from 'lit';
 import { customElement, queryAssignedElements } from 'lit/decorators.js';
 
-import styleChipGroup from './chip-group.scss';
+import styleChipGroup from './chip-group.scss?inline';
 import { AotwChip } from './chip';
 
 const AOTW_CHIP_GROUP = 'aotw-chip-group';

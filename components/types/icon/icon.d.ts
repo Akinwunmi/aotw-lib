@@ -1,5 +1,4 @@
 import { LitElement, TemplateResult } from 'lit';
-import './icons';
 import { IconSize } from './icon.model';
 export declare class IconElement extends LitElement {
     name: string;

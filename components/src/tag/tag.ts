@@ -1,7 +1,7 @@
 import { LitElement, TemplateResult, html, unsafeCSS } from 'lit';
 import { customElement, property, queryAssignedElements } from 'lit/decorators.js';
 
-import styleTag from './tag.scss';
+import styleTag from './tag.scss?inline';
 
 const AOTW_TAG = 'aotw-tag';
 

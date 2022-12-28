@@ -1,7 +1,7 @@
 import { LitElement, TemplateResult, html, unsafeCSS } from 'lit';
-import { customElement, property, queryAssignedElements } from 'lit/decorators.js';
+import { customElement, queryAssignedElements } from 'lit/decorators.js';
 
-import styleField from './field.scss';
+import styleField from './field.scss?inline';
 
 const AOTW_FIELD = 'aotw-field';
 

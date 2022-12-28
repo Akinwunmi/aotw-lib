@@ -1,7 +1,7 @@
 import { LitElement, TemplateResult, html, unsafeCSS } from 'lit';
 import { customElement } from 'lit/decorators.js';
 
-import styleError from './error.scss';
+import styleError from './error.scss?inline';
 
 const AOTW_FIELD_ERROR = 'aotw-error';
 

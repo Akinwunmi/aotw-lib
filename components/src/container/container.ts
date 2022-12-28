@@ -1,7 +1,7 @@
 import { html, LitElement, TemplateResult, unsafeCSS } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 
-import styleContainer from './container.scss';
+import styleContainer from './container.scss?inline';
 
 const AOTW_CONTAINER = 'aotw-container';
 

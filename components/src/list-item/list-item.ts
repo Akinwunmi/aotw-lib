@@ -1,7 +1,7 @@
 import { TemplateResult, html, unsafeCSS, LitElement } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 
-import styleListItem from './list-item.scss';
+import styleListItem from './list-item.scss?inline';
 
 const AOTW_LIST_ITEM = 'aotw-list-item';
 

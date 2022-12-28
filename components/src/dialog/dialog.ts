@@ -1,7 +1,7 @@
 import { LitElement, TemplateResult, html, unsafeCSS } from 'lit';
 import { customElement } from 'lit/decorators.js';
 
-import styleDialog from './dialog.scss';
+import styleDialog from './dialog.scss?inline';
 
 const AOTW_DIALOG = 'aotw-dialog';
 

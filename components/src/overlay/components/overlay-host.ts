@@ -1,7 +1,7 @@
 import { html, LitElement, TemplateResult, unsafeCSS } from 'lit';
 import { customElement } from 'lit/decorators.js';
 
-import styleOverlayHost from './overlay-host.scss';
+import styleOverlayHost from './overlay-host.scss?inline';
 
 export const AOTW_OVERLAY_HOST = 'aotw-overlay-host';
 

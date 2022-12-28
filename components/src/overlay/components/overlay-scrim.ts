@@ -1,7 +1,7 @@
 import { html, LitElement, TemplateResult, unsafeCSS } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 
-import styleOverlayScrim from './overlay-scrim.scss';
+import styleOverlayScrim from './overlay-scrim.scss?inline';
 
 export const OVERLAY_SCRIM = 'aotw-overlay-scrim';
 

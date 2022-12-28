@@ -1,7 +1,7 @@
 import { LitElement, TemplateResult, html, unsafeCSS } from 'lit';
 import { customElement, property, queryAssignedElements } from 'lit/decorators.js';
 
-import styleChip from './chip.scss';
+import styleChip from './chip.scss?inline';
 
 const AOTW_CHIP = 'aotw-chip';
 
