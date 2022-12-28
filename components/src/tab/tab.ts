@@ -1,7 +1,7 @@
 import { html, LitElement, TemplateResult, unsafeCSS } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 
-import styleTab from './tab.scss';
+import styleTab from './tab.scss?inline';
 
 const AOTW_TAB = 'aotw-tab';
 

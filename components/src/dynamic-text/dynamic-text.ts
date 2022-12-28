@@ -2,7 +2,7 @@ import { LitElement, TemplateResult, html, unsafeCSS } from 'lit';
 import { customElement, property, query } from 'lit/decorators.js';
 import { ClassInfo, classMap } from 'lit/directives/class-map.js';
 
-import styleDynamicText from './dynamic-text.scss';
+import styleDynamicText from './dynamic-text.scss?inline';
 
 const AOTW_DYNAMIC_TEXT = 'aotw-dynamic-text';
 @customElement(AOTW_DYNAMIC_TEXT)

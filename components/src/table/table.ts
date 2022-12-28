@@ -2,7 +2,7 @@ import { LitElement, TemplateResult, html, unsafeCSS } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import { classMap } from 'lit/directives/class-map.js';
 
-import tableStyles from './table.scss';
+import tableStyles from './table.scss?inline';
 import { Column, Data } from './table.model';
 
 const AOTW_TABLE = 'aotw-table';

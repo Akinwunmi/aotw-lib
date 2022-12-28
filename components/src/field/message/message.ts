@@ -1,7 +1,7 @@
 import { LitElement, TemplateResult, html, unsafeCSS } from 'lit';
 import { customElement } from 'lit/decorators.js';
 
-import styleMessage from './message.scss';
+import styleMessage from './message.scss?inline';
 
 const AOTW_FIELD_MESSAGE = 'aotw-message';
 

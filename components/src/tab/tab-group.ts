@@ -1,7 +1,7 @@
 import { html, LitElement, TemplateResult, unsafeCSS } from 'lit';
 import { customElement, query, queryAssignedElements } from 'lit/decorators.js';
 
-import styleTabGroup from './tab-group.scss';
+import styleTabGroup from './tab-group.scss?inline';
 import { AotwTab } from './tab';
 import { SelectedTabEvent } from './tab.model';
 

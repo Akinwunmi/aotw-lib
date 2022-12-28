@@ -1,7 +1,7 @@
 import { LitElement, TemplateResult, html, unsafeCSS } from 'lit';
 import { customElement } from 'lit/decorators.js';
 
-import styleLabel from './label.scss';
+import styleLabel from './label.scss?inline';
 
 const AOTW_LABEL = 'aotw-label';
 

@@ -1,7 +1,7 @@
 import { LitElement, html, unsafeCSS } from 'lit';
 import { customElement } from 'lit/decorators.js';
 
-import styleCloseButton from './close-button.scss';
+import styleCloseButton from './close-button.scss?inline';
 
 const AOTW_CLOSE_BUTTON = 'aotw-close-button';
 

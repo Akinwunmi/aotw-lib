@@ -1,7 +1,7 @@
 import { html, LitElement, TemplateResult, unsafeCSS } from 'lit';
 import { customElement } from 'lit/decorators.js';
 
-import styleOverlayPanel from './overlay-panel.scss';
+import styleOverlayPanel from './overlay-panel.scss?inline';
 
 export const AOTW_OVERLAY_PANEL = 'aotw-overlay-panel';
 

@@ -2,7 +2,7 @@ import { LitElement, TemplateResult, unsafeCSS, svg } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import { unsafeSVG } from 'lit/directives/unsafe-svg.js';
 
-import styleIcon from './icon.scss';
+import styleIcon from './icon.scss?inline';
 import { IconSize } from './icon.model';
 import { AotwIconRegistry } from './icon-registry';
 
