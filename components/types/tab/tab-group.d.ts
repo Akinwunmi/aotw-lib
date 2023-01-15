@@ -5,8 +5,8 @@ export declare class AotwTabGroup extends LitElement {
     private _activeLine;
     private _tabs;
     static styles: import("lit").CSSResult;
-    protected firstUpdated(): void;
     protected render(): TemplateResult;
+    private _handleSlotChange;
     private _setActive;
 }
 declare global {
