@@ -25,16 +25,16 @@ export class AotwTabGroup extends LitElement {
 
   public static override styles = unsafeCSS(styleTabGroup);
 
-  protected override firstUpdated(): void {
-    this._tabs.forEach((tab, i) => tab.addEventListener('click', this._setActive.bind(this, tab, i)));
-    this._activeLine.style.width = `${100 / this._tabs.length}%`;
-  }
-
   protected override render(): TemplateResult {
     return html`
-      <slot></slot>
+      <slot @slotchange=${this._handleSlotChange.bind(this)}></slot>
       <div class="active-line"></div>
     `;
+  }
+
+  private _handleSlotChange(): void {
+    this._tabs.forEach((tab, i) => tab.addEventListener('click', this._setActive.bind(this, tab, i)));
+    this._activeLine.style.width = `${100 / this._tabs.length}%`;
   }
 
   private _setActive(tab: AotwTab, index: number): void {
