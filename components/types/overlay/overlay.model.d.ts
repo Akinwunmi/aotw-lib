@@ -5,7 +5,7 @@ export interface OverlayConfig {
     scrimWithBackground?: boolean;
     scrimCloseTrigger?: string;
 }
-type Orientation = 'start' | 'center' | 'end';
+declare type Orientation = 'start' | 'center' | 'end';
 export interface Positions {
     offset?: Point;
     relative?: PositionAxes;
