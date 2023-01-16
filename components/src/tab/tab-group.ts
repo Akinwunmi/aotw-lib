@@ -12,9 +12,8 @@ export class AotwTabGroup extends LitElement {
   @property({ type: Number, reflect: true })
   public set activeTab(activeTab: number) {
     this._activeTab = activeTab;
-    this._activeLine.style.left = `${100 / this._tabs.length * this._activeTab}%`;
+    this._setActiveLinePosition();
   };
-
   private _activeTab = 0;
 
   @query('.active-line')
@@ -33,8 +32,12 @@ export class AotwTabGroup extends LitElement {
   }
 
   private _handleSlotChange(): void {
-    this._tabs.forEach((tab, i) => tab.addEventListener('click', this._setActive.bind(this, tab, i)));
+    this._tabs.forEach((tab, i) => {
+      tab.removeEventListener('click', this._setActive.bind(this, tab, i));
+      tab.addEventListener('click', this._setActive.bind(this, tab, i));
+    });
     this._activeLine.style.width = `${100 / this._tabs.length}%`;
+    this._setActiveLinePosition();
   }
 
   private _setActive(tab: AotwTab, index: number): void {
@@ -44,6 +47,10 @@ export class AotwTabGroup extends LitElement {
       detail: { index, tab }
     });
     this.dispatchEvent(event);
+  }
+
+  private _setActiveLinePosition(): void {
+    this._activeLine.style.left = `${100 / this._tabs.length * this._activeTab}%`;
   }
 }
 

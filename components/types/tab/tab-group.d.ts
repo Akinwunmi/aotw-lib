@@ -8,6 +8,7 @@ export declare class AotwTabGroup extends LitElement {
     protected render(): TemplateResult;
     private _handleSlotChange;
     private _setActive;
+    private _setActiveLinePosition;
 }
 declare global {
     interface HTMLElementTagNameMap {
