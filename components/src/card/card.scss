@@ -1,0 +1,9 @@
+@use '@aotw/core/src/typography';
+
+:host {
+  @include typography.typography-body;
+  display: grid;
+  gap: var(--aotw-space-xs);
+  height: min-content;
+  max-width: calc(var(--aotw-size-xl) * 5.25);
+}

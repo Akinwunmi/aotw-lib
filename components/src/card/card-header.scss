@@ -1,0 +1,32 @@
+@use '@aotw/core/src/typography';
+
+:host {
+  @include typography.typography-header;
+  align-items: center;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  line-height: 2rem; // ! Update line-height tokens
+}
+
+::slotted([header-image]) {
+  grid-column: 1 / 3;
+  grid-row: 1;
+  margin-bottom: var(--aotw-space-m);
+  width: 100%;
+}
+
+::slotted([header-prefix]) {
+  grid-column: 1 / 2;
+  margin-right: var(--aotw-space-s);
+}
+
+::slotted([header-title]) {
+  grid-column: 2 / 3;
+}
+
+::slotted([header-suffix]) {
+  align-self: flex-start;
+  grid-column: 3 / 4;
+  grid-row: -1;
+  margin-left: var(--aotw-space-s);
+}

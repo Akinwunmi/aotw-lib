@@ -1,7 +1,7 @@
 import { html, LitElement, TemplateResult, unsafeCSS } from 'lit';
 import { customElement, property, query, queryAssignedElements } from 'lit/decorators.js';
 
-import styleTabGroup from './tab-group.scss';
+import styleTabGroup from './tab-group.scss?inline';
 import { AotwTab } from './tab';
 import { SelectedTabEvent } from './tab.model';
 
@@ -35,8 +35,17 @@ export class AotwTabGroup extends LitElement {
     this._tabs.forEach((tab, i) => {
       tab.removeEventListener('click', this._setActive.bind(this, tab, i));
       tab.addEventListener('click', this._setActive.bind(this, tab, i));
+
+      if (tab.getAttribute('disabled') !== null && this._activeTab === i) {
+        if (i > 0) {
+          this._activeTab--;
+        } else {
+          this._activeTab++;
+        }
+      }
     });
     this._activeLine.style.width = `${100 / this._tabs.length}%`;
+
     this._setActiveLinePosition();
   }
 

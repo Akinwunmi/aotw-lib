@@ -25,7 +25,7 @@ export const TabGroupTemplate: Story<ArgTypes> = (props) => {
   `);
 
   return html`
-    <aotw-tab-group>
+    <aotw-tab-group activeTab="1">
       ${tabElements}
     </aotw-tab-group>
   `;

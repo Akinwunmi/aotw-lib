@@ -1,39 +1,30 @@
 {
   "aotw": {
     "color": {
-      "black": { "value": "#161616", "type": "color" },
-      "white": { "value": "rgba(255, 255, 255, 0.9)", "type": "color" },
+      "black": { "value": "#111111", "type": "color" },
+      "white": { "value": "#ffffff", "type": "color" },
+      "primary": {
+        "300": { "value": "#9999ff", "type": "color" },
+        "400": { "value": "#5555ff", "type": "color" },
+        "500": { "value": "#0000ff", "type": "color" },
+        "600": { "value": "#0000bb", "type": "color" }
+      },
       "grey": {
-        "100": { "value": "#eaebf1", "type": "color" },
-        "200": { "value": "#d4d7e2", "type": "color" },
-        "300": { "value": "#a4a8b4", "type": "color" },
-        "400": { "value": "#838290", "type": "color" },
-        "500": { "value": "#5a5d70", "type": "color" },
+        "100": { "value": "#dcdee4", "type": "color" },
+        "200": { "value": "#cdcfd7", "type": "color" },
+        "300": { "value": "#b4b6c1", "type": "color" },
+        "400": { "value": "#848693", "type": "color" },
+        "500": { "value": "#5a5c6e", "type": "color" },
         "600": { "value": "#3a3c50", "type": "color" }
       },
-      "primary": {
-        "100": { "value": "#dedefd", "type": "color" },
-        "200": { "value": "#b7b7f3", "type": "color" },
-        "300": { "value": "#9090eb", "type": "color" },
-        "400": { "value": "#3300ff", "type": "color" },
-        "500": { "value": "#2900cc", "type": "color" },
-        "600": { "value": "#1e0094", "type": "color" }
-      },
-      "secondary": {
-        "100": { "value": "rgba(111, 255, 180, 0.1)", "type": "color" },
-        "200": { "value": "rgba(111, 255, 180, 0.4)", "type": "color" },
-        "300": { "value": "#6fffb4", "type": "color" },
-        "400": { "value": "#68e2a2", "type": "color" },
-        "500": { "value": "#61bf8e", "type": "color" }
-      },
       "success": {
-        "300": { "value": "#00c98d", "type": "color" }
+        "500": { "value": "#00c98d", "type": "color" }
       },
       "error": {
-        "300": { "value": "#ff3535", "type": "color" }
+        "500": { "value": "#ff3535", "type": "color" }
       },
       "warning": {
-        "300": { "value": "#fc9a2a", "type": "color" }
+        "500": { "value": "#fc9a2a", "type": "color" }
       }
     }
   }

@@ -12,11 +12,6 @@
       grid-column: 1 / -1;
       grid-template-columns: repeat(2, 1fr);
     }
-
-    &.validation {
-      grid-column: 1 / -1;
-      grid-template-columns: repeat(3, 1fr);
-    }
   }
 
   .card {
@@ -31,7 +26,7 @@
     }
 
     &.border {
-      border: 1px solid var(--aotw-color-grey-300);
+      border: 1px solid var(--aotw-color-grey-200);
     }
 
     &.light {

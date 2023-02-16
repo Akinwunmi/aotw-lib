@@ -3,13 +3,13 @@ import { create } from '@storybook/theming';
 export default create({
   base: 'light',
 
-  colorPrimary: '#161616',
-  colorSecondary: '#3300ff',
+  colorPrimary: '#111111',
+  colorSecondary: '#0000ff',
 
   // UI
-  appBg: '#d4d7e2',
-  appContentBg: '#d4d7e2',
-  appBorderColor: '#a4a8b4',
+  appBg: '#dcdee4',
+  appContentBg: '#dcdee4',
+  appBorderColor: '#bcbec6',
   appBorderRadius: 4,
 
   // Typography
@@ -17,13 +17,13 @@ export default create({
   fontCode: 'monospace',
 
   // Text colors
-  textColor: '#161616',
+  textColor: '#111111',
   textInverseColor: '#ffffff',
 
   // Toolbar default and active colors
-  barTextColor: '#838290',
-  barSelectedColor: '#3300ff',
-  barBg: '#d4d7e2',
+  barTextColor: '#111111',
+  barSelectedColor: '#0000ff',
+  barBg: '#dcdee4',
 
   brandTitle: 'AOTW Design System',
   brandUrl: 'https://github.com/Akinwunmi',

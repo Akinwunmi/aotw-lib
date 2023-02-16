@@ -12,5 +12,5 @@ Default.args = tabArgs;
 export const Disabled = TabGroupTemplate.bind({});
 Disabled.args = {
   ...tabArgs,
-  disabledItem: 0
+  disabledItem: 1
 };

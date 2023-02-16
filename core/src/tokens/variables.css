@@ -1,32 +1,25 @@
 /**
  * Do not edit directly
- * Generated on Wed, 28 Dec 2022 19:51:42 GMT
+ * Generated on Thu, 16 Feb 2023 14:33:06 GMT
  */
 
 :root {
-  --aotw-color-black: #161616;
-  --aotw-color-white: rgba(255, 255, 255, 0.9);
-  --aotw-color-grey-100: #eaebf1;
-  --aotw-color-grey-200: #d4d7e2;
-  --aotw-color-grey-300: #a4a8b4;
-  --aotw-color-grey-400: #838290;
-  --aotw-color-grey-500: #5a5d70;
+  --aotw-color-black: #111111;
+  --aotw-color-white: #ffffff;
+  --aotw-color-primary-300: #9999ff;
+  --aotw-color-primary-400: #5555ff;
+  --aotw-color-primary-500: #0000ff;
+  --aotw-color-primary-600: #0000bb;
+  --aotw-color-grey-100: #dcdee4;
+  --aotw-color-grey-200: #cdcfd7;
+  --aotw-color-grey-300: #b4b6c1;
+  --aotw-color-grey-400: #848693;
+  --aotw-color-grey-500: #5a5c6e;
   --aotw-color-grey-600: #3a3c50;
-  --aotw-color-primary-100: #dedefd;
-  --aotw-color-primary-200: #b7b7f3;
-  --aotw-color-primary-300: #9090eb;
-  --aotw-color-primary-400: #3300ff;
-  --aotw-color-primary-500: #2900cc;
-  --aotw-color-primary-600: #1e0094;
-  --aotw-color-secondary-100: rgba(111, 255, 180, 0.1);
-  --aotw-color-secondary-200: rgba(111, 255, 180, 0.4);
-  --aotw-color-secondary-300: #6fffb4;
-  --aotw-color-secondary-400: #68e2a2;
-  --aotw-color-secondary-500: #61bf8e;
-  --aotw-color-success-300: #00c98d;
-  --aotw-color-error-300: #ff3535;
-  --aotw-color-warning-300: #fc9a2a;
-  --aotw-elevation-xs: 0 4px 8px var(--aotw-color-grey-300);
+  --aotw-color-success-500: #00c98d;
+  --aotw-color-error-500: #ff3535;
+  --aotw-color-warning-500: #fc9a2a;
+  --aotw-elevation-xs: 0.25rem 0.25rem 0.5rem var(--aotw-color-grey-200);
   --aotw-font-family-primary: 'Inter', sans-serif;
   --aotw-font-letter-spacing-m: 0.25em;
   --aotw-font-line-height-s: 1.25em;
@@ -38,14 +31,14 @@
   --aotw-font-weight-bold: 600;
   --aotw-font-weight-medium: 500;
   --aotw-font-weight-regular: 400;
-  --aotw-height-s: 24px;
-  --aotw-height-m: 32px;
-  --aotw-height-l: 48px;
-  --aotw-height-xl: 64px;
   --aotw-radius-xs: 2px;
   --aotw-radius-s: 4px;
   --aotw-radius-m: 6px;
   --aotw-radius-l: 8px;
+  --aotw-size-s: 24px;
+  --aotw-size-m: 32px;
+  --aotw-size-l: 48px;
+  --aotw-size-xl: 64px;
   --aotw-space-xs: 4px;
   --aotw-space-s: 8px;
   --aotw-space-m: 12px;

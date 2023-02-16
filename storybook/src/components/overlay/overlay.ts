@@ -36,9 +36,21 @@ export const OverlayTemplate: Story<OverlayProps> = (props) => {
     </template>
 
     <template id="overlay-dropdown">
-      <aotw-list-item>Item 1</aotw-list-item>
-      <aotw-list-item>Item 2</aotw-list-item>
-      <aotw-list-item>Item 3</aotw-list-item>
+      <aotw-list-item style="
+        --aotw-list-item-background-color: var(--aotw-color-white);
+        --aotw-list-item-background-color-hover: var(--aotw-color-grey-100);
+        --aotw-list-item-background-color-active: var(--aotw-color-grey-200)
+      ">Item 1</aotw-list-item>
+      <aotw-list-item style="
+        --aotw-list-item-background-color: var(--aotw-color-white);
+        --aotw-list-item-background-color-hover: var(--aotw-color-grey-100);
+        --aotw-list-item-background-color-active: var(--aotw-color-grey-200)
+      ">Item 2</aotw-list-item>
+      <aotw-list-item style="
+        --aotw-list-item-background-color: var(--aotw-color-white);
+        --aotw-list-item-background-color-hover: var(--aotw-color-grey-100);
+        --aotw-list-item-background-color-active: var(--aotw-color-grey-200)
+      ">Item 3</aotw-list-item>
     </template>
 
     <template id="overlay-toast">
