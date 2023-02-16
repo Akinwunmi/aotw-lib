@@ -21,7 +21,6 @@ export class AotwCardHeader extends LitElement {
   }
 
   private _handleSlotChanged(): void {
-    console.log('changed');
     const image = this._elements.find(element => element instanceof HTMLImageElement);
     this._elements.forEach(element => {
       if (element.getAttribute('header-prefix') !== null || element.getAttribute('header-title') !== null) {

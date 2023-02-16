@@ -5,8 +5,9 @@ import { Story } from '../../../types/story.model';
 
 interface ArgTypes {
   header?: boolean;
-  content?: boolean;
+  content?: string;
   footer?: boolean;
+  '[elevated]': boolean;
   '[header-image]'?: boolean;
   '[header-suffix]'?: boolean;
   '[header-prefix]'?: string;
@@ -15,8 +16,9 @@ interface ArgTypes {
 
 export const props: ArgTypes = {
   header: true,
-  content: true,
+  content: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempora, facere?',
   footer: true,
+  '[elevated]': true,
   '[header-image]': true,
   '[header-suffix]': true,
   '[header-prefix]': 'logo',
@@ -25,7 +27,7 @@ export const props: ArgTypes = {
 
 export const Template: Story<ArgTypes> = (props) => {
   const image = props['[header-image]'] && html`
-    <img header-image src="https://unsplash.it/600/400" />
+    <img header-image src="https://upload.wikimedia.org/wikipedia/commons/c/ca/Frisian_flag.svg" />
   `;
 
   const headerPrefix = props['[header-prefix]'] && html`
@@ -38,17 +40,21 @@ export const Template: Story<ArgTypes> = (props) => {
     </button>
   `;
 
+  const headerTitle = props['[header-title]'] && html`
+    <span header-title>${props['[header-title]']}</span>
+  `;
+
   const header = props.header && html`
     <aotw-card-header>
       ${image || ''}
       ${headerSuffix || ''}
       ${headerPrefix || ''}
-      <span header-title>${props['[header-title]']}</span>
+      ${headerTitle || ''}
     </aotw-card-header>
   `;
   const content = props.content && html`
     <aotw-card-content>
-      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempora, facere?
+      ${props.content}
     </aotw-card-content>
   `;
   const footer = props.footer && html`
@@ -59,7 +65,7 @@ export const Template: Story<ArgTypes> = (props) => {
   `;
 
   return html`
-    <aotw-card>
+    <aotw-card ?elevated=${props['[elevated]']}>
       ${header || ''}
       ${content || ''}
       ${footer || ''}

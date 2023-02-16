@@ -26,7 +26,7 @@ NoImage.args = {
 export const NoFooter = Template.bind({});
 NoFooter.args = {
   ...props,
-  footer: false
+  footer: false,
 };
 
 export const TitleAndContent = Template.bind({});
@@ -36,4 +36,15 @@ TitleAndContent.args = {
   '[header-image]': false,
   '[header-suffix]': false,
   '[header-prefix]': undefined,
+};
+
+export const ImageWithCaption = Template.bind({});
+ImageWithCaption.args = {
+  ...props,
+  content: 'Friesland',
+  footer: false,
+  '[elevated]': false,
+  '[header-prefix]': false,
+  '[header-suffix]': false,
+  '[header-title]': '',
 };
