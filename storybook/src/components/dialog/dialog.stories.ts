@@ -4,7 +4,7 @@ import { html } from 'lit';
 import { dialogArgs, DialogTemplate } from './dialog.model';
 
 export default {
-  title: 'Components/Dialog'
+  title: 'Components/Dialog (deprecated)'
 } as Meta;
 
 export const Default = DialogTemplate.bind({});

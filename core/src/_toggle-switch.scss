@@ -3,8 +3,8 @@
 input[type='checkbox'][toggle-switch] {
   display: none;
   align-items: center;
-  width: 40px;
-  height: 24px;
+  width: calc(var(--aotw-size-m) + var(--aotw-space-s));
+  height: var(--aotw-size-s);
   cursor: pointer;
 
   + label {
@@ -18,20 +18,21 @@ input[type='checkbox'][toggle-switch] {
     &::before {
       content: '';
       order: -1;
-      background-color: var(--aotw-color-primary-200);
+      background-color: var(--aotw-color-primary-300);
       transition: all 150ms ease-in-out;
+      transition-property: background-color, left;
     }
 
     &::before {
-      width: 40px;
-      height: 6px;
+      width: calc(var(--aotw-size-m) + var(--aotw-space-s));
+      height: calc(var(--aotw-size-s) / 4);
       border-radius: var(--aotw-radius-s);
     }
 
     &::after {
       position: absolute;
-      width: 16px;
-      height: 16px;
+      width: calc(var(--aotw-size-m) / 2);
+      height: calc(var(--aotw-size-m) / 2);
       left: 0;
       border-radius: 50%;
     }
@@ -40,14 +41,14 @@ input[type='checkbox'][toggle-switch] {
   &:active + label {
     &::before,
     &::after {
-      background-color: var(--aotw-color-primary-300);
+      background-color: var(--aotw-color-primary-400);
     }
   }
 
   &:checked + label {
     &::before,
     &::after {
-      background-color: var(--aotw-color-primary-400);
+      background-color: var(--aotw-color-primary-500);
     }
 
     &::after {
@@ -58,7 +59,7 @@ input[type='checkbox'][toggle-switch] {
   &:disabled + label {
     &::before,
     &::after {
-      background-color: var(--aotw-color-grey-300);
+      background-color: var(--aotw-color-grey-200);
     }
   }
 

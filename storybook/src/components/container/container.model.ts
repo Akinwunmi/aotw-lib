@@ -10,7 +10,7 @@ interface ArgTypes {
 
 export const props: ArgTypes = {
   elevated: false,
-  slot: ''
+  slot: 'Content'
 };
 
 export const Template: Story<ArgTypes> = (props) => {

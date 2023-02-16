@@ -1,0 +1,10 @@
+{
+  "aotw": {
+    "size": {
+      "s": { "value": "24px", "type": "size" },
+      "m": { "value": "32px", "type": "size" },
+      "l": { "value": "48px", "type": "size" },
+      "xl": { "value": "64px", "type": "size" }
+    }
+  }
+}

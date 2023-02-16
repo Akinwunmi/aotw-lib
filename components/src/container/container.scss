@@ -1,8 +1,14 @@
+@use '@aotw/core/src/typography';
+
 :host {
-  background-color: var(--aotw-color-white);
+  @include typography.typography-body;
+  background-color: var(--aotw-container-background-color, var(--aotw-color-grey-100));
+  box-sizing: border-box;
+  color: var(--aotw-container-color, var(--aotw-color-primary-500));
   display: grid;
   height: 100%;
-  min-height: var(--aotw-height-s);
+  min-height: var(--aotw-size-s);
+  padding: var(--aotw-space-s);
   width: 100%;
 }
 

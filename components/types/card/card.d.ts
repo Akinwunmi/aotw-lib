@@ -1,10 +1,10 @@
 import { AotwContainer } from '../container';
-export declare class AotwListItem extends AotwContainer {
-    disabled: boolean;
+export declare class AotwCard extends AotwContainer {
+    readonly elevated = true;
     static styles: import("lit").CSSResult[];
 }
 declare global {
     interface HTMLElementTagNameMap {
-        AOTW_LIST_ITEM: AotwListItem;
+        AOTW_CARD: AotwCard;
     }
 }
