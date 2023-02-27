@@ -1,30 +1,32 @@
 {
   "aotw": {
     "color": {
-      "black": { "value": "#111111", "type": "color" },
-      "white": { "value": "#ffffff", "type": "color" },
+      "black": { "value": "hsl(0, 0%, 7%)", "type": "color" },
+      "white": { "value": "hsl(0, 0%, 100%)", "type": "color" },
       "primary": {
-        "300": { "value": "#9999ff", "type": "color" },
-        "400": { "value": "#5555ff", "type": "color" },
-        "500": { "value": "#0000ff", "type": "color" },
-        "600": { "value": "#0000bb", "type": "color" }
+        "100": { "value": "hsl(240, 100%, 96%)", "type": "color" },
+        "200": { "value": "hsl(240, 100%, 89%)", "type": "color" },
+        "300": { "value": "hsl(240, 100%, 79%)", "type": "color" },
+        "400": { "value": "hsl(240, 100%, 66%)", "type": "color" },
+        "500": { "value": "hsl(240, 100%, 50%)", "type": "color" },
+        "600": { "value": "hsl(240, 100%, 37%)", "type": "color" }
       },
       "grey": {
-        "100": { "value": "#dcdee4", "type": "color" },
-        "200": { "value": "#cdcfd7", "type": "color" },
-        "300": { "value": "#b4b6c1", "type": "color" },
-        "400": { "value": "#848693", "type": "color" },
-        "500": { "value": "#5a5c6e", "type": "color" },
-        "600": { "value": "#3a3c50", "type": "color" }
+        "100": { "value": "hsl(225, 13%, 88%)", "type": "color" },
+        "200": { "value": "hsl(228, 11%, 82%)", "type": "color" },
+        "300": { "value": "hsl(231, 9%, 73%)", "type": "color" },
+        "400": { "value": "hsl(232, 6%, 55%)", "type": "color" },
+        "500": { "value": "hsl(234, 10%, 39%)", "type": "color" },
+        "600": { "value": "hsl(235, 16%, 27%)", "type": "color" }
       },
       "success": {
-        "500": { "value": "#00c98d", "type": "color" }
+        "500": { "value": "hsl(162, 100%, 39%)", "type": "color" }
       },
       "error": {
-        "500": { "value": "#ff3535", "type": "color" }
+        "500": { "value": "hsl(0, 100%, 60%)", "type": "color" }
       },
       "warning": {
-        "500": { "value": "#fc9a2a", "type": "color" }
+        "500": { "value": "hsl(32, 97%, 58%)", "type": "color" }
       }
     }
   }

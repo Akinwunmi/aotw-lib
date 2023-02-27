@@ -1,24 +1,26 @@
 /**
  * Do not edit directly
- * Generated on Thu, 16 Feb 2023 14:33:06 GMT
+ * Generated on Mon, 27 Feb 2023 14:33:34 GMT
  */
 
 :root {
-  --aotw-color-black: #111111;
-  --aotw-color-white: #ffffff;
-  --aotw-color-primary-300: #9999ff;
-  --aotw-color-primary-400: #5555ff;
-  --aotw-color-primary-500: #0000ff;
-  --aotw-color-primary-600: #0000bb;
-  --aotw-color-grey-100: #dcdee4;
-  --aotw-color-grey-200: #cdcfd7;
-  --aotw-color-grey-300: #b4b6c1;
-  --aotw-color-grey-400: #848693;
-  --aotw-color-grey-500: #5a5c6e;
-  --aotw-color-grey-600: #3a3c50;
-  --aotw-color-success-500: #00c98d;
-  --aotw-color-error-500: #ff3535;
-  --aotw-color-warning-500: #fc9a2a;
+  --aotw-color-black: hsl(0, 0%, 7%);
+  --aotw-color-white: hsl(0, 0%, 100%);
+  --aotw-color-primary-100: hsl(240, 100%, 96%);
+  --aotw-color-primary-200: hsl(240, 100%, 89%);
+  --aotw-color-primary-300: hsl(240, 100%, 79%);
+  --aotw-color-primary-400: hsl(240, 100%, 66%);
+  --aotw-color-primary-500: hsl(240, 100%, 50%);
+  --aotw-color-primary-600: hsl(240, 100%, 37%);
+  --aotw-color-grey-100: hsl(225, 13%, 88%);
+  --aotw-color-grey-200: hsl(228, 11%, 82%);
+  --aotw-color-grey-300: hsl(231, 9%, 73%);
+  --aotw-color-grey-400: hsl(232, 6%, 55%);
+  --aotw-color-grey-500: hsl(234, 10%, 39%);
+  --aotw-color-grey-600: hsl(235, 16%, 27%);
+  --aotw-color-success-500: hsl(162, 100%, 39%);
+  --aotw-color-error-500: hsl(0, 100%, 60%);
+  --aotw-color-warning-500: hsl(32, 97%, 58%);
   --aotw-elevation-xs: 0.25rem 0.25rem 0.5rem var(--aotw-color-grey-200);
   --aotw-font-family-primary: 'Inter', sans-serif;
   --aotw-font-letter-spacing-m: 0.25em;

@@ -1,4 +1,5 @@
 import { Meta } from '@storybook/addon-docs';
+import colorTokens from '@aotw/core/src/tokens/colors.json';
 
 import './colors.stories.scss';
 
@@ -26,79 +27,105 @@ import './colors.stories.scss';
 
 ### Palette
 
-<div class="palette">
-  <div class="palette_color default">
-    <div class="card light" style={{ backgroundColor: 'var(--aotw-color-white)' }}>
-      <p class="name">White</p>
-      <p class="value">#FFFFFF</p>
-    </div>
-    <div class="card" style={{ backgroundColor: 'var(--aotw-color-black)' }}>
-      <p class="name">Black</p>
-      <p class="value">#111111</p>
-    </div>
-  </div>
-  <div class="palette_color">
-    <div class="card border light" style={{ backgroundColor: 'var(--aotw-color-grey-100)' }}>
-      <p class="name">Grey 100</p>
-      <p class="value">#DCDEE4</p>
-    </div>
-    <div class="card" style={{ backgroundColor: 'var(--aotw-color-grey-200)' }}>
-      <p class="name">Grey 200</p>
-      <p class="value">#CDCFD7</p>
-    </div>
-    <div class="card" style={{ backgroundColor: 'var(--aotw-color-grey-300)' }}>
-      <p class="name">Grey 300</p>
-      <p class="value">#B4B6C1</p>
-    </div>
-    <div class="card" style={{ backgroundColor: 'var(--aotw-color-grey-400)' }}>
-      <p class="name">Grey 400</p>
-      <p class="value">#848693</p>
-    </div>
-    <div class="card" style={{ backgroundColor: 'var(--aotw-color-grey-500)' }}>
-      <p class="name">Grey 500</p>
-      <p class="value">#5A5C6E</p>
-    </div>
-    <div class="card" style={{ backgroundColor: 'var(--aotw-color-grey-600)' }}>
-      <p class="name">Grey 600</p>
-      <p class="value">#3A3C50</p>
-    </div>
-  </div>
-  <div class="palette_color">
-    <div class="card"></div>
-    <div class="card"></div>
-    <div class="card" style={{ backgroundColor: 'var(--aotw-color-primary-300)' }}>
-      <p class="name">Primary 300</p>
-      <p class="value">#9090EB</p>
-    </div>
-    <div class="card" style={{ backgroundColor: 'var(--aotw-color-primary-400)' }}>
-      <p class="name">Primary 400</p>
-      <p class="value">#3300FF</p>
-    </div>
-    <div class="card" style={{ backgroundColor: 'var(--aotw-color-primary-500)' }}>
-      <p class="name">Primary 500</p>
-      <p class="value">#2900CC</p>
-    </div>
-    <div class="card" style={{ backgroundColor: 'var(--aotw-color-primary-600)' }}>
-      <p class="name">Primary 600</p>
-      <p class="value">#1E0094</p>
-    </div>
-  </div>
-  <div class="palette_color">
-    <div class="card" style={{ backgroundColor: 'var(--aotw-color-success-500)' }}>
-      <p class="name">Success 500</p>
-      <p class="value">#00C98D</p>
-    </div>
-    <div class="card" style={{ backgroundColor: 'var(--aotw-color-warning-500)' }}>
-      <p class="name">Warning 500</p>
-      <p class="value">#FC9A2A</p>
-    </div>
-    <div class="card" style={{ backgroundColor: 'var(--aotw-color-error-500)' }}>
-      <p class="name">Error 500</p>
-      <p class="value">#FF3535</p>
-    </div>
-  </div>
-</div>
-<br/>
+export const Colors = () => {
+  const colors = colorTokens.aotw.color;
+  // console.log(colors);
+  const color = Object.entries(colors).map(([name, values]) => {
+    console.log(colors[name], name);
+    return <div class="palette_color">
+      {Object.entries(colors[name]).map(([value, info]) => {
+        {/* console.log(value, info); */}
+        return <div class="card" style={{ backgroundColor: `var(--aotw-color-${name}${value !== 'value' ? '-' + value : ''})` }}>
+          <p class="name">{ name[0].toUpperCase() + name.slice(1) } { value !== 'value' ? value : '' }</p>
+          <p class="value">{ info.value }</p>
+        </div>;
+      })}
+    </div>;
+  });
+  return <div class="palette">
+    {color}
+  </div>;
+  // return <div class="palette">
+  //   <div class="palette_color default">
+  //     <div class="card light" style={{ backgroundColor: 'var(--aotw-color-white)' }}>
+  //       <p class="name">White</p>
+  //       <p class="value">#FFFFFF</p>
+  //     </div>
+  //     <div class="card" style={{ backgroundColor: 'var(--aotw-color-black)' }}>
+  //       <p class="name">Black</p>
+  //       <p class="value">#111111</p>
+  //     </div>
+  //   </div>
+  //   <div class="palette_color">
+  //     <div class="card border light" style={{ backgroundColor: 'var(--aotw-color-grey-100)' }}>
+  //       <p class="name">Grey 100</p>
+  //       <p class="value">#DCDEE4</p>
+  //     </div>
+  //     <div class="card" style={{ backgroundColor: 'var(--aotw-color-grey-200)' }}>
+  //       <p class="name">Grey 200</p>
+  //       <p class="value">#CDCFD7</p>
+  //     </div>
+  //     <div class="card" style={{ backgroundColor: 'var(--aotw-color-grey-300)' }}>
+  //       <p class="name">Grey 300</p>
+  //       <p class="value">#B4B6C1</p>
+  //     </div>
+  //     <div class="card" style={{ backgroundColor: 'var(--aotw-color-grey-400)' }}>
+  //       <p class="name">Grey 400</p>
+  //       <p class="value">#848693</p>
+  //     </div>
+  //     <div class="card" style={{ backgroundColor: 'var(--aotw-color-grey-500)' }}>
+  //       <p class="name">Grey 500</p>
+  //       <p class="value">#5A5C6E</p>
+  //     </div>
+  //     <div class="card" style={{ backgroundColor: 'var(--aotw-color-grey-600)' }}>
+  //       <p class="name">Grey 600</p>
+  //       <p class="value">#3A3C50</p>
+  //     </div>
+  //   </div>
+  //   <div class="palette_color">
+  //     <div class="card light" style={{ backgroundColor: 'var(--aotw-color-primary-100)' }}>
+  //       <p class="name">Primary 100</p>
+  //       <p class="value">#F0F0FF</p>
+  //     </div>
+  //     <div class="card" style={{ backgroundColor: 'var(--aotw-color-primary-200)' }}>
+  //       <p class="name">Primary 200</p>
+  //       <p class="value">#CDCDFF</p>
+  //     </div>
+  //     <div class="card" style={{ backgroundColor: 'var(--aotw-color-primary-300)' }}>
+  //       <p class="name">Primary 300</p>
+  //       <p class="value">#9090EB</p>
+  //     </div>
+  //     <div class="card" style={{ backgroundColor: 'var(--aotw-color-primary-400)' }}>
+  //       <p class="name">Primary 400</p>
+  //       <p class="value">#3300FF</p>
+  //     </div>
+  //     <div class="card" style={{ backgroundColor: 'var(--aotw-color-primary-500)' }}>
+  //       <p class="name">Primary 500</p>
+  //       <p class="value">#2900CC</p>
+  //     </div>
+  //     <div class="card" style={{ backgroundColor: 'var(--aotw-color-primary-600)' }}>
+  //       <p class="name">Primary 600</p>
+  //       <p class="value">#1E0094</p>
+  //     </div>
+  //   </div>
+  //   <div class="palette_color">
+  //     <div class="card" style={{ backgroundColor: 'var(--aotw-color-success-500)' }}>
+  //       <p class="name">Success 500</p>
+  //       <p class="value">#00C98D</p>
+  //     </div>
+  //     <div class="card" style={{ backgroundColor: 'var(--aotw-color-warning-500)' }}>
+  //       <p class="name">Warning 500</p>
+  //       <p class="value">#FC9A2A</p>
+  //     </div>
+  //     <div class="card" style={{ backgroundColor: 'var(--aotw-color-error-500)' }}>
+  //       <p class="name">Error 500</p>
+  //       <p class="value">#FF3535</p>
+  //     </div>
+  //   </div>
+  // </div>;
+};
+
+<Colors />
 
 ---
 
