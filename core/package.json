@@ -9,9 +9,10 @@
     "src/"
   ],
   "scripts": {
+    "build:colors": "node generate-colors.js",
     "build:tokens": "style-dictionary build --config ./config.json",
     "build:scss": "sass src/index.scss:dist/style.css",
-    "build": "rimraf dist && npm run build:tokens && npm run build:scss"
+    "build": "rimraf dist && npm run build:colors && npm run build:tokens && npm run build:scss"
   },
   "engines": {
     "node": "16.19.0",
