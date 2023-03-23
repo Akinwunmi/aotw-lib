@@ -1,6 +1,6 @@
 import { Meta } from '@storybook/web-components';
 
-import { buttonArgs, ButtonControls, ButtonTemplate } from './button.model';
+import { buttonArgs, ButtonControls, ButtonTemplate } from './button';
 
 export default {
   title: 'Core/Button',

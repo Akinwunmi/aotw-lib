@@ -16,7 +16,7 @@ const colorVariables = [];
 Object.entries(colors).map(([colorName, values]) => {
   let name, value;
   if (!values.range) {
-    name = `${colorPrefix}${colorName}-500`;
+    name = `${colorPrefix}${colorName}${colorName === 'black' || colorName === 'white' ? '' : '-500'}`;
     value = `hsl(${values.hue},${values.saturation}%,${values.lightness || 51}%)`;
     colorVariables.push({ [name]: value });
     return;

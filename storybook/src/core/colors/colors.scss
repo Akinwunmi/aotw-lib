@@ -1,0 +1,46 @@
+.overview.colors section {
+  .second {
+    margin-top: var(--aotw-size-l);
+  }
+
+  .card {
+    align-items: center;
+    border-radius: var(--aotw-radius-s);
+    box-sizing: border-box;
+    display: flex;
+    height: var(--aotw-size-l);
+    justify-content: space-between;
+    padding: var(--aotw-space-s) var(--aotw-space-m);
+
+    p {
+      color: var(--aotw-color-white);
+      font-size: var(--aotw-font-size-s);
+      line-height: var(--aotw-font-line-height-s);
+      font-weight: var(--aotw-font-weight-medium);
+      margin: 0;
+
+      &.value {
+        font-size: var(--aotw-font-size-xs);
+      }
+    }
+
+    &.title {
+      font-size: var(--aotw-font-size-m);
+      padding-left: 0;
+    }
+
+    &.border {
+      border: 1px solid var(--aotw-color-grey-300);
+    }
+
+    &.light {
+      p {
+        color: var(--aotw-color-black);
+      }
+    }
+
+    .value {
+      font-family: monospace;
+    }
+  }
+}

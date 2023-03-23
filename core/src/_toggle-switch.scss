@@ -57,9 +57,11 @@ input[type='checkbox'][toggle-switch] {
   }
 
   &:disabled + label {
+    color: var(--aotw-color-grey-400);
+
     &::before,
     &::after {
-      background-color: var(--aotw-color-grey-200);
+      background-color: var(--aotw-color-grey-300);
     }
   }
 
