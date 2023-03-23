@@ -3,6 +3,11 @@
 html,
 body {
   height: 100%;
+  font-family: var(--aotw-font-family-primary);
+}
+
+.sb-show-main.sb-main-padded {
+  padding: var(--aotw-space-4xl);
 }
 
 .aotw-overlay-container {

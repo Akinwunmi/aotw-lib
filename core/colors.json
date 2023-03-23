@@ -1,0 +1,44 @@
+{
+  "white": {
+    "hue": 0,
+    "saturation": 0,
+    "lightness": 100,
+    "range": false
+  },
+  "black": {
+    "hue": 0,
+    "saturation": 0,
+    "lightness": 7,
+    "range": false
+  },
+  "primary": {
+    "hue": 240,
+    "saturation": 100,
+    "range": true
+  },
+  "secondary": {
+    "hue": 165,
+    "saturation": 100,
+    "range": true
+  },
+  "grey": {
+    "hue": 235,
+    "saturation": 10,
+    "range": true
+  },
+  "success": {
+    "hue": 150,
+    "saturation": 70,
+    "range": false
+  },
+  "warning": {
+    "hue": 39,
+    "saturation": 100,
+    "range": false
+  },
+  "error": {
+    "hue": 354,
+    "saturation": 100,
+    "range": false
+  }
+}

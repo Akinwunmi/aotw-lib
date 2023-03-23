@@ -1,24 +1,9 @@
 /**
  * Do not edit directly
- * Generated on Thu, 16 Feb 2023 14:33:06 GMT
+ * Generated on Thu, 23 Mar 2023 14:46:53 GMT
  */
 
 :root {
-  --aotw-color-black: #111111;
-  --aotw-color-white: #ffffff;
-  --aotw-color-primary-300: #9999ff;
-  --aotw-color-primary-400: #5555ff;
-  --aotw-color-primary-500: #0000ff;
-  --aotw-color-primary-600: #0000bb;
-  --aotw-color-grey-100: #dcdee4;
-  --aotw-color-grey-200: #cdcfd7;
-  --aotw-color-grey-300: #b4b6c1;
-  --aotw-color-grey-400: #848693;
-  --aotw-color-grey-500: #5a5c6e;
-  --aotw-color-grey-600: #3a3c50;
-  --aotw-color-success-500: #00c98d;
-  --aotw-color-error-500: #ff3535;
-  --aotw-color-warning-500: #fc9a2a;
   --aotw-elevation-xs: 0.25rem 0.25rem 0.5rem var(--aotw-color-grey-200);
   --aotw-font-family-primary: 'Inter', sans-serif;
   --aotw-font-letter-spacing-m: 0.25em;
@@ -31,22 +16,22 @@
   --aotw-font-weight-bold: 600;
   --aotw-font-weight-medium: 500;
   --aotw-font-weight-regular: 400;
-  --aotw-radius-xs: 2px;
-  --aotw-radius-s: 4px;
-  --aotw-radius-m: 6px;
-  --aotw-radius-l: 8px;
-  --aotw-size-s: 24px;
-  --aotw-size-m: 32px;
-  --aotw-size-l: 48px;
-  --aotw-size-xl: 64px;
-  --aotw-space-xs: 4px;
-  --aotw-space-s: 8px;
-  --aotw-space-m: 12px;
-  --aotw-space-l: 16px;
-  --aotw-space-xl: 20px;
-  --aotw-space-2xl: 24px;
-  --aotw-space-3xl: 28px;
-  --aotw-space-4xl: 32px;
-  --aotw-space-5xl: 36px;
-  --aotw-space-6xl: 40px;
+  --aotw-radius-xs: 0.125rem;
+  --aotw-radius-s: 0.25rem;
+  --aotw-radius-m: 0.375rem;
+  --aotw-radius-l: 0.5rem;
+  --aotw-size-s: 1.5rem;
+  --aotw-size-m: 2rem;
+  --aotw-size-l: 3rem;
+  --aotw-size-xl: 4rem;
+  --aotw-space-xs: 0.25rem;
+  --aotw-space-s: 0.5rem;
+  --aotw-space-m: 0.75rem;
+  --aotw-space-l: 1rem;
+  --aotw-space-xl: 1.25rem;
+  --aotw-space-2xl: 1.5rem;
+  --aotw-space-3xl: 1.75rem;
+  --aotw-space-4xl: 2rem;
+  --aotw-space-5xl: 2.25rem;
+  --aotw-space-6xl: 2.5rem;
 }

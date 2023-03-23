@@ -26,15 +26,16 @@ button {
   }
 
   &[secondary] {
-    background-color: var(--aotw-color-grey-600);
-    color: var(--aotw-color-white);
+    background-color: var(--aotw-color-secondary-500);
+    color: var(--aotw-color-grey-700);
 
     &:hover {
-      background-color: var(--aotw-color-grey-500);
+      background-color: var(--aotw-color-secondary-400);
     }
 
     &:active {
-      background-color: var(--aotw-color-black);
+      background-color: var(--aotw-color-secondary-600);
+      color: var(--aotw-color-white);
     }
   }
 
@@ -43,21 +44,29 @@ button {
     color: var(--aotw-color-primary-500);
 
     &[secondary] {
-      color: var(--aotw-color-black);
-    }
+      color: var(--aotw-color-secondary-500);
+
+      &:hover {
+        background-color: var(--aotw-color-secondary-100);
+      }
+  
+      &:active {
+        background-color: var(--aotw-color-secondary-200);
+      }
+      }
 
     &:hover {
-      background-color: var(--aotw-color-grey-200);
+      background-color: var(--aotw-color-primary-100);
     }
 
     &:active {
-      background-color: var(--aotw-color-grey-300);
+      background-color: var(--aotw-color-primary-200);
     }
   }
 
   &[disabled] {
-    background-color: var(--aotw-color-grey-200);
-    color: var(--aotw-color-grey-300);
+    background-color: var(--aotw-color-grey-300);
+    color: var(--aotw-color-grey-400);
     pointer-events: none;
   }
 }

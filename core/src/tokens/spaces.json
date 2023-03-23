@@ -1,16 +1,16 @@
 {
   "aotw": {
     "space": {
-      "xs": { "value": "4px", "type": "space" },
-      "s": { "value": "8px", "type": "space" },
-      "m": { "value": "12px", "type": "space" },
-      "l": { "value": "16px", "type": "space" },
-      "xl": { "value": "20px", "type": "space" },
-      "2xl": { "value": "24px", "type": "space" },
-      "3xl": { "value": "28px", "type": "space" },
-      "4xl": { "value": "32px", "type": "space" },
-      "5xl": { "value": "36px", "type": "space" },
-      "6xl": { "value": "40px", "type": "space" }
+      "xs": { "value": "0.25rem", "type": "space" },
+      "s": { "value": "0.5rem", "type": "space" },
+      "m": { "value": "0.75rem", "type": "space" },
+      "l": { "value": "1rem", "type": "space" },
+      "xl": { "value": "1.25rem", "type": "space" },
+      "2xl": { "value": "1.5rem", "type": "space" },
+      "3xl": { "value": "1.75rem", "type": "space" },
+      "4xl": { "value": "2rem", "type": "space" },
+      "5xl": { "value": "2.25rem", "type": "space" },
+      "6xl": { "value": "2.5rem", "type": "space" }
     }
   }
 }

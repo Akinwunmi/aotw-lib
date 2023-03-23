@@ -1,6 +1,6 @@
 import { Meta } from '@storybook/web-components';
 
-import { inputArgs, InputControls, InputTemplate } from './input.model';
+import { inputArgs, InputControls, InputTemplate } from './input';
 
 export default {
   title: 'Core/Input',
