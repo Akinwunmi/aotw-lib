@@ -1,0 +1,13 @@
+hr {
+  background-color: var(--aotw-color-grey-400);
+  border: none;
+  height: calc(var(--aotw-space-xs) / 4);
+  margin-block: var(--aotw-space-s);
+  width: 100%;
+
+  &[vertical] {
+    height: 100%;
+    margin: 0 var(--aotw-space-s);
+    width: calc(var(--aotw-space-xs) / 4);
+  }
+}
