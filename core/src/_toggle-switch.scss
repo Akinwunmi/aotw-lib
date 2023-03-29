@@ -2,10 +2,6 @@
 
 input[type='checkbox'][toggle-switch] {
   display: none;
-  align-items: center;
-  width: calc(var(--aotw-size-m) + var(--aotw-space-s));
-  height: var(--aotw-size-s);
-  cursor: pointer;
 
   + label {
     @include typography-body;
