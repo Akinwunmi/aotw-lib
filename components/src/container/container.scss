@@ -5,11 +5,10 @@
   background-color: var(--aotw-container-background-color, var(--aotw-color-grey-200));
   box-sizing: border-box;
   color: var(--aotw-container-color, var(--aotw-color-primary-500));
-  display: grid;
+  display: flex;
   min-height: var(--aotw-size-s);
   overflow: hidden;
   padding: var(--aotw-space-s);
-  position: relative;
   width: 100%;
 }
 
@@ -29,12 +28,8 @@
 
 .scrollbar {
   background-color: transparent;
-  bottom: var(--aotw-space-s);
   display: none;
   height: 100%;
-  position: absolute;
-  right: 0;
-  top: 0;
   width: var(--aotw-space-xl);
 
   .track {
@@ -45,7 +40,7 @@
     margin: var(--aotw-space-s);
     position: relative;
     transition: background-color 150ms ease-in-out;
-    width: calc(100% - var(--aotw-space-l));
+    width: var(--aotw-space-xs);
 
     .thumb {
       background-color: var(--aotw-color-grey-400);
