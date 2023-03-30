@@ -2,16 +2,73 @@
 
 :host {
   @include typography.typography-body;
-  background-color: var(--aotw-container-background-color, var(--aotw-color-grey-100));
+  background-color: var(--aotw-container-background-color, var(--aotw-color-grey-200));
   box-sizing: border-box;
   color: var(--aotw-container-color, var(--aotw-color-primary-500));
   display: grid;
-  height: 100%;
   min-height: var(--aotw-size-s);
+  overflow: hidden;
   padding: var(--aotw-space-s);
+  position: relative;
   width: 100%;
 }
 
 :host([elevated]) {
   box-shadow: var(--aotw-elevation-xs);
+}
+
+.content {
+  height: 100%;
+  overflow-y: scroll;
+  user-select: none;
+
+  &::-webkit-scrollbar {
+    width: 0;
+  }
+}
+
+.scrollbar {
+  background-color: transparent;
+  bottom: var(--aotw-space-s);
+  display: none;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: var(--aotw-space-xl);
+
+  .track {
+    background-color: transparent;
+    box-sizing: border-box;
+    cursor: pointer;
+    height: calc(100% - var(--aotw-space-l));
+    margin: var(--aotw-space-s);
+    position: relative;
+    transition: background-color 150ms ease-in-out;
+    width: calc(100% - var(--aotw-space-l));
+
+    .thumb {
+      background-color: var(--aotw-color-grey-400);
+      border-radius: calc(var(--aotw-space-xs) / 2);
+      position: absolute;
+      top: 0;
+      width: 100%;
+
+      &:hover {
+        background-color: var(--aotw-color-grey-500);
+      }
+    }
+  }
+
+  &:hover {
+    .track {
+      background-color: var(--aotw-color-grey-300);
+    }
+  }
+}
+
+:host([scrollable]) {
+  .scrollbar {
+    display: block;
+  }
 }
