@@ -27,5 +27,6 @@ export default create({
 
   brandTitle: 'AOTW Design System',
   brandUrl: 'https://github.com/Akinwunmi',
+  brandImage: 'shared/assets/aotw-storybook-brand-image.png',
   brandTarget: '_self',
 });
