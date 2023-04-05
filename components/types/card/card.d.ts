@@ -1,7 +1,10 @@
+import { TemplateResult } from 'lit';
 import { AotwContainer } from '../container';
 export declare class AotwCard extends AotwContainer {
-    readonly elevated = true;
+    private _elements;
     static styles: import("lit").CSSResult[];
+    render(): TemplateResult;
+    private _handleSlotChange;
 }
 declare global {
     interface HTMLElementTagNameMap {
