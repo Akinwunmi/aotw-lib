@@ -1,0 +1,19 @@
+@use 'typography';
+
+:root {
+  --aotw-tag-background-color: var(--aotw-color-grey-100);
+  --aotw-tag-color: var(--aotw-color-primary-500);
+}
+
+[aotw-tag] {
+  @include typography.typography-body-small;
+  align-items: center;
+  background-color: var(--aotw-tag-background-color);
+  border-radius: var(--aotw-radius-m);
+  box-sizing: border-box;
+  color: var(--aotw-tag-color);
+  display: inline-flex;
+  gap: var(--aotw-space-xs);
+  height: var(--aotw-size-s);
+  padding-inline: var(--aotw-space-xs);
+}

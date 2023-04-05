@@ -9,4 +9,3 @@ export * from './list-item';
 export * from './overlay';
 export * from './tab';
 export * from './table';
-export * from './tag';
