@@ -1,55 +1,102 @@
-import { AotwOverlayHost, AotwOverlayPanel, AOTW_OVERLAY_HOST, AOTW_OVERLAY_PANEL } from './components';
 import { OverlayConfig } from './overlay.model';
-import { OverlayPortal, OverlayPosition, OverlayRef } from './services';
-
-let PANEL_ID = 0;
+import { OverlayPosition } from './overlay-position';
+import { OverlayRef } from './overlay-ref';
+import { Portal } from '../portal';
+import { applyStyles } from './overlay.utils';
 
 export class Overlay {
-  private static _instance: Overlay;
+  private static instance: Overlay;
 
-  private _container!: HTMLDivElement;
-  private _host!: AotwOverlayHost;
+  private container!: HTMLDivElement;
+  private host!: HTMLDivElement;
+  private scrim!: HTMLDivElement;
 
-  public static getInstance(): Overlay {
-    if (!this._instance) {
-      this._instance = new Overlay();
+  public static get(): Overlay {
+    if (!this.instance) {
+      this.instance = new Overlay();
     }
-    return this._instance;
+    return this.instance;
   }
 
   public create(config?: OverlayConfig): OverlayRef {
-    this._createContainer();
-    this._createHost();
-    const panel = this._createPanel();
-    const portal = new OverlayPortal(panel);
+    this.createContainer();
+    this.createHost();
+    const panel = this.createPanel();
+    const portal = new Portal();
 
-    const overlayRef = new OverlayRef(this._container, this._host, panel, portal, config);
-
-    return overlayRef;
+    return new OverlayRef(this.host, panel, portal, this.scrim, config);
   }
 
   public position() {
     return new OverlayPosition();
   }
 
-  private _createContainer(): void {
-    if (!this._container) {
-      const container = document.createElement('div');
-      container.className = 'aotw-overlay-container';
-      this._container = container;
-      document.body.appendChild(this._container);
+  private createContainer(): void {
+    if (this.container) {
+      return;
     }
+
+    const container = document.createElement('div');
+    container.toggleAttribute('aotw-overlay-container', true);
+    const style: Partial<CSSStyleDeclaration> = {
+      alignItems: 'center',
+      display: 'flex',
+      inset: '0',
+      justifyContent: 'center',
+      padding: 'var(--aotw-overlay-container-padding)',
+      pointerEvents: 'none',
+      position: 'fixed',
+      zIndex: 'var(--aotw-overlay-container-level)'
+    };
+    applyStyles(container.style, style as CSSStyleDeclaration);
+
+    this.container = container;
+    document.body.appendChild(this.container);
+    this.createScrim();
   }
 
-  private _createHost(): void {
-    this._host = document.createElement(AOTW_OVERLAY_HOST) as AotwOverlayHost;
-    this._container.appendChild(this._host);
+  private createScrim(): void {
+    const scrim = document.createElement('div');
+    scrim.toggleAttribute('aotw-overlay-scrim', true);
+    const style: Partial<CSSStyleDeclaration> = {
+      display: 'none',
+      inset: '0',
+      pointerEvents: 'auto',
+      position: 'fixed'
+    };
+    applyStyles(scrim.style, style as CSSStyleDeclaration);
+    
+    this.scrim = scrim;
+    this.container.prepend(this.scrim);
+}
+
+  private createHost(): void {
+    const host = document.createElement('div');
+    host.toggleAttribute('aotw-overlay-host', true);
+    const style: Partial<CSSStyleDeclaration> = {
+      display: 'flex',
+      position: 'absolute',
+      inset: '0',
+      alignItems: 'center',
+      justifyContent: 'center',
+      pointerEvents: 'none'
+    };
+    applyStyles(host.style, style as CSSStyleDeclaration);
+    this.host = host;
+
+    this.container.appendChild(this.host);
   }
 
-  private _createPanel(): AotwOverlayPanel {
-    const panel = document.createElement(AOTW_OVERLAY_PANEL) as AotwOverlayPanel;
-    panel.id = `panel-${PANEL_ID++}`;
-    this._host.appendChild(panel);
+  private createPanel(): HTMLDivElement {
+    const panel = document.createElement('div');
+    panel.toggleAttribute('aotw-overlay-panel', true);
+    const style: Partial<CSSStyleDeclaration> = {
+      backgroundColor: 'var(--aotw-color-white)',
+      boxShadow: 'var(--aotw-elevation-xs)',
+      display: 'block',
+      pointerEvents: 'auto'
+    };
+    applyStyles(panel.style, style as CSSStyleDeclaration);
 
     return panel;
   }

@@ -1,7 +1,7 @@
 import { Meta } from '@storybook/web-components';
 import { iconsStub } from '../icon/icon.mock';
 
-import { props, Template } from './card.model';
+import { props, Template } from './card';
 
 export default {
   title: 'Components/Card',

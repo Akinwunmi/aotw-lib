@@ -7,5 +7,6 @@ export * from './icon';
 export * from './field';
 export * from './list-item';
 export * from './overlay';
+export * from './portal';
 export * from './tab';
 export * from './table';

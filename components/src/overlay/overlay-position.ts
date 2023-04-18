@@ -1,69 +1,69 @@
-import { Point, PositionAxes, Positions } from '../overlay.model';
-import { applyStyles, transformCssValue } from '../overlay.utils';
+import { Point, PositionAxes, Positions } from './overlay.model';
+import { applyStyles, transformCssValue } from './overlay.utils';
 import { OverlayRef } from './overlay-ref';
 
 export class OverlayPosition {
-  private _origin?: HTMLElement;
-  private _positions?: Positions;
-  private _overlayRef?: OverlayRef;
+  private origin?: HTMLElement;
+  private positions?: Positions;
+  private overlayRef?: OverlayRef;
 
-  private _containerRect?: DOMRect;
-  private _originRect?: DOMRect;
+  private containerRect?: DOMRect;
+  private originRect?: DOMRect;
 
-  private _minimumDistanceFromEdge = 0;
+  private minimumDistanceFromEdge = 0;
 
   // Origin to attach the overlay element to
   public setOrigin(origin: HTMLElement): OverlayPosition {
-    this._origin = origin;
+    this.origin = origin;
     return this;
   }
 
   // Define custom positions when the overlay element has to be positioned other then in the center
   public setPositions(positions: Positions): OverlayPosition {
-    this._positions = positions;
+    this.positions = positions;
     return this;
   }
 
   public attach(overlayRef: OverlayRef): void {
-    this._overlayRef = overlayRef;
+    this.overlayRef = overlayRef;
 
     this.apply();
   }
 
   public apply(): void {
-    if (!this._overlayRef) {
+    if (!this.overlayRef) {
       return;
     }
 
-    this._setMinimumDistanceToEdge();
+    this.setMinimumDistanceToEdge();
 
-    this._containerRect = document.querySelector('.aotw-overlay-container')?.getBoundingClientRect();
-    this._originRect = this._origin?.getBoundingClientRect();
+    this.containerRect = document.querySelector('[aotw-overlay-container]')?.getBoundingClientRect();
+    this.originRect = this.origin?.getBoundingClientRect();
 
-    const containerRect = this._containerRect;
-    const originRect = this._originRect;
+    const containerRect = this.containerRect;
+    const originRect = this.originRect;
 
-    const relativePosition = this._positions?.relative;
-    const absolutePosition = this._positions?.absolute;
-    const offsetPosition = this._positions?.offset;
+    const relativePosition = this.positions?.relative;
+    const absolutePosition = this.positions?.absolute;
+    const offsetPosition = this.positions?.offset;
 
     if (containerRect) {
       if (offsetPosition) {
-        this._applyOffsetPosition(offsetPosition);
+        this.applyOffsetPosition(offsetPosition);
       }
       if (relativePosition && originRect) {
-        const updatedRelativePosition = this._updateRelativePosition(containerRect, originRect, relativePosition);
-        const originPoint = this._getOriginPoint(originRect, updatedRelativePosition);
-        this._applyRelativePosition(containerRect, originPoint, updatedRelativePosition);
+        const updatedRelativePosition = this.updateRelativePosition(containerRect, originRect, relativePosition);
+        const originPoint = this.getOriginPoint(originRect, updatedRelativePosition);
+        this.applyRelativePosition(containerRect, originPoint, updatedRelativePosition);
         return;
       }
       if (absolutePosition) {
-        this._applyAbsolutePosition(absolutePosition);
+        this.applyAbsolutePosition(absolutePosition);
       }
     }
   }
 
-  private _getOriginPoint(originRect: DOMRect, relativePosition: PositionAxes): Point {
+  private getOriginPoint(originRect: DOMRect, relativePosition: PositionAxes): Point {
     let x, y;
 
     if (relativePosition.horizontal === 'center') {
@@ -81,7 +81,7 @@ export class OverlayPosition {
     return { x, y };
   }
 
-  private _applyRelativePosition(containerRect: DOMRect, originPoint: Point, relativePosition: PositionAxes): void {
+  private applyRelativePosition(containerRect: DOMRect, originPoint: Point, relativePosition: PositionAxes): void {
     let top, right, bottom, left, width, height;
     const styles: Partial<CSSStyleDeclaration> = {};
 
@@ -132,13 +132,13 @@ export class OverlayPosition {
     styles.width = transformCssValue(width);
     styles.height = transformCssValue(height);
 
-    const hostStyle = this._overlayRef?.host.style;
+    const hostStyle = this.overlayRef?.host.style;
     if (hostStyle) {
       applyStyles(hostStyle, styles as CSSStyleDeclaration);
     }
   }
 
-  private _applyAbsolutePosition(absolutePosition: PositionAxes): void {
+  private applyAbsolutePosition(absolutePosition: PositionAxes): void {
     const styles: Partial<CSSStyleDeclaration> = {};
 
     switch (absolutePosition.vertical) {
@@ -169,44 +169,44 @@ export class OverlayPosition {
         break;
     }
 
-    const hostStyle = this._overlayRef?.host.style;
+    const hostStyle = this.overlayRef?.host.style;
     if (hostStyle) {
       applyStyles(hostStyle, styles as CSSStyleDeclaration);
     }
   }
 
-  private _applyOffsetPosition(offsetPosition: Point): void {
+  private applyOffsetPosition(offsetPosition: Point): void {
     const styles: Partial<CSSStyleDeclaration> = {
       transform: `translate(${offsetPosition.x}px, ${offsetPosition.y}px)`,
     };
 
-    const hostStyle = this._overlayRef?.host.style;
+    const hostStyle = this.overlayRef?.host.style;
     if (hostStyle) {
       applyStyles(hostStyle, styles as CSSStyleDeclaration);
     }
   }
 
-  private _setMinimumDistanceToEdge(): void {
+  private setMinimumDistanceToEdge(): void {
     const computedDocumentStyle = getComputedStyle(document.documentElement);
     const fontSize = Number(computedDocumentStyle.fontSize.replace('px', ''));
     const multiplier = Number(computedDocumentStyle.getPropertyValue('--aotw-overlay-container-padding').replace('rem', ''));
-    this._minimumDistanceFromEdge = fontSize * multiplier;
+    this.minimumDistanceFromEdge = fontSize * multiplier;
   }
 
-  private _updateRelativePosition(containerRect: DOMRect, originRect: DOMRect, relativePosition: PositionAxes): PositionAxes {
-    if (relativePosition.vertical === 'start' && originRect.y < this._minimumDistanceFromEdge) {
+  private updateRelativePosition(containerRect: DOMRect, originRect: DOMRect, relativePosition: PositionAxes): PositionAxes {
+    if (relativePosition.vertical === 'start' && originRect.y < this.minimumDistanceFromEdge) {
       relativePosition.vertical = 'end';
     }
 
-    if (relativePosition.vertical === 'end' && containerRect.bottom - originRect.bottom < this._minimumDistanceFromEdge) {
+    if (relativePosition.vertical === 'end' && containerRect.bottom - originRect.bottom < this.minimumDistanceFromEdge) {
       relativePosition.vertical = 'start';
     }
 
-    if (relativePosition.horizontal === 'start' && containerRect.right - originRect.right < this._minimumDistanceFromEdge) {
+    if (relativePosition.horizontal === 'start' && containerRect.right - originRect.right < this.minimumDistanceFromEdge) {
       relativePosition.horizontal = 'end';
     }
 
-    if (relativePosition.horizontal === 'end' && originRect.x < this._minimumDistanceFromEdge) {
+    if (relativePosition.horizontal === 'end' && originRect.x < this.minimumDistanceFromEdge) {
       relativePosition.horizontal = 'start';
     }
 

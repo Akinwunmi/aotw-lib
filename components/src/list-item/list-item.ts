@@ -8,7 +8,10 @@ const AOTW_LIST_ITEM = 'aotw-list-item';
 
 @customElement(AOTW_LIST_ITEM)
 export class AotwListItem extends AotwContainer {
-  @property({ type: Boolean })
+  @property({ type: Boolean, reflect: true })
+  public active = false;
+
+  @property({ type: Boolean, reflect: true })
   public disabled = false;
 
   public static override styles = [...AotwContainer.styles, unsafeCSS(styleListItem)];
