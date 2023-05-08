@@ -1,56 +1,85 @@
-import { AotwOverlayHost, AotwOverlayPanel, AOTW_OVERLAY_HOST, AOTW_OVERLAY_PANEL } from './components';
+import { Portal } from '../portal';
+import { OverlayPosition } from './overlay-position';
+import { OverlayRef } from './overlay-ref';
 import { OverlayConfig } from './overlay.model';
-import { OverlayPortal, OverlayPosition, OverlayRef } from './services';
-
-let PANEL_ID = 0;
 
 export class Overlay {
-  private static _instance: Overlay;
+  private static instance?: Overlay;
 
-  private _container!: HTMLDivElement;
-  private _host!: AotwOverlayHost;
+  private container!: HTMLDivElement;
+  private host!: HTMLDivElement;
+  private scrim!: HTMLDivElement;
 
-  public static getInstance(): Overlay {
-    if (!this._instance) {
-      this._instance = new Overlay();
+  public static get(): Overlay {
+    if (!this.instance) {
+      this.instance = new Overlay();
     }
-    return this._instance;
+    return this.instance;
   }
 
   public create(config?: OverlayConfig): OverlayRef {
-    this._createContainer();
-    this._createHost();
-    const panel = this._createPanel();
-    const portal = new OverlayPortal(panel);
+    this.createContainer();
+    this.createHost();
+    const panel = this.createPanel();
+    const portal = new Portal();
 
-    const overlayRef = new OverlayRef(this._container, this._host, panel, portal, config);
-
-    return overlayRef;
+    return new OverlayRef(this.host, panel, portal, this.scrim, config);
   }
 
-  public position() {
+  public position(): OverlayPosition {
     return new OverlayPosition();
   }
 
-  private _createContainer(): void {
-    if (!this._container) {
-      const container = document.createElement('div');
-      container.className = 'aotw-overlay-container';
-      this._container = container;
-      document.body.appendChild(this._container);
+  private createContainer(): void {
+    if (this.container) {
+      return;
     }
+
+    const style: Partial<CSSStyleDeclaration> = {
+      inset: '0',
+      pointerEvents: 'none',
+      position: 'fixed'
+    };
+    this.container = this.createElement('aotw-overlay', style);
+    document.body.appendChild(this.container);
+    this.createScrim();
   }
 
-  private _createHost(): void {
-    this._host = document.createElement(AOTW_OVERLAY_HOST) as AotwOverlayHost;
-    this._container.appendChild(this._host);
+  private createHost(): void {
+    const style: Partial<CSSStyleDeclaration> = {
+      display: 'flex',
+      inset: '0',
+      placeContent: 'center',
+      placeItems: 'center',
+      position: 'absolute'
+    };
+    this.host = this.createElement('host', style);
+    this.container.appendChild(this.host);
   }
 
-  private _createPanel(): AotwOverlayPanel {
-    const panel = document.createElement(AOTW_OVERLAY_PANEL) as AotwOverlayPanel;
-    panel.id = `panel-${PANEL_ID++}`;
-    this._host.appendChild(panel);
+  private createPanel(): HTMLDivElement {
+    const style: Partial<CSSStyleDeclaration> = {
+      display: 'block',
+      pointerEvents: 'auto'
+    };
+    return this.createElement('panel', style);
+  }
 
-    return panel;
+  private createScrim(): void {
+    const style: Partial<CSSStyleDeclaration> = {
+      display: 'none',
+      inset: '0',
+      pointerEvents: 'auto',
+      position: 'fixed'
+    };
+    this.scrim = this.createElement('scrim', style);
+    this.container.prepend(this.scrim);
+  }
+
+  private createElement(name: string, style: Partial<CSSStyleDeclaration>): HTMLDivElement {
+    const element = document.createElement('div');
+    element.toggleAttribute(name, true);
+    Object.assign(element.style, style);
+    return element;
   }
 }

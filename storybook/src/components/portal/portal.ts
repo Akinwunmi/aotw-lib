@@ -1,5 +1,5 @@
 import { html } from 'lit';
-import { Portal } from '@aotw/components/src/portal/portal';
+import { Portal } from '@aotw/components/src/portal';
 
 import { Story } from '../../../types/story.model';
 

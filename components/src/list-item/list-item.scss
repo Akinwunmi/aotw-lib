@@ -1,16 +1,17 @@
 :host {
   align-items: center;
-  background-color: var(--aotw-list-item-background-color, var(--aotw-color-grey-100));
+  background-color: var(--aotw-list-item-background-color, var(--aotw-color-white));
   grid-template-columns: auto 1fr auto;
   min-height: var(--aotw-size-l);
 }
 
 :host(:hover) {
-  background-color: var(--aotw-list-item-background-color-hover, var(--aotw-color-grey-200));
+  background-color: var(--aotw-list-item-background-color-hover, var(--aotw-color-primary-100));
 }
 
-:host(:active) {
-  background-color: var(--aotw-list-item-background-color-active, var(--aotw-color-grey-300));
+:host(:active),
+:host([active]) {
+  background-color: var(--aotw-list-item-background-color-active, var(--aotw-color-primary-200));
   transition: background-color 150ms ease-in-out;
 }
 

@@ -1,22 +1,21 @@
 import '@aotw/components/src/overlay/index';
-import { OverlayConfig } from '@aotw/components/src/overlay/overlay.model';
 import { html } from 'lit';
 
 import { Story } from '../../../types/story.model';
-import { handleOpenDialog, handleOpenDropdown, handleOpenToast } from './overlay.utils';
+import { openDialog, openDropdown, openToast } from './overlay.utils';
 
 interface OverlayProps {
   '--aotw-overlay-container-padding'?: string;
-  handleOpenDialog: (elementId: string, config?: OverlayConfig) => void;
-  handleOpenDropdown: (elementId: string, config?: OverlayConfig) => void;
-  handleOpenToast: (elementId: string, config?: OverlayConfig) => void;
+  openDialog: (elementId: string) => void;
+  openDropdown: (elementId: string) => void;
+  openToast: (elementId: string) => void;
 }
 
 export const overlayArgs: OverlayProps = {
   '--aotw-overlay-container-padding': 'var(--aotw-space-xl)',
-  handleOpenDialog,
-  handleOpenDropdown,
-  handleOpenToast
+  openDialog,
+  openDropdown,
+  openToast
 };
 
 export const OverlayTemplate: Story<OverlayProps> = (props) => {
@@ -26,31 +25,34 @@ export const OverlayTemplate: Story<OverlayProps> = (props) => {
 
   return html`
     <div style="display: flex; gap: var(--aotw-space-s)">
-      <button id="button-dialog" @click=${props.handleOpenDialog.bind(undefined, 'overlay-dialog')}>Open dialog</button>
-      <button id="button-dropdown" @click=${props.handleOpenDropdown.bind(undefined, 'overlay-dropdown')}>Open dropdown</button>
-      <button id="button-toast" @click=${props.handleOpenToast.bind(undefined, 'overlay-toast')}>Open toast</button>
+      <button id="button-dialog" @click=${props.openDialog.bind(undefined, 'overlay-dialog')}>Open dialog</button>
+      <button id="button-dropdown" @click=${props.openDropdown.bind(undefined, 'overlay-dropdown')}>Open dropdown</button>
+      <button id="button-toast" @click=${props.openToast.bind(undefined, 'overlay-toast')}>Open toast</button>
     </div>
 
     <template id="overlay-dialog">
-      <aotw-dialog>Click me!</aotw-dialog>
+      <aotw-card>
+        <aotw-card-header>
+          <img header-image src="https://upload.wikimedia.org/wikipedia/commons/c/ca/Frisian_flag.svg">
+          <button header-suffix ghost>
+            <aotw-icon name="close" size="medium"></aotw-icon>
+          </button>
+          Fryslân
+        </aotw-card-header>
+        <aotw-card-content>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempora, facere?
+        </aotw-card-content>
+        <aotw-card-footer>
+          <button id="cancel-button" ghost>Cancel</button>
+          <button>Confirm</button>
+        </aotw-card-footer>
+      </aotw-card>
     </template>
 
     <template id="overlay-dropdown">
-      <aotw-list-item style="
-        --aotw-list-item-background-color: var(--aotw-color-white);
-        --aotw-list-item-background-color-hover: var(--aotw-color-grey-100);
-        --aotw-list-item-background-color-active: var(--aotw-color-grey-200)
-      ">Item 1</aotw-list-item>
-      <aotw-list-item style="
-        --aotw-list-item-background-color: var(--aotw-color-white);
-        --aotw-list-item-background-color-hover: var(--aotw-color-grey-100);
-        --aotw-list-item-background-color-active: var(--aotw-color-grey-200)
-      ">Item 2</aotw-list-item>
-      <aotw-list-item style="
-        --aotw-list-item-background-color: var(--aotw-color-white);
-        --aotw-list-item-background-color-hover: var(--aotw-color-grey-100);
-        --aotw-list-item-background-color-active: var(--aotw-color-grey-200)
-      ">Item 3</aotw-list-item>
+      <aotw-list-item>Item 1</aotw-list-item>
+      <aotw-list-item>Item 2</aotw-list-item>
+      <aotw-list-item>Item 3</aotw-list-item>
     </template>
 
     <template id="overlay-toast">

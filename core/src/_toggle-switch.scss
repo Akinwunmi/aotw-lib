@@ -1,10 +1,10 @@
-@import './typography';
+@use './typography';
 
 input[type='checkbox'][toggle-switch] {
   display: none;
 
   + label {
-    @include typography-body;
+    @include typography.typography-body;
     position: relative;
     display: inline-flex;
     align-items: center;

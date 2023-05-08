@@ -1,7 +1,7 @@
-@import '@aotw/core/src/typography';
+@use '@aotw/core/src/typography';
 
 .table {
-  @include typography-body;
+  @include typography.typography-body;
   display: flex;
   justify-content: stretch;
   border: 1px solid var(--aotw-color-white);
