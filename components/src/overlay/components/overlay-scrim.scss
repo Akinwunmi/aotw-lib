@@ -1,9 +1,0 @@
-:host {
-  inset: 0;
-  position: fixed;
-}
-
-:host([withBackground]) {
-  background-color: var(--aotw-color-grey-500);
-  opacity: 0.5;
-}

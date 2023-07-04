@@ -3,35 +3,39 @@ import { PortalOptions } from './portal.model';
 
 export class Portal {
   private _attached?: HTMLElement;
-  private _parentElement = document.body;
+  private parentElement = document.body;
 
   public get attached(): HTMLElement | undefined {
     return this._attached;
   }
 
+  public set attached(attached: HTMLElement | undefined) {
+    this._attached = attached;
+  }
+
   public attach(element: HTMLElement, options?: PortalOptions): HTMLElement {
     if (options?.parent) {
-      this._parentElement = options.parent;
+      this.parentElement = options.parent;
     }
-    if (!this._attached) {
-      this._attached = element;
-      this._parentElement.appendChild(this._attached);
+    if (!this.attached) {
+      this.attached = element;
+      this.parentElement.appendChild(this.attached);
     }
-    this._attached.style.display = 'block';
-    return this._attached;
+    this.attached.style.display = 'block';
+    return this.attached;
   }
 
   public close(): void {
-    if (this._attached) {
-      this._attached.style.display = 'none';
+    if (this.attached) {
+      this.attached.style.display = 'none';
     }
   }
 
   public detach(): void {
-    if (!this._attached) {
+    if (!this.attached) {
       return;
     }
-    this._parentElement.removeChild(this._attached);
-    this._attached = undefined;
+    this.parentElement.removeChild(this.attached);
+    this.attached = undefined;
   }
 }

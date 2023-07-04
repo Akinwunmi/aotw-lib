@@ -1,7 +1,7 @@
-@import '@aotw/core/src/typography';
+@use '@aotw/core/src/typography';
 
 :host {
-  @include typography-body;
+  @include typography.typography-body;
   background-color: var(--aotw-color-primary-400);
   color: var(--aotw-color-white);
   display: inline-grid;
@@ -21,7 +21,7 @@
 
     section {
       slot[name='title'] {
-        @include typography-header;
+        @include typography.typography-header;
         display: inline-block;
         margin-block: var(--aotw-space-s);
       }

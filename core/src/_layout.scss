@@ -1,19 +1,19 @@
-@import 'typography';
+@use 'typography';
 
 html,
 body {
-  @include typography-body;
+  @include typography.typography-body;
   background-color: var(--aotw-color-secondary-150);
   color: var(--aotw-color-primary-500);
 
   h1,
   h2,
   h3 {
-    @include typography-header;
+    @include typography.typography-header;
   }
 
   a {
-    @include typography-link;
+    @include typography.typography-link;
     color: var(--aotw-color-primary-500);
     cursor: pointer;
   }
