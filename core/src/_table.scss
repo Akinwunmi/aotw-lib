@@ -12,6 +12,12 @@
     border-right: 1px solid var(--aotw-color-grey-300);
   }
 
+  tbody tr {
+    &[disabled] {
+      color: var(--aotw-color-grey-300);
+    }
+  }
+
   caption,
   td,
   th {

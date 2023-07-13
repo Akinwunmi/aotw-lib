@@ -1,15 +1,21 @@
-import { html } from 'lit';
+import { TemplateResult, html } from 'lit';
 
 import { Story } from '../../../types/story.model';
 
 interface TableProps {
+  checkboxes: number[];
   columns: number;
+  disabledRows: number[];
+  radioButtons: number[];
   rows: number;
 }
 
 export const tableArgs: TableProps = {
+  checkboxes: [3, 4, 6],
   columns: 5,
-  rows: 6
+  disabledRows: [6, 7, 9],
+  radioButtons: [2, 5, 9],
+  rows: 11
 };
 
 export const TableTemplate: Story<TableProps> = (props) => {
@@ -20,19 +26,46 @@ export const TableTemplate: Story<TableProps> = (props) => {
     </th>
   `);
 
-  const cells = (rowIndex) => Array(props.columns).fill(true).map((_, index) => html`
-    <td>
-      Cell ${rowIndex}.${index + 1}
-    </td>
-  `);
+  const cells = (rowIndex: number): TemplateResult[] => 
+    Array(props.columns).fill(true).map((_, index) => html`
+      <td>
+        Cell ${rowIndex}.${index + 1}
+      </td>
+    `);
+
+  const checkbox = (rowIndex: number) => props.checkboxes.includes(rowIndex) && html`
+    <input
+      aotw-checkbox
+      type="checkbox"
+      id="row-${rowIndex}"
+      name="checkbox-group"
+      ?disabled=${props.disabledRows.includes(rowIndex)}
+    />
+    <label for="row-${rowIndex}">Row ${rowIndex + 1}</label>
+  `;
+
+  const radioButton = (rowIndex: number) => props.radioButtons.includes(rowIndex) && html`
+    <input
+      aotw-radio-button
+      type="radio"
+      id="row-${rowIndex}"
+      name="radio-group"
+      ?disabled=${props.disabledRows.includes(rowIndex)}
+    />
+    <label for="row-${rowIndex}">Row ${rowIndex + 1}</label>
+  `;
 
   const rows = Array(props.rows).fill(true).map((_, index) => {
     return html`
-      <tr>
-        <th>Row ${index + 1}</th>
+      <tr ?disabled=${props.disabledRows.includes(index)}>
+        <th>
+          ${checkbox(index) || ''}
+          ${radioButton(index) || ''}
+          ${!checkbox(index) && !radioButton(index) ? `Row ${index + 1}` : ''}
+        </th>
         ${cells(index + 1).slice(1, -1)}
         <td>
-          <button ghost>
+          <button ghost ?disabled=${props.disabledRows.includes(index)}>
             <aotw-icon name="ellipsis" size="medium"></aotw-icon>
           </button>
         </td>

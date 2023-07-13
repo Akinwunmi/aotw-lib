@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Thu, 13 Jul 2023 09:47:38 GMT
+ * Generated on Thu, 13 Jul 2023 15:47:17 GMT
  */
 
 :root {
@@ -22,6 +22,7 @@
   --aotw-radius-s: 0.25rem;
   --aotw-radius-m: 0.375rem;
   --aotw-radius-l: 0.5rem;
+  --aotw-size-xs: 1rem;
   --aotw-size-s: 1.5rem;
   --aotw-size-m: 2rem;
   --aotw-size-l: 3rem;

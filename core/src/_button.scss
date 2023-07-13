@@ -65,8 +65,8 @@ button {
   }
 
   &[disabled] {
-    background-color: var(--aotw-color-grey-300);
-    color: var(--aotw-color-grey-400);
+    background-color: var(--aotw-color-grey-200);
+    color: var(--aotw-color-grey-300);
     pointer-events: none;
   }
 }
