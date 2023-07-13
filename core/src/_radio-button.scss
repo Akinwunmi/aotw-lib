@@ -1,0 +1,37 @@
+[aotw-radio-button] {
+  display: none;
+
+  + label {
+    align-items: center;
+    cursor: pointer;
+    display: inline-flex;
+    gap: var(--aotw-space-s);
+    position: relative;
+
+    &::before {
+      background-color: var(--aotw-color-white);
+      border: 0.125rem solid var(--aotw-color-white);
+      border-radius: 50%;
+      box-sizing: border-box;
+      content: '';
+      height: var(--aotw-size-xs);
+      order: -1;
+      width: var(--aotw-size-xs);
+    }
+  }
+
+  &:checked + label {
+    &::before {
+      background-color: var(--aotw-color-primary-500);
+    }
+  }
+
+  &:disabled + label {
+    pointer-events: none;
+
+    &::before {
+      background-color: var(--aotw-color-grey-100);
+      border: none;
+    }
+  }
+}

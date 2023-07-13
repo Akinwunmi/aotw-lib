@@ -20,7 +20,7 @@ export class IconElement extends LitElement {
 
   protected override render(): TemplateResult {
     return svg`
-      ${unsafeSVG(AotwIconRegistry.getIcon(this.name).data)}
+      ${unsafeSVG(AotwIconRegistry.getIcon(this.name)?.data)}
     `;
   }
 }

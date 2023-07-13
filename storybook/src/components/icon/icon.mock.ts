@@ -2,6 +2,18 @@ export const iconsStub = [
   {
     data: `
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" fill="none">
+        <title>Add Icon</title>
+        <path
+          d="M7.75 1.25L10.25 1.25L10.25 7.75L16.75 7.75L16.75 10.25L10.25 10.25L10.25 16.75L7.75 16.75L7.75 10.25L1.25 10.25L1.25 7.75L7.75 7.75Z"
+          fill="currentColor"
+        />
+      </svg>
+    `,
+    name: 'add'
+  },
+  {
+    data: `
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" fill="none">
         <title>Arrow Down Icon</title>
         <path
           d="M1.25 6L3 4.25L9 10.25L15 4.25L16.75 6L9 13.75Z"
@@ -58,6 +70,42 @@ export const iconsStub = [
   },
   {
     data: `
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" fill="none">
+        <title>Edit Icon</title>
+        <path d="M8 1L17 1L17 17L1 17L1 8L3 8L3 15L15 15L15 3L8 3Z" fill="currentColor" />
+        <path d="M0 3L3 0L11 8L13 13L8 11Z" fill="currentColor" />
+      </svg>
+    `,
+    name: 'edit'
+  },
+  {
+    data: `
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" fill="none">
+        <circle cx="2" cy="9" r="2" fill="currentColor" />
+        <circle cx="9" cy="9" r="2" fill="currentColor" />
+        <circle cx="16" cy="9" r="2" fill="currentColor" />
+      </svg>
+    `,
+    name: 'ellipsis'
+  },
+  {
+    data: `
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+        <line x1="9" y1="19" x2="22" y2="19" stroke="currentColor" stroke-width="2" stroke-linecap="square"/>
+        <line x1="2" y1="19" x2="5" y2="19" stroke="currentColor" stroke-width="2" stroke-linecap="square"/>
+        <circle cx="7" cy="19" r="2" stroke="currentColor" stroke-width="2"/>
+        <circle cx="17" cy="12" r="2" stroke="currentColor" stroke-width="2"/>
+        <line x1="19" y1="12" x2="22" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="square"/>
+        <line x1="2" y1="12" x2="15" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="square"/>
+        <circle cx="7" cy="5" r="2" stroke="currentColor" stroke-width="2"/>
+        <line x1="9" y1="5" x2="22" y2="5" stroke="currentColor" stroke-width="2" stroke-linecap="square"/>
+        <line x1="2" y1="5" x2="5" y2="5" stroke="currentColor" stroke-width="2" stroke-linecap="square"/>
+      </svg>
+    `,
+    name: 'filter'
+  },
+  {
+    data: `
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
         <title>Grid Icon</title>
         <rect x="3" y="3" width="7" height="7" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
@@ -67,6 +115,34 @@ export const iconsStub = [
       </svg>  
     `,
     name: 'grid'
+  },
+  {
+    data: `
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" fill="none">
+        <path d="M17 17L13 7H11.5L7.5 17H9L12.25 9L15.5 17Z" fill="currentColor"/>
+        <rect x="9.5" y="13" width="5.5" height="1.5" fill="currentColor"/>
+        <path
+          d="M1 11C4.5 11 8 7.5 8 4H9.5C9.5 7.5 6.25 12.5 1 12.5Z"
+          fill="currentColor"
+        />
+        <defs>
+          <clipPath id="cut-edges">
+            <path d="M1 6H12L12 12L3 17Z" />
+          </clipPath>
+        </defs>
+
+        <rect x="1" y="3" width="10" height="1.5" fill="currentColor"/>
+        <rect x="5.25" y="1" width="1.5" height="2.5" fill="currentColor"/>
+        <path
+          d="M1 11C4.5 11 8 7.5 8 4H9.5C9.5 7.5 6.25 12.5 1 12.5Z"
+          clip-path="url(#cut-edges)"
+          transform="scale(-1, 1)"
+          transform-origin="6 0"
+          fill="currentColor"
+        />
+      </svg>
+    `,
+    name: 'language'
   },
   {
     data: `
@@ -99,6 +175,27 @@ export const iconsStub = [
   {
     data: `
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" fill="none">
+        <title>Menu Icon</title>
+        <rect x="1" y="3" width="16" height="2" fill="currentColor" />
+        <rect x="1" y="8" width="16" height="2" fill="currentColor" />
+        <rect x="1" y="13" width="16" height="2" fill="currentColor" />
+      </svg>
+    `,
+    name: 'menu'
+  },
+  {
+    data: `
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" fill="none">
+        <title>Search Icon</title>
+        <circle cx="6.75" cy="6.75" r="5" stroke="currentColor" stroke-width="2" />
+        <path d="M9 11L11 9L17 15L15 17Z" fill="currentColor" />
+      </svg>
+    `,
+    name: 'search'
+  },
+  {
+    data: `
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" fill="none">
         <title>Shine Icon</title>
         <defs>
           <g id="sparks">
@@ -112,5 +209,52 @@ export const iconsStub = [
       </svg>
     `,
     name: 'shine'
+  },
+  {
+    data: `
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" fill="none">
+        <path
+          d="M13.75 5.75L12 7.5L9 4.5L6 7.5L4.25 5.75L9 1Z"
+          fill="currentColor"
+        />
+        <path
+          d="M4.25 12.25L6 10.5L9 13.5L12 10.5L13.75 12.25L9 17Z"
+          fill="currentColor"
+        />
+      </svg>
+    `,
+    name: 'sort'
+  },
+  {
+    data: `
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+        <line x1="2" y1="5" x2="22" y2="5" stroke="currentColor" stroke-width="2" stroke-linecap="square"/>
+        <line x1="2" y1="12" x2="15" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="square"/>
+        <line x1="2" y1="19" x2="8" y2="19" stroke="currentColor" stroke-width="2" stroke-linecap="square"/>
+      </svg>
+    `,
+    name: 'sort-by'
+  },
+  {
+    data: `
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" fill="none">
+        <path
+          d="M4.25 12.25L6 10.5L9 13.5L12 10.5L13.75 12.25L9 17Z"
+          fill="currentColor"
+        />
+      </svg>
+    `,
+    name: 'sort-down'
+  },
+  {
+    data: `
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" fill="none">
+        <path
+          d="M13.75 5.75L12 7.5L9 4.5L6 7.5L4.25 5.75L9 1Z"
+          fill="currentColor"
+        />
+      </svg>
+    `,
+    name: 'sort-up'
   }
 ];

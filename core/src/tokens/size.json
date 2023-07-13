@@ -1,6 +1,7 @@
 {
   "aotw": {
     "size": {
+      "xs": { "value": "1rem", "type": "size" },
       "s": { "value": "1.5rem", "type": "size" },
       "m": { "value": "2rem", "type": "size" },
       "l": { "value": "3rem", "type": "size" },

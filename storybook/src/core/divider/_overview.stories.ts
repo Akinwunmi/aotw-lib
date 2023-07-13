@@ -14,13 +14,13 @@ export const Overview = () => html`
       <div class="variant">
         <header>Default</header>
         <div class="content">
-          <hr>
+          <hr aotw-divider>
         </div>
       </div>
       <div class="variant">
         <header>Vertical</header>
         <div class="content" style="height: var(--aotw-size-l)">
-          <hr vertical>
+          <hr aotw-divider vertical>
         </div>
       </div>
     </section>

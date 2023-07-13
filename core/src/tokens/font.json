@@ -5,11 +5,13 @@
         "primary": { "value": "'Inter', sans-serif", "type": "font" }
       },
       "letter-spacing": {
-        "m": { "value": "0.25em", "type": "font" }
+        "m": { "value": "0.25rem", "type": "font" }
       },
       "line-height": {
-        "s": { "value": "1.25em", "type": "font" },
-        "m": { "value": "1.5em", "type": "font" }
+        "s": { "value": "1.25rem", "type": "font" },
+        "m": { "value": "1.5rem", "type": "font" },
+        "l": { "value": "1.75rem", "type": "font" },
+        "xl": { "value": "2rem", "type": "font" }
       },
       "size": {
         "xs": { "value": "0.75rem", "type": "font" },

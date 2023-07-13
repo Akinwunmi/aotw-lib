@@ -1,14 +1,16 @@
 /**
  * Do not edit directly
- * Generated on Thu, 04 May 2023 08:33:43 GMT
+ * Generated on Thu, 13 Jul 2023 15:47:17 GMT
  */
 
 :root {
   --aotw-elevation-xs: 0.25rem 0.25rem 0.5rem var(--aotw-color-grey-200);
   --aotw-font-family-primary: 'Inter', sans-serif;
-  --aotw-font-letter-spacing-m: 0.25em;
-  --aotw-font-line-height-s: 1.25em;
-  --aotw-font-line-height-m: 1.5em;
+  --aotw-font-letter-spacing-m: 0.25rem;
+  --aotw-font-line-height-s: 1.25rem;
+  --aotw-font-line-height-m: 1.5rem;
+  --aotw-font-line-height-l: 1.75rem;
+  --aotw-font-line-height-xl: 2rem;
   --aotw-font-size-xs: 0.75rem;
   --aotw-font-size-s: 1rem;
   --aotw-font-size-m: 1.25rem;
@@ -20,6 +22,7 @@
   --aotw-radius-s: 0.25rem;
   --aotw-radius-m: 0.375rem;
   --aotw-radius-l: 0.5rem;
+  --aotw-size-xs: 1rem;
   --aotw-size-s: 1.5rem;
   --aotw-size-m: 2rem;
   --aotw-size-l: 3rem;

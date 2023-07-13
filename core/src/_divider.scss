@@ -1,13 +1,21 @@
-hr {
-  background-color: var(--aotw-color-grey-400);
+[aotw-divider] {
+  background-color: var(--aotw-color-white);
   border: none;
-  height: calc(var(--aotw-space-xs) / 4);
+  height: calc(var(--aotw-space-xs) / 2);
   margin-block: var(--aotw-space-s);
   width: 100%;
+
+  &[no-margin] {
+    margin-block: 0;
+  }
 
   &[vertical] {
     height: 100%;
     margin: 0 var(--aotw-space-s);
-    width: calc(var(--aotw-space-xs) / 4);
+    width: calc(var(--aotw-space-xs) / 2);
+
+    &[no-margin] {
+      margin-inline: 0;
+    }
   }
 }

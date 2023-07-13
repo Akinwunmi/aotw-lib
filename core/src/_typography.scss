@@ -8,41 +8,43 @@
   text-decoration: none;
   text-transform: uppercase;
 }
-.aotw-typography-button {
-  @include typography-button();
-}
+
 @mixin typography-body {
   font-family: var(--aotw-font-family-primary);
   font-weight: var(--aotw-font-weight-regular);
   font-size: var(--aotw-font-size-s);
   line-height: var(--aotw-font-line-height-s);
 }
+
 @mixin typography-body-small {
   font-family: var(--aotw-font-family-primary);
   font-weight: var(--aotw-font-weight-regular);
   font-size: var(--aotw-font-size-xs);
   line-height: var(--aotw-font-line-height-s);
 }
+
 @mixin typography-header {
   font-family: var(--aotw-font-family-primary);
   font-weight: var(--aotw-font-weight-medium);
   font-size: var(--aotw-font-size-l);
   line-height: var(--aotw-font-line-height-s);
 }
+
 @mixin typography-header-small {
   font-family: var(--aotw-font-family-primary);
   font-weight: var(--aotw-font-weight-regular);
   font-size: var(--aotw-font-size-m);
   line-height: var(--aotw-font-line-height-s);
 }
+
 @mixin typography-header-smallcaps {
   font-family: var(--aotw-font-family-primary);
   font-weight: var(--aotw-font-weight-regular);
   font-size: var(--aotw-font-size-s);
   line-height: var(--aotw-font-line-height-s);
-  letter-spacing: var(--aotw-font-letter-spacing-m);
   text-transform: uppercase;
 }
+
 @mixin typography-input {
   font-family: var(--aotw-font-family-primary);
   font-weight: var(--aotw-font-weight-regular);
@@ -50,10 +52,43 @@
   line-height: var(--aotw-font-line-height-s);
   text-decoration: none;
 }
+
 @mixin typography-link {
   font-family: var(--aotw-font-family-primary);
   font-weight: var(--aotw-font-weight-bold);
   font-size: var(--aotw-font-size-s);
   line-height: var(--aotw-font-line-height-s);
   text-decoration: none;
+}
+
+.aotw-typography-button {
+  @include typography-button();
+}
+
+.aotw-typography-body {
+  @include typography-body();
+}
+
+.aotw-typography-body-small {
+  @include typography-body-small();
+}
+
+.aotw-typography-header {
+  @include typography-header();
+}
+
+.aotw-typography-header-small {
+  @include typography-header-small();
+}
+
+.aotw-typography-header-smallcaps {
+  @include typography-header-smallcaps();
+}
+
+.aotw-typography-input {
+  @include typography-input();
+}
+
+.aotw-typography-link {
+  @include typography-link();
 }
