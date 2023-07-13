@@ -59,6 +59,9 @@ export class AotwTabGroup extends LitElement {
   }
 
   private _setActiveLinePosition(): void {
+    if (!this._activeLine) {
+      return;
+    }
     this._activeLine.style.left = `${100 / this._tabs.length * this._activeTab}%`;
   }
 }

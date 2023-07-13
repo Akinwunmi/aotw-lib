@@ -1,9 +1,9 @@
 import { Meta } from '@storybook/web-components';
 
-import { tableArgs, TableTemplate } from './table.model';
+import { tableArgs, TableTemplate } from './table';
 
 export default {
-  title: 'Components/Table (deprecated)'
+  title: 'Core/Table'
 } as Meta;
 
 export const Default = TableTemplate.bind({});

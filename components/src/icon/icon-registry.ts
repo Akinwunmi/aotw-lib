@@ -7,10 +7,10 @@ export class AotwIconRegistry {
     this._icons = icons;
   }
 
-  public static getIcon(name: string): Icon {
+  public static getIcon(name: string): Icon | undefined {
     const foundIcon = this._icons.find(icon => icon.name === name);
     if (!foundIcon) {
-      throw new Error('Icon not found.');
+      console.error(`Icon with name ${name} not found.`);
     }
     return foundIcon;
   }

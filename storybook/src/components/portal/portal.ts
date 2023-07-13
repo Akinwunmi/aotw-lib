@@ -30,7 +30,7 @@ function changeBackgroundColor(color: string): void {
 
 export const PortalTemplate: Story<Record<string, never>> = () => {
   return html`
-    <div>
+    <div style="display: flex; gap: var(--aotw-space-s)">
       <button @click=${attachElement.bind(undefined)}>Attach element</button>
       <button @click=${closeElement.bind(undefined)}>Close element</button>
       <button @click=${detachElement.bind(undefined)}>Detach element</button>

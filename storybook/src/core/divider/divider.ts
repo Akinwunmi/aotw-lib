@@ -13,7 +13,7 @@ export const dividerArgs: DividerProps = {
 export const DividerTemplate: Story<DividerProps> = (props) => {
   return html`
     <div style="height: var(--aotw-size-l)">
-      <hr ?vertical=${props.vertical}>
+      <hr aotw-divider ?vertical=${props.vertical}>
     </div>
   `;
 };
