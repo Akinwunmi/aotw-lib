@@ -1,5 +1,5 @@
+import icons from '@aotw/core/dist/icons/icons.json';
 import { Meta } from '@storybook/web-components';
-import { iconsStub } from '../icon/icon.mock';
 
 import { props, Template } from './card.model';
 
@@ -9,7 +9,7 @@ export default {
     '[header-prefix]': {
       control: 'select',
       defaultValue: 'icon',
-      options: [undefined, ...iconsStub.map(icon => icon.name)]
+      options: [undefined, ...icons.map(icon => icon.name)]
     }
   }
 } as Meta;

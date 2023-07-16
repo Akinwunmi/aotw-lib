@@ -6,13 +6,13 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "dev": "start-storybook -p 6006",
-    "build": "build-storybook -o dist",
+    "dev": "storybook dev -p 6006",
+    "build": "storybook build -o dist",
     "lint": "eslint . src/**/*.ts",
     "lint:fix": "eslint . src/**/*.ts --fix"
   },
   "engines": {
-    "node": "16.19.0",
+    "node": "18.13.0",
     "npm": "8.19.3"
   },
   "dependencies": {
@@ -22,25 +22,19 @@
   },
   "devDependencies": {
     "@aotw/eslint-config": "file:../eslint-config",
-    "@storybook/addon-actions": "6.5.15",
-    "@storybook/addon-essentials": "6.5.15",
-    "@storybook/addon-links": "6.5.15",
-    "@storybook/addons": "6.5.15",
-    "@storybook/builder-vite": "0.2.6",
-    "@storybook/theming": "6.5.15",
-    "@storybook/web-components": "6.5.15",
+    "@storybook/addon-actions": "7.0.27",
+    "@storybook/addon-essentials": "7.0.27",
+    "@storybook/addon-links": "7.0.27",
+    "@storybook/addons": "7.0.27",
+    "@storybook/theming": "7.0.27",
+    "@storybook/web-components": "7.0.27",
+    "@storybook/web-components-vite": "^7.0.27",
     "@typescript-eslint/eslint-plugin": "5.47.1",
     "eslint-plugin-lit": "1.7.2",
     "rollup-plugin-postcss-lit": "2.0.0",
     "sass": "1.57.1",
+    "storybook": "^7.0.27",
     "typescript": "4.9.4",
     "vite": "4.0.3"
-  },
-  "overrides": {
-    "react": "^17.0.0",
-    "react-dom": "^17.0.0",
-    "@storybook/addon-docs": {
-      "@mdx-js/react": "1.6.22"
-    }
   }
 }
