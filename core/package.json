@@ -10,17 +10,22 @@
   ],
   "scripts": {
     "build:colors": "node generate-colors.js",
+    "build:icons": "cpx src/icons/icons.json dist/icons",
     "build:tokens": "style-dictionary build --config ./config.json",
     "build:scss": "sass src/index.scss:dist/style.css",
-    "build": "rimraf dist && npm run build:colors && npm run build:tokens && npm run build:scss"
+    "build": "rimraf dist && run-p build:*"
   },
   "engines": {
-    "node": "16.19.0",
+    "node": "18.13.0",
     "npm": "8.19.3"
   },
   "devDependencies": {
+    "cpx": "^1.5.0",
     "rimraf": "3.0.2",
     "sass": "1.57.1",
     "style-dictionary": "3.7.1"
+  },
+  "dependencies": {
+    "npm-run-all": "^4.1.5"
   }
 }

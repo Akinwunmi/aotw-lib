@@ -1,13 +1,17 @@
+import { OverlayPosition } from './overlay-position';
+import { OverlayRef } from './overlay-ref';
 import { OverlayConfig } from './overlay.model';
-import { OverlayPosition, OverlayRef } from './services';
 export declare class Overlay {
-    private static _instance;
-    private _container;
-    private _host;
-    static getInstance(): Overlay;
+    private static instance?;
+    private container;
+    private host;
+    private scrim;
+    static get(): Overlay;
     create(config?: OverlayConfig): OverlayRef;
     position(): OverlayPosition;
-    private _createContainer;
-    private _createHost;
-    private _createPanel;
+    private createContainer;
+    private createHost;
+    private createPanel;
+    private createScrim;
+    private createElement;
 }
