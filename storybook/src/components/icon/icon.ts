@@ -1,6 +1,5 @@
-import '@aotw/components/src/icon';
+import '@aotw/components/src/icon/icon';
 import { IconSize } from '@aotw/components/src/icon/icon.model';
-import { AotwIconRegistry } from '@aotw/components/src/icon/icon-registry';
 import icons from '@aotw/core/dist/icons/icons.json';
 import { html } from 'lit';
 
@@ -28,8 +27,6 @@ export const iconArgs: IconProps = {
   name: 'logo',
   size: IconSize.ExtraLarge
 };
-
-AotwIconRegistry.register(icons);
 
 export const IconTemplate: Story<IconProps> = (props) => {
   return html`

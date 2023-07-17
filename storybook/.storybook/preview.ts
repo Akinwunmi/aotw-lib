@@ -1,3 +1,6 @@
+import { AotwIconRegistry } from '@aotw/components/src/icon/icon-registry';
+import '@aotw/components/src/icon/icon';
+import icons from '@aotw/core/dist/icons/icons.json';
 import { Preview } from '@storybook/web-components';
 
 import './preview.scss';
@@ -31,5 +34,7 @@ const preview: Preview = {
     }
   }
 }
+
+AotwIconRegistry.register(icons);
 
 export default preview;
