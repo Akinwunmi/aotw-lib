@@ -26,6 +26,13 @@
     }
   }
 
+  &:indeterminate + label {
+    &::before {
+      background-color: var(--aotw-color-primary-500);
+      border-width: 0.25rem;
+    }
+  }
+
   &:disabled + label {
     pointer-events: none;
 

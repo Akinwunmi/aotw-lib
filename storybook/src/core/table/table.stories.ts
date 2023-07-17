@@ -8,3 +8,9 @@ export default {
 
 export const Default = TableTemplate.bind({});
 Default.args = tableArgs;
+
+export const SelectableRows = TableTemplate.bind({});
+SelectableRows.args = {
+  ...tableArgs,
+  multiSelect: true
+};

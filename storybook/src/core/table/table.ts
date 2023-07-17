@@ -8,6 +8,7 @@ interface TableProps {
   disabledRows: number[];
   radioButtons: number[];
   rows: number;
+  multiSelect: boolean;
 }
 
 export const tableArgs: TableProps = {
@@ -15,13 +16,71 @@ export const tableArgs: TableProps = {
   columns: 5,
   disabledRows: [6, 7, 9],
   radioButtons: [2, 5, 9],
-  rows: 11
+  rows: 11,
+  multiSelect: false
 };
 
 export const TableTemplate: Story<TableProps> = (props) => {
+  const toggleCheckboxes = () => {
+    const checkboxes = document.querySelectorAll('input[name=checkbox-group]') as NodeListOf<HTMLInputElement>;
+    const contentCheckboxes = [...checkboxes].slice(1);
+
+    if (contentCheckboxes.every(checkbox => checkbox.checked || (!checkbox.checked && checkbox.disabled))) {
+      checkboxes.forEach(checkbox => checkbox.checked = false);
+      return;
+    }
+
+    if (contentCheckboxes.every(checkbox => !checkbox.checked || (checkbox.checked && checkbox.disabled))) {
+      checkboxes.forEach(checkbox => checkbox.checked = true);
+      return;
+    }
+
+    if (contentCheckboxes.some(checkbox => checkbox.checked)) {
+      checkboxes.forEach(checkbox => checkbox.checked = true);
+      return;
+    }
+  };
+
+  const setHeaderCheckbox = () => {
+    const checkboxes = document.querySelectorAll('input[name=checkbox-group]') as NodeListOf<HTMLInputElement>;
+    const contentCheckboxes = [...checkboxes].slice(1);
+    const headerCheckbox = document.querySelector('#row-header') as HTMLInputElement;
+
+    if (contentCheckboxes.every(checkbox => checkbox.checked || (!checkbox.checked && checkbox.disabled))) {
+      headerCheckbox.checked = true;
+      headerCheckbox.indeterminate = false;
+      return;
+    }
+
+    if(contentCheckboxes.every(checkbox => !checkbox.checked || (checkbox.checked && checkbox.disabled))) {
+      headerCheckbox.checked = false;
+      headerCheckbox.indeterminate = false;
+      return;
+    }
+    
+    if (contentCheckboxes.some(checkbox => checkbox.checked)) {
+      headerCheckbox.checked = false;
+      headerCheckbox.indeterminate = true;
+      return;
+    }
+  };
+
+  const headerLabel = (index: number) => props.multiSelect && index === 0
+    ? html`
+      <input
+        aotw-checkbox
+        type="checkbox"
+        id="row-header"
+        name="checkbox-group"
+        @click=${toggleCheckboxes}
+      />
+      <label for="row-header">Column ${index + 1}</label>
+    `
+    : `Column ${index + 1}`;
+
   const header = Array(props.columns).fill(true).map((_, index) => html`
     <th>
-      Column ${index + 1}
+      ${headerLabel(index)}
       <aotw-icon name="sort" style="color: var(--aotw-color-grey-400)"></aotw-icon>
     </th>
   `);
@@ -33,18 +92,19 @@ export const TableTemplate: Story<TableProps> = (props) => {
       </td>
     `);
 
-  const checkbox = (rowIndex: number) => props.checkboxes.includes(rowIndex) && html`
+  const checkbox = (rowIndex: number) => (props.multiSelect || props.checkboxes.includes(rowIndex)) && html`
     <input
       aotw-checkbox
       type="checkbox"
       id="row-${rowIndex}"
       name="checkbox-group"
+      @click=${setHeaderCheckbox}
       ?disabled=${props.disabledRows.includes(rowIndex)}
     />
     <label for="row-${rowIndex}">Row ${rowIndex + 1}</label>
   `;
 
-  const radioButton = (rowIndex: number) => props.radioButtons.includes(rowIndex) && html`
+  const radioButton = (rowIndex: number) => !props.multiSelect && props.radioButtons.includes(rowIndex) && html`
     <input
       aotw-radio-button
       type="radio"
