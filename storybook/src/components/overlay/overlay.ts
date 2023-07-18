@@ -1,3 +1,5 @@
+import '@aotw/components/src/card/index';
+import '@aotw/components/src/list-item/index';
 import '@aotw/components/src/overlay/index';
 import { html } from 'lit';
 
@@ -25,16 +27,22 @@ export const OverlayTemplate: Story<OverlayProps> = (props) => {
 
   return html`
     <div style="display: flex; gap: var(--aotw-space-s)">
-      <button id="button-dialog" @click=${props.openDialog.bind(undefined, 'overlay-dialog')}>Open dialog</button>
-      <button id="button-dropdown" @click=${props.openDropdown.bind(undefined, 'overlay-dropdown')}>Open dropdown</button>
-      <button id="button-toast" @click=${props.openToast.bind(undefined, 'overlay-toast')}>Open toast</button>
+      <button aotw-button id="button-dialog" @click=${props.openDialog.bind(undefined, 'overlay-dialog')}>
+        Open dialog
+      </button>
+      <button aotw-button id="button-dropdown" @click=${props.openDropdown.bind(undefined, 'overlay-dropdown')}>
+        Open dropdown
+      </button>
+      <button aotw-button id="button-toast" @click=${props.openToast.bind(undefined, 'overlay-toast')}>
+        Open toast
+      </button>
     </div>
 
     <template id="overlay-dialog">
       <aotw-card>
         <aotw-card-header>
           <img header-image src="https://upload.wikimedia.org/wikipedia/commons/c/ca/Frisian_flag.svg">
-          <button header-suffix ghost>
+          <button aotw-button header-suffix ghost>
             <aotw-icon name="close" size="medium"></aotw-icon>
           </button>
           Fryslân
@@ -43,8 +51,8 @@ export const OverlayTemplate: Story<OverlayProps> = (props) => {
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempora, facere?
         </aotw-card-content>
         <aotw-card-footer>
-          <button id="cancel-button" ghost>Cancel</button>
-          <button>Confirm</button>
+          <button aotw-button id="cancel-button" ghost>Cancel</button>
+          <button aotw-button>Confirm</button>
         </aotw-card-footer>
       </aotw-card>
     </template>

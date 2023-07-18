@@ -1,10 +1,10 @@
 import { LitElement, TemplateResult } from 'lit';
 export declare class AotwChipGroup extends LitElement {
-    private _chips;
+    private chips;
     static styles: import("lit").CSSResult;
-    protected firstUpdated(): void;
     protected render(): TemplateResult;
-    private _setActive;
+    private onSlotChange;
+    private setActive;
 }
 declare global {
     interface HTMLElementTagNameMap {

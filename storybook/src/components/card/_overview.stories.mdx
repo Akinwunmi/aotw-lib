@@ -1,3 +1,4 @@
+import '@aotw/components/src/card/index';
 import { Meta } from '@storybook/addon-docs';
 
 <Meta title="Components/Card/Overview" />
@@ -7,7 +8,7 @@ import { Meta } from '@storybook/addon-docs';
 <aotw-card>
   <aotw-card-header>
     <img header-image="" src="https://unsplash.it/600/400" />
-    <button header-suffix="" ghost="">
+    <button aotw-button="" header-suffix="" ghost="">
       <aotw-icon name="close" size="medium"></aotw-icon>
     </button>
     <aotw-icon header-prefix="" name="logo" size="medium"></aotw-icon>
@@ -17,8 +18,8 @@ import { Meta } from '@storybook/addon-docs';
     Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempora, facere?
   </aotw-card-content>
   <aotw-card-footer>
-    <button ghost="">Button</button>
-    <button>Button</button>
+    <button aotw-button="" ghost="">Button</button>
+    <button aotw-button="">Button</button>
   </aotw-card-footer>
 </aotw-card>
 
