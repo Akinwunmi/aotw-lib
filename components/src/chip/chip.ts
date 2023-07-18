@@ -7,10 +7,10 @@ const AOTW_CHIP = 'aotw-chip';
 
 @customElement(AOTW_CHIP)
 export class AotwChip extends LitElement {
-  @property({ type: Boolean })
+  @property({ type: Boolean, reflect: true })
   public active = false;
 
-  @property({ type: Boolean })
+  @property({ type: Boolean, reflect: true })
   public disabled = false;
 
   @property({ type: String, reflect: true })

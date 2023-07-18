@@ -35,7 +35,7 @@ export const Template: Story<ArgTypes> = (props) => {
   `;
 
   const headerSuffix = props['[header-suffix]'] && html`
-    <button header-suffix ghost>
+    <button aotw-button header-suffix ghost>
       <aotw-icon name="close" size="medium"></aotw-icon>
     </button>
   `;
@@ -59,8 +59,8 @@ export const Template: Story<ArgTypes> = (props) => {
   `;
   const footer = props.footer && html`
     <aotw-card-footer>
-      <button ghost>Button</button>
-      <button>Button</button>
+      <button aotw-button ghost>Button</button>
+      <button aotw-button>Button</button>
     </aotw-card-footer>
   `;
 

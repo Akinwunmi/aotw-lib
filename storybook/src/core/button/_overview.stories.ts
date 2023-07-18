@@ -15,23 +15,23 @@ export const Overview = () => html`
       <div class="variant">
         <header>Default</header>
         <div class="content">
-          <button>Button</button>
-          <button>
+          <button aotw-button>Button</button>
+          <button aotw-button>
             <aotw-icon name="logo"></aotw-icon>
             Button
           </button>
-          <button><aotw-icon name="logo"></aotw-icon></button>
+          <button aotw-button><aotw-icon name="logo"></aotw-icon></button>
         </div>
       </div>
       <div class="variant">
         <header>Ghost</header>
         <div class="content">
-          <button ghost>Button</button>
-          <button ghost>
+          <button aotw-button ghost>Button</button>
+          <button aotw-button ghost>
             <aotw-icon name="logo"></aotw-icon>
             Button
           </button>
-          <button ghost><aotw-icon name="logo"></aotw-icon></button>
+          <button aotw-button ghost><aotw-icon name="logo"></aotw-icon></button>
         </div>
       </div>
     </section>
@@ -40,23 +40,23 @@ export const Overview = () => html`
       <div class="variant">
         <header>Default</header>
         <div class="content">
-          <button secondary>Button</button>
-          <button secondary>
+          <button aotw-button secondary>Button</button>
+          <button aotw-button secondary>
             <aotw-icon name="logo"></aotw-icon>
             Button
           </button>
-          <button secondary><aotw-icon name="logo"></aotw-icon></button>
+          <button aotw-button secondary><aotw-icon name="logo"></aotw-icon></button>
         </div>
       </div>
       <div class="variant">
         <header>Ghost</header>
         <div class="content">
-          <button ghost secondary>Button</button>
-          <button ghost secondary>
+          <button aotw-button ghost secondary>Button</button>
+          <button aotw-button ghost secondary>
             <aotw-icon name="logo"></aotw-icon>
             Button
           </button>
-          <button ghost secondary><aotw-icon name="logo"></aotw-icon></button>
+          <button aotw-button ghost secondary><aotw-icon name="logo"></aotw-icon></button>
         </div>
       </div>
     </section>
@@ -65,12 +65,12 @@ export const Overview = () => html`
       <div class="variant">
         <header>Default</header>
         <div class="content">
-          <button disabled>Button</button>
-          <button disabled>
+          <button aotw-button disabled>Button</button>
+          <button aotw-button disabled>
             <aotw-icon name="logo"></aotw-icon>
             Button
           </button>
-          <button disabled><aotw-icon name="logo"></aotw-icon></button>
+          <button aotw-button disabled><aotw-icon name="logo"></aotw-icon></button>
         </div>
       </div>
     </section>
