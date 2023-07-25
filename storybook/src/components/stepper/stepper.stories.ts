@@ -20,3 +20,9 @@ Completed.args = {
   ...stepperArgs,
   activeStep: 3
 };
+
+export const ActiveLabelOnly = Template.bind({});
+ActiveLabelOnly.args = {
+  ...stepperArgs,
+  steps: ['', 'Main category', '', '']
+};

@@ -4,11 +4,15 @@
   position: relative;
 }
 
+::slotted(*) {
+  z-index: 1;
+}
+
 .progress,
 .progress-bar {
   position: absolute;
   width: 0.5rem;
-  z-index: -1;
+  z-index: 0;
 }
 
 .progress {

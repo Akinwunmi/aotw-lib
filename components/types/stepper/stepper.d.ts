@@ -1,5 +1,6 @@
 import { LitElement, TemplateResult } from 'lit';
 export declare class AotwStepper extends LitElement {
+    private progress;
     private steps;
     static styles: import("lit").CSSResult[];
     protected render(): TemplateResult;
