@@ -1,29 +1,29 @@
 :host {
   align-items: center;
-  color: var(--aotw-color-grey-300);
+  color: var(--aotw-step-color, var(--aotw-color-grey-300));
   display: flex;
   gap: var(--aotw-space-s);
   height: var(--aotw-size-xs);
 }
 
 .handle {
-  background-color: var(--aotw-color-grey-100);
+  background-color: var(--aotw-step-handle-background-color, var(--aotw-color-grey-100));
   border-radius: 50%;
   height: var(--aotw-size-xs);
   width: var(--aotw-size-xs);
 }
 
-:host([active]),
-:host([completed]) {
+:host([active]) {
+  color: var(--aotw-step-color-active, var(--aotw-color-primary-500));
+
   .handle {
-    background-color: var(--aotw-color-primary-500);
+    background-color: var(--aotw-step-handle-background-color-active, var(--aotw-color-primary-500));
+    outline: 2px solid var(--aotw-step-handle-border-color-active, var(--aotw-color-grey-100));
   }
 }
 
-:host([active]) {
-  color: var(--aotw-color-primary-500);
-
+:host([completed]) {
   .handle {
-    outline: 2px solid var(--aotw-color-grey-100);
+    background-color: var(--aotw-step-handle-background-color-completed, var(--aotw-color-primary-500));
   }
 }
