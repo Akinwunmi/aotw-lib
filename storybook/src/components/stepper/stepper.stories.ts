@@ -26,3 +26,9 @@ ActiveLabelOnly.args = {
   ...stepperArgs,
   steps: ['', 'Main category', '', '']
 };
+
+export const DisabledStep = Template.bind({});
+DisabledStep.args = {
+  ...stepperArgs,
+  disabledSteps: [2]
+};

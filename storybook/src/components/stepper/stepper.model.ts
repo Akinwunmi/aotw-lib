@@ -5,6 +5,7 @@ import { Story } from '../../../types/story.model';
 
 interface ArgTypes {
   activeStep?: number;
+  disabledSteps?: number[];
   steps: string[];
 }
 
@@ -15,7 +16,10 @@ export const stepperArgs: ArgTypes = {
 
 export const Template: Story<ArgTypes> = (props) => {
   const steps = props.steps && props.steps.map((step, index) => html`
-    <aotw-step ?active=${index === props.activeStep}>
+    <aotw-step
+      ?active=${index === props.activeStep}
+      ?disabled=${props.disabledSteps?.includes(index)}
+    >
       ${step}
     </aotw-step>
   `);

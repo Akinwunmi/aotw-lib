@@ -16,6 +16,13 @@ export class AotwStepper extends LitElement {
   
   public static override styles = [unsafeCSS(style)];
 
+  public override disconnectedCallback(): void {
+    this.steps.forEach(step => {
+      step.removeEventListener('click', this.updateProgress.bind(this));
+      step.removeEventListener('updated', this.updateProgress.bind(this));
+    });
+  }
+
   protected override render(): TemplateResult {
     return html`
       <slot @slotchange=${this.onSlotChange.bind(this)}></slot>
@@ -25,8 +32,19 @@ export class AotwStepper extends LitElement {
   }
 
   private onSlotChange(): void {
+    this.updateProgress();
+    this.steps.forEach(step => {
+      step.addEventListener('click', this.updateProgress.bind(this));
+      step.addEventListener('updated', this.updateProgress.bind(this));
+    });
+  }
+
+  private updateProgress(): void {
     const activeStep = this.steps.findIndex(step => step.hasAttribute('active'));
-    this.steps.slice(0, activeStep).forEach(step => step.toggleAttribute('completed', true));
+    this.steps.forEach((step, index) => {
+      step.toggleAttribute('active', index === activeStep);
+      step.toggleAttribute('completed', index < activeStep);
+    });
     this.progress.style.height = `calc(${100 / (this.steps.length - 1) * activeStep}% - 0.5rem)`;
   }
 }

@@ -27,3 +27,12 @@
     background-color: var(--aotw-step-handle-background-color-completed, var(--aotw-color-primary-500));
   }
 }
+
+:host([disabled]) {
+  color: var(--aotw-step-color-disabled, var(--aotw-color-grey-300));
+  pointer-events: none;
+
+  .handle {
+    background-color: var(--aotw-step-handle-background-color-disabled, var(--aotw-color-grey-300));
+  }
+}
