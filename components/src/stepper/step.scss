@@ -1,0 +1,38 @@
+:host {
+  align-items: center;
+  color: var(--aotw-step-color, var(--aotw-color-grey-300));
+  display: flex;
+  gap: var(--aotw-space-s);
+  height: var(--aotw-size-xs);
+}
+
+.handle {
+  background-color: var(--aotw-step-handle-background-color, var(--aotw-color-grey-100));
+  border-radius: 50%;
+  height: var(--aotw-size-xs);
+  width: var(--aotw-size-xs);
+}
+
+:host([active]) {
+  color: var(--aotw-step-color-active, var(--aotw-color-primary-500));
+
+  .handle {
+    background-color: var(--aotw-step-handle-background-color-active, var(--aotw-color-primary-500));
+    outline: 2px solid var(--aotw-step-handle-border-color-active, var(--aotw-color-grey-100));
+  }
+}
+
+:host([completed]) {
+  .handle {
+    background-color: var(--aotw-step-handle-background-color-completed, var(--aotw-color-primary-500));
+  }
+}
+
+:host([disabled]) {
+  color: var(--aotw-step-color-disabled, var(--aotw-color-grey-300));
+  pointer-events: none;
+
+  .handle {
+    background-color: var(--aotw-step-handle-background-color-disabled, var(--aotw-color-grey-300));
+  }
+}

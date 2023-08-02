@@ -17,6 +17,6 @@ export const inputArgs: ArgTypes = {
 
 export const InputTemplate: Story<ArgTypes> = (props) => {
   return html`
-    <input aotw-input ?disabled=${props.disabled} .placeholder=${ifDefined(props.placeholder)} .value=${ifDefined(props.value)} />
+    <input ?disabled=${props.disabled} .placeholder=${ifDefined(props.placeholder)} .value=${ifDefined(props.value)} />
   `;
 };

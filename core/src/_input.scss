@@ -1,6 +1,6 @@
 @use './typography';
 
-[aotw-input] {
+input {
   @include typography.typography-body;
   background-color: var(--aotw-color-white);
   border: none;

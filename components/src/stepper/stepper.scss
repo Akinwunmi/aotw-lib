@@ -1,0 +1,26 @@
+:host {
+  display: grid;
+  gap: var(--aotw-space-xl);
+  position: relative;
+}
+
+::slotted(*) {
+  z-index: 1;
+}
+
+.progress,
+.progress-bar {
+  position: absolute;
+  width: 0.5rem;
+  z-index: 0;
+}
+
+.progress {
+  background-color: var(--aotw-stepper-progress-background-color, var(--aotw-color-primary-500));
+  inset: 0.25rem auto auto 0.25rem;
+}
+
+.progress-bar {
+  background-color: var(--aotw-stepper-progress-bar-background-color, var(--aotw-color-white));
+  inset: 0.25rem;
+}

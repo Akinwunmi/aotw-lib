@@ -12,7 +12,7 @@
     "name": "arrow-up"
   },
   {
-    "data": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 18 18\" fill=\"none\"><path d=\"M0 8.5L2 6.5L7 11.5L16 2.5L18 4.5L7 15.5Z\" fill=\"currentColor\"/></svg>",
+    "data": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\"><path d=\"M0 12L3 9L9 15L21 3L24 6L9 21Z\" fill=\"currentColor\" /></svg>",
     "name": "check"
   },
   {
@@ -30,6 +30,10 @@
   {
     "data": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 18 18\" fill=\"none\"><circle cx=\"2\" cy=\"9\" r=\"2\" fill=\"currentColor\"/><circle cx=\"9\" cy=\"9\" r=\"2\" fill=\"currentColor\"/><circle cx=\"16\" cy=\"9\" r=\"2\" fill=\"currentColor\"/></svg>",
     "name": "ellipsis"
+  },
+  {
+    "data": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\"><path d=\"M8.5 2H15.5L13.5 15.5H10.5Z\" fill=\"currentColor\" /><circle cx=\"12\" cy=\"20\" r=\"2.5\" fill=\"currentColor\" /></svg>",
+    "name": "error"
   },
   {
     "data": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\"><line x1=\"9\" y1=\"19\" x2=\"22\" y2=\"19\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"square\"/><line x1=\"2\" y1=\"19\" x2=\"5\" y2=\"19\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"square\"/><circle cx=\"7\" cy=\"19\" r=\"2\" stroke=\"currentColor\" stroke-width=\"2\"/><circle cx=\"17\" cy=\"12\" r=\"2\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"19\" y1=\"12\" x2=\"22\" y2=\"12\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"square\"/><line x1=\"2\" y1=\"12\" x2=\"15\" y2=\"12\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"square\"/><circle cx=\"7\" cy=\"5\" r=\"2\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"9\" y1=\"5\" x2=\"22\" y2=\"5\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"square\"/><line x1=\"2\" y1=\"5\" x2=\"5\" y2=\"5\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"square\"/></svg>",

@@ -27,13 +27,13 @@ export const OverlayTemplate: Story<OverlayProps> = (props) => {
 
   return html`
     <div style="display: flex; gap: var(--aotw-space-s)">
-      <button aotw-button id="button-dialog" @click=${props.openDialog.bind(undefined, 'overlay-dialog')}>
+      <button id="button-dialog" @click=${props.openDialog.bind(undefined, 'overlay-dialog')}>
         Open dialog
       </button>
-      <button aotw-button id="button-dropdown" @click=${props.openDropdown.bind(undefined, 'overlay-dropdown')}>
+      <button id="button-dropdown" @click=${props.openDropdown.bind(undefined, 'overlay-dropdown')}>
         Open dropdown
       </button>
-      <button aotw-button id="button-toast" @click=${props.openToast.bind(undefined, 'overlay-toast')}>
+      <button id="button-toast" @click=${props.openToast.bind(undefined, 'overlay-toast')}>
         Open toast
       </button>
     </div>
@@ -42,7 +42,7 @@ export const OverlayTemplate: Story<OverlayProps> = (props) => {
       <aotw-card>
         <aotw-card-header>
           <img header-image src="https://upload.wikimedia.org/wikipedia/commons/c/ca/Frisian_flag.svg">
-          <button aotw-button header-suffix ghost>
+          <button header-suffix ghost>
             <aotw-icon name="close" size="medium"></aotw-icon>
           </button>
           Fryslân
@@ -51,8 +51,8 @@ export const OverlayTemplate: Story<OverlayProps> = (props) => {
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempora, facere?
         </aotw-card-content>
         <aotw-card-footer>
-          <button aotw-button id="cancel-button" ghost>Cancel</button>
-          <button aotw-button>Confirm</button>
+          <button id="cancel-button" ghost>Cancel</button>
+          <button>Confirm</button>
         </aotw-card-footer>
       </aotw-card>
     </template>
