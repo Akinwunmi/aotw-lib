@@ -31,10 +31,10 @@ function changeBackgroundColor(color: string): void {
 export const PortalTemplate: Story<Record<string, never>> = () => {
   return html`
     <div style="display: flex; gap: var(--aotw-space-s)">
-      <button aotw-button @click=${attachElement.bind(undefined)}>Attach element</button>
-      <button aotw-button @click=${closeElement.bind(undefined)}>Close element</button>
-      <button aotw-button @click=${detachElement.bind(undefined)}>Detach element</button>
-      <button aotw-button @click=${changeBackgroundColor.bind(undefined, 'red')}>Change background color</button>
+      <button @click=${attachElement.bind(undefined)}>Attach element</button>
+      <button @click=${closeElement.bind(undefined)}>Close element</button>
+      <button @click=${detachElement.bind(undefined)}>Detach element</button>
+      <button @click=${changeBackgroundColor.bind(undefined, 'red')}>Change background color</button>
     </div>
 
     <div style="margin-top: var(--aotw-space-m)">
@@ -46,7 +46,7 @@ export const PortalTemplate: Story<Record<string, never>> = () => {
     </div>
 
     <template id="portal-element">
-      <button aotw-button>Blue button</button>
+      <button>Blue button</button>
     </template>
   `;
 };

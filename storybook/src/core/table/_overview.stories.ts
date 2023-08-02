@@ -30,7 +30,7 @@ export const Overview = () => html`
                 <td>Cell 1.2</td>
                 <td>Cell 1.3</td>
                 <td>
-                  <button aotw-button ghost>
+                  <button ghost>
                     <aotw-icon name="ellipsis"></aotw-icon>
                   </button>
                 </td>
@@ -40,7 +40,7 @@ export const Overview = () => html`
                 <td>Cell 2.2</td>
                 <td>Cell 2.3</td>
                 <td>
-                  <button aotw-button ghost>
+                  <button ghost>
                     <aotw-icon name="ellipsis"></aotw-icon>
                   </button>
                 </td>
@@ -50,7 +50,7 @@ export const Overview = () => html`
                 <td>Cell 3.2</td>
                 <td>Cell 3.3</td>
                 <td>
-                  <button aotw-button ghost>
+                  <button ghost>
                     <aotw-icon name="ellipsis"></aotw-icon>
                   </button>
                 </td>

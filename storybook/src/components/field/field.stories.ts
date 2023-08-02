@@ -16,7 +16,7 @@ Label.args = {
   ...fieldArgs,
   slot: html`
     <aotw-label>Label</aotw-label>
-    <input aotw-input />
+    <input />
   `
 };
 
@@ -24,7 +24,7 @@ export const Message = FieldTemplate.bind({});
 Message.args = {
   ...fieldArgs,
   slot: html`
-    <input aotw-input />
+    <input />
     <aotw-message>Message</aotw-message>
   `
 };
@@ -34,7 +34,7 @@ InputMessage.args = {
   ...fieldArgs,
   slot: html`
     <aotw-label>Label</aotw-label>
-    <input aotw-input message="Input message" />
+    <input message="Input message" />
   `
 };
 
@@ -43,7 +43,7 @@ InputError.args = {
   ...fieldArgs,
   slot: html`
     <aotw-label>Label</aotw-label>
-    <input aotw-input error="Input error" />
+    <input error="Input error" />
   `
 };
 
@@ -53,7 +53,7 @@ Disabled.args = {
   disabled: true,
   slot: html`
     <aotw-label disabled>Label</aotw-label>
-    <input aotw-input disabled />
+    <input disabled />
     <aotw-message disabled>Message</aotw-message>
   `
 };

@@ -26,7 +26,6 @@ export const ButtonTemplate: Story<ButtonProps> = (props) => {
 
   return html`
     <button
-      aotw-button
       ?secondary=${props.secondary}
       ?disabled=${props.disabled}
       ?ghost=${props.ghost}

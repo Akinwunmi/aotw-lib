@@ -14,25 +14,25 @@ export const Overview = () => html`
       <div class="variant">
         <header>Default</header>
         <div class="content">
-          <input aotw-input />
+          <input />
         </div>
       </div>
       <div class="variant">
         <header>Placeholder</header>
         <div class="content">
-          <input aotw-input placeholder="Type anything..." />
+          <input placeholder="Type anything..." />
         </div>
       </div>
       <div class="variant">
         <header>Value</header>
         <div class="content">
-          <input aotw-input value="Something typed" />
+          <input value="Something typed" />
         </div>
       </div>
       <div class="variant">
         <header>Disabled</header>
         <div class="content">
-          <input aotw-input value="Something typed" disabled />
+          <input value="Something typed" disabled />
         </div>
       </div>
     </section>

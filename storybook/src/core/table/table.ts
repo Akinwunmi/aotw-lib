@@ -125,7 +125,7 @@ export const TableTemplate: Story<TableProps> = (props) => {
         </th>
         ${cells(index + 1).slice(1, -1)}
         <td>
-          <button aotw-button ghost ?disabled=${props.disabledRows.includes(index)}>
+          <button ghost ?disabled=${props.disabledRows.includes(index)}>
             <aotw-icon name="ellipsis" size="medium"></aotw-icon>
           </button>
         </td>
