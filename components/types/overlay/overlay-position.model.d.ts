@@ -34,6 +34,7 @@ export interface RelativePositionStyle extends AbsolutePositionStyle {
 export interface OffsetPositionStyle {
     transform: string;
 }
+export type PositionStyle = AbsolutePositionStyle | RelativePositionStyle | OffsetPositionStyle;
 export interface Point {
     top: number;
     right: number;

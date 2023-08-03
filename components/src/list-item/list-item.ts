@@ -1,5 +1,6 @@
 import { unsafeCSS } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
+
 import { AotwContainer } from '../container';
 
 import styleListItem from './list-item.scss?inline';

@@ -1,4 +1,5 @@
 import { Portal } from '../portal';
+
 import { OverlayConfig } from './overlay.model';
 
 export class OverlayRef {

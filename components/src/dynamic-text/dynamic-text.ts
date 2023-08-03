@@ -43,7 +43,8 @@ export class DynamicTextElement extends LitElement {
       return;
     }
     if (this._content.clientWidth > this.clientWidth) {
-      this._content.style[this.alignment] = `${this.clientWidth - this._content.clientWidth}px`;
+      const margin = this.clientWidth - this._content.clientWidth;
+      this._content.style[this.alignment] = `${margin}px`;
       setTimeout(() => {
         this._content.style[this.alignment] = '0';
       }, this._duration);

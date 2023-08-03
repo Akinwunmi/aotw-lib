@@ -1,5 +1,16 @@
-import { AbsolutePosition, AbsolutePositionStyle, OffsetPosition, OffsetPositionStyle, Point, Positions, RelativePosition, RelativePositionStyle } from './overlay-position.model';
+import {
+  AbsolutePosition,
+  AbsolutePositionStyle,
+  OffsetPosition,
+  OffsetPositionStyle,
+  Point,
+  PositionStyle,
+  Positions,
+  RelativePosition,
+  RelativePositionStyle
+} from './overlay-position.model';
 import { OverlayRef } from './overlay-ref';
+import { transformStyle } from './overlay.utils';
 
 export class OverlayPosition {
   private origin?: HTMLElement;
@@ -26,7 +37,8 @@ export class OverlayPosition {
       return;
     }
 
-    this.containerRect = document.querySelector('[aotw-overlay]')?.getBoundingClientRect();
+    const container = document.querySelector('[aotw-overlay]');
+    this.containerRect = container?.getBoundingClientRect();
     this.originRect = this.origin?.getBoundingClientRect();
 
     if (!this.containerRect) {
@@ -75,42 +87,34 @@ export class OverlayPosition {
 
   private applyAbsolutePosition({ horizontal, vertical }: AbsolutePosition): void {
     const style: AbsolutePositionStyle = {
-      'justify-content': '',
-      'align-items': ''
+      'justify-content': 'center',
+      'align-items': 'center'
     };
 
-    switch (horizontal) {
-      case 'left':
-        style['justify-content'] = 'flex-start';
-        break;
-      case 'right':
-        style['justify-content'] = 'flex-end';
-        break;
-      case 'center':
-        style['justify-content'] = 'center';
-        break;
-      default:
-        break;
+    if (horizontal === 'left') {
+      style['justify-content'] = 'flex-start';
+    }
+    
+    if (horizontal === 'right') {
+      style['justify-content'] = 'flex-end';
     }
 
-    switch (vertical) {
-      case 'top':
-        style['align-items'] = 'flex-start';
-        break;
-      case 'bottom':
-        style['align-items'] = 'flex-end';
-        break;
-      case 'center':
-        style['align-items'] = 'center';
-        break;
-      default:
-        break;
+    if (vertical === 'top') {
+      style['align-items'] = 'flex-start';
+    }
+
+    if (vertical === 'bottom') {
+      style['align-items'] = 'flex-end';
     }
 
     this.setHostStyle(style);
   }
 
-  private applyRelativePosition(containerRect: DOMRect, originPoint: Point, { side, startingPoint }: RelativePosition): void {
+  private applyRelativePosition(
+    containerRect: DOMRect,
+    originPoint: Point,
+    { side, startingPoint }: RelativePosition
+  ): void {
     const style: RelativePositionStyle = {
       'justify-content': '',
       'align-items': '',
@@ -195,19 +199,13 @@ export class OverlayPosition {
     this.setHostStyle(style);
   }
 
-  private setHostStyle(style: AbsolutePositionStyle | RelativePositionStyle | OffsetPositionStyle): void {
+  private setHostStyle(style: PositionStyle): void {
     const hostStyle = this.overlayRef?.host.style;
     if (!hostStyle) {
       return;
     }
 
-    const convertedStyle = Object.entries(style).map(([key, value]) => {
-      if (value === null) {
-        return [key, ''];
-      }
-      return [key, typeof value === 'string' ? value : `${value}px`];
-    });
-
+    const convertedStyle = transformStyle(style);
     Object.assign(hostStyle, Object.fromEntries(convertedStyle));
   }
 }
