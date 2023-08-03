@@ -20,7 +20,9 @@ export class AotwChipGroup extends LitElement {
   }
 
   private onSlotChange(): void {
-    this.chips.forEach(chip => chip.addEventListener('click', this.setActive.bind(this, chip)));
+    this.chips.forEach(chip =>
+      chip.addEventListener('click', this.setActive.bind(this, chip))
+    );
   }
 
   private setActive(selectedChip: AotwChip): void {

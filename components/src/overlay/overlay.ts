@@ -1,4 +1,5 @@
 import { Portal } from '../portal';
+
 import { OverlayPosition } from './overlay-position';
 import { OverlayRef } from './overlay-ref';
 import { OverlayConfig } from './overlay.model';
@@ -76,7 +77,10 @@ export class Overlay {
     this.container.prepend(this.scrim);
   }
 
-  private createElement(name: string, style: Partial<CSSStyleDeclaration>): HTMLDivElement {
+  private createElement(
+    name: string,
+    style: Partial<CSSStyleDeclaration>
+  ): HTMLDivElement {
     const element = document.createElement('div');
     element.toggleAttribute(name, true);
     Object.assign(element.style, style);

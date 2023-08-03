@@ -23,7 +23,10 @@ export class AotwCardHeader extends LitElement {
   private _handleSlotChanged(): void {
     const image = this._elements.find(element => element instanceof HTMLImageElement);
     this._elements.forEach(element => {
-      if (element.getAttribute('header-prefix') !== null || element.getAttribute('header-title') !== null) {
+      if (
+        element.getAttribute('header-prefix') !== null ||
+        element.getAttribute('header-title') !== null
+      ) {
         element.style.gridRow = image ? '2' : '-1';
       }
     });

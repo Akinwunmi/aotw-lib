@@ -45,7 +45,8 @@ export class AotwStepper extends LitElement {
       step.toggleAttribute('active', index === activeStep);
       step.toggleAttribute('completed', index < activeStep);
     });
-    this.progress.style.height = `calc(${100 / (this.steps.length - 1) * activeStep}% - 0.5rem)`;
+    const percentageFromTop = 100 / (this.steps.length - 1) * activeStep;
+    this.progress.style.height = `calc(${percentageFromTop}% - 0.5rem)`;
   }
 }
 

@@ -1,5 +1,10 @@
 import { html, LitElement, TemplateResult, unsafeCSS } from 'lit';
-import { customElement, property, query, queryAssignedElements } from 'lit/decorators.js';
+import {
+  customElement,
+  property,
+  query,
+  queryAssignedElements
+} from 'lit/decorators.js';
 
 import styleTabGroup from './tab-group.scss?inline';
 import { AotwTab } from './tab';
@@ -13,7 +18,7 @@ export class AotwTabGroup extends LitElement {
   public set activeTab(activeTab: number) {
     this._activeTab = activeTab;
     this._setActiveLinePosition();
-  };
+  }
   private _activeTab = 0;
 
   @query('.active-line')
@@ -62,7 +67,9 @@ export class AotwTabGroup extends LitElement {
     if (!this._activeLine) {
       return;
     }
-    this._activeLine.style.left = `${100 / this._tabs.length * this._activeTab}%`;
+
+    const percentageFromLeft = 100 / this._tabs.length * this._activeTab;
+    this._activeLine.style.left = `${percentageFromLeft}%`;
   }
 }
 
