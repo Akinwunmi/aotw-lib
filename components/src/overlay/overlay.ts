@@ -20,10 +20,9 @@ export class Overlay {
   public create(config?: OverlayConfig): OverlayRef {
     this.createContainer();
     this.createHost();
-    const panel = this.createPanel();
     const portal = new Portal();
 
-    return new OverlayRef(this.host, panel, portal, this.scrim, config);
+    return new OverlayRef(this.host, portal, this.scrim, config);
   }
 
   public position(): OverlayPosition {
@@ -55,14 +54,6 @@ export class Overlay {
     };
     this.host = this.createElement('host', style);
     this.container.appendChild(this.host);
-  }
-
-  private createPanel(): HTMLDivElement {
-    const style: Partial<CSSStyleDeclaration> = {
-      display: 'block',
-      pointerEvents: 'auto'
-    };
-    return this.createElement('panel', style);
   }
 
   private createScrim(): void {

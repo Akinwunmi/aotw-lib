@@ -18,7 +18,9 @@ export class Portal {
       this.parentElement = options.parent;
     }
     if (!this.attached) {
+      element.after(element.cloneNode(true));
       this.attached = element;
+      console.log(this.parentElement, element, this.attached);
       this.parentElement.appendChild(this.attached);
     }
     this.attached.style.display = 'block';

@@ -4,7 +4,6 @@ import { OverlayConfig } from './overlay.model';
 export class OverlayRef {
   public host: HTMLDivElement;
   
-  private panel: HTMLDivElement;
   private portal: Portal;
   private scrim: HTMLDivElement;
   private config?: OverlayConfig;
@@ -15,13 +14,11 @@ export class OverlayRef {
 
   public constructor(
     host: HTMLDivElement,
-    panel: HTMLDivElement,
     portal: Portal,
     scrim: HTMLDivElement,
     config?: OverlayConfig
   ) {
     this.host = host;
-    this.panel = panel;
     this.portal = portal;
     this.scrim = scrim;
     this.config = config;
@@ -32,12 +29,9 @@ export class OverlayRef {
       this.config.position?.attach(this);
     }
 
-    if (!this.attached) {
-      this.panel.appendChild(element);
-    }
-
     this.showScrim();
-    return this.portal.attach(this.panel, { parent: this.host });
+    element.style.pointerEvents = 'auto';
+    return this.portal.attach(element, { parent: this.host });
   }
 
   public close(): void {
@@ -53,6 +47,13 @@ export class OverlayRef {
       this.host.removeChild(this.host.children[0]);
     }
     this.host.remove();
+  }
+
+  private handleScrimClose(event: Event): void {
+    this.config?.onScrimTriggered?.(event);
+    if (!event.defaultPrevented) {
+      this.close();
+    }
   }
 
   private showScrim(): void {
@@ -80,7 +81,9 @@ export class OverlayRef {
     }
 
     Object.assign(this.scrim.style, style);
-    this.scrim.addEventListener('click', this.close.bind(this));
+    this.scrim.addEventListener('click', this.handleScrimClose.bind(this), {
+      once: true
+    });
   }
 
   private hideScrim(): void {

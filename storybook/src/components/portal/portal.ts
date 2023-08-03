@@ -8,11 +8,9 @@ let attached: HTMLElement;
 const portal = new Portal();
 
 function attachElement(): void {
-  const parent = document.getElementById('portal-parent') as HTMLTemplateElement;
-  const template = document.getElementById('portal-element') as HTMLTemplateElement;
-  const clone = template.content.cloneNode(true) as HTMLElement;
-  attached = portal.attach(clone.firstElementChild as HTMLElement, { parent });
-  attached.addEventListener('click', changeBackgroundColor.bind(undefined, 'green'));
+  const parent = document.getElementById('portal-parent') as HTMLDivElement;
+  const element = document.getElementById('portal-element') as HTMLButtonElement;
+  attached = portal.attach(element, { parent });
 }
 
 function closeElement(): void {
@@ -45,8 +43,6 @@ export const PortalTemplate: Story<Record<string, never>> = () => {
       ></div>
     </div>
 
-    <template id="portal-element">
-      <button>Blue button</button>
-    </template>
+    <button id="portal-element" style="display: none" @click=${changeBackgroundColor.bind(undefined, 'green')}>Blue button</button>
   `;
 };

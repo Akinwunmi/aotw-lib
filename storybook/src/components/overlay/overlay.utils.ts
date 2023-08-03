@@ -1,3 +1,4 @@
+import { AotwCard } from '@aotw/components/src/card';
 import { Overlay } from '@aotw/components/src/overlay/overlay';
 import { OverlayConfig } from '@aotw/components/src/overlay/overlay.model';
 
@@ -10,17 +11,11 @@ const dialogConfig: OverlayConfig = {
 const dialogRef = overlay.create(dialogConfig);
 
 export function openDialog(templateId: string): void {
-  const template = document.getElementById(templateId) as HTMLTemplateElement;
-  const clone = template.content.cloneNode(true) as HTMLElement;
-  dialogRef.attach(clone);
-
-  const closeButton = document.querySelector('[header-suffix]') as HTMLButtonElement;
-  const cancelButton = document.querySelector('#cancel-button') as HTMLButtonElement;
-  closeButton.addEventListener('click', closeDialog);
-  cancelButton.addEventListener('click', closeDialog);
+  const element = document.getElementById(templateId) as AotwCard;
+  dialogRef.attach(element);
 }
 
-function closeDialog(): void {
+export function closeDialog(): void {
   dialogRef.close();
 }
 
@@ -39,14 +34,13 @@ const dropdownConfig: OverlayConfig = {
 const dropdownRef = overlay.create(dropdownConfig);
 
 export function openDropdown(templateId: string): void {
-  const template = document.getElementById(templateId) as HTMLTemplateElement;
-  const clone = template.content.cloneNode(true) as HTMLElement;
+  const element = document.getElementById(templateId) as HTMLDivElement;
   const origin = document.getElementById('button-dropdown');
 
   if (origin) {
     dropdownPosition.setOrigin(origin);
   }
-  const attached = dropdownRef.attach(clone);
+  const attached = dropdownRef.attach(element);
 
   const items = attached.querySelectorAll('aotw-list-item') as NodeListOf<HTMLElement>;
   items.forEach((item, index) => {
@@ -79,10 +73,9 @@ const toastConfig: OverlayConfig = {
 const toastRef = overlay.create(toastConfig);
 
 export function openToast(templateId: string): void {
-  const template = document.getElementById(templateId) as HTMLTemplateElement;
-  const clone = template.content.cloneNode(true) as HTMLElement;
+  const element = document.getElementById(templateId) as HTMLDivElement;
 
-  toastRef.attach(clone);
+  toastRef.attach(element);
   setTimeout(() => {
     toastRef.close();
   }, 3000);
