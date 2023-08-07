@@ -19,7 +19,7 @@ export class OverlayPosition {
     return this;
   }
 
-  public attach(overlayRef: OverlayRef): void {
+  public open(overlayRef: OverlayRef): void {
     this.overlayRef = overlayRef;
 
     if (!this.overlayRef) {
@@ -107,7 +107,7 @@ export class OverlayPosition {
         break;
     }
 
-    this.setHostStyle(style);
+    this.setContainerStyle(style);
   }
 
   private applyRelativePosition(containerRect: DOMRect, originPoint: Point, { side, startingPoint }: RelativePosition): void {
@@ -184,7 +184,7 @@ export class OverlayPosition {
         break;
     }
 
-    this.setHostStyle(style);
+    this.setContainerStyle(style);
   }
 
   private applyOffsetPosition({ x, y }: OffsetPosition): void {
@@ -192,12 +192,12 @@ export class OverlayPosition {
       transform: `translate(${x}px, ${y}px)`
     };
 
-    this.setHostStyle(style);
+    this.setContainerStyle(style);
   }
 
-  private setHostStyle(style: AbsolutePositionStyle | RelativePositionStyle | OffsetPositionStyle): void {
-    const hostStyle = this.overlayRef?.host.style;
-    if (!hostStyle) {
+  private setContainerStyle(style: AbsolutePositionStyle | RelativePositionStyle | OffsetPositionStyle): void {
+    const containerStyle = this.overlayRef?.container.style;
+    if (!containerStyle) {
       return;
     }
 
@@ -208,6 +208,6 @@ export class OverlayPosition {
       return [key, typeof value === 'string' ? value : `${value}px`];
     });
 
-    Object.assign(hostStyle, Object.fromEntries(convertedStyle));
+    Object.assign(containerStyle, Object.fromEntries(convertedStyle));
   }
 }

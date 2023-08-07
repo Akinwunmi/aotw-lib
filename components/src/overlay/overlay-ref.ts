@@ -2,7 +2,7 @@ import { Portal } from '../portal';
 import { OverlayConfig } from './overlay.model';
 
 export class OverlayRef {
-  public host: HTMLDivElement;
+  public container: HTMLDivElement;
   
   private portal: Portal;
   private scrim: HTMLDivElement;
@@ -13,25 +13,24 @@ export class OverlayRef {
   }
 
   public constructor(
-    host: HTMLDivElement,
+    container: HTMLDivElement,
     portal: Portal,
     scrim: HTMLDivElement,
     config?: OverlayConfig
   ) {
-    this.host = host;
+    this.container = container;
     this.portal = portal;
     this.scrim = scrim;
     this.config = config;
   }
 
-  public attach(element: HTMLElement): HTMLElement {
+  public open(element: HTMLElement): HTMLElement {
     if (this.config) {
-      this.config.position?.attach(this);
+      this.config.position?.open(this);
     }
 
     this.showScrim();
-    element.style.pointerEvents = 'auto';
-    return this.portal.attach(element, { parent: this.host });
+    return this.portal.open(element, { parent: this.container });
   }
 
   public close(): void {
@@ -43,10 +42,10 @@ export class OverlayRef {
     this.portal.detach();
     this.hideScrim();
 
-    while (this.host.children.length) {
-      this.host.removeChild(this.host.children[0]);
+    while (this.container.children.length) {
+      this.container.removeChild(this.container.children[0]);
     }
-    this.host.remove();
+    this.container.remove();
   }
 
   private handleScrimClose(event: Event): void {

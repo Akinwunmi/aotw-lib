@@ -1,6 +1,7 @@
 import { LitElement, TemplateResult, html } from 'lit';
 import { customElement, property, queryAssignedElements } from 'lit/decorators.js';
 import { Overlay } from './overlay';
+import { Positions, Side, StartingPoint } from './overlay-position.model';
 import { OverlayRef } from './overlay-ref';
 
 const AOTW_OVERLAY_TRIGGER = 'aotw-overlay-trigger';
@@ -8,10 +9,16 @@ const AOTW_OVERLAY_TRIGGER = 'aotw-overlay-trigger';
 @customElement(AOTW_OVERLAY_TRIGGER)
 export class AotwOverlayTrigger extends LitElement {
   @property({ type: Boolean, reflect: true })
-  public scrim = true;
+  public open = false;
 
   @property({ type: Boolean, reflect: true })
-  public open = false;
+  public scrim = true;
+
+  @property({ type: String, reflect: true })
+  public side: Side = 'bottom';
+
+  @property({ type: String, attribute: 'starting-point', reflect: true })
+  public startingPoint: StartingPoint = 'start';
 
   @property({ type: Array, reflect: true })
   public triggers = ['click'];
@@ -38,41 +45,49 @@ export class AotwOverlayTrigger extends LitElement {
 
     this.overlayRef?.close();
     this.open = true;
+    const positions: Positions = {
+      relative: {
+        side: this.side,
+        startingPoint: this.startingPoint
+      }
+    };
+    const position = this.overlay.position().setOrigin(this).setPositions(positions);
     this.overlayRef = this.overlay.create({
       onScrimTriggered: this.closePopover,
+      position,
       scrim: this.scrim
     });
-    this.overlayRef?.attach(this.popover);
+    this.overlayRef?.open(this.popover);
     return this.overlayRef;
   }
 
-  private openPopover(event?: Event): OverlayRef {
+  private openPopover(event?: Event): void {
     event?.stopPropagation();
     this.overlayRef?.close();
-    this.open = true;
     this.overlayRef = this.create();
-
-    return this.overlayRef;
+    this.open = true;
   }
 
   private closePopover(): void {
     this.overlayRef?.close();
     this.overlayRef?.detach();
     this.open = false;
+    console.log('close popover ==> is open:', this.open);
   }
 
   public toggle(): void {
+    console.log('==> is open', this.open);
     if (this.open) {
       this.closePopover();
+      console.log('toggle closed ==> is open:', this.open);
       return;
     }
     this.openPopover();
+    console.log('toggle opened ==> is open:', this.open);
   }
 
   public onSlotChange(): void {
-    // if (this.open) {
-    //   this.openPopover();
-    // }
+    this.popover.style.display = 'none';
   }
 
   /* Lifecycle methods */
@@ -82,9 +97,6 @@ export class AotwOverlayTrigger extends LitElement {
       this.removeEventListener(trigger, this.toggle.bind(this));
       this.addEventListener(trigger, this.toggle.bind(this));
     });
-    // if (this.open) {
-    //   this.openPopover();
-    // }
   }
 
   public render(): TemplateResult {

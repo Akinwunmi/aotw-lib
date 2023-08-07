@@ -7,7 +7,6 @@ export class Overlay {
   private static instance?: Overlay;
 
   private container!: HTMLDivElement;
-  private host!: HTMLDivElement;
   private scrim!: HTMLDivElement;
 
   public static get(): Overlay {
@@ -19,10 +18,9 @@ export class Overlay {
 
   public create(config?: OverlayConfig): OverlayRef {
     this.createContainer();
-    this.createHost();
     const portal = new Portal();
 
-    return new OverlayRef(this.host, portal, this.scrim, config);
+    return new OverlayRef(this.container, portal, this.scrim, config);
   }
 
   public position(): OverlayPosition {
@@ -35,8 +33,10 @@ export class Overlay {
     }
 
     const style: Partial<CSSStyleDeclaration> = {
+      display: 'flex',
       inset: '0',
-      pointerEvents: 'none',
+      placeContent: 'center',
+      placeItems: 'center',
       position: 'fixed'
     };
     this.container = this.createElement('aotw-overlay', style);
@@ -44,23 +44,10 @@ export class Overlay {
     this.createScrim();
   }
 
-  private createHost(): void {
-    const style: Partial<CSSStyleDeclaration> = {
-      display: 'flex',
-      inset: '0',
-      placeContent: 'center',
-      placeItems: 'center',
-      position: 'absolute'
-    };
-    this.host = this.createElement('host', style);
-    this.container.appendChild(this.host);
-  }
-
   private createScrim(): void {
     const style: Partial<CSSStyleDeclaration> = {
       display: 'none',
       inset: '0',
-      pointerEvents: 'auto',
       position: 'fixed'
     };
     this.scrim = this.createElement('scrim', style);
