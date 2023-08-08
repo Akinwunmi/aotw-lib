@@ -12,7 +12,7 @@ export class AotwOverlayTrigger extends LitElement {
   public open = false;
 
   @property({ type: Boolean, reflect: true })
-  public scrim = true;
+  public scrim = true;                                                                                             
 
   @property({ type: String, reflect: true })
   public side: Side = 'bottom';
@@ -39,12 +39,6 @@ export class AotwOverlayTrigger extends LitElement {
       throw new Error('Provide one trigger element and one popover element');
     }
 
-    if (!this.popover) {
-      throw new Error('A popover must exist');
-    }
-
-    this.overlayRef?.close();
-    this.open = true;
     const positions: Positions = {
       relative: {
         side: this.side,
@@ -61,32 +55,25 @@ export class AotwOverlayTrigger extends LitElement {
     return this.overlayRef;
   }
 
-  private openPopover(event?: Event): void {
-    event?.stopPropagation();
-    this.overlayRef?.close();
-    this.overlayRef = this.create();
+  private openPopover(): void {
     this.open = true;
+    this.overlayRef = this.create();
   }
 
   private closePopover(): void {
-    this.overlayRef?.close();
     this.overlayRef?.detach();
     this.open = false;
-    console.log('close popover ==> is open:', this.open);
   }
 
-  public toggle(): void {
-    console.log('==> is open', this.open);
+  private toggle(): void {
     if (this.open) {
       this.closePopover();
-      console.log('toggle closed ==> is open:', this.open);
       return;
     }
     this.openPopover();
-    console.log('toggle opened ==> is open:', this.open);
   }
 
-  public onSlotChange(): void {
+  private onSlotChange(): void {
     this.popover.style.display = 'none';
   }
 
@@ -94,12 +81,12 @@ export class AotwOverlayTrigger extends LitElement {
   public override connectedCallback(): void {
     super.connectedCallback();
     this.triggers.forEach(trigger => {
-      this.removeEventListener(trigger, this.toggle.bind(this));
-      this.addEventListener(trigger, this.toggle.bind(this));
+      this.removeEventListener(trigger, this.toggle);
+      this.addEventListener(trigger, this.toggle);
     });
   }
 
-  public render(): TemplateResult {
+  public override render(): TemplateResult {
     return html`
       <slot @slotchange=${this.onSlotChange.bind(this)}></slot>
     `;
@@ -108,6 +95,9 @@ export class AotwOverlayTrigger extends LitElement {
   public override disconnectedCallback(): void {
     super.disconnectedCallback();
     this.closePopover();
+    this.triggers.forEach(trigger => {
+      this.removeEventListener(trigger, this.toggle.bind(this));
+    });
   }
 }
 

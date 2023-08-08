@@ -44,6 +44,6 @@ export function openToast(templateId: string): void {
 
   toastRef.open(element);
   setTimeout(() => {
-    toastRef.close();
+    toastRef.detach();
   }, 3000);
 }

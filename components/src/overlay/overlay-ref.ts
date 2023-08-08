@@ -2,10 +2,10 @@ import { Portal } from '../portal';
 import { OverlayConfig } from './overlay.model';
 
 export class OverlayRef {
-  public container: HTMLDivElement;
+  public container!: HTMLDivElement;
   
   private portal: Portal;
-  private scrim: HTMLDivElement;
+  private scrim!: HTMLDivElement;
   private config?: OverlayConfig;
 
   public get attached(): HTMLElement | undefined {
@@ -13,18 +13,16 @@ export class OverlayRef {
   }
 
   public constructor(
-    container: HTMLDivElement,
     portal: Portal,
-    scrim: HTMLDivElement,
     config?: OverlayConfig
   ) {
-    this.container = container;
     this.portal = portal;
-    this.scrim = scrim;
     this.config = config;
   }
 
   public open(element: HTMLElement): HTMLElement {
+    this.createContainer();
+
     if (this.config) {
       this.config.position?.open(this);
     }
@@ -48,10 +46,47 @@ export class OverlayRef {
     this.container.remove();
   }
 
+  private createElement(name: string, style: Partial<CSSStyleDeclaration>): HTMLDivElement {
+    const element = document.createElement('div');
+    element.toggleAttribute(name, true);
+    Object.assign(element.style, style);
+    return element;
+  }
+
+  private createScrim(): void {
+    const style: Partial<CSSStyleDeclaration> = {
+      display: 'none',
+      inset: '0',
+      pointerEvents: 'auto',
+      position: 'fixed',
+      zIndex: '0'
+    };
+    this.scrim = this.createElement('scrim', style);
+    this.container.prepend(this.scrim);
+  }
+
+  private createContainer(): void {
+    if (this.container) {
+      return;
+    }
+
+    const style: Partial<CSSStyleDeclaration> = {
+      display: 'flex',
+      inset: '0',
+      placeContent: 'center',
+      placeItems: 'center',
+      pointerEvents: 'none',
+      position: 'fixed'
+    };
+    this.container = this.createElement('aotw-overlay', style);
+    this.createScrim();
+    document.body.appendChild(this.container);
+  }
+
   private handleScrimClose(event: Event): void {
     this.config?.onScrimTriggered?.(event);
     if (!event.defaultPrevented) {
-      this.close();
+      this.detach();
     }
   }
 

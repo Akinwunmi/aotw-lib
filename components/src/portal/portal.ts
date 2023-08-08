@@ -23,6 +23,8 @@ export class Portal {
       this.parentElement.appendChild(this.attached);
     }
     this.attached.style.display = 'block';
+    this.attached.style.pointerEvents = 'auto';
+    this.attached.style.zIndex = '1';
     return this.attached;
   }
 
