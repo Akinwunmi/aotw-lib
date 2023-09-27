@@ -4,16 +4,32 @@
     "name": "add"
   },
   {
-    "data": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 18 18\" fill=\"none\"><path d=\"M1.25 6L3 4.25L9 10.25L15 4.25L16.75 6L9 13.75Z\" fill=\"currentColor\"/></svg>",
+    "data": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 18 18\" fill=\"none\"><path d=\"M1.25 9L3 7.25L7.75 12.25V2H10.25V12.25L15 7.25L16.75 9L9 16.75Z\" fill=\"currentColor\"/></svg>",
     "name": "arrow-down"
   },
   {
-    "data": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 18 18\" fill=\"none\"><path d=\"M16.75 12L15 13.75L9 7.75L3 13.75L1.25 12L9 4.25Z\" fill=\"currentColor\"/></svg>",
+    "data": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 18 18\" fill=\"none\"><path d=\"M16.75 9L15 10.75L10.25 5.75V16H7.75V5.75L3 10.75L1.25 9L9 1.25Z\" fill=\"currentColor\"/></svg>",
     "name": "arrow-up"
   },
   {
     "data": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\"><path d=\"M0 12L3 9L9 15L21 3L24 6L9 21Z\" fill=\"currentColor\" /></svg>",
     "name": "check"
+  },
+  {
+    "data": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 18 18\" fill=\"none\"><path d=\"M1.25 6L3 4.25L9 10.25L15 4.25L16.75 6L9 13.75Z\" fill=\"currentColor\"/></svg>",
+    "name": "chevron-down"
+  },
+  {
+    "data": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 18 18\" fill=\"none\"><g transform=\"rotate(90, 9, 9)\"><path d=\"M1.25 6L3 4.25L9 10.25L15 4.25L16.75 6L9 13.75Z\" fill=\"currentColor\"/></g></svg>",
+    "name": "chevron-left"
+  },
+  {
+    "data": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 18 18\" fill=\"none\"><g transform=\"rotate(270, 9, 9)\"><path d=\"M1.25 6L3 4.25L9 10.25L15 4.25L16.75 6L9 13.75Z\" fill=\"currentColor\"/></g></svg>",
+    "name": "chevron-right"
+  },
+  {
+    "data": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 18 18\" fill=\"none\"><path d=\"M16.75 12L15 13.75L9 7.75L3 13.75L1.25 12L9 4.25Z\" fill=\"currentColor\"/></svg>",
+    "name": "chevron-up"
   },
   {
     "data": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 18 18\" fill=\"none\"><path d=\"M1.25 3L3 1.25L9 7.25L15 1.25L16.75 3L10.75 9L16.75 15L15 16.75L9 10.75L3 16.75L1.25 15L7.25 9Z\" fill=\"currentColor\"/></svg>",

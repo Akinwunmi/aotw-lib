@@ -1,10 +1,10 @@
 /**
  * Do not edit directly
- * Generated on Thu, 03 Aug 2023 13:31:49 GMT
+ * Generated on Tue, 26 Sep 2023 13:31:22 GMT
  */
 
 :root {
-  --aotw-elevation-xs: 0.25rem 0.25rem 0.5rem var(--aotw-color-grey-200);
+  --aotw-elevation-xs: 0.25rem 0.25rem 0.5rem var(--aotw-color-grey-300);
   --aotw-font-family-primary: 'Inter', sans-serif;
   --aotw-font-letter-spacing-m: 0.25rem;
   --aotw-font-line-height-s: 1.25rem;
